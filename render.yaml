@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ai-excellence-training-platform
+    runtime: php
+    buildCommand: npm install --legacy-peer-deps && npm run build && composer install --no-dev --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        sync: false
+      - key: NODE_VERSION
+        value: 20.18.1
