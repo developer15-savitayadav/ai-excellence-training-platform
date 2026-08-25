@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, usePage, router } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';   
 import { Search, ArrowRight, ArrowUpRight, LayoutDashboard, UserRound, LogOut } from 'lucide-react';
 
 const navLinks = [
