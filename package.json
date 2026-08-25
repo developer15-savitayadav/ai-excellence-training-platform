@@ -7,7 +7,7 @@
         "dev": "vite",
         "start": "php artisan serve --host=0.0.0.0 --port=$PORT"
     },
-    "devDependencies": {
+    "devDependencies": {   
         "@headlessui/react": "^2.0.0",    
         "@inertiajs/react": "^2.0.0",
         "@vitejs/plugin-react": "^4.2.0",
