@@ -42,11 +42,11 @@ RUN cp -n .env.example .env 2>/dev/null || true
 # ── Step 3: Install PHP deps WITHOUT triggering artisan ──
 RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts
 
-# ── Step 4: Now vendor/autoload.php exists — generate APP_KEY ──
-RUN php artisan key:generate --force
+# ── Step 4: Generate APP_KEY (use sqlite at build time — no MySQL available) ──
+RUN DB_CONNECTION=sqlite php artisan key:generate --force
 
 # ── Step 5: Run post-autoload-dump (artisan package:discover) ──
-RUN composer dump-autoload --optimize --no-dev
+RUN DB_CONNECTION=sqlite composer dump-autoload --optimize --no-dev
 
 # ── Step 6: Frontend assets from build stage ─────────
 COPY --from=frontend /app/public/build public/build

@@ -14,5 +14,38 @@ services:
         sync: false
       - key: NODE_VERSION
         value: 20.18.1
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        fromDatabase:
+          name: ai-excellence-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: ai-excellence-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: ai-excellence-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: ai-excellence-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: ai-excellence-db
+          property: password
+      - key: CACHE_STORE
+        value: database
+      - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
       - key: RUN_MIGRATIONS
         value: "true"
+
+databases:
+  - name: ai-excellence-db
+    plan: free
+    databaseName: ai_excellence
