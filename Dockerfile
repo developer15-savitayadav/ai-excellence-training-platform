@@ -20,7 +20,7 @@ FROM php:8.3-fpm
 
 # System deps + nginx + supervisor
 RUN apt-get update && apt-get install -y \
-    nginx supervisor \
+    nginx supervisor ca-certificates \
     libpng-dev libjpeg-dev libfreetype6-dev libzip-dev \
     libicu-dev libonig-dev libxml2-dev libcurl4-openssl-dev \
     libpq-dev \
