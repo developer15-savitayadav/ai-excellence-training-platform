@@ -16,11 +16,11 @@ if ! grep -q "APP_KEY=base64:" /var/www/html/.env 2>/dev/null; then
     php artisan key:generate --force
 fi
 
-# ── Permissions ───────────────────────────────────────
-touch /var/www/html/database/database.sqlite 2>/dev/null || true
-chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database/database.sqlite 2>/dev/null || true
-chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache 2>/dev/null || true
-chmod 664 /var/www/html/database/database.sqlite 2>/dev/null || true
+# ── Permissions (www-data must own everything) ─────────
+mkdir -p /var/www/html/storage/framework/{sessions,views,cache} /var/www/html/storage/logs /var/www/html/bootstrap/cache
+touch /var/www/html/storage/logs/laravel.log /var/www/html/database/database.sqlite
+chown -R www-data:www-data /var/www/html
+chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # ── Storage symlink ───────────────────────────────────
 if [ ! -L /var/www/html/public/storage ]; then
@@ -39,6 +39,12 @@ php artisan view:cache 2>/dev/null || true
 if [ "$RUN_MIGRATIONS" = "true" ]; then
     echo "==> Running migrations"
     php artisan migrate --force
+fi
+
+# ── Seed admin user (safe to re-run) ─────────────────
+if [ "$RUN_MIGRATIONS" = "true" ]; then
+    echo "==> Seeding admin user"
+    php artisan db:seed --force 2>/dev/null || true
 fi
 
 echo "==> Starting services..."

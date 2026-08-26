@@ -57,12 +57,12 @@ COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 COPY docker/php-uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# ── Step 8: Create SQLite DB + fix all permissions ─────
-RUN touch database/database.sqlite \
-    && mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
-    && chown -R www-data:www-data storage bootstrap/cache database/database.sqlite \
+# ── Step 8: Fix ALL permissions for www-data ──────────
+RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
+    && touch storage/logs/laravel.log \
+    && touch database/database.sqlite \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache \
-    && chmod 664 database/database.sqlite \
     && chmod +x entrypoint.sh
 
 EXPOSE 80
