@@ -18,7 +18,7 @@ RUN npm run build
 # ─── Stage 2: Production image ────────────────────────
 FROM php:8.3-fpm
 
-# System deps
+# System deps + nginx + supervisor
 RUN apt-get update && apt-get install -y \
     nginx supervisor \
     libpng-dev libjpeg-dev libfreetype6-dev libzip-dev \
@@ -33,36 +33,29 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# ── PHP deps (cached layer) ──────────────────────────
-COPY composer.json composer.lock ./
-COPY .env.example .env
-
-# Install deps without triggering artisan scripts
-RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts
-
-# Now generate APP_KEY so artisan can run
-RUN php artisan key:generate --force
-
-# Autoload + post-autoload-dump (artisan package:discover now works)
-RUN composer dump-autoload --optimize --no-dev
-
-# ── Application code ─────────────────────────────────
+# ── Step 1: Copy full app first (artisan needs bootstrap/, config/, app/) ──
 COPY . .
 
-# Overwrite .env with the one we prepared (in case COPY overwrote it)
-COPY .env.example .env
+# ── Step 2: Create .env if missing ────────────────────
+RUN cp -n .env.example .env 2>/dev/null || true
+
+# ── Step 3: Generate APP_KEY ──────────────────────────
 RUN php artisan key:generate --force
 
-# ── Frontend assets from build stage ─────────────────
+# ── Step 4: Install PHP deps (--no-scripts to skip artisan during install) ──
+RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts \
+    && composer dump-autoload --optimize --no-dev
+
+# ── Step 5: Frontend assets from build stage ─────────
 COPY --from=frontend /app/public/build public/build
 
-# ── Config files ──────────────────────────────────────
+# ── Step 6: Config files ─────────────────────────────
 COPY docker/nginx.conf /etc/nginx/sites-available/default
 COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 COPY docker/php-uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# ── Permissions ───────────────────────────────────────
+# ── Step 7: Permissions + storage dirs ────────────────
 RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache \
