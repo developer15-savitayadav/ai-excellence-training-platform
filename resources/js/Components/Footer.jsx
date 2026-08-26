@@ -56,13 +56,13 @@ export default function Footer() {
 
                         <h3 className="text-lg font-bold text-white mb-3">Sign up for our newsletter today.</h3>
                         
-                        <div className="flex flex-col gap-2 sm:flex-row">
+                        <div className="flex flex-col gap-2 sm:flex-row  rounded-[8px] border border-white/20 bg-white/5">
                             <input
                                 type="email"
                                 placeholder="Your email"
-                                className="flex-1 min-w-0 rounded-full border border-white/20 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#982cdc]/50 transition-colors"
+                                className="flex-1 min-w-0 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#982cdc]/50 transition-colors"
                             />
-                            <button className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity">
+                            <button className="rounded-[8px] bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity">
                                 Subscribe
                             </button>
                         </div>
@@ -72,11 +72,11 @@ export default function Footer() {
 
                     {/* Main Pages */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white/70 mb-4">Main Pages</h3>
+                        <h3 className="text-sm font-semibold text-white mb-4">Main Pages</h3>
                         <ul className="space-y-2.5">
                             {['About us', 'Contact us', 'FAQ', 'Blog', 'Career Services'].map((item) => (
                                 <li key={item}>
-                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white/40 hover:text-white transition-colors">
+                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white hover:text-white transition-colors">
                                         {item}
                                     </Link>
                                 </li>
@@ -86,7 +86,7 @@ export default function Footer() {
 
                     {/* Courses */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white/70 mb-4">Courses</h3>
+                        <h3 className="text-sm font-semibold text-white mb-4">Courses</h3>
                         <ul className="space-y-2.5">
                             {[
                                 'Data Science & Analytics',
@@ -96,7 +96,7 @@ export default function Footer() {
                                 'DSA Courses'
                             ].map((item) => (
                                 <li key={item}>
-                                    <Link href={`/courses`} className="text-sm text-white/40 hover:text-white transition-colors">
+                                    <Link href={`/courses`} className="text-sm text-white hover:text-white transition-colors">
                                         {item}
                                     </Link>
                                 </li>
@@ -107,29 +107,21 @@ export default function Footer() {
                     {/* Social Media */}
                     <div>
                         <h3 className="text-sm font-semibold text-white/70 mb-4">Social Media</h3>
-                        <div className="flex gap-3 mb-6">
+                        <div className="flex flex-col gap-4">
                             {socialLinks.map((social) => (
                                 <a
                                     key={social.name}
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/50 hover:border-white/30 hover:text-white transition-all"
+                                    className="flex h-5 w-5 items-center justify-center text-white/50 hover:text-white transition-colors"
                                     aria-label={social.name}
                                 >
                                     <social.icon />
                                 </a>
                             ))}
                         </div>
-                        <ul className="space-y-2.5">
-                            {['FW School of Design', 'Generative AI', 'Project Garage'].map((item) => (
-                                <li key={item}>
-                                    <Link href={`/courses`} className="text-sm text-white/40 hover:text-white transition-colors">
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        
                     </div>
                 </div>
 

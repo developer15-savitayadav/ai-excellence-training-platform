@@ -14,8 +14,8 @@
     --color-muted: #73726a;
     --color-body: #23231e;
 
-    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Urbanist" sans-serif;
+    --font-body: "Poppins" sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
     --font-geist-mono: "Geist Mono", ui-monospace, monospace;
 }

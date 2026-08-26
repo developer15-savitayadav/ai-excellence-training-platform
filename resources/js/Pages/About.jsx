@@ -292,7 +292,7 @@ export default function About() {
                             <div className="relative">
                                 <div className="absolute -inset-6 bg-gradient-to-br from-violet/10 via-transparent to-lime/8 rounded-3xl blur-xl" />
 
-                                <div className="relative bg-[#0F1616] border border-black/[0.08] rounded-2xl overflow-hidden">
+                                <div className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
                                     {/* Window chrome */}
                                     <div className="flex items-center gap-2 px-5 py-3 border-b border-black/[0.06]">
                                         <div className="flex gap-1.5">
@@ -391,7 +391,7 @@ export default function About() {
                         {BELIEFS.map((b) => (
                             <div
                                 key={b.number}
-                                className="relative bg-[#0F1616] border border-black/[0.08] rounded-2xl p-8 hover:border-black/[0.18] hover:-translate-y-0.5 transition-all duration-[220ms]"
+                                className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-8 hover:border-black/[0.18] hover:-translate-y-0.5 transition-all duration-[220ms]"
                             >
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center shrink-0">
@@ -439,7 +439,7 @@ export default function About() {
                     </div>
 
                     {/* Desktop table */}
-                    <div className="hidden md:block bg-[#0F1616] border border-black/[0.08] rounded-2xl overflow-hidden">
+                    <div className="hidden md:block bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
                         <div className="grid grid-cols-3 border-b border-black/[0.08]">
                             <div className="px-6 py-4 font-mono text-xs uppercase tracking-wider text-muted">
                                 Feature
@@ -498,7 +498,7 @@ export default function About() {
                         {COMPARISON.map((row) => (
                             <div
                                 key={row.feature}
-                                className="bg-[#0F1616] border border-black/[0.08] rounded-2xl p-5"
+                                className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-5"
                             >
                                 <p className="font-mono text-xs uppercase tracking-wider text-muted mb-3">
                                     {row.feature}
@@ -545,7 +545,7 @@ export default function About() {
                                 {CAMPUS.map((f) => (
                                     <div
                                         key={f.label}
-                                        className="bg-[#0F1616] border border-black/[0.08] rounded-2xl p-5 hover:border-black/[0.15] transition-colors"
+                                        className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-5 hover:border-black/[0.15] transition-colors"
                                     >
                                         <svg
                                             className="w-5 h-5 text-lime mb-3"
@@ -575,7 +575,7 @@ export default function About() {
                         <div className="flex-1 w-full max-w-md">
                             <div className="relative">
                                 <div className="absolute -inset-4 bg-violet/8 rounded-3xl blur-2xl" />
-                                <div className="relative bg-[#0F1616] border border-black/[0.08] rounded-2xl overflow-hidden">
+                                <div className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
                                     <div className="flex items-center gap-2 px-5 py-3 border-b border-black/[0.06]">
                                         <div className="flex gap-1.5">
                                             <div className="w-2.5 h-2.5 rounded-full bg-danger/80" />

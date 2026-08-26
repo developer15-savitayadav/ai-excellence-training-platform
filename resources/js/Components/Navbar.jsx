@@ -1,12 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, usePage, router } from '@inertiajs/react';   
 import { Search, ArrowRight, ArrowUpRight, LayoutDashboard, UserRound, LogOut } from 'lucide-react';
+import CoursesMegaMenu from './CoursesMegaMenu';
 
 const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'Offline Courses', href: '/offline-courses' },
-    { name: 'Reward', href: '/reward' },
+    {name:'About',href: '/about' },
+    { name: 'Fee', href: '/fee' },
+    { name: 'Programmes', href: '/programmes' },
+    { name: 'Career/Placement', href: '/career' },
+    { name: 'Contact', href: '/contact' },
+
 ];
 
 function isActive(url, href) {
@@ -98,7 +102,27 @@ export default function Navbar() {
                     <Logo />
 
                     <div className="hidden items-center gap-1 md:flex">
-                        {navLinks.map((link) => {
+                        {navLinks.slice(0, 2).map((link) => {
+                            const active = isActive(url, link.href);
+                            return (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className={`relative rounded-full px-4 py-2 text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                                        active ? 'text-black' : 'text-black/55 hover:text-black'
+                                    }`}
+                                >
+                                    {link.name}
+                                    <span
+                                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
+                                            active ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+                                        }`}
+                                    />
+                                </Link>
+                            );
+                        })}
+                        <CoursesMegaMenu />
+                        {navLinks.slice(2).map((link) => {
                             const active = isActive(url, link.href);
                             return (
                                 <Link
@@ -161,7 +185,7 @@ export default function Navbar() {
                                         </button>
 
                                         {userDropdownOpen && (
-                                            <div className="absolute right-0 top-full mt-3 w-60 origin-top-right rounded-2xl border border-black/[0.08] bg-white/95 p-1.5 shadow-[0_24px_60px_-15px_rgba(15,22,22,0.28)] backdrop-blur-xl">
+                                            <div className="absolute right-0 top-full mt-0 w-60 origin-top-right rounded-2xl border border-black/[0.08] bg-white/95 p-1.5 shadow-[0_24px_60px_-15px_rgba(15,22,22,0.28)] backdrop-blur-xl">
                                                 <div className="mb-1 flex items-center gap-3 rounded-xl bg-black/[0.03] px-3 py-2.5">
                                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-sm font-semibold text-white">
                                                         {user.name?.charAt(0)?.toUpperCase() || '?'}
@@ -171,42 +195,13 @@ export default function Navbar() {
                                                         <p className="truncate text-xs text-black/50">{user.email}</p>
                                                     </div>
                                                 </div>
-                                                <Link
-                                                    href="/dashboard"
-                                                    className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[13.5px] text-black/65 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                                    onClick={() => setUserDropdownOpen(false)}
-                                                >
-                                                    <LayoutDashboard className="h-4 w-4" />
-                                                    Dashboard
-                                                </Link>
-                                                <Link
-                                                    href="/profile"
-                                                    className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[13.5px] text-black/65 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                                    onClick={() => setUserDropdownOpen(false)}
-                                                >
-                                                    <UserRound className="h-4 w-4" />
-                                                    Profile
-                                                </Link>
-                                                <div className="mx-2 my-1 border-t border-black/[0.06]" />
-                                                <button
-                                                    onClick={handleLogout}
-                                                    className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-[13.5px] text-black/65 transition-colors hover:bg-red-50 hover:text-red-600"
-                                                >
-                                                    <LogOut className="h-4 w-4" />
-                                                    Log Out
-                                                </button>
                                             </div>
                                         )}
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    <Link
-                                        href="/login"
-                                        className="rounded-full px-4 py-2 text-[13.5px] font-medium text-black/65 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                    >
-                                        Log in
-                                    </Link>
+                                    
                                     <Link
                                         href="/register"
                                         className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
@@ -252,14 +247,15 @@ export default function Navbar() {
                                 <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
                             </form>
 
-                            <div className="space-y-0.5">
+                            <div className="">
+                                <CoursesMegaMenu onMobileNavigate={() => setMobileOpen(false)} />
                                 {navLinks.map((link) => {
                                     const active = isActive(url, link.href);
                                     return (
                                         <Link
                                             key={link.name}
                                             href={link.href}
-                                            className={`group flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium transition-colors ${
+                                            className={`group flex items-center justify-between rounded-2xl px-4 py-1 text-[15px] font-medium transition-colors ${
                                                 active
                                                     ? 'bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent'
                                                     : 'text-black/65 hover:bg-black/[0.04] hover:text-black'

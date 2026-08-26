@@ -8,6 +8,10 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeeController;
+use App\Http\Controllers\ProgrammesController;
+use App\Http\Controllers\CareerController;
+use App\Http\Controllers\OfflineCoursesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +28,10 @@ Route::get('/instructors/{slug}', [InstructorController::class, 'show'])->name('
 Route::get('/resources', [ResourceController::class, 'index'])->name('resources.index');
 Route::get('/resources/{slug}', [ResourceController::class, 'show'])->name('resources.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/fee', [FeeController::class, 'index'])->name('fee');
+Route::get('/programmes', [ProgrammesController::class, 'index'])->name('programmes');
+Route::get('/career', [CareerController::class, 'index'])->name('career');
+Route::get('/offline-courses', [OfflineCoursesController::class, 'index'])->name('offline-courses');
 Route::get('/certificate/{code}', [CertificateController::class, 'show'])->name('certificate.show');
 
 // Authenticated routes
