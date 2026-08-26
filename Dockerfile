@@ -33,29 +33,31 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# ── Step 1: Copy full app first (artisan needs bootstrap/, config/, app/) ──
+# ── Step 1: Copy full app (vendor excluded by .dockerignore) ──
 COPY . .
 
-# ── Step 2: Create .env if missing ────────────────────
+# ── Step 2: Create .env ──────────────────────────────
 RUN cp -n .env.example .env 2>/dev/null || true
 
-# ── Step 3: Generate APP_KEY ──────────────────────────
+# ── Step 3: Install PHP deps WITHOUT triggering artisan ──
+RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts
+
+# ── Step 4: Now vendor/autoload.php exists — generate APP_KEY ──
 RUN php artisan key:generate --force
 
-# ── Step 4: Install PHP deps (--no-scripts to skip artisan during install) ──
-RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts \
-    && composer dump-autoload --optimize --no-dev
+# ── Step 5: Run post-autoload-dump (artisan package:discover) ──
+RUN composer dump-autoload --optimize --no-dev
 
-# ── Step 5: Frontend assets from build stage ─────────
+# ── Step 6: Frontend assets from build stage ─────────
 COPY --from=frontend /app/public/build public/build
 
-# ── Step 6: Config files ─────────────────────────────
+# ── Step 7: Config files ─────────────────────────────
 COPY docker/nginx.conf /etc/nginx/sites-available/default
 COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
 COPY docker/php-uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# ── Step 7: Permissions + storage dirs ────────────────
+# ── Step 8: Permissions + storage dirs ────────────────
 RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache \
