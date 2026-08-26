@@ -17,8 +17,10 @@ if ! grep -q "APP_KEY=base64:" /var/www/html/.env 2>/dev/null; then
 fi
 
 # ── Permissions ───────────────────────────────────────
-chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache 2>/dev/null || true
+touch /var/www/html/database/database.sqlite 2>/dev/null || true
+chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database/database.sqlite 2>/dev/null || true
 chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache 2>/dev/null || true
+chmod 664 /var/www/html/database/database.sqlite 2>/dev/null || true
 
 # ── Storage symlink ───────────────────────────────────
 if [ ! -L /var/www/html/public/storage ]; then
