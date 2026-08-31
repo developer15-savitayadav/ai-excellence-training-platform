@@ -1327,7 +1327,7 @@ function ShortcutsHelp() {
 
 export default function Player() {
     const { props } = usePage();
-    const course = props.course ?? { title: 'Cortex Academy — Deep Learning Mastery' };
+    const course = props.course ?? { title: 'AI Excellence Academy — Deep Learning Mastery' };
     const sections = props.sections ?? STATIC_SECTIONS;
     const allLessons = useMemo(() => sections.flatMap((s) => s.lessons), [sections]);
     const initialLessonId = props.currentLesson?.id ?? allLessons[0]?.id;

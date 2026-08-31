@@ -152,7 +152,7 @@ export default function Show({ certificate, verified }) {
                                 </div>
 
                                 <p className="text-xs text-muted/60">
-                                    This certificate was issued by Cortex Academy and can be verified at any time.
+                                    This certificate was issued by AI Excellence Academy and can be verified at any time.
                                 </p>
                             </>
                         ) : (

@@ -25,7 +25,7 @@ function SidebarContent({ user, navigation, onLinkClick }) {
             <div className="flex h-16 items-center px-6 border-b border-black/[0.08]">
                 <Link href="/" className="flex items-center gap-2 group">
                     <span className="inline-block h-2 w-2 rotate-45 bg-lime transition-transform group-hover:scale-125" />
-                    <span className="font-display font-bold text-lg text-body">Cortex Academy</span>
+                    <span className="font-display font-bold text-lg text-body">AI Excellence Academy</span>
                 </Link>
             </div>
 
@@ -120,7 +120,7 @@ export default function DashboardLayout({ children, navigation = defaultNavigati
 
                     <Link href="/" className="flex items-center gap-2">
                         <span className="inline-block h-2 w-2 rotate-45 bg-lime" />
-                        <span className="font-display font-bold text-lg text-body">Cortex Academy</span>
+                        <span className="font-display font-bold text-lg text-body">AI Excellence Academy</span>
                     </Link>
 
                     <div className="ml-auto">

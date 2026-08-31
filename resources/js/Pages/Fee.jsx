@@ -91,153 +91,72 @@ const BUNDLES = [
 export default function Fee() {
     return (
         <PublicLayout>
-            {/* ═══════════════ BREADCRUMB BANNER ═══════════════ */}
-            <section className="relative overflow-hidden bg-[#F5F5F2]">
+            {/* ═══════════════ HERO BANNER ═══════════════ */}
+            <section className="relative overflow-hidden bg-ink">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute -top-24 left-[10%] w-[440px] h-[260px] rounded-full bg-violet/[0.07] blur-[110px]" />
-                    <div className="absolute -bottom-28 right-[6%] w-[400px] h-[240px] rounded-full bg-lime/[0.05] blur-[110px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.02]"
-                        style={{
-                            backgroundImage:
-                                'radial-gradient(circle, white 1px, transparent 1px)',
-                            backgroundSize: '28px 28px',
-                        }}
-                    />
+                    <div className="absolute -top-32 left-[8%] w-[520px] h-[300px] rounded-full bg-violet/[0.07] blur-[120px]" />
+                    <div className="absolute top-[30%] right-[5%] w-[420px] h-[250px] rounded-full bg-lime/[0.06] blur-[110px]" />
+                    <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <nav
-                    aria-label="Breadcrumb"
-                    className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[140px] max-lg:pt-[120px] pb-9 max-lg:pb-7"
-                >
-                    <div className="flex items-center justify-between gap-x-6 gap-y-3 flex-wrap">
-                        <ol className="flex items-center gap-1 p-1 rounded-full bg-black/[0.04] border border-black/[0.08] backdrop-blur-sm">
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm text-muted hover:text-body hover:bg-black/[0.06] transition-all duration-200"
-                                >
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                                        />
-                                    </svg>
-                                    Home
-                                </Link>
-                            </li>
-                            <li aria-hidden="true">
-                                <svg
-                                    className="w-3.5 h-3.5 text-black/20"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                                    />
-                                </svg>
-                            </li>
-                            <li aria-current="page">
-                                <span className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm font-medium text-lime bg-lime/[0.08] border border-lime/15">
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
-                                        />
-                                    </svg>
-                                    Fees &amp; Scholarships
-                                </span>
-                            </li>
-                        </ol>
-
-                        <span
-                            aria-hidden="true"
-                            className="hidden sm:inline-block font-mono text-[11px] tracking-wide text-muted/60 select-none"
-                        >
-                            ~/fees
-                            <span className="animate-pulse text-lime">_</span>
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
+                        </span>
+                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
+                            Transparent &amp; Flexible
                         </span>
                     </div>
-                </nav>
 
-                <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/[0.12] to-transparent pointer-events-none" />
-            </section>
+                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                        <span className="text-black">
+                            FEES, EMI{" "}
+                        </span>
+                        <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
+                            &amp; Scholarships
+                        </span>
+                    </h1>
 
-            {/* ═══════════════ HERO ═══════════════ */}
-            <section className="relative overflow-hidden pt-[88px] pb-[100px] max-lg:pt-[56px] max-lg:pb-[72px]">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-violet/[0.07] blur-[150px]" />
-                    <div className="absolute top-32 right-[10%] w-[400px] h-[400px] rounded-full bg-lime/[0.05] blur-[120px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.025]"
-                        style={{
-                            backgroundImage:
-                                'radial-gradient(circle, white 1px, transparent 1px)',
-                            backgroundSize: '32px 32px',
-                        }}
-                    />
-                </div>
+                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                        Quality AI education, priced for Lucknow families. We keep our fee
+                        structure transparent and flexible &mdash; and we prefer to discuss it
+                        with you personally, so we can match the right program and payment
+                        plan to your goals and budget.
+                    </p>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime/[0.08] border border-lime/20 mb-8">
-                            <span className="relative flex h-2 w-2">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime" />
-                            </span>
-                            <span className="font-mono text-xs text-lime uppercase tracking-wider">
-                                Transparent &amp; Flexible
-                            </span>
-                        </div>
-
-                        <h1 className="font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[1.08] tracking-tight text-body">
-                            FEES, EMI{' '}
-                            <span className="relative inline-block">
-                                <span className="relative z-10 text-lime">
-                                    &amp; Scholarships
-                                </span>
-                                <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-lime/30 rounded-full" />
-                            </span>
-                        </h1>
-
-                        <p className="text-muted text-lg mt-7 max-w-2xl mx-auto leading-relaxed">
-                            Quality AI education, priced for Lucknow families. We keep our fee
-                            structure transparent and flexible &mdash; and we prefer to discuss it
-                            with you personally, so we can match the right program and payment
-                            plan to your goals and budget.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4 mt-10">
-                            <Button href="/contact">Contact Us for Pricing</Button>
-                            <Button variant="secondary" href="/courses">
-                                View Courses
-                            </Button>
-                        </div>
-
-                        <p className="text-muted/60 text-sm mt-6">
-                            Call, WhatsApp or walk in, and a counsellor will share the complete
-                            fee details for any program.
-                        </p>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <Link href="/contact" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
+                            Contact Us for Pricing
+                        </Link>
+                        <Link href="/courses" className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
+                            View Courses
+                        </Link>
                     </div>
                 </div>
+
+                {/* Stat Bar */}
+                {/* <div className="border-y border-black/[0.06] bg-white/80 backdrop-blur-sm">
+                    <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-black/[0.08]">
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Payment</span>
+                            <span className="text-lg font-bold text-black">No-cost EMI</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Scholarships</span>
+                            <span className="text-lg font-bold text-black">Merit &amp; Women in Tech</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Group Benefits</span>
+                            <span className="text-lg font-bold text-black">Early-bird &amp; Referral</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Upgrade</span>
+                            <span className="text-lg font-bold text-black">Full credit within 60 days</span>
+                        </div>
+                    </div>
+                </div> */}
             </section>
 
             {/* ═══════════════ FLEXIBLE PAYMENT OPTIONS ═══════════════ */}
@@ -250,9 +169,9 @@ export default function Fee() {
                         backgroundSize: '24px 24px',
                     }}
                 />
-                <div className="relative max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="relative max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow color="lime">FLEXIBLE PAYMENT OPTIONS_</EyeBrow>
+                        <EyeBrow color="violet">FLEXIBLE PAYMENT OPTIONS_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             Ways to Save
                         </h2>
@@ -292,7 +211,7 @@ export default function Fee() {
 
             {/* ═══════════════ BUNDLES ═══════════════ */}
             <section className="bg-[#F5F5F2]">
-                <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
                         <EyeBrow>BUNDLES_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
@@ -324,7 +243,7 @@ export default function Fee() {
                                     <span
                                         className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-mono font-semibold tracking-wider mb-5 ${
                                             bundle.accent === 'lime'
-                                                ? 'bg-lime/10 text-lime border border-lime/20'
+                                                ? 'bg-lime/10 text-violet border border-lime/20'
                                                 : 'bg-violet/10 text-violet border border-violet/20'
                                         }`}
                                     >
@@ -372,7 +291,7 @@ export default function Fee() {
                         backgroundSize: '22px 22px',
                     }}
                 />
-                <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px] text-center">
+                <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px] text-center">
                     <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold text-body leading-tight">
                         Contact Us for Pricing
                         <br />

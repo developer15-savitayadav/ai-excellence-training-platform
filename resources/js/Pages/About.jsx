@@ -15,7 +15,7 @@ function EyeBrow({ children, color = "violet" }) {
 function CheckIcon() {
     return (
         <svg
-            className="w-4 h-4 text-lime shrink-0"
+            className="w-4 h-4 text-violet shrink-0"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
@@ -129,245 +129,70 @@ const CAMPUS = [
 export default function About() {
     return (
         <PublicLayout>
-            {/* ═══════════════ BREADCRUMB BANNER ═══════════════ */}
-            <section className="relative overflow-hidden bg-[#F5F5F2]">
-                {/* Ambient background */}
+            {/* ═══════════════ HERO BANNER ═══════════════ */}
+            <section className="relative overflow-hidden bg-ink">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute -top-24 left-[10%] w-[440px] h-[260px] rounded-full bg-violet/[0.07] blur-[110px]" />
-                    <div className="absolute -bottom-28 right-[6%] w-[400px] h-[240px] rounded-full bg-lime/[0.05] blur-[110px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.02]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(circle, white 1px, transparent 1px)",
-                            backgroundSize: "28px 28px",
-                        }}
-                    />
+                    <div className="absolute -top-32 left-[8%] w-[520px] h-[300px] rounded-full bg-violet/[0.07] blur-[120px]" />
+                    <div className="absolute top-[30%] right-[5%] w-[420px] h-[250px] rounded-full bg-lime/[0.06] blur-[110px]" />
+                    <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <nav
-                    aria-label="Breadcrumb"
-                    className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[140px] max-lg:pt-[120px] pb-9 max-lg:pb-7"
-                >
-                    <div className="flex items-center justify-between gap-x-6 gap-y-3 flex-wrap">
-                        <ol className="flex items-center gap-1 p-1 rounded-full bg-black/[0.04] border border-black/[0.08] backdrop-blur-sm">
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm text-muted hover:text-body hover:bg-black/[0.06] transition-all duration-200"
-                                >
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                                        />
-                                    </svg>
-                                    Home
-                                </Link>
-                            </li>
-                            <li aria-hidden="true">
-                                <svg
-                                    className="w-3.5 h-3.5 text-black/20"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                                    />
-                                </svg>
-                            </li>
-                            <li aria-current="page">
-                                <span className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm font-medium text-lime bg-lime/[0.08] border border-lime/15">
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-                                        />
-                                    </svg>
-                                    About Us
-                                </span>
-                            </li>
-                        </ol>
-
-                        {/* Terminal-style path marker */}
-                        <span
-                            aria-hidden="true"
-                            className="hidden sm:inline-block font-mono text-[11px] tracking-wide text-muted/60 select-none"
-                        >
-                            ~/about-us
-                            <span className="animate-pulse text-lime">_</span>
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
+                        </span>
+                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
+                            AI Excellence Academy
                         </span>
                     </div>
-                </nav>
 
-                {/* Bottom hairline */}
-                <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/[0.12] to-transparent pointer-events-none" />
-            </section>
+                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                        <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
+                            Built in Lucknow,
+                        </span>
+                        <br className="hidden sm:block" />
+                        <span className="text-black">
+                            {" "}for Lucknow's AI Talent
+                        </span>
+                    </h1>
 
-            {/* ═══════════════ HERO ═══════════════ */}
-            <section className="relative overflow-hidden pt-[88px] pb-[100px] max-lg:pt-[56px] max-lg:pb-[72px]">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-violet/[0.07] blur-[150px]" />
-                    <div className="absolute top-32 right-[10%] w-[400px] h-[400px] rounded-full bg-lime/[0.05] blur-[120px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.025]"
-                        style={{
-                            backgroundImage:
-                                "radial-gradient(circle, white 1px, transparent 1px)",
-                            backgroundSize: "32px 32px",
-                        }}
-                    />
-                </div>
+                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                        AI Excellence Academy was founded on a simple observation: Lucknow has thousands of bright students and ambitious professionals, but the training available to them is either outdated, certificate-only, or priced for metro cities.
+                    </p>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-                        {/* Left — Copy */}
-                        <div className="flex-1 max-w-2xl">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime/[0.08] border border-lime/20 mb-8">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" />
-                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-lime" />
-                                </span>
-                                <span className="font-mono text-xs text-lime uppercase tracking-wider">
-                                    Lucknow, India
-                                </span>
-                            </div>
-
-                            <h1 className="font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[1.08] tracking-tight text-body">
-                                Built in Lucknow,
-                                <br />
-                                for Lucknow&apos;s{" "}
-                                <span className="relative inline-block">
-                                    <span className="relative z-10 text-lime">
-                                        AI Talent
-                                    </span>
-                                    <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-lime/30 rounded-full" />
-                                </span>
-                            </h1>
-
-                            <p className="text-muted text-lg mt-7 max-w-xl leading-relaxed">
-                                AI Excellence Academy was founded on a simple
-                                observation: Lucknow has thousands of bright
-                                students and ambitious professionals, but the
-                                training available to them is either outdated,
-                                certificate-only, or priced for metro cities and
-                                delivered online with no accountability.
-                            </p>
-                            <p className="text-muted text-lg mt-4 max-w-xl leading-relaxed">
-                                We set out to build something different &mdash;
-                                an offline institute with a curriculum that
-                                moves as fast as the AI industry, trainers who
-                                are practitioners rather than lecturers, and
-                                career support that is a process, not a slogan.
-                            </p>
-
-                            <div className="flex flex-wrap gap-4 mt-10">
-                                <Button href="/courses">Explore Courses</Button>
-                                <Button variant="secondary" href="/contact">
-                                    Visit Our Campus
-                                </Button>
-                            </div>
-                        </div>
-
-                        {/* Right — Visual card */}
-                        <div className="flex-1 w-full max-w-md lg:max-w-none">
-                            <div className="relative">
-                                <div className="absolute -inset-6 bg-gradient-to-br from-violet/10 via-transparent to-lime/8 rounded-3xl blur-xl" />
-
-                                <div className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
-                                    {/* Window chrome */}
-                                    <div className="flex items-center gap-2 px-5 py-3 border-b border-black/[0.06]">
-                                        <div className="flex gap-1.5">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-danger/80" />
-                                            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                                            <div className="w-2.5 h-2.5 rounded-full bg-success/80" />
-                                        </div>
-                                        <span className="font-mono text-[10px] text-muted ml-2">
-                                            founding-story.ai
-                                        </span>
-                                    </div>
-
-                                    <div className="p-6 space-y-4">
-                                        {/* Origin line */}
-                                        <div className="flex items-start gap-3">
-                                            <span className="shrink-0 mt-0.5 font-mono text-[11px] text-violet font-medium bg-violet/10 px-2 py-0.5 rounded">
-                                                ORIGIN
-                                            </span>
-                                            <p className="text-sm text-muted leading-relaxed">
-                                                Lucknow has thousands of bright
-                                                students &mdash; but training is
-                                                outdated, overpriced, or online
-                                                with no accountability.
-                                            </p>
-                                        </div>
-
-                                        <div className="h-px bg-black/[0.06]" />
-
-                                        {/* Mission line */}
-                                        <div className="flex items-start gap-3">
-                                            <span className="shrink-0 mt-0.5 font-mono text-[11px] text-lime font-medium bg-lime/10 px-2 py-0.5 rounded">
-                                                MISSION
-                                            </span>
-                                            <p className="text-sm text-muted leading-relaxed">
-                                                Build an offline institute with
-                                                a curriculum that moves as fast
-                                                as the AI industry.
-                                            </p>
-                                        </div>
-
-                                        <div className="h-px bg-black/[0.06]" />
-
-                                        {/* Stats row */}
-                                        <div className="grid grid-cols-3 gap-3 pt-1">
-                                            <div className="text-center p-3 rounded-xl bg-black/[0.03] border border-black/[0.06]">
-                                                <div className="font-mono text-xl font-bold text-lime">
-                                                    25
-                                                </div>
-                                                <div className="text-[10px] text-muted mt-1">
-                                                    Workstations
-                                                </div>
-                                            </div>
-                                            <div className="text-center p-3 rounded-xl bg-black/[0.03] border border-black/[0.06]">
-                                                <div className="font-mono text-xl font-bold text-body">
-                                                    1:20
-                                                </div>
-                                                <div className="text-[10px] text-muted mt-1">
-                                                    Batch Size
-                                                </div>
-                                            </div>
-                                            <div className="text-center p-3 rounded-xl bg-black/[0.03] border border-black/[0.06]">
-                                                <div className="font-mono text-xl font-bold text-violet">
-                                                    10-7
-                                                </div>
-                                                <div className="text-[10px] text-muted mt-1">
-                                                    Lab Hours
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <Link href="/courses" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
+                            Explore Courses
+                        </Link>
+                        <Link href="/contact" className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
+                            Visit Our Campus
+                        </Link>
                     </div>
                 </div>
+
+                {/* Stat Bar */}
+                {/* <div className="border-y border-black/[0.06] bg-white/80 backdrop-blur-sm">
+                    <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-black/[0.08]">
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Location</span>
+                            <span className="text-lg font-bold text-black">Gomti Nagar, Lucknow</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Workstations</span>
+                            <span className="text-lg font-bold text-black">25</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Batch Size</span>
+                            <span className="text-lg font-bold text-black">20–25 max</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Lab Hours</span>
+                            <span className="text-lg font-bold text-black">10 AM – 7 PM</span>
+                        </div>
+                    </div>
+                </div> */}
             </section>
 
             {/* ═══════════════ WHAT WE BELIEVE ═══════════════ */}
@@ -382,7 +207,7 @@ export default function About() {
                 />
                 <div className="relative max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow color="lime">WHAT WE BELIEVE_</EyeBrow>
+                        <EyeBrow color="violet">WHAT WE BELIEVE_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             Our Principles
                         </h2>
@@ -396,7 +221,7 @@ export default function About() {
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center shrink-0">
                                         <svg
-                                            className="w-6 h-6 text-lime"
+                                            className="w-6 h-6 text-violet"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
@@ -445,7 +270,7 @@ export default function About() {
                                 Feature
                             </div>
                             <div className="px-6 py-4 bg-lime/5 border-l border-black/[0.08]">
-                                <span className="inline-flex items-center gap-2 font-display font-semibold text-lime text-sm">
+                                <span className="inline-flex items-center gap-2 font-display font-semibold text-violet text-sm">
                                     <svg
                                         className="w-4 h-4"
                                         fill="none"
@@ -528,7 +353,7 @@ export default function About() {
                 <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1">
-                            <EyeBrow color="lime">OUR CAMPUS_</EyeBrow>
+                            <EyeBrow color="violet">OUR CAMPUS_</EyeBrow>
                             <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body mb-6">
                                 Where Learning
                                 <br />
@@ -548,7 +373,7 @@ export default function About() {
                                         className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-5 hover:border-black/[0.15] transition-colors"
                                     >
                                         <svg
-                                            className="w-5 h-5 text-lime mb-3"
+                                            className="w-5 h-5 text-violet mb-3"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={1.5}
@@ -617,7 +442,7 @@ export default function About() {
                                             <span className="font-mono text-[10px] text-muted">
                                                 10:00 AM &ndash; 7:00 PM
                                             </span>
-                                            <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-lime/10 text-lime border border-lime/20">
+                                            <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-lime/10 text-violet border border-lime/20">
                                                 Book a Visit
                                             </span>
                                         </div>

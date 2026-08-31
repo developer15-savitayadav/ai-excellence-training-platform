@@ -147,7 +147,7 @@ const PLACEMENT_ENGINE = [
 
 function Check() {
     return (
-        <svg className="w-4 h-4 text-lime mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+        <svg className="w-4 h-4 text-violet mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
     );
@@ -170,151 +170,75 @@ function CellValue({ value }) {
 export default function Career() {
     return (
         <PublicLayout>
-            {/* ═══════════════ BREADCRUMB BANNER ═══════════════ */}
-            <section className="relative overflow-hidden bg-[#F5F5F2]">
+            {/* ═══════════════ HERO BANNER ═══════════════ */}
+            <section className="relative overflow-hidden bg-ink">
                 <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute -top-24 left-[10%] w-[440px] h-[260px] rounded-full bg-violet/[0.07] blur-[110px]" />
-                    <div className="absolute -bottom-28 right-[6%] w-[400px] h-[240px] rounded-full bg-lime/[0.05] blur-[110px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.02]"
-                        style={{
-                            backgroundImage:
-                                'radial-gradient(circle, white 1px, transparent 1px)',
-                            backgroundSize: '28px 28px',
-                        }}
-                    />
+                    <div className="absolute -top-32 left-[8%] w-[520px] h-[300px] rounded-full bg-violet/[0.07] blur-[120px]" />
+                    <div className="absolute top-[30%] right-[5%] w-[420px] h-[250px] rounded-full bg-lime/[0.06] blur-[110px]" />
+                    <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <nav
-                    aria-label="Breadcrumb"
-                    className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[140px] max-lg:pt-[120px] pb-9 max-lg:pb-7"
-                >
-                    <div className="flex items-center justify-between gap-x-6 gap-y-3 flex-wrap">
-                        <ol className="flex items-center gap-1 p-1 rounded-full bg-black/[0.04] border border-black/[0.08] backdrop-blur-sm">
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm text-muted hover:text-body hover:bg-black/[0.06] transition-all duration-200"
-                                >
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                                        />
-                                    </svg>
-                                    Home
-                                </Link>
-                            </li>
-                            <li aria-hidden="true">
-                                <svg
-                                    className="w-3.5 h-3.5 text-black/20"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                                    />
-                                </svg>
-                            </li>
-                            <li aria-current="page">
-                                <span className="flex items-center gap-2 px-4 py-2 max-sm:px-3 rounded-full text-sm font-medium text-lime bg-lime/[0.08] border border-lime/15">
-                                    <svg
-                                        className="w-3.5 h-3.5 shrink-0"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
-                                        />
-                                    </svg>
-                                    Career
-                                </span>
-                            </li>
-                        </ol>
-
-                        <span
-                            aria-hidden="true"
-                            className="hidden sm:inline-block font-mono text-[11px] tracking-wide text-muted/60 select-none"
-                        >
-                            ~/career
-                            <span className="animate-pulse text-lime">_</span>
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
+                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
+                        </span>
+                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
+                            Career Services &amp; Placements
                         </span>
                     </div>
-                </nav>
 
-                <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-black/[0.12] to-transparent pointer-events-none" />
-            </section>
+                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                        <span className="text-black">
+                            Structured Placement{" "}
+                        </span>
+                        <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
+                            Assistance
+                        </span>
+                        <br />
+                        <span className="text-black text-[clamp(1.1rem,2vw,1.6rem)] font-medium">
+                            a process, not a promise
+                        </span>
+                    </h1>
 
-            {/* ═══════════════ HERO ═══════════════ */}
-            <section className="relative overflow-hidden pt-[88px] pb-[100px] max-lg:pt-[56px] max-lg:pb-[72px]">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-violet/[0.07] blur-[150px]" />
-                    <div className="absolute top-32 right-[10%] w-[400px] h-[400px] rounded-full bg-lime/[0.05] blur-[120px]" />
-                    <div
-                        className="absolute inset-0 opacity-[0.025]"
-                        style={{
-                            backgroundImage:
-                                'radial-gradient(circle, white 1px, transparent 1px)',
-                            backgroundSize: '32px 32px',
-                        }}
-                    />
-                </div>
+                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                        We do not advertise &ldquo;100% placement guarantee.&rdquo;
+                        Nobody can honestly make that promise. What we offer instead is
+                        a structured system, a dedicated team, and published results.
+                    </p>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime/[0.08] border border-lime/20 mb-8">
-                            <span className="relative flex h-2 w-2">
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" />
-                                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime" />
-                            </span>
-                            <span className="font-mono text-xs text-lime uppercase tracking-wider">
-                                Career Services &amp; Placements
-                            </span>
-                        </div>
-
-                        <h1 className="font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[1.08] tracking-tight text-body">
-                            Structured Placement{' '}
-                            <span className="relative inline-block">
-                                <span className="relative z-10 text-lime">
-                                    Assistance
-                                </span>
-                                <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-lime/30 rounded-full" />
-                            </span>
-                            <br />
-                            <span className="text-body/40 text-[clamp(1.25rem,2.5vw,2rem)] font-medium">
-                                a process, not a promise
-                            </span>
-                        </h1>
-
-                        <p className="text-muted text-lg mt-7 max-w-2xl mx-auto leading-relaxed">
-                            We do not advertise &ldquo;100% placement guarantee.&rdquo;
-                            Nobody can honestly make that promise. What we offer instead is
-                            a structured system, a dedicated team, and published results.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4 mt-10">
-                            <Button href="/contact">Talk to Our Team</Button>
-                            <Button variant="secondary" href="/courses">
-                                Explore Programs
-                            </Button>
-                        </div>
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        <Link href="/contact" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
+                            Talk to Our Team
+                        </Link>
+                        <Link href="/courses" className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
+                            Explore Programs
+                        </Link>
                     </div>
                 </div>
+
+                {/* Stat Bar */}
+                {/* <div className="border-y border-black/[0.06] bg-white/80 backdrop-blur-sm">
+                    <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-black/[0.08]">
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Placement Coordinator</span>
+                            <span className="text-lg font-bold text-black">Dedicated</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Hiring Partners</span>
+                            <span className="text-lg font-bold text-black">Lucknow, Noida &amp; Remote</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Placement Drives</span>
+                            <span className="text-lg font-bold text-black">Quarterly On-Campus</span>
+                        </div>
+                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
+                            <span className="text-xs text-muted font-medium">Resume Support</span>
+                            <span className="text-lg font-bold text-black">3 Tailored Variants</span>
+                        </div>
+                    </div>
+                </div> */}
             </section>
 
             {/* ═══════════════ TIER COMPARISON TABLE ═══════════════ */}
@@ -327,9 +251,9 @@ export default function Career() {
                         backgroundSize: '24px 24px',
                     }}
                 />
-                <div className="relative max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="relative max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow color="lime">WHAT'S INCLUDED_</EyeBrow>
+                        <EyeBrow color="violet">WHAT'S INCLUDED_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             By Program Tier
                         </h2>
@@ -438,7 +362,7 @@ export default function Career() {
 
             {/* ═══════════════ RESUME MODULE ═══════════════ */}
             <section className="bg-[#F5F5F2]">
-                <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
                         <EyeBrow>THE RESUME MODULE_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
@@ -476,9 +400,9 @@ export default function Career() {
 
             {/* ═══════════════ PLACEMENT ENGINE ═══════════════ */}
             <section className="relative">
-                <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow color="lime">HOW IT WORKS_</EyeBrow>
+                        <EyeBrow color="violet">HOW IT WORKS_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             Our Placement Engine
                         </h2>
@@ -490,7 +414,7 @@ export default function Career() {
                                 key={item.title}
                                 className="flex items-start gap-4 bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-6 hover:border-black/[0.15] transition-colors"
                             >
-                                <div className="w-11 h-11 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center shrink-0 text-lime">
+                                <div className="w-11 h-11 rounded-xl bg-violet/10 border border-lime/20 flex items-center justify-center shrink-0 text-violet">
                                     {item.icon}
                                 </div>
                                 <div>
@@ -507,8 +431,8 @@ export default function Career() {
 
                     {/* Eligibility callout */}
                     <div className="mt-12 max-w-3xl mx-auto">
-                        <div className="bg-white border border-lime/20 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-8 text-center">
-                            <div className="w-12 h-12 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center mx-auto mb-4 text-lime">
+                        <div className="bg-white border border-violet/20 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-8 text-center">
+                            <div className="w-12 h-12 rounded-xl bg-violet/10 border border-lime/20 flex items-center justify-center mx-auto mb-4 text-violet">
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -528,7 +452,7 @@ export default function Career() {
 
             {/* ═══════════════ RESULTS PLACEHOLDER ═══════════════ */}
             <section className="bg-[#F5F5F2]">
-                <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
+                <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
                         <EyeBrow>OUR RESULTS_</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
@@ -578,7 +502,7 @@ export default function Career() {
                         backgroundSize: '22px 22px',
                     }}
                 />
-                <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px] text-center">
+                <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px] text-center">
                     <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold text-body leading-tight">
                         Ready to Start Your
                         <br />

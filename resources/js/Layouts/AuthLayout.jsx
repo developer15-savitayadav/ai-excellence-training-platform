@@ -5,7 +5,7 @@ function Logo() {
     return (
         <Link href="/" className="flex items-center justify-center gap-2 group">
             <span className="inline-block h-2.5 w-2.5 rotate-45 bg-lime transition-transform group-hover:scale-125" />
-            <span className="font-display font-bold text-xl text-body">Cortex Academy</span>
+            <span className="font-display font-bold text-xl text-body">AI Excellence Academy</span>
         </Link>
     );
 }

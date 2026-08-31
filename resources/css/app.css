@@ -14,9 +14,9 @@
     --color-muted: #73726a;
     --color-body: #23231e;
     
-    --font-display: "Urbanist" sans-serif;
+    --font-display:"Poppins" sans-serif;
     --font-body: "Poppins" sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    --font-mono: "Urbanist" sans-serif;
     --font-geist-mono: "Geist Mono", ui-monospace, monospace;
 }
 
@@ -56,6 +56,14 @@ body {
 }
 
 @keyframes marquee-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+@keyframes marquee {
     from {
         transform: translateX(0);
     }
@@ -761,4 +769,12 @@ body {
     100% {
         right: -14px;
     }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

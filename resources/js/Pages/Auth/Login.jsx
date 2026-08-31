@@ -66,7 +66,7 @@ export default function Login({ status, canResetPassword }) {
 
             <div className="text-center mb-8">
                 <h1 className="font-display text-3xl font-bold text-body">Welcome Back</h1>
-                <p className="text-muted mt-2">Sign in to your Cortex Academy account</p>
+                <p className="text-muted mt-2">Sign in to your AI Excellence Academy account</p>
             </div>
 
             {status && (

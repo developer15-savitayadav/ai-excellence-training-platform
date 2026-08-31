@@ -202,7 +202,7 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                 onMouseLeave={() => setIsHovered(false)}
             >
                 <button
-                    className={`relative rounded-full px-4 py-2 text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                         isHovered ? 'text-black' : 'text-black/55 hover:text-black'
                     }`}
                 >

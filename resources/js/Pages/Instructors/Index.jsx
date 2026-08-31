@@ -16,7 +16,7 @@ const INSTRUCTORS = [
         slug: 'dr-sarah-mitchell',
         name: 'Dr. Sarah Mitchell',
         specialization: 'Deep Learning & Neural Architecture',
-        bio: 'Former MIT professor with 15 years of experience in deep learning research. Published 40+ papers in top-tier conferences and leads curriculum design at Cortex Academy.',
+        bio: 'Former MIT professor with 15 years of experience in deep learning research. Published 40+ papers in top-tier conferences and leads curriculum design at AI Excellence Academy.',
         rating: 4.9,
         courseCount: 8,
         studentCount: 4200,

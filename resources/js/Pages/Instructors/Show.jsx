@@ -18,7 +18,7 @@ const INSTRUCTOR = {
     name: 'Dr. Sarah Mitchell',
     title: 'Head of Curriculum & Lead Instructor',
     specialization: 'Deep Learning & Neural Architecture',
-    bio: 'Dr. Sarah Mitchell is a former MIT professor with over 15 years of experience in deep learning research and education. She has published more than 40 papers in top-tier conferences and journals, including NeurIPS, ICML, and JMLR. Her research focuses on neural architecture search, efficient deep learning, and interpretable AI models. At Cortex Academy, Sarah leads the curriculum design and teaches the most popular courses on deep learning fundamentals and advanced neural networks. Her teaching philosophy centers on hands-on learning — every concept is reinforced through practical coding exercises and real-world projects.',
+    bio: 'Dr. Sarah Mitchell is a former MIT professor with over 15 years of experience in deep learning research and education. She has published more than 40 papers in top-tier conferences and journals, including NeurIPS, ICML, and JMLR. Her research focuses on neural architecture search, efficient deep learning, and interpretable AI models. At AI Excellence Academy, Sarah leads the curriculum design and teaches the most popular courses on deep learning fundamentals and advanced neural networks. Her teaching philosophy centers on hands-on learning — every concept is reinforced through practical coding exercises and real-world projects.',
     stats: {
         students: '4,200+',
         courses: '8',

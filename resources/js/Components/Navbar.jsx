@@ -93,7 +93,7 @@ export default function Navbar() {
         <>
             <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-5">
                 <nav
-                    className={`mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-3 rounded-2xl border pl-4 pr-2 transition-all duration-300 ${
+                    className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-3 rounded-2xl border pl-6 pr-6 transition-all duration-300 ${
                         scrolled
                             ? 'border-black/[0.08] bg-white/85 shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl'
                             : 'border-black/[0.05] bg-white/60 shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg'
@@ -108,7 +108,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`relative rounded-full px-4 py-2 text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                                         active ? 'text-black' : 'text-black/55 hover:text-black'
                                     }`}
                                 >
@@ -128,7 +128,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`relative rounded-full px-4 py-2 text-[13.5px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
                                         active ? 'text-black' : 'text-black/55 hover:text-black'
                                     }`}
                                 >
