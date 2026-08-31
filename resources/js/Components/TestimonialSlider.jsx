@@ -11,7 +11,7 @@ const TESTIMONIALS = [
     {
         name: "Rohit Verma",
         role: "Data Analyst at TCS",
-        img: "/assets/images/shop-owners.png",
+        img: "/assets/images/teacher.png",
         quote: "I came in with zero coding background. The Python Foundation and Advanced Diploma gave me the skills and confidence to land a data analyst role within two months of completing the program. The mock interviews were a game-changer.",
     },
     {
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
     {
         name: "Vikas Patel",
         role: "Freelance AI Consultant",
-        img: "/assets/images/shop-owners.png",
+        img: "/assets/images/teacher.png",
         quote: "After the Generative AI & Prompt Engineering course, I started freelancing on Upwork within weeks. The practical approach to prompt engineering and automation workflows gave me a real edge. Already earning back my investment.",
     },
 ];

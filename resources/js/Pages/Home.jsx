@@ -1286,7 +1286,7 @@ export default function Home() {
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-[14px] leading-[1.6] text-black sm:text-[14px]">
+                                    <p className="text-[16px] leading-[1.6] text-black sm:text-[16px]">
                                         {item.description}
                                     </p>
 

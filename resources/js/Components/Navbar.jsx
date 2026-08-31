@@ -150,7 +150,7 @@ export default function Navbar() {
                                 placeholder="Search courses..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="h-9 w-[168px] rounded-full border border-black/[0.08] bg-black/[0.03] pl-9 pr-4 text-[13px] text-black outline-none transition-all duration-300 placeholder:text-black/35 focus:w-[232px] focus:border-[#982cdc]/40 focus:bg-white focus:ring-4 focus:ring-[#982cdc]/[0.08]"
+                                className="h-9 w-[168px] rounded-full border border-black/[0.08] bg-black/[0.03] pl-9 pr-4 text-[13px] text-black outline-none transition-all duration-300 placeholder:text-black/35 "
                             />
                             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
                         </form>

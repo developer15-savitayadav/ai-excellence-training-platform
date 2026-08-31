@@ -86,19 +86,24 @@ export default function Programmes() {
             <section className="relative">
                 <div className="max-w-[1240px] mx-auto px-6 py-16 max-lg:py-12">
                     {/* Tracks row — image-based tabs */}
-                    <div className="flex flex-wrap items-center gap-x-10 gap-y-4 pb-8 mb-14 border-b border-black/[0.06]">
-                        <span className="font-display text-lg font-bold text-black shrink-0">
+                    <div className="flex items-center gap-4 pb-8 mb-14 border-b border-black/[0.06]">
+                        <span className="font-display text-lg font-bold text-black shrink-0 mr-2">
                             Tracks :
                         </span>
-                        {TRACKS.map((track) => (
-                            <div className="flex items-center gap-2.5">
-                                <img
-                                    src={track.image}
-                                    alt={track.name}
-                                    className="w-8 h-8 object-contain shrink-0"
-                                />
-                            </div>
-                        ))}
+                        <div className="flex-1 grid grid-cols-4 gap-4">
+                            {TRACKS.map((track) => (
+                                <div
+                                    key={track.name}
+                                    className="flex items-center justify-center h-14 rounded-2xl bg-black/[0.03] border border-black/[0.06] hover:border-violet/30 hover:bg-violet/5 hover:-translate-y-0.5 transition-all duration-200"
+                                >
+                                    <img
+                                        src={track.image}
+                                        alt={track.name}
+                                        className="w-full h-full object-contain shrink-0 rounded-2xl"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* What Includes */}
@@ -159,111 +164,120 @@ export default function Programmes() {
                     </div>
                 </div>
             </section>
-            {/* ═══════════════ CORPORATE TRAINING BANNER ═══════════════ */}
-            <section className="relative">
-                <div className="max-w-[1240px] mx-auto px-6 py-14 max-lg:py-10">
-                    <div className="relative rounded-[24px] overflow-hidden min-h-[380px] max-lg:min-h-[460px] flex items-center">
-                        {/* Background photo */}
-                        <img
-                            src="/assets/images/corporate-training-banner.jpeg"
-                            alt=""
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
+            {/* ═══════════════ STACKED GROUP: Corporate + School + Weekend ═══════════════ */}
+            <div className="relative z-[0] isolate">
+                {/* ═══════════════ CORPORATE TRAINING BANNER ═══════════════ */}
+                <section className="sticky top-[100px] z-[1]">
+                    <div className="max-w-[1240px] mx-auto px-6 pt-10 pb-20 max-lg:pb-14">
+                        <div className="relative rounded-[24px] overflow-hidden min-h-[500px] max-lg:min-h-[460px] flex items-center ">
+                            {/* Background photo */}
+                            <img
+                                src="/assets/images/corporate-training-banner.jpeg"
+                                alt=""
+                                className="absolute inset-0 w-full h-full object-cover object-top"
+                            />
 
-                        {/* Dark gradient overlay — solid left, fades toward the right */}
-                        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,15,45,0.92)_0%,rgba(10,15,45,0.82)_35%,rgba(10,15,45,0.25)_65%,rgba(10,15,45,0)_85%)]" />
+                            {/* Dark gradient overlay — solid left, fades toward the right */}
+                            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,15,45,0.92)_0%,rgba(10,15,45,0.82)_35%,rgba(10,15,45,0.25)_65%,rgba(10,15,45,0)_85%)]" />
 
-                        {/* Dot-grid decoration */}
-                        <div
-                            className="absolute top-8 left-8 w-20 h-16 opacity-40"
-                            style={{
-                                backgroundImage:
-                                    "radial-gradient(circle, white 1.5px, transparent 1.5px)",
-                                backgroundSize: "10px 10px",
-                            }}
-                        />
+                            {/* Dot-grid decoration */}
+                            <div
+                                className="absolute top-8 left-8 w-20 h-16 opacity-40"
+                                style={{
+                                    backgroundImage:
+                                        "radial-gradient(circle, white 1.5px, transparent 1.5px)",
+                                    backgroundSize: "10px 10px",
+                                }}
+                            />
 
-                        {/* Content */}
-                        <div className="relative z-10 px-8 sm:px-12 py-10 max-w-md">
-                            <h2 className="font-display text-[clamp(1.6rem,2.8vw,2.2rem)] font-bold text-white leading-tight">
-                                Corporate Training
+                            {/* Content */}
+                            <div className="relative z-10 px-8 sm:px-12 py-10 max-w-md">
+                                <h2 className="font-display text-[clamp(1.6rem,2.8vw,2.2rem)] font-bold text-white leading-tight">
+                                    Corporate Training
+                                </h2>
+
+                                <p className="text-white/75 text-[15px] mt-4 leading-relaxed">
+                                    AI adoption programmes for businesses,
+                                    banks, hospitals, agencies and professional
+                                    firms. From half-day leadership sessions to
+                                    multi-week team upskilling — scoped to your
+                                    workflows, delivered at your premises or
+                                    ours.
+                                </p>
+
+                                <div className="mt-7">
+                                    <Link
+                                        href="/contact"
+                                        className="inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.3)] hover:shadow-[0_10px_28px_rgba(152,44,220,.4)] hover:-translate-y-0.5 transition-all duration-300"
+                                    >
+                                        Talk to Our Corporate Team
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════ SCHOOL WORKSHOPS ═══════════════ */}
+                <section className="sticky top-[100px] z-[2]">
+                    <div className="max-w-[1240px] mx-auto px-6 pt-10 pb-20 max-lg:pb-14">
+                        {/* School Workshops — photo + copy */}
+                        <div className="bg-white rounded-[20px] shadow-[0_8px_30px_rgba(0,0,0,.04)] p-6 min-h-[500px] max-lg:min-h-[460px]">
+                            <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 items-center">
+                                <div className="rounded-2xl overflow-hidden">
+                                    <img
+                                        src="/assets/images/school-workshop.jpg"
+                                        alt="School Workshop"
+                                        className="w-full h-[350px] object-cover object-top"
+                                    />
+                                </div>
+
+                                <div>
+                                    <h2 className="font-display text-2xl font-bold text-black">
+                                        School Workshops
+                                    </h2>
+                                    <p className="italic text-black/60 font-medium mt-1">
+                                        AI Literacy for Classes 9–12
+                                    </p>
+                                    <p className="text-muted text-[15px] leading-relaxed mt-4">
+                                        Two-day, age-appropriate AI literacy
+                                        workshops that teach students to use AI
+                                        responsibly for learning, creativity and
+                                        careers.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ═══════════════ WEEKEND AI WORKSHOPS ═══════════════ */}
+                <section className="sticky top-[100px] z-[3]">
+                    <div className="max-w-[1240px] mx-auto px-6 pt-10 pb-20 max-lg:pb-14">
+                        <div className="bg-black rounded-[20px] px-8 py-14 text-center min-h-[500px] max-lg:min-h-[460px] flex flex-col items-center justify-center">
+                            <h2 className="font-display text-2xl font-bold text-white">
+                                Weekend AI Workshops
                             </h2>
-
-                            <p className="text-white/75 text-[15px] mt-4 leading-relaxed">
-                                AI adoption programmes for businesses, banks,
-                                hospitals, agencies and professional firms. From
-                                half-day leadership sessions to multi-week team
-                                upskilling — scoped to your workflows, delivered
-                                at your premises or ours.
+                            <p className="italic text-white/70 font-medium mt-1">
+                                Open to All
                             </p>
-
+                            <p className="text-white/70 text-[15px] leading-relaxed mt-5 max-w-md mx-auto">
+                                One-day paid seminars on practical AI topics. A
+                                great way to experience our teaching before you
+                                commit to a course.
+                            </p>
                             <div className="mt-7">
                                 <Link
                                     href="/contact"
-                                    className="inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.3)] hover:shadow-[0_10px_28px_rgba(152,44,220,.4)] hover:-translate-y-0.5 transition-all duration-300"
+                                    className="inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.3)] hover:shadow-[0_10px_28px_rgba(152,44,220,.4)] hover:-translate-y-0.5 transition-all duration-300"
                                 >
                                     Talk to Our Corporate Team
                                 </Link>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            {/* ═══════════════ SCHOOL & WEEKEND WORKSHOPS ═══════════════ */}
-            <section className="relative">
-                <div className="max-w-[1240px] mx-auto px-6 py-10 space-y-5">
-                    {/* School Workshops — photo + copy */}
-                    <div className="bg-white rounded-[20px] shadow-[0_8px_30px_rgba(0,0,0,.04)] p-6">
-                        <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 items-center">
-                            <div className="rounded-2xl overflow-hidden">
-                                <img
-                                    src="/assets/images/school-workshop.jpg"
-                                    alt="School Workshop"
-                                    className="w-full h-[220px] object-cover"
-                                />
-                            </div>
-
-                            <div>
-                                <h2 className="font-display text-2xl font-bold text-black">
-                                    School Workshops
-                                </h2>
-                                <p className="italic text-black/60 font-medium mt-1">
-                                    AI Literacy for Classes 9–12
-                                </p>
-                                <p className="text-muted text-[15px] leading-relaxed mt-4">
-                                    Two-day, age-appropriate AI literacy
-                                    workshops that teach students to use AI
-                                    responsibly for learning, creativity and
-                                    careers.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Weekend AI Workshops — dark CTA card */}
-                    <div className="bg-black rounded-[20px] px-8 py-14 text-center">
-                        <h2 className="font-display text-2xl font-bold text-white">
-                            Weekend AI Workshops
-                        </h2>
-                        <p className="italic text-white/70 font-medium mt-1">
-                            Open to All
-                        </p>
-                        <p className="text-white/70 text-[15px] leading-relaxed mt-5 max-w-md mx-auto">
-                            One-day paid seminars on practical AI topics. A
-                            great way to experience our teaching before you
-                            commit to a course.
-                        </p>
-                        <div className="mt-7">
-                            <Link
-                                href="/contact"
-                                className="inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.3)] hover:shadow-[0_10px_28px_rgba(152,44,220,.4)] hover:-translate-y-0.5 transition-all duration-300"
-                            >
-                                Talk to Our Corporate Team
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
             {/* ═══════════════ FAQ ═══════════════ */}
             <FaqSection />
             {/* ═══════════════ CTA ═══════════════ */}
@@ -277,7 +291,7 @@ export default function Programmes() {
                             Ready to Start Your AI{" "}
                             <span className="text-[#765bc4]">Journey</span> ?
                         </h2>
-                        <p className="mt-3 text-lg text-white/55">
+                        <p className="mt-3 text-lg text-white">
                             New batch starts every month
                         </p>
                         <div className="mt-8 flex justify-center">

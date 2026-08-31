@@ -76,7 +76,7 @@ export default function Footer() {
                         <ul className="space-y-2.5">
                             {['About us', 'Contact us', 'FAQ', 'Blog', 'Career Services'].map((item) => (
                                 <li key={item}>
-                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white hover:text-white transition-colors">
+                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white/55 hover:text-white transition-colors">
                                         {item}
                                     </Link>
                                 </li>
@@ -96,7 +96,7 @@ export default function Footer() {
                                 'DSA Courses'
                             ].map((item) => (
                                 <li key={item}>
-                                    <Link href={`/courses`} className="text-sm text-white hover:text-white transition-colors">
+                                    <Link href={`/courses`} className="text-sm text-white/55 hover:text-white transition-colors">
                                         {item}
                                     </Link>
                                 </li>

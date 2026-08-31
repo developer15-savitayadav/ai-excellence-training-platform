@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import PublicLayout from "../Layouts/PublicLayout";
 import Button from "../Components/ui/Button";
-import RevealDiv, { useReveal } from "../Components/RevealDiv"; 
+import RevealDiv, { useReveal } from "../Components/RevealDiv";
 import TestimonialSlider from "../Components/TestimonialSlider";
 import FaqSection from "../Components/FAQSection";
 function EyeBrow({ children, color = "violet" }) {
@@ -13,7 +13,6 @@ function EyeBrow({ children, color = "violet" }) {
         </p>
     );
 }
-
 
 const TIER_ROWS = [
     {
@@ -212,21 +211,35 @@ function Dash() {
 }
 
 function CellValue({ value }) {
-    if (value === true) return <Check />;
-    if (value === false) return <Dash />;
-    return (
-        <span className="text-[13px] font-medium text-violet mx-auto whitespace-nowrap">
-            {value}
-        </span>
-    );
+    if (value === false || value === undefined || value === null) {
+        return <span className="text-black/25 text-base leading-none">—</span>;
+    }
+    if (value === true) {
+        return (
+            <svg
+                className="w-4 h-4 text-violet"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                />
+            </svg>
+        );
+    }
+    // text value — no icon, just the label
+    return <span className="text-violet-950 font-medium">{value}</span>;
 }
-
 export default function Career() {
     return (
         <PublicLayout>
             {/* ═══════════════ HERO BANNER ═══════════════ */}
             <section className="relative overflow-hidden bg-[#f4f3ef]">
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-16 pb-10 max-lg:pt-12">
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-16  max-lg:pt-12">
                     <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
                         {/* Left: copy */}
                         <div>
@@ -328,12 +341,7 @@ export default function Career() {
                     }}
                 />
                 <div className="relative max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
-                    <div className="text-center mb-16">
-                        <EyeBrow color="violet">WHAT'S INCLUDED_</EyeBrow>
-                        <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
-                            By Program Tier
-                        </h2>
-                    </div>
+
 
                     {/* Desktop table */}
                     <div className="hidden md:flex items-stretch gap-4">
@@ -342,7 +350,7 @@ export default function Career() {
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="h-[52px] flex items-center text-sm text-body/80"
+                                    className="h-[52px] flex items-center text-[16px] text-black"
                                 >
                                     {row.service}
                                 </div>
@@ -350,46 +358,46 @@ export default function Career() {
                         </div>
 
                         {/* Short-Term */}
-                        <div className="w-[170px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                        <div className="w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-body mb-4">
                                 Short-Term
                             </span>
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="h-[52px] w-full flex items-center justify-center text-sm text-muted"
+                                    className="h-[52px] w-full flex items-center justify-start pl-6 text-sm text-muted"
                                 >
-                                    {row.short}
+                                    <CellValue value={row.short} />
                                 </div>
                             ))}
                         </div>
 
                         {/* Professional */}
-                        <div className="w-[170px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                        <div className="w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-body mb-4">
                                 Professional
                             </span>
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="h-[52px] w-full flex items-center justify-center text-sm text-muted"
+                                    className="h-[52px] w-full flex items-center justify-start pl-6 text-sm text-muted"
                                 >
-                                    {row.professional}
+                                    <CellValue value={row.professional} />
                                 </div>
                             ))}
                         </div>
 
                         {/* Career — highlighted tier */}
-                        <div className="w-[170px] shrink-0 rounded-[28px] bg-violet/25 px-4 py-6 flex flex-col items-center">
+                        <div className="w-[230px] shrink-0 rounded-[28px] bg-violet/25 px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-violet-950 mb-4">
                                 Career
                             </span>
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="min-h-[52px] w-full flex items-center justify-center text-center text-sm font-medium text-violet-950 leading-snug py-1"
+                                    className="min-h-[52px] w-full flex items-center justify-start pl-6 text-left text-sm font-medium text-violet-950 leading-snug py-1"
                                 >
-                                    {row.career}
+                                    <CellValue value={row.career} />
                                 </div>
                             ))}
                         </div>
@@ -462,11 +470,11 @@ export default function Career() {
                                                     : "bg-white border border-black/[0.08]"
                                             }`}
                                         >
-                                            <span className="block text-xs font-semibold text-black/70 mb-3">
+                                            <span className="block text-[20px] font-semibold text-black/70 mb-3">
                                                 {step.number}
                                             </span>
                                             <h3
-                                                className={`font-display text-base font-bold leading-snug mb-2 ${
+                                                className={`font-display text-[18px] font-bold leading-snug mb-2 ${
                                                     highlighted
                                                         ? "text-black"
                                                         : "text-violet"
@@ -475,9 +483,9 @@ export default function Career() {
                                                 {step.title}
                                             </h3>
                                             <p
-                                                className={`text-xs leading-relaxed ${
+                                                className={`text-[16px]   ${
                                                     highlighted
-                                                        ? "text-violet-950/70"
+                                                        ? "text-black"
                                                         : "text-muted"
                                                 }`}
                                             >
@@ -615,7 +623,7 @@ export default function Career() {
                             Ready to Start Your AI{" "}
                             <span className="text-[#765bc4]">Journey</span> ?
                         </h2>
-                        <p className="mt-3 text-lg text-white/55">
+                        <p className="mt-3 text-lg text-white">
                             New batch starts every month
                         </p>
                         <div className="mt-8 flex justify-center">
@@ -630,10 +638,9 @@ export default function Career() {
                 </div>
             </div>
             {/* ═══════════════ ALUMNI TESTIMONIALS ═══════════════ */}
-                <TestimonialSlider />
+            <TestimonialSlider />
             {/* ═══════════════ FAQ ═══════════════ */}
-                  <FaqSection />
-         
+            <FaqSection />
         </PublicLayout>
     );
 }

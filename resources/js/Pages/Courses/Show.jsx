@@ -1180,7 +1180,7 @@ export default function CoursesShow({ slug }) {
                                 <span className="text-[#765bc4]">Journey</span>{" "}
                                 ?
                             </h2>
-                            <p className="mt-3 text-lg text-white/55">
+                            <p className="mt-3 text-lg text-white">
                                 New batch starts every month
                             </p>
                             <div className="mt-8 flex justify-center">

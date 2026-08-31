@@ -17,7 +17,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className="w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -38,7 +38,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className="w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -59,7 +59,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className=" w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -80,7 +80,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className="w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -101,7 +101,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className="w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -122,7 +122,7 @@ const PAYMENT_OPTIONS = [
     {
         icon: (
             <svg
-                className="w-6 h-6"
+                className=" w-10 h-10"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -245,16 +245,16 @@ export default function Fee() {
                         {PAYMENT_OPTIONS.map((option) => (
                             <div
                                 key={option.title}
-                                className="bg-[#ffd05a] rounded-2xl p-6 flex items-start gap-4 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255,208,90,.35)] transition-all duration-300"
+                                className="bg-[#ffd05a] rounded-0 p-6 min-h-[160px] flex items-start gap-4 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255,208,90,.35)] transition-all duration-300"
                             >
-                                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shrink-0">
+                                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shrink-0">
                                     {option.icon}
                                 </div>
                                 <div className="pt-1">
                                     <h3 className="font-display text-base font-bold text-black leading-snug mb-1.5">
                                         {option.title}
                                     </h3>
-                                    <p className="text-black/60 leading-relaxed text-xs">
+                                    <p className="text-black leading-relaxed text-[16px] mt-4">
                                         {option.description}
                                     </p>
                                 </div>
@@ -309,7 +309,7 @@ export default function Fee() {
                         &amp; Scholarship{" "}
                         <span className="text-violet">Eligibility.</span>
                     </h2>
-                    <p className="text-muted text-lg mt-4">
+                    <p className="text-white text-lg mt-4">
                         New batch starts every month
                     </p>
                     <div className="flex justify-center mt-8">
