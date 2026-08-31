@@ -223,13 +223,13 @@ const learners = [
     },
 ];
 const trustedBrands = [
-    { name: "Microsoft", src: "https://cdn.simpleicons.org/microsoft" },
-    { name: "Amazon", src: "https://cdn.simpleicons.org/amazon" },
-    { name: "Google", src: "https://cdn.simpleicons.org/google" },
-    { name: "Nvidia", src: "https://cdn.simpleicons.org/nvidia" },
-    { name: "IBM", src: "https://cdn.simpleicons.org/ibm" },
-    { name: "Meta", src: "https://cdn.simpleicons.org/meta" },
-    { name: "TCS", src: "https://cdn.simpleicons.org/tcs" },
+    { name: "Microsoft", src: "/assets/images/microsoft.avif" },
+    { name: "Amazon", src: "/assets/images/amazon.png" },
+    { name: "Google", src: "/assets/images/google.png" },
+    { name: "Nvidia", src: "/assets/images/nvidia.png" },
+    { name: "IBM", src: "/assets/images/ibm.png" },
+    { name: "Meta", src: "/assets/images/meta.jpg" },
+    { name: "TCS", src: "/assets/images/tcs.webp" },
 ];
 const placements = [
     {
@@ -894,13 +894,13 @@ export default function Home() {
                         ].map((brand, index) => (
                             <div
                                 key={`${brand.name}-${index}`}
-                                className="flex h-8 w-28 shrink-0 items-center justify-center"
+                                className="flex h-28 w-28 shrink-0 items-center justify-center"
                             >
                                 <img
                                     src={brand.src}
                                     alt={brand.name}
                                     loading="lazy"
-                                    className="h-6 w-auto max-w-full object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-7"
+                                    className="h-28 w-28 max-w-full object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-28"
                                 />
                             </div>
                         ))}

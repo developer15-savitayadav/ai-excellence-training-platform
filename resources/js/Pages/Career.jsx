@@ -1,66 +1,71 @@
-import { Link } from '@inertiajs/react';
-import PublicLayout from '../Layouts/PublicLayout';
-import Button from '../Components/ui/Button';
-
-function EyeBrow({ children, color = 'violet' }) {
+import { Link } from "@inertiajs/react";
+import PublicLayout from "../Layouts/PublicLayout";
+import Button from "../Components/ui/Button";
+import RevealDiv, { useReveal } from "../Components/RevealDiv"; 
+import TestimonialSlider from "../Components/TestimonialSlider";
+import FaqSection from "../Components/FaqSection";
+function EyeBrow({ children, color = "violet" }) {
     return (
-        <p className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}>
+        <p
+            className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}
+        >
             {children}
         </p>
     );
 }
 
+
 const TIER_ROWS = [
     {
-        service: 'Certificate of completion',
+        service: "Certificate of completion",
         short: true,
         professional: true,
         career: true,
     },
     {
-        service: 'GitHub / portfolio setup',
+        service: "GitHub / portfolio setup",
         short: false,
         professional: true,
         career: true,
     },
     {
-        service: 'ATS resume building (1-on-1)',
+        service: "ATS resume building (1-on-1)",
         short: false,
         professional: true,
         career: true,
     },
     {
-        service: 'LinkedIn profile optimisation',
+        service: "LinkedIn profile optimisation",
         short: false,
         professional: true,
         career: true,
     },
     {
-        service: 'Mock interviews',
-        short: '2 sessions',
-        professional: '5+ sessions',
-        career: '5+ sessions',
+        service: "Mock interviews",
+        short: "2 sessions",
+        professional: "5+ sessions",
+        career: "5+ sessions",
     },
     {
-        service: 'Aptitude & communication training',
+        service: "Aptitude & communication training",
         short: false,
         professional: false,
-        career: '20 hrs',
+        career: "20 hrs",
     },
     {
-        service: 'Job referrals to hiring partners',
+        service: "Job referrals to hiring partners",
         short: false,
         professional: true,
-        career: 'Priority',
+        career: "Priority",
     },
     {
-        service: 'Internship placement',
+        service: "Internship placement",
         short: false,
         professional: false,
-        career: 'Career Track',
+        career: "Career Track",
     },
     {
-        service: 'Lifetime re-attendance',
+        service: "Lifetime re-attendance",
         short: true,
         professional: true,
         career: true,
@@ -69,86 +74,135 @@ const TIER_ROWS = [
 
 const RESUME_STEPS = [
     {
-        number: '01',
-        title: 'ATS Mechanics',
+        number: "01",
+        title: "ATS Mechanics",
         description:
-            'Why most resumes are auto-rejected, and how to format and keyword-map yours to pass.',
+            "Why most resumes are auto-rejected, and how to format and keyword-map yours to pass.",
     },
     {
-        number: '02',
-        title: 'The Fresher Problem',
+        number: "02",
+        title: "The Fresher Problem",
         description:
-            'Filling a resume with zero work experience using projects, freelance work and college activity.',
+            "Filling a resume with zero work experience using projects, freelance work and college activity.",
     },
     {
-        number: '03',
-        title: 'Project Write-Ups That Land',
+        number: "03",
+        title: "Project Write-Ups That Land",
         description:
-            '\u201cBuilt a churn prediction model on 50k records achieving 87% accuracy, deployed via Streamlit\u201d instead of \u201cMade an ML project.\u201d',
+            "\u201cBuilt a churn prediction model on 50k records achieving 87% accuracy, deployed via Streamlit\u201d instead of \u201cMade an ML project.\u201d",
     },
     {
-        number: '04',
-        title: '1-on-1 Rebuild Session',
+        number: "04",
+        title: "1-on-1 Rebuild Session",
         description:
-            'Your trainer sits with you personally, not a template handout.',
+            "Your trainer sits with you personally, not a template handout.",
     },
     {
-        number: '05',
-        title: 'Three Tailored Variants',
-        description:
-            'One each for AI/ML, data analyst and general IT roles.',
+        number: "05",
+        title: "Three Tailored Variants",
+        description: "One each for AI/ML, data analyst and general IT roles.",
     },
     {
-        number: '06',
-        title: 'LinkedIn + GitHub',
-        description:
-            'Headline, About section, pinned repos, README writing.',
+        number: "06",
+        title: "LinkedIn + GitHub",
+        description: "Headline, About section, pinned repos, README writing.",
     },
 ];
 
 const PLACEMENT_ENGINE = [
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                />
             </svg>
         ),
-        title: 'Dedicated Placement Coordinator',
-        description: 'Whose only job is getting you hired.',
+        title: "Dedicated Placement Coordinator",
+        description: "Whose only job is getting you hired.",
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"
+                />
             </svg>
         ),
-        title: 'Hiring Partner Network',
-        description: 'Growing across Lucknow, Noida, Gurgaon and remote-first startups.',
+        title: "Hiring Partner Network",
+        description:
+            "Growing across Lucknow, Noida, Gurgaon and remote-first startups.",
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
             </svg>
         ),
-        title: 'Quarterly Placement Drives',
-        description: 'On-campus drives with multiple companies.',
+        title: "Quarterly Placement Drives",
+        description: "On-campus drives with multiple companies.",
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                />
             </svg>
         ),
-        title: 'Alumni Referral Programme',
-        description: 'Our graduates bring opportunities back.',
+        title: "Alumni Referral Programme",
+        description: "Our graduates bring opportunities back.",
     },
 ];
 
 function Check() {
     return (
-        <svg className="w-4 h-4 text-violet mx-auto" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        <svg
+            className="w-4 h-4 text-violet mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+            stroke="currentColor"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"
+            />
         </svg>
     );
 }
@@ -171,74 +225,96 @@ export default function Career() {
     return (
         <PublicLayout>
             {/* ═══════════════ HERO BANNER ═══════════════ */}
-            <section className="relative overflow-hidden bg-ink">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute -top-32 left-[8%] w-[520px] h-[300px] rounded-full bg-violet/[0.07] blur-[120px]" />
-                    <div className="absolute top-[30%] right-[5%] w-[420px] h-[250px] rounded-full bg-lime/[0.06] blur-[110px]" />
-                    <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
-                </div>
+            <section className="relative overflow-hidden bg-[#f4f3ef]">
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-16 pb-10 max-lg:pt-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+                        {/* Left: copy */}
+                        <div>
+                            <h1 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.12]">
+                                <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
+                                    Structured
+                                </span>
+                                <span className="text-black">
+                                    {" "}
+                                    Placement Assistance —
+                                </span>
+                                <br />
+                                <span className="text-black">
+                                    A process, Not a Promise
+                                </span>
+                            </h1>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
-                        <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
-                        </span>
-                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
-                            Career Services &amp; Placements
-                        </span>
-                    </div>
+                            <p className="text-neutral-600 text-base mt-5 max-w-lg leading-relaxed">
+                                We do not advertise &ldquo;100% placement
+                                guarantee.&rdquo; Nobody can honestly make that
+                                promise. What we offer instead is a structured
+                                system, a dedicated team, and published results
+                            </p>
 
-                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
-                        <span className="text-black">
-                            Structured Placement{" "}
-                        </span>
-                        <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
-                            Assistance
-                        </span>
-                        <br />
-                        <span className="text-black text-[clamp(1.1rem,2vw,1.6rem)] font-medium">
-                            a process, not a promise
-                        </span>
-                    </h1>
+                            <div className="mt-7 flex flex-wrap gap-3">
+                                <Link
+                                    href="/enroll"
+                                    className="rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    Enrol Now
+                                </Link>
+                                <Link
+                                    href="/curriculum"
+                                    className="rounded-full bg-black px-7 py-3.5 text-sm font-semibold text-white hover:bg-black/80 hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    Download Curriculum
+                                </Link>
+                            </div>
+                        </div>
 
-                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
-                        We do not advertise &ldquo;100% placement guarantee.&rdquo;
-                        Nobody can honestly make that promise. What we offer instead is
-                        a structured system, a dedicated team, and published results.
-                    </p>
-
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        <Link href="/contact" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
-                            Talk to Our Team
-                        </Link>
-                        <Link href="/courses" className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
-                            Explore Programs
-                        </Link>
+                        {/* Right: visual */}
+                        <div className="relative flex justify-center lg:justify-end">
+                            <img
+                                src="/assets/images/ai-hero-robot.png"
+                                alt="AI-powered career guidance"
+                                className="w-full max-w-[420px] h-auto object-contain"
+                            />
+                        </div>
                     </div>
                 </div>
 
                 {/* Stat Bar */}
-                {/* <div className="border-y border-black/[0.06] bg-white/80 backdrop-blur-sm">
-                    <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-black/[0.08]">
-                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
-                            <span className="text-xs text-muted font-medium">Placement Coordinator</span>
-                            <span className="text-lg font-bold text-black">Dedicated</span>
+                <div className="border-t border-black/[0.08] bg-white">
+                    <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-black/[0.08] items-center">
+                        <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                            <span className="text-xs text-neutral-500 font-medium">
+                                -----
+                            </span>
+                            <span className="text-lg font-bold text-black">
+                                Students Enrolled
+                            </span>
                         </div>
-                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
-                            <span className="text-xs text-muted font-medium">Hiring Partners</span>
-                            <span className="text-lg font-bold text-black">Lucknow, Noida &amp; Remote</span>
+                        <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                            <span className="text-xs text-neutral-500 font-medium">
+                                -----
+                            </span>
+                            <span className="text-lg font-bold text-black">
+                                Students Placed
+                            </span>
                         </div>
-                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
-                            <span className="text-xs text-muted font-medium">Placement Drives</span>
-                            <span className="text-lg font-bold text-black">Quarterly On-Campus</span>
+                        <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                            <span className="text-xs text-neutral-500 font-medium">
+                                -----
+                            </span>
+                            <span className="text-lg font-bold text-black">
+                                Median Package
+                            </span>
                         </div>
-                        <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
-                            <span className="text-xs text-muted font-medium">Resume Support</span>
-                            <span className="text-lg font-bold text-black">3 Tailored Variants</span>
+                        <div className="flex items-center justify-center py-6 px-4">
+                            <Link
+                                href="/contact"
+                                className="rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 transition-all duration-300"
+                            >
+                                Contact us for pricing
+                            </Link>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </section>
 
             {/* ═══════════════ TIER COMPARISON TABLE ═══════════════ */}
@@ -247,8 +323,8 @@ export default function Career() {
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
                         backgroundImage:
-                            'radial-gradient(circle, white 1px, transparent 1px)',
-                        backgroundSize: '24px 24px',
+                            "radial-gradient(circle, white 1px, transparent 1px)",
+                        backgroundSize: "24px 24px",
                     }}
                 />
                 <div className="relative max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
@@ -260,74 +336,63 @@ export default function Career() {
                     </div>
 
                     {/* Desktop table */}
-                    <div className="hidden md:block bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
-                        {/* Header */}
-                        <div className="grid grid-cols-4 border-b border-black/[0.08]">
-                            <div className="px-6 py-4 font-mono text-xs uppercase tracking-wider text-muted">
-                                Service
-                            </div>
-                            <div className="px-6 py-4 text-center border-l border-black/[0.08]">
-                                <span className="inline-flex items-center gap-2 font-display font-semibold text-sm text-muted">
-                                    Short-Term
-                                </span>
-                            </div>
-                            <div className="px-6 py-4 text-center bg-violet/[0.03] border-l border-black/[0.08]">
-                                <span className="inline-flex items-center gap-2 font-display font-semibold text-sm text-violet">
-                                    <svg
-                                        className="w-4 h-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
-                                        />
-                                    </svg>
-                                    Professional
-                                </span>
-                            </div>
-                            <div className="px-6 py-4 text-center bg-lime/[0.03] border-l border-black/[0.08]">
-                                <span className="inline-flex items-center gap-2 font-display font-semibold text-sm text-lime">
-                                    <svg
-                                        className="w-4 h-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={2}
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0116.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.015 6.015 0 01-1.77.857m0 0a6.015 6.015 0 01-1.77-.857m0 0c-.262.212-.542.4-.833.562" />
-                                    </svg>
-                                    Career
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Rows */}
-                        {TIER_ROWS.map((row, i) => (
-                            <div
-                                key={row.service}
-                                className={`grid grid-cols-4 ${i < TIER_ROWS.length - 1 ? 'border-b border-black/[0.06]' : ''}`}
-                            >
-                                <div className="px-6 py-5 font-mono text-sm text-muted">
+                    <div className="hidden md:flex items-stretch gap-4">
+                        {/* Labels column */}
+                        <div className="flex-1 min-w-0 pt-[68px]">
+                            {TIER_ROWS.map((row) => (
+                                <div
+                                    key={row.service}
+                                    className="h-[52px] flex items-center text-sm text-body/80"
+                                >
                                     {row.service}
                                 </div>
-                                <div className="px-6 py-5 border-l border-black/[0.08]">
-                                    <CellValue value={row.short} />
+                            ))}
+                        </div>
+
+                        {/* Short-Term */}
+                        <div className="w-[170px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                            <span className="font-display font-semibold text-base text-body mb-4">
+                                Short-Term
+                            </span>
+                            {TIER_ROWS.map((row) => (
+                                <div
+                                    key={row.service}
+                                    className="h-[52px] w-full flex items-center justify-center text-sm text-muted"
+                                >
+                                    {row.short}
                                 </div>
-                                <div className="px-6 py-5 bg-violet/[0.02] border-l border-black/[0.08]">
-                                    <CellValue value={row.professional} />
+                            ))}
+                        </div>
+
+                        {/* Professional */}
+                        <div className="w-[170px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                            <span className="font-display font-semibold text-base text-body mb-4">
+                                Professional
+                            </span>
+                            {TIER_ROWS.map((row) => (
+                                <div
+                                    key={row.service}
+                                    className="h-[52px] w-full flex items-center justify-center text-sm text-muted"
+                                >
+                                    {row.professional}
                                 </div>
-                                <div className="px-6 py-5 bg-lime/[0.02] border-l border-black/[0.08]">
-                                    <CellValue value={row.career} />
+                            ))}
+                        </div>
+
+                        {/* Career — highlighted tier */}
+                        <div className="w-[170px] shrink-0 rounded-[28px] bg-violet/25 px-4 py-6 flex flex-col items-center">
+                            <span className="font-display font-semibold text-base text-violet-950 mb-4">
+                                Career
+                            </span>
+                            {TIER_ROWS.map((row) => (
+                                <div
+                                    key={row.service}
+                                    className="min-h-[52px] w-full flex items-center justify-center text-center text-sm font-medium text-violet-950 leading-snug py-1"
+                                >
+                                    {row.career}
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                     {/* Mobile cards */}
@@ -337,20 +402,26 @@ export default function Career() {
                                 key={row.service}
                                 className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-5"
                             >
-                                <p className="font-mono text-xs uppercase tracking-wider text-muted mb-3">
+                                <p className="text-xs uppercase tracking-wider text-muted mb-3">
                                     {row.service}
                                 </p>
                                 <div className="space-y-2">
                                     <div className="flex items-center justify-between">
-                                        <span className="text-sm text-muted">Short-Term</span>
+                                        <span className="text-sm text-muted">
+                                            Short-Term
+                                        </span>
                                         <CellValue value={row.short} />
                                     </div>
                                     <div className="flex items-center justify-between">
-                                        <span className="text-sm text-violet font-medium">Professional</span>
+                                        <span className="text-sm text-muted">
+                                            Professional
+                                        </span>
                                         <CellValue value={row.professional} />
                                     </div>
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-sm text-lime font-medium">Career</span>
+                                    <div className="flex items-center justify-between rounded-lg bg-violet/10 -mx-2 px-2 py-1">
+                                        <span className="text-sm text-violet-950 font-medium">
+                                            Career
+                                        </span>
                                         <CellValue value={row.career} />
                                     </div>
                                 </div>
@@ -363,37 +434,60 @@ export default function Career() {
             {/* ═══════════════ RESUME MODULE ═══════════════ */}
             <section className="bg-[#F5F5F2]">
                 <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
-                    <div className="text-center mb-16">
-                        <EyeBrow>THE RESUME MODULE_</EyeBrow>
-                        <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
-                            6 Structured Hours That
-                            <br className="max-lg:hidden" />
-                            Transform Your Resume
-                        </h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        {RESUME_STEPS.map((step) => (
-                            <div
-                                key={step.number}
-                                className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-7 hover:border-black/[0.18] hover:-translate-y-0.5 transition-all duration-[220ms]"
-                            >
-                                <span className="font-mono text-3xl font-bold text-black/[0.06] absolute top-5 right-6">
-                                    {step.number}
-                                </span>
-                                <div className="w-10 h-10 rounded-xl bg-violet/10 border border-violet/20 flex items-center justify-center mb-5">
-                                    <span className="font-mono text-sm font-bold text-violet">
-                                        {step.number}
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-lg font-semibold text-body mb-2">
-                                    {step.title}
-                                </h3>
-                                <p className="text-muted leading-relaxed text-sm">
-                                    {step.description}
-                                </p>
+                    <div className="bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,.06)] p-10 max-lg:p-6">
+                        <div className="grid lg:grid-cols-[0.85fr_2fr] gap-10 items-start">
+                            {/* Left: intro panel */}
+                            <div className="lg:sticky lg:top-10">
+                                <h2 className="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] font-bold tracking-[-0.03em] leading-[1.15] text-black">
+                                    The Resume Building Module
+                                </h2>
+                                <Link
+                                    href="/enroll"
+                                    className="mt-6 inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 transition-all duration-300"
+                                >
+                                    Enrol Now
+                                </Link>
                             </div>
-                        ))}
+
+                            {/* Right: step grid */}
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {RESUME_STEPS.map((step, i) => {
+                                    const highlighted = i % 2 === 1;
+                                    return (
+                                        <div
+                                            key={step.number}
+                                            className={`rounded-2xl p-5 ${
+                                                highlighted
+                                                    ? "bg-violet/20"
+                                                    : "bg-white border border-black/[0.08]"
+                                            }`}
+                                        >
+                                            <span className="block text-xs font-semibold text-black/70 mb-3">
+                                                {step.number}
+                                            </span>
+                                            <h3
+                                                className={`font-display text-base font-bold leading-snug mb-2 ${
+                                                    highlighted
+                                                        ? "text-black"
+                                                        : "text-violet"
+                                                }`}
+                                            >
+                                                {step.title}
+                                            </h3>
+                                            <p
+                                                className={`text-xs leading-relaxed ${
+                                                    highlighted
+                                                        ? "text-violet-950/70"
+                                                        : "text-muted"
+                                                }`}
+                                            >
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -433,17 +527,31 @@ export default function Career() {
                     <div className="mt-12 max-w-3xl mx-auto">
                         <div className="bg-white border border-violet/20 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-8 text-center">
                             <div className="w-12 h-12 rounded-xl bg-violet/10 border border-lime/20 flex items-center justify-center mx-auto mb-4 text-violet">
-                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    />
                                 </svg>
                             </div>
                             <h3 className="font-display text-lg font-semibold text-body mb-2">
                                 Eligibility
                             </h3>
                             <p className="text-muted leading-relaxed">
-                                Students with <span className="font-semibold text-body">75% or higher attendance</span> are
-                                eligible for placement assistance. We set this bar because
-                                showing up is what makes everything else work.
+                                Students with{" "}
+                                <span className="font-semibold text-body">
+                                    75% or higher attendance
+                                </span>{" "}
+                                are eligible for placement assistance. We set
+                                this bar because showing up is what makes
+                                everything else work.
                             </p>
                         </div>
                     </div>
@@ -451,7 +559,7 @@ export default function Career() {
             </section>
 
             {/* ═══════════════ RESULTS PLACEHOLDER ═══════════════ */}
-            <section className="bg-[#F5F5F2]">
+            {/* <section className="bg-[#F5F5F2]">
                 <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
                         <EyeBrow>OUR RESULTS_</EyeBrow>
@@ -464,10 +572,13 @@ export default function Career() {
                         <div className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-10 text-center">
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                                 {[
-                                    { label: 'Students Enrolled', value: '---' },
-                                    { label: 'Students Placed', value: '---' },
-                                    { label: 'Median Package', value: '---' },
-                                    { label: 'Hiring Companies', value: '---' },
+                                    {
+                                        label: "Students Enrolled",
+                                        value: "---",
+                                    },
+                                    { label: "Students Placed", value: "---" },
+                                    { label: "Median Package", value: "---" },
+                                    { label: "Hiring Companies", value: "---" },
                                 ].map((stat) => (
                                     <div key={stat.label}>
                                         <div className="font-mono text-3xl font-bold text-black/[0.08]">
@@ -481,45 +592,48 @@ export default function Career() {
                             </div>
                             <div className="mt-8 pt-6 border-t border-black/[0.06]">
                                 <p className="text-muted text-sm leading-relaxed max-w-lg mx-auto">
-                                    Real numbers will be published here after each batch:
-                                    students enrolled, students placed, median package,
-                                    hiring companies, and named student stories. Updated every
+                                    Real numbers will be published here after
+                                    each batch: students enrolled, students
+                                    placed, median package, hiring companies,
+                                    and named student stories. Updated every
                                     quarter.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ═══════════════ CTA ═══════════════ */}
-            <section className="relative overflow-hidden bg-[#F5F5F2]">
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        backgroundImage:
-                            'radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)',
-                        backgroundSize: '22px 22px',
-                    }}
-                />
-                <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px] text-center">
-                    <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold text-body leading-tight">
-                        Ready to Start Your
-                        <br />
-                        Career in AI?
-                    </h2>
-                    <p className="text-muted text-lg mt-4 max-w-lg mx-auto">
-                        Enrol in a program and get access to our structured placement
-                        assistance, resume building, and hiring partner network.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 mt-8">
-                        <Button href="/courses">Explore Programs</Button>
-                        <Button variant="secondary" href="/contact">
-                            Talk to Our Team
-                        </Button>
-                    </div>
+            <div className="bg-surface relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-violet/[0.12] blur-[140px]" />
                 </div>
-            </section>
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 py-20 sm:py-24 text-center">
+                    <RevealDiv>
+                        <h2 className="font-display text-[clamp(2rem,4vw,2.6rem)] font-bold tracking-[-0.04em] text-white leading-tight">
+                            Ready to Start Your AI{" "}
+                            <span className="text-[#765bc4]">Journey</span> ?
+                        </h2>
+                        <p className="mt-3 text-lg text-white/55">
+                            New batch starts every month
+                        </p>
+                        <div className="mt-8 flex justify-center">
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-10 py-4 text-sm font-semibold text-white shadow-[0_6px_24px_rgba(152,44,220,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(152,44,220,.5)]"
+                            >
+                                Enroll Now
+                            </Link>
+                        </div>
+                    </RevealDiv>
+                </div>
+            </div>
+            {/* ═══════════════ ALUMNI TESTIMONIALS ═══════════════ */}
+                <TestimonialSlider />
+            {/* ═══════════════ FAQ ═══════════════ */}
+                  <FaqSection />
+         
         </PublicLayout>
     );
 }
