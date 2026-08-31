@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import PublicLayout from "../Layouts/PublicLayout";
 import Button from "../Components/ui/Button";
-import FaqSection from "../Components/FaqSection";
+import FaqSection from "../Components/FAQSection";
 
 function EyeBrow({ children, color = "violet" }) {
     return (

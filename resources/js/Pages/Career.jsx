@@ -3,7 +3,7 @@ import PublicLayout from "../Layouts/PublicLayout";
 import Button from "../Components/ui/Button";
 import RevealDiv, { useReveal } from "../Components/RevealDiv"; 
 import TestimonialSlider from "../Components/TestimonialSlider";
-import FaqSection from "../Components/FaqSection";
+import FaqSection from "../Components/FAQSection";
 function EyeBrow({ children, color = "violet" }) {
     return (
         <p
