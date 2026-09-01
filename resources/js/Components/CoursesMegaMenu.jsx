@@ -1,94 +1,102 @@
-import { useState } from 'react';
-import { Link } from '@inertiajs/react';
-import { Zap, Award, Rocket, ChevronRight, BookOpen, Clock, Users } from 'lucide-react';
+import { useState } from "react";
+import { Link } from "@inertiajs/react";
+import {
+    Zap,
+    Award,
+    Rocket,
+    ChevronRight,
+    BookOpen,
+    Clock,
+    Users,
+} from "lucide-react";
 
 const tabs = [
     {
-        id: 'short-term',
-        label: 'Short-Term Courses',
-        subtitle: 'Start Fast',
+        id: "short-term",
+        label: "Short-Term Courses",
+        subtitle: "Start Fast",
         icon: Zap,
         courses: [
             {
-                name: 'AI Tools Mastery',
-                tagline: 'Work Smarter with AI',
-                href: '/courses',
+                name: "AI Tools Mastery",
+                tagline: "Work Smarter with AI",
+                href: "/ai-tools-mastery",
                 icon: BookOpen,
             },
             {
-                name: 'Python Programming Foundation',
-                tagline: 'Build Your Coding Base',
-                href: '/courses',
+                name: "Python Programming Foundation",
+                tagline: "Build Your Coding Base",
+                href: "/python-programming-foundation",
                 icon: Code,
             },
             {
-                name: 'Generative AI & Prompt Engineering',
-                tagline: 'Master the AI Revolution',
-                href: '/courses',
+                name: "Generative AI & Prompt Engineering",
+                tagline: "Master the AI Revolution",
+                href: "/generative-ai-prompt-engineering",
                 icon: Sparkles,
             },
             {
-                name: 'AI for Business Owners & Professionals',
-                tagline: 'Weekend Batch',
-                href: '/courses',
+                name: "AI for Business Owners & Professionals",
+                tagline: "Weekend Batch",
+                href: "/ai-for-business",
                 icon: Users,
             },
             {
-                name: 'Summer / Winter Training',
-                tagline: 'AKTU-Compliant',
-                href: '/courses',
+                name: "Summer / Winter Training",
+                tagline: "AKTU-Compliant",
+                href: "/summer-winter-training",
                 icon: Clock,
             },
         ],
     },
     {
-        id: 'professional',
-        label: 'Professional Certificates',
-        subtitle: 'Build a Skill Employers Pay For',
+        id: "professional",
+        label: "Professional Certificates",
+        subtitle: "Build a Skill Employers Pay For",
         icon: Award,
         courses: [
             {
-                name: 'Digital Marketing with AI',
-                tagline: 'Professional',
-                href: '/courses',
+                name: "Digital Marketing with AI",
+                tagline: "Professional",
+                href: "/digital-marketing-ai",
                 icon: TrendingUp,
             },
             {
-                name: 'Python for Data Analytics',
-                tagline: 'Data-Driven Decisions',
-                href: '/courses',
+                name: "Python for Data Analytics",
+                tagline: "Data-Driven Decisions",
+                href: "/python-data-analytics",
                 icon: BarChart3,
             },
             {
-                name: 'Applied Machine Learning',
-                tagline: 'From Theory to Production',
-                href: '/courses',
+                name: "Applied Machine Learning",
+                tagline: "From Theory to Production",
+                href: "/courses",
                 icon: Brain,
             },
         ],
     },
     {
-        id: 'career',
-        label: 'Career Programs',
-        subtitle: 'Our Flagship, Placement-Backed Tracks',
+        id: "career",
+        label: "Career Programs",
+        subtitle: "Our Flagship, Placement-Backed Tracks",
         icon: Rocket,
         courses: [
             {
-                name: 'Advanced Diploma in AI & Machine Learning',
-                tagline: 'Placement-Backed',
-                href: '/courses',
+                name: "Advanced Diploma in AI & Machine Learning",
+                tagline: "Placement-Backed",
+                href: "/courses",
                 icon: GraduationCap,
             },
             {
-                name: 'AI-Powered Digital Marketing Specialist',
-                tagline: 'Industry-Ready Program',
-                href: '/courses',
+                name: "AI-Powered Digital Marketing Specialist",
+                tagline: "Industry-Ready Program",
+                href: "/courses",
                 icon: Megaphone,
             },
             {
-                name: 'Data Science & AI Career Track',
-                tagline: 'With Internship',
-                href: '/courses',
+                name: "Data Science & AI Career Track",
+                tagline: "With Internship",
+                href: "/courses",
                 icon: LineChart,
             },
         ],
@@ -97,7 +105,18 @@ const tabs = [
 
 function Code(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <polyline points="16 18 22 12 16 6" />
             <polyline points="8 6 2 12 8 18" />
         </svg>
@@ -106,7 +125,18 @@ function Code(props) {
 
 function Sparkles(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
             <path d="M5 3v4" />
             <path d="M19 17v4" />
@@ -118,7 +148,18 @@ function Sparkles(props) {
 
 function TrendingUp(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
             <polyline points="16 7 22 7 22 13" />
         </svg>
@@ -127,7 +168,18 @@ function TrendingUp(props) {
 
 function BarChart3(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="M3 3v18h18" />
             <path d="M18 17V9" />
             <path d="M13 17V5" />
@@ -138,7 +190,18 @@ function BarChart3(props) {
 
 function Brain(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
             <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
             <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
@@ -154,7 +217,18 @@ function Brain(props) {
 
 function GraduationCap(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
             <path d="M22 10v6" />
             <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
@@ -164,7 +238,18 @@ function GraduationCap(props) {
 
 function Megaphone(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="m3 11 18-5v12L3 13v-2z" />
             <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
         </svg>
@@ -173,7 +258,18 @@ function Megaphone(props) {
 
 function LineChart(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            {...props}
+        >
             <path d="M3 3v18h18" />
             <path d="m19 9-5 5-4-4-3 3" />
         </svg>
@@ -198,21 +294,29 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
             {/* Desktop Mega Menu */}
             <div
                 className="relative hidden md:block"
-                onMouseEnter={() => { setIsHovered(true); setMobileOpen(false); }}
+                onMouseEnter={() => {
+                    setIsHovered(true);
+                    setMobileOpen(false);
+                }}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <button
+                <Link
+                    href="/courses"
                     className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
-                        isHovered ? 'text-black' : 'text-black/55 hover:text-black'
+                        isHovered
+                            ? "text-black"
+                            : "text-black/55 hover:text-black"
                     }`}
                 >
                     Courses
                     <span
                         className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
-                            isHovered ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+                            isHovered
+                                ? "scale-x-100 opacity-100"
+                                : "scale-x-0 opacity-0"
                         }`}
                     />
-                </button>
+                </Link>
 
                 {isHovered && (
                     <div className="absolute left-1/2 top-full z-50 mt-0 w-[680px] -translate-x-1/2 animate-menu-pop overflow-hidden rounded-2xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)]">
@@ -225,19 +329,21 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                     return (
                                         <button
                                             key={tab.id}
-                                            onMouseEnter={() => setActiveTab(tab.id)}
+                                            onMouseEnter={() =>
+                                                setActiveTab(tab.id)
+                                            }
                                             onClick={() => setActiveTab(tab.id)}
                                             className={`group flex w-full items-start gap-3 rounded-xl px-3 py-3 text-left transition-all duration-200 ${
                                                 isActive
-                                                    ? 'bg-white shadow-[0_2px_12px_-4px_rgba(152,44,220,0.15)]'
-                                                    : 'hover:bg-white/60'
+                                                    ? "bg-white shadow-[0_2px_12px_-4px_rgba(152,44,220,0.15)]"
+                                                    : "hover:bg-white/60"
                                             }`}
                                         >
                                             <span
                                                 className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors duration-200 ${
                                                     isActive
-                                                        ? 'bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white'
-                                                        : 'bg-black/[0.06] text-black/40 group-hover:bg-black/[0.1] group-hover:text-black/60'
+                                                        ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white"
+                                                        : "bg-black/[0.06] text-black/40 group-hover:bg-black/[0.1] group-hover:text-black/60"
                                                 }`}
                                             >
                                                 <Icon className="h-4 w-4" />
@@ -245,7 +351,9 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                             <div className="min-w-0 pt-0.5">
                                                 <p
                                                     className={`text-[13.5px] font-semibold leading-tight transition-colors ${
-                                                        isActive ? 'text-black' : 'text-black/70'
+                                                        isActive
+                                                            ? "text-black"
+                                                            : "text-black/70"
                                                     }`}
                                                 >
                                                     {tab.label}
@@ -257,8 +365,8 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                             <ChevronRight
                                                 className={`ml-auto mt-1 h-3.5 w-3.5 shrink-0 transition-all duration-200 ${
                                                     isActive
-                                                        ? 'translate-x-0 opacity-100 text-[#982cdc]'
-                                                        : '-translate-x-1 opacity-0'
+                                                        ? "translate-x-0 opacity-100 text-[#982cdc]"
+                                                        : "-translate-x-1 opacity-0"
                                                 }`}
                                             />
                                         </button>
@@ -291,7 +399,9 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                                 key={course.name}
                                                 href={course.href}
                                                 className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-[linear-gradient(60deg,#982cdc,#eec369)]/5"
-                                                onClick={() => setIsHovered(false)}
+                                                onClick={() =>
+                                                    setIsHovered(false)
+                                                }
                                             >
                                                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-black/[0.04] text-black/35 transition-all duration-200 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:text-white">
                                                     <CourseIcon className="h-4 w-4" />
@@ -321,19 +431,23 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                     onClick={() => setMobileOpen(!mobileOpen)}
                     className={`group flex w-full items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium transition-colors ${
                         mobileOpen
-                            ? 'bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent'
-                            : 'text-black/65 hover:bg-black/[0.04] hover:text-black'
+                            ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent"
+                            : "text-black/65 hover:bg-black/[0.04] hover:text-black"
                     }`}
                 >
                     <span>Courses</span>
                     <svg
-                        className={`h-4 w-4 transition-transform duration-200 ${mobileOpen ? 'rotate-180 text-[#982cdc]' : 'text-black/25'}`}
+                        className={`h-4 w-4 transition-transform duration-200 ${mobileOpen ? "rotate-180 text-[#982cdc]" : "text-black/25"}`}
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={2}
                         stroke="currentColor"
                     >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                        />
                     </svg>
                 </button>
 
@@ -345,23 +459,33 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                             return (
                                 <div key={tab.id}>
                                     <button
-                                        onClick={() => setMobileAccordionTab(isOpen ? null : tab.id)}
+                                        onClick={() =>
+                                            setMobileAccordionTab(
+                                                isOpen ? null : tab.id,
+                                            )
+                                        }
                                         className={`flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-[14px] font-medium transition-colors ${
                                             isOpen
-                                                ? 'bg-[linear-gradient(60deg,#982cdc10,#eec36910)] text-black'
-                                                : 'text-black/55 hover:bg-black/[0.04] hover:text-black/75'
+                                                ? "bg-[linear-gradient(60deg,#982cdc10,#eec36910)] text-black"
+                                                : "text-black/55 hover:bg-black/[0.04] hover:text-black/75"
                                         }`}
                                     >
                                         <Icon className="h-4 w-4 shrink-0 text-[#982cdc]/60" />
-                                        <span className="flex-1">{tab.label}</span>
+                                        <span className="flex-1">
+                                            {tab.label}
+                                        </span>
                                         <svg
-                                            className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                                            className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={2}
                                             stroke="currentColor"
                                         >
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                            />
                                         </svg>
                                     </button>
 
@@ -372,10 +496,16 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                                     key={course.name}
                                                     href={course.href}
                                                     className="flex flex-col rounded-xl px-3 py-2.5 text-black/55 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                                    onClick={handleMobileNavigate}
+                                                    onClick={
+                                                        handleMobileNavigate
+                                                    }
                                                 >
-                                                    <span className="text-[13.5px] font-medium">{course.name}</span>
-                                                    <span className="text-[11.5px] text-black/35">{course.tagline}</span>
+                                                    <span className="text-[13.5px] font-medium">
+                                                        {course.name}
+                                                    </span>
+                                                    <span className="text-[11.5px] text-black/35">
+                                                        {course.tagline}
+                                                    </span>
                                                 </Link>
                                             ))}
                                         </div>

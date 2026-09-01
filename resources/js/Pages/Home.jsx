@@ -244,6 +244,18 @@ const placements = [
             "Work on practical AI projects that demonstrate your ability to solve real problems.",
         image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
     },
+    {
+        title: "Placement 3",
+        description:
+            "Ship production-ready ML pipelines and gain the confidence to lead technical teams.",
+        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85",
+    },
+    {
+        title: "Placement 4",
+        description:
+            "Translate AI research into business impact with roles across product and strategy.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85",
+    },
 ];
 
 function SectionLabel({ children, light = false }) {
@@ -662,6 +674,9 @@ export default function Home() {
     const visiblePrograms = programs.filter((p) => p.tab === activeTab);
     const [whyRef, whyInView] = useInView(0.15);
     const stackRef = useRef(null);
+    
+    const placementScrollRef = useRef(null);
+    const placementTrackRef = useRef(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -682,9 +697,8 @@ export default function Home() {
                 defaults: { ease: "none" },
                 scrollTrigger: {
                     trigger: el,
-                    start: "top top",
-                    end: () =>
-                        "+=" + window.innerHeight * (cards.length - 1) * 0.9,
+                    start: "top top+=50",
+                    end: "+=2226",
                     pin: true,
                     scrub: 1,
                     anticipatePin: 1,
@@ -700,6 +714,43 @@ export default function Home() {
 
         return () => ctx.revert();
     }, []);
+    
+     useEffect(() => {
+        const viewport = placementScrollRef.current;
+        const track = placementTrackRef.current;
+        if (!viewport || !track) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+            return;
+
+        let raf = 0;
+        const update = () => {
+            raf = 0;
+            const maxScroll = track.scrollWidth - viewport.clientWidth;
+            const rect = viewport.getBoundingClientRect();
+            const vh = window.innerHeight;
+            const sectionCenter = rect.top + rect.height / 2;
+            const viewportCenter = vh / 2;
+            const halfBand = Math.max(rect.height, 1);
+            let progress =
+                0.5 -
+                (sectionCenter - viewportCenter) / (2 * halfBand);
+            progress = Math.min(Math.max(progress, 0), 1);
+            track.style.transform = `translate3d(${-progress * maxScroll}px, 0, 0)`;
+        };
+        const onScroll = () => {
+            if (!raf) raf = requestAnimationFrame(update);
+        };
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+            if (raf) cancelAnimationFrame(raf);
+        };
+    }, []);
+
+    
     const [offerTab, setOfferTab] = useState(courseTabs[0].id);
     const [slideIndex, setSlideIndex] = useState(0);
     const [perView, setPerView] = useState(3);
@@ -1286,7 +1337,7 @@ export default function Home() {
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-[16px] leading-[1.6] text-black sm:text-[16px]">
+                                    <p className="text-[14px] leading-[1.6] text-black sm:text-[14px]">
                                         {item.description}
                                     </p>
 
@@ -1521,8 +1572,8 @@ export default function Home() {
                 </section>
 
                 {/* PLACEMENT */}
-                <section className="border-t border-black/5 px-5 py-20 bg-[#f5f5f2]">
-                    <div className="mx-auto max-w-[1050px]">
+                <section className="border-t border-black/5 bg-[#f5f5f2]">
+                    <div className="mx-auto max-w-[1050px] px-5 pt-20">
                         <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc] mb-3">
                             YOUR NEXT STEP
                         </p>
@@ -1535,46 +1586,58 @@ export default function Home() {
                             See where our graduates are making an impact in the
                             AI industry
                         </p>
-
-                        <div className="mt-10 grid gap-6 md:grid-cols-2">
-                            {placements.map((placement) => (
-                                <div key={placement.image} className="group">
-                                    <div className="relative h-[260px] overflow-hidden rounded-xl">
-                                        <img
-                                            src={placement.image}
-                                            alt={placement.title}
-                                            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                                        <div className="absolute bottom-4 left-4">
-                                            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                                                Placed
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="mt-4 flex items-start justify-between gap-4">
-                                        <div>
-                                            <h3 className="text-[clamp(18px,1.4vw,22px)] font-bold text-black">
-                                                {placement.title}
-                                            </h3>
-                                            <p className="mt-2 max-w-[380px] text-[clamp(14px,1vw,16px)] leading-[1.6] text-black/50">
-                                                {placement.description}
-                                            </p>
-                                        </div>
-
-                                        <Link
-                                            href="/placements"
-                                            className="mt-1 shrink-0 rounded-full bg-black px-6 py-2.5 text-[clamp(13px,1vw,15px)] font-semibold text-white transition hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] hover:shadow-[0_8px_25px_rgba(152,44,220,.25)]"
-                                        >
-                                            Explore →
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
                     </div>
+
+                    {/* Vertical-scroll-driven horizontal carousel (full width) */}
+                    <div
+                        className="placement-viewport"
+                        ref={placementScrollRef}
+                    >
+                            <div
+                                className="placement-track"
+                                ref={placementTrackRef}
+                            >
+                                {placements.map((placement) => (
+                                    <div
+                                        key={placement.image}
+                                        className="group placement-card"
+                                    >
+                                        <div className="relative h-[300px] overflow-hidden rounded-xl">
+                                            <img
+                                                src={placement.image}
+                                                alt={placement.title}
+                                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                                            <div className="absolute bottom-4 left-4">
+                                                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                                                    Placed
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-4 flex items-start justify-between gap-4">
+                                            <div>
+                                                <h3 className="text-[clamp(18px,1.4vw,22px)] font-bold text-black">
+                                                    {placement.title}
+                                                </h3>
+                                                <p className="mt-2 max-w-[460px] text-[clamp(14px,1vw,16px)] leading-[1.6] text-black/50">
+                                                    {placement.description}
+                                                </p>
+                                            </div>
+
+                                            <Link
+                                                href="/placements"
+                                                className="mt-1 shrink-0 rounded-full bg-black px-6 py-2.5 text-[clamp(13px,1vw,15px)] font-semibold text-white transition hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] hover:shadow-[0_8px_25px_rgba(152,44,220,.25)]"
+                                            >
+                                                Explore →
+                                            </Link>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            </div>
                 </section>
 
                 {/* FINAL CTA */}

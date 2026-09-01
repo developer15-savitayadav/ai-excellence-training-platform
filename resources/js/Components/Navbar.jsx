@@ -8,7 +8,7 @@ const navLinks = [
     {name:'About',href: '/about' },
     { name: 'Fee', href: '/fee' },
     { name: 'Programmes', href: '/programmes' },
-    { name: 'Career/Placement', href: '/career' },
+    { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
 
 ];
@@ -24,7 +24,7 @@ function Logo() {
             <img
                 src="/assets/images/Logo1.png"
                 alt="AI Excellence Academy"
-                className="h-30 w-30 object-contain"
+                className="h-20 w-40 object-contain"
             />
         </Link>
     );
@@ -93,10 +93,10 @@ export default function Navbar() {
         <>
             <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-5">
                 <nav
-                    className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-3 rounded-2xl border pl-6 pr-6 transition-all duration-300 ${
+                    className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-1 rounded-2xl border pl-6 pr-6 transition-all duration-300 ${
                         scrolled
-                            ? 'border-black/[0.08] bg-white/85 shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl'
-                            : 'border-black/[0.05] bg-white/60 shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg'
+                            ? 'border-black/[0.08] bg-white shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl'
+                            : 'border-black/[0.05] bg-white shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg'
                     }`}
                 >
                     <Logo />

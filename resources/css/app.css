@@ -527,16 +527,7 @@ body {
     color: rgba(255, 255, 255, 0.78);
 } */
 
-.tstack {
-    --_gap---gap-xl: clamp(24px, 4vw, 52px);
-    --_border-radius---border-radius-xl: clamp(18px, 3vw, 30px);
-    --dark-color: #0f1616;
-    --white: #ffffff;
-    --blue-color: #2563eb;
-    --primary-color: #982cdc;
-    --dark-field: #ffffff;
-    --yellow-color: #eec369;
-}
+
 
 .is-light {
     background-color: var(--white);
@@ -561,10 +552,9 @@ body {
     color: var(--dark-field);
 }
 
+/* ---- Testimonial sticky card stack ---- */
 .tstack {
-    position: relative;
-    height: min(560px, 68vh);
-    height: min(560px, 68svh);
+    /* Kept for backwards compatibility / any legacy usage of the CSS vars */
     --_gap---gap-xl: clamp(14px, 2.2vw, 28px);
     --_border-radius---border-radius-xl: clamp(18px, 3vw, 30px);
     --dark-color: #0f1616;
@@ -572,6 +562,30 @@ body {
     --blue-color: #2563eb;
     --primary-color: #982cdc;
     --dark-field: #ffffff;
+    --yellow-color: #eec369;
+    height: 480px;
+}
+
+/* Native sticky scroll wrapper: 500vh gives 4 viewport-heights of travel
+   so all 5 cards can finish stacking before release. */
+.tstack-scroll {
+    position: relative;
+    min-height: 500vh;
+    --_gap---gap-xl: clamp(14px, 2.2vw, 28px);
+    --_border-radius---border-radius-xl: clamp(18px, 3vw, 30px);
+    --dark-color: #0f1616;
+    --white: #ffffff;
+    --blue-color: #2563eb;
+    --primary-color: #982cdc;
+    --dark-field: #ffffff;
+    --yellow-color: #eec369;
+}
+
+.tstack-viewport {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 20px);
+    overflow: hidden;
 }
 
 .is-light {
@@ -606,6 +620,17 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .tstack-scroll {
+        min-height: 0;
+    }
+
+    .tstack-viewport {
+        position: relative;
+        top: auto;
+        height: auto;
+        overflow: visible;
+    }
+
     .tstack-card {
         position: relative;
         width: 100%;
@@ -614,39 +639,38 @@ body {
 
     .tstack-card:nth-child(n) {
         top: auto;
+        transform: none;
     }
 }
 
 .tstack-card:nth-child(1) {
     z-index: 1;
     top: min(60px, 8vh);
+    transform: rotate(0deg);
 }
 .tstack-card:nth-child(2) {
     z-index: 2;
-    top: min(72px, 9.5vh);
-    transform: rotate(-2deg);
+    top: 70px;
+    transform: rotate(4deg);
     box-shadow: 0 22px 50px #0000000a;
 }
 .tstack-card:nth-child(3) {
     z-index: 3;
-    top: min(84px, 11vh);
-    transform: rotate(-4deg);
-}
-.tstack-card:nth-child(4) {
-    z-index: 4;
-    top: min(96px, 12.5vh);
-    transform: rotate(4deg);
-}
-.tstack-card:nth-child(5) {
-    z-index: 5;
-    top: min(108px, 14vh);
+    top: 70px;
     transform: rotate(-3deg);
     box-shadow: 0 22px 50px #0000000a;
 }
-.tstack-card:nth-child(6) {
-    z-index: 6;
-    top: min(120px, 15.5vh);
-    transform: rotate(3deg);
+.tstack-card:nth-child(4) {
+    z-index: 4;
+    top: 70px;
+    transform: rotate(6deg);
+    box-shadow: 0 26px 56px #0000000a;
+}
+.tstack-card:nth-child(5) {
+    z-index: 5;
+    top: 70px;
+    transform: rotate(-2deg);
+    box-shadow: 0 30px 60px #0000000d;
 }
 
 .tstack-mark {
@@ -730,27 +754,82 @@ body {
     }
 
     .tstack-card:nth-child(1) {
-        top: min(120px, 16vh);
+        top: min(80px, 12vh);
     }
     .tstack-card:nth-child(2) {
-        top: min(132px, 17.5vh);
+        top: min(92px, 13.5vh);
     }
     .tstack-card:nth-child(3) {
-        top: min(144px, 19vh);
+        top: min(104px, 15vh);
     }
     .tstack-card:nth-child(4) {
-        top: min(156px, 20.5vh);
+        top: min(116px, 16.5vh);
     }
     .tstack-card:nth-child(5) {
-        top: min(168px, 22vh);
-    }
-    .tstack-card:nth-child(6) {
-        top: min(180px, 23.5vh);
+        top: min(128px, 18vh);
     }
 
     .tstack-avatar {
         width: 42px;
         height: 42px;
+    }
+}
+
+/* PLACEMENT vertical-scroll-driven horizontal carousel */
+.placement-scroll {
+    position: relative;
+ }
+
+.placement-viewport {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    padding: 0 0 20px;
+    padding-left: max(5vw, 20px);
+}
+
+.placement-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: clamp(16px, 2.5vw, 32px);
+    will-change: transform;
+}
+
+.placement-card {
+    flex-shrink: 0;
+    width: 45vw;
+    max-width: 560px;
+    min-width: 340px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .placement-scroll {
+        min-height: 0;
+    }
+
+    .placement-viewport {
+        position: relative;
+        top: auto;
+        padding-left: 0;
+    }
+
+    .placement-track {
+        flex-wrap: wrap;
+        transform: none !important;
+    }
+
+    .placement-card {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .placement-card {
+        width: 85vw;
+        min-width: 0;
     }
 }
 .growth-pill {

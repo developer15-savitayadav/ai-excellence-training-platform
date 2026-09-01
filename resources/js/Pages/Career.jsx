@@ -283,7 +283,7 @@ export default function Career() {
                         {/* Right: visual */}
                         <div className="relative flex justify-center lg:justify-end">
                             <img
-                                src="/assets/images/ai-hero-robot.png"
+                                src="/assets/images/careerBanner.png"
                                 alt="AI-powered career guidance"
                                 className="w-full max-w-[420px] h-auto object-contain"
                             />
