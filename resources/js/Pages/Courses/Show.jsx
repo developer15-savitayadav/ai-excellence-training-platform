@@ -470,13 +470,320 @@ function PlayIcon() {
 
 const ALL_COURSES = [...SHORT_TERM, ...PROFESSIONAL, ...CAREER];
 
+const DEFAULT_INSTRUCTOR = {
+    name: "Your Lead Instructor",
+    tagline: "AI Practitioner & Trainer",
+    bio: "Live, in-person, taught by practitioners who actually ship AI projects — not by someone who just reads about them.",
+    points: [
+        "Every live session ends with you using what you learned, not just watching it",
+        "Answers are grounded in your own work — bring your real tasks and questions",
+        "You get personalised feedback on your final project",
+    ],
+};
+
+const DEFAULT_PRICING_INCLUDES = [
+    "All live, instructor-led sessions",
+    "Lifetime access to all session recordings",
+    "The complete curriculum workbook (PDF)",
+    "Weekly practice exercises with feedback",
+    "Final project feedback",
+    "Certificate of completion",
+];
+
+const COURSE_DETAILS = {
+    "ai-tools-mastery": {
+        eyebrow: "4-Week Live Cohort · Hands-On · No Coding Required",
+        trustLine: "25 seats per cohort · Certificate of completion included",
+        whoItsForHeadline: "Built for people who need results, not theory",
+        whoItsForBullets: [
+            "Working professionals drowning in manual tasks — research, drafting, email, reporting",
+            "Marketers, content creators and freelancers who want AI leverage — without becoming prompt engineers",
+            "Managers and founders who need to make data-informed decisions faster",
+            "Students and career switchers who want AI skills they can use in week one",
+        ],
+        readinessNote:
+            "You don't need to code. You don't need to be \u201ctechnical\u201d. If you have ever used WhatsApp, you have all the prerequisites you need.",
+        problemTitle: "Everyone has AI. Almost nobody uses it well.",
+        problemBody: [
+            "ChatGPT has taken over the world. But open the average person's chat history and there it is — 3 prompts, 1.5 sentences, and a \u201cthat's not what I meant\u201d loop.",
+            "The single most powerful tool of this generation is being used at 5% of its capability. Generic prompt → generic answer → give up. This course fixes exactly that.",
+        ],
+        outcomes: [
+            "Use ChatGPT, Claude and Gemini to save hours every day",
+            "Write prompts that produce the output you want — first try",
+            "Build a personal AI workflow for your role, subject or business",
+            "Create images, decks, documents and social content in minutes",
+            "Feed AI your own knowledge (drag-and-drop) for memory and grounded answers",
+            "Verify AI output, spot hallucinations and stay safe",
+            "Avoid the mistakes 9 out of 10 users make — and use AI as a partner",
+        ],
+        howItWorks: [
+            { label: "Length", value: "4 weeks" },
+            { label: "Schedule", value: "2 sessions per week · evenings" },
+            { label: "Session format", value: "Live, instructor-led, hands-on — 60% practice, 40% discussion" },
+            { label: "Outside class", value: "Weekly guided practice exercises (\u201cBrush-Ups\u201d) using free tools" },
+            { label: "Class size", value: "Small — capped at 25 per cohort" },
+            { label: "Recordings", value: "Every session recorded and available for the cohort" },
+            { label: "Support", value: "Yes — we answer AI questions between sessions" },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Foundations & Prompt Engineering",
+                build: "Your Prompt Toolkit — a reusable prompt system for your daily tasks",
+                topics: [
+                    "The AI fluency loop: 5% → 50% → 90%",
+                    "Inside an LLM — what it can and cannot do",
+                    "The 6-level task model",
+                    "The R.O.L.E. prompt framework",
+                    "The \u201cFeed Forward\u201d technique",
+                    "Your 12 weekly prompts",
+                ],
+            },
+            {
+                week: 2,
+                title: "AI for Documents, Thinking & Ideas",
+                build: "The 10x Your Draft workflow",
+                topics: [
+                    "Write, edit and re-research drafts",
+                    "Summarise long reports and extract data",
+                    "Study heavy documents with NotebookLM",
+                    "Plan your week and brainstorm ideas",
+                    "AI vision — let it \u201csee\u201d your pictures and documents",
+                ],
+            },
+            {
+                week: 3,
+                title: "AI for Images, Presentations & Content",
+                build: "A complete branded content pack — logo, palette, 3 images, a 10-slide deck",
+                topics: [
+                    "Images for anything — Canva AI, Midjourney",
+                    "A logo and brand palette",
+                    "A pitch deck in under 30 minutes",
+                    "A month of social content",
+                    "Short video with AI narration",
+                ],
+            },
+            {
+                week: 4,
+                title: "Personal AI, Business Ops & Future-Proofing",
+                build: "Your Personal AI Toolkit and a working FAQ bot",
+                topics: [
+                    "Build your own AI assistant (custom GPT)",
+                    "Drag-and-drop your knowledge into AI",
+                    "Your FAQ bot",
+                    "Business ops — invoices, spreadsheets, WhatsApp",
+                    "Beyond ChatGPT — agentic AI, voice, ambient AI",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "You leave with more than notes — you leave with a working system.",
+            tracks: [
+                { title: "Professional", desc: "Design an AI workflow for one core task in your job" },
+                { title: "Marketing / Creative", desc: "A complete AI-made marketing pack" },
+                { title: "Student", desc: "Build an AI study system — notes, flashcards, mock exams" },
+                { title: "Small Business", desc: "An AI operations kit — catalogue, invoices, WhatsApp replies" },
+                { title: "Curated Projects", desc: "Pick one from our project briefs" },
+            ],
+            grading: "Graded pass/fail on completion. Every completed project earns the certificate.",
+            leave: "Your Personal AI Toolkit — a working document that captures your prompts, workflows and favourite tools (template included).",
+            cta: "Reserve Your Seat",
+        },
+        tools: [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "Perplexity",
+            "NotebookLM",
+            "Canva AI",
+            "Midjourney",
+            "Microsoft Copilot",
+            "Google Vids",
+            "ChatGPT Canvas",
+            "Claude Artifacts",
+            "ElevenLabs",
+            "Descript",
+            "+ 12 more unlocked during the course",
+        ],
+        toolsNote: "23 tools in total — most available on a free tier. A budget note caps your real spend.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "AI Practitioner & Trainer · Lucknow",
+            bio: "Live, in-person, taught by practitioners who actually ship AI projects — not by someone who just reads about them.",
+            points: [
+                "I have 4+ years of hands-on experience with AI tools in real work",
+                "I have trained 25+ professionals and students in person at the academy",
+                "You can ask me anything — and I will actually answer",
+                "Every technique is tested on real work before it reaches the classroom",
+            ],
+        },
+        pricingIncludes: [
+            "All 8 live, instructor-led sessions",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Weekly Brush-Ups with instructor feedback",
+            "Final project feedback",
+            "Certificate of completion",
+            "AI Tool Budget Note — everything you need has a free tier (cap ₹500/month)",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel more confident with AI, we'll make it right.",
+        faqs: [
+            { question: "I'm a complete beginner with AI. Will I cope on this course?", answer: "Yes — this course was built specifically for people without a technical background. The whole curriculum runs on tools you already use: a browser, WhatsApp, and plain English." },
+            { question: "I already use ChatGPT. Will I still learn something?", answer: "Yes. Most people use one tool, a few prompts and generic answers. We go far deeper — prompt frameworks, custom assistants, knowledge you can drag-and-drop, and a final project you actually use." },
+            { question: "What's the time commitment?", answer: "Four weeks, two live sessions per week, plus a weekly guided practice exercise. Realistically 3–4 hours per week outside class." },
+            { question: "Do I need to buy any software or subscriptions?", answer: "No. Almost everything runs on free tiers. The course includes an AI Tool Budget Note that caps your real spend at around ₹500/month if you want to." },
+            { question: "Will I get a certificate?", answer: "Yes — you earn a certificate of completion by finishing the final project, which is graded pass/fail on completion." },
+            { question: "Do I need a laptop?", answer: "Yes, any modern laptop with a browser works. Most exercises also work from your phone." },
+            { question: "What happens if I miss a session?", answer: "Every session is recorded and made available to the cohort, so you can catch up. You can also attend a makeup session in the next cycle." },
+            { question: "Is the course live?", answer: "Yes — it is live and instructor-led, not a pre-recorded video course. You practise during the session and get immediate feedback." },
+            { question: "Will I work on real projects?", answer: "Yes. Every week ends with a build, and the course finishes with a final project you choose from five tracks." },
+            { question: "How is this different from a free YouTube playlist?", answer: "A playlist won't correct your prompts, answer your questions, hold you accountable, or give feedback on your project. That feedback loop is the whole point." },
+            { question: "Can my team or group enrol together?", answer: "Yes — teams of 2+ get 10% off and teams of 5+ get 15% off. We also run private cohorts for companies and colleges." },
+            { question: "Where and when does the course run?", answer: "The course runs as a live cohort at our Lucknow academy and online. Contact us for the schedule of the next batch." },
+        ],
+    },
+};
+
+function buildDetail(course) {
+    const override = COURSE_DETAILS[course.slug] || {};
+    const whoItsForBullets =
+        override.whoItsForBullets ||
+        (course.whoItsFor
+            ? course.whoItsFor
+                  .split(/(?<=[.;])\s+/)
+                  .filter(Boolean)
+                  .map((s) => s.trim())
+            : [course.title + " — designed to be practical and career-focussed."]);
+
+    const weeks = override.weeks;
+    const months = course.monthlyJourney || [];
+    const fallbackOutcomes = months.length
+        ? months.map((m) => m.title)
+        : typeof course.whatYouLearn === "string"
+          ? course.whatYouLearn.split(/(?<=[;,.])\s+/).filter(Boolean).map((s) => s.trim())
+          : [course.tagline];
+    const outcomes =
+        override.outcomes ||
+        (Array.isArray(course.whatYouLearn) ? course.whatYouLearn : null) ||
+        fallbackOutcomes;
+
+    const howItWorks =
+        override.howItWorks ||
+        [
+            { label: "Length", value: course.duration || "—" },
+            { label: "Total hours", value: course.hours || "—" },
+            {
+                label: "Schedule",
+                value:
+                    typeof course.classesPerWeek === "number"
+                        ? course.classesPerWeek + " classes a week"
+                        : course.classesPerWeek || "Weekday / weekend batches",
+            },
+            { label: "Session format", value: "Live, instructor-led, hands-on" },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            { label: "Support", value: "Personal doubt-clearing during the course" },
+        ].filter((row) => row);
+
+    const finalProject = override.finalProject || {
+        intro: course.walkAwayWith
+            ? course.walkAwayWith
+            : "You leave with more than notes — you leave with something you can show.",
+        tracks: (Array.isArray(course.whatYouLearn) ? course.whatYouLearn : []).slice(0, 4).map((t) => ({
+            title: "Track",
+            desc: t,
+        })),
+        grading: "Graded on completion. Completed projects earn the certificate.",
+        leave: null,
+        cta: null,
+    };
+
+    const tools = override.tools || (course.tools ? course.tools : TOOLS);
+    const instructor = override.instructor || DEFAULT_INSTRUCTOR;
+
+    const pricingIncludes = override.pricingIncludes ||
+        (course.included && Array.isArray(course.included) ? course.included : DEFAULT_PRICING_INCLUDES);
+
+    return {
+        eyebrow: override.eyebrow || (course.badge ? `${course.badge} · Hands-On` : "Live · Hands-On · Career-Focussed"),
+        trustLine: override.trustLine || course.cta || "Certificate of completion included",
+        whoItsForHeadline: override.whoItsForHeadline || "Built for people who need results, not theory",
+        whoItsForBullets,
+        readinessNote:
+            override.readinessNote ||
+            "No prior experience required — the program is designed to take you from the basics to confident, practical use.",
+        problemTitle: override.problemTitle || `The truth about ${course.title.split(" — ")[0]}`,
+        problemBody: override.problemBody || [
+            `Most learners stop at the surface: a few tools, a few prompts, generic answers.`,
+            `This program takes you from 5% to confident, practical use — real tasks, real projects, real outcomes.`,
+        ],
+        outcomes,
+        howItWorks,
+        modules: buildModules(course, weeks, months, outcomes),
+        finalProject,
+        tools,
+        toolsNote: override.toolsNote || "Everything you need is industry-standard — most tools have free tiers.",
+        instructor,
+        pricingIncludes,
+        teamPricing: override.teamPricing || "Group and institute discounts available",
+        guarantee:
+            override.guarantee ||
+            "If you complete the program in full and are not satisfied with the experience, we'll make it right.",
+        faqs: override.faqs || null,
+    };
+}
+
+function buildModules(course, weeks, months, outcomes) {
+    if (weeks && weeks.length) {
+        return weeks.map((w) => ({
+            id: w.week,
+            label: `Week-${w.week}`,
+            heading: w.title,
+            sub: `Week ${w.week}`,
+            lectures: [
+                ...(w.topics || []).map((t, i) => ({ num: i + 1, title: t })),
+                ...(w.build ? [{ num: (w.topics || []).length + 1, title: `Build — ${w.build}` }] : []),
+            ],
+        }));
+    }
+    if (months.length) {
+        return months.map((m) => ({
+            id: m.month,
+            label: `Month-${m.month}`,
+            heading: m.title,
+            sub: `Month ${m.month}`,
+            lectures: m.topics
+                ? m.topics.split(",").map((t, i) => ({ num: i + 1, title: t.trim() }))
+                : [],
+        }));
+    }
+    const items = Array.isArray(outcomes) ? outcomes : [];
+    const chunkSize = Math.max(1, Math.ceil(items.length / 4));
+    const chunks = [];
+    for (let i = 0; i < items.length; i += chunkSize) chunks.push(items.slice(i, i + chunkSize));
+    return chunks.map((chunk, i) => ({
+        id: i + 1,
+        label: `Module-${i + 1}`,
+        heading: `Understanding the Subject · Part ${i + 1}`,
+        sub: `Module ${i + 1}`,
+        lectures: chunk.map((t, j) => ({ num: j + 1, title: t })),
+    }));
+}
+
 const NAV_TABS = [
     { id: "eligibility", label: "Eligibility" },
     { id: "about-course", label: "About Course" },
     { id: "learning", label: "Learning" },
+    { id: "how-it-works", label: "How It Works" },
     { id: "tools", label: "Tools" },
     { id: "curriculum", label: "Curriculum" },
+    { id: "final-project", label: "Project" },
+    { id: "instructor", label: "Instructor" },
     { id: "alumni", label: "Alumni" },
+    { id: "pricing", label: "Pricing" },
     { id: "faq", label: "FAQ" },
 ];
 
@@ -527,7 +834,7 @@ function StickyNav() {
                         ? "translate-y-0 opacity-100"
                         : "translate-y-6 opacity-0 pointer-events-none"
                 }`}
-                style={{ width: "min(650px, calc(100% - 32px))" }}
+                style={{ width: "min(700px, calc(100% - 32px))" }}
             >
                 <div className="flex items-center gap-1 rounded-[20px] bg-white/92 backdrop-blur-xl border border-black/[0.07] shadow-[0_8px_32px_rgba(0,0,0,.12),0_2px_8px_rgba(0,0,0,.06)] px-2 py-1.5">
                     <div className="flex items-center gap-0.5 flex-1 overflow-x-auto no-scrollbar">
@@ -566,6 +873,7 @@ export default function CoursesShow({ slug }) {
     const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
     const course = ALL_COURSES.find((c) => c.slug === slug);
+    const detail = course ? buildDetail(course) : null;
     if (!course) {
         return (
             <PublicLayout>
@@ -611,7 +919,7 @@ export default function CoursesShow({ slug }) {
                                         <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
                                     </span>
                                     <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
-                                        Ai Excilence Academy
+                                        {detail.eyebrow}
                                     </span>
                                 </div>
                             </RevealDiv>
@@ -619,18 +927,23 @@ export default function CoursesShow({ slug }) {
                             <RevealDiv delay={80}>
                                 <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
                                     <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
-                                        AI Tools Mastery
+                                        {course.title.split(" — ")[0]}
                                     </span>
-                                    <br className="hidden sm:block" />
-                                    <span className="text-black">
-                                        {" "}— Work Smarter with AI
-                                    </span>
+                                    {course.title.includes(" — ") && (
+                                        <>
+                                            <br className="hidden sm:block" />
+                                            <span className="text-black">
+                                                {" "}—{" "}
+                                                {course.title.split(" — ").slice(1).join(" — ")}
+                                            </span>
+                                        </>
+                                    )}
                                 </h1>
                             </RevealDiv>
 
                             <RevealDiv delay={160}>
                                 <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
-                                    Use AI confidently in your work, studies and business — no coding required.
+                                    {course.tagline}
                                 </p>
                             </RevealDiv>
 
@@ -649,6 +962,22 @@ export default function CoursesShow({ slug }) {
                                         Download Curriculum
                                     </Link>
                                 </div>
+                                <p className="mt-5 inline-flex items-center gap-2 text-[13px] text-black/50">
+                                    <svg
+                                        className="w-4 h-4 text-lime/70"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5"
+                                            fill="none"
+                                            strokeWidth={2.5}
+                                        />
+                                    </svg>
+                                    {detail.trustLine}
+                                </p>
                             </RevealDiv>
                         </div>
 
@@ -677,7 +1006,9 @@ export default function CoursesShow({ slug }) {
                                     Classes per week
                                 </span>
                                 <span className="text-lg font-bold text-black">
-                                    3 classes a week
+                                    {typeof course.classesPerWeek === "number"
+                                        ? `${course.classesPerWeek} classes a week`
+                                        : course.classesPerWeek || "Weekday / weekend"}
                                 </span>
                             </div>
                             <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
@@ -685,7 +1016,7 @@ export default function CoursesShow({ slug }) {
                                     Duration
                                 </span>
                                 <span className="text-lg font-bold text-black">
-                                    4 Weeks (32 Hours)
+                                    {course.duration} {course.hours && `(${course.hours})`}
                                 </span>
                             </div>
                             <div className="flex flex-col items-center justify-center gap-1 py-5 px-4 text-center">
@@ -871,6 +1202,71 @@ export default function CoursesShow({ slug }) {
                 </div>
             </section>
 
+            {/* ═══════════════ WHO THIS IS FOR ═══════════════ */}
+            <section className="bg-ink py-20 sm:py-24">
+                <div className="mx-auto max-w-[1240px] px-6">
+                    <RevealDiv>
+                        <div className="max-w-[720px] mb-12">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                WHO THIS IS FOR_
+                            </p>
+                            <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
+                                {detail.whoItsForHeadline}
+                            </h2>
+                        </div>
+                    </RevealDiv>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {detail.whoItsForBullets.map((bullet, i) => (
+                            <RevealDiv key={i} delay={i * 60}>
+                                <div className="h-full min-h-[150px] rounded-[18px] border border-black/[0.06] bg-white/60 backdrop-blur-sm p-6 flex flex-col gap-4 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(152,44,220,0.08)] transition-all duration-300">
+                                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] font-mono text-[12px] font-bold text-white shadow-[0_4px_12px_rgba(152,44,220,.25)]">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <p className="text-[15px] leading-[1.45] text-black/70">
+                                        {bullet}
+                                    </p>
+                                </div>
+                            </RevealDiv>
+                        ))}
+                    </div>
+
+                    <RevealDiv delay={120}>
+                        <p className="mt-8 inline-flex items-start gap-3 rounded-[16px] bg-[#cdbdff]/30 border border-violet/15 px-6 py-4 text-[15px] leading-relaxed text-black/70">
+                            <svg className="mt-0.5 w-5 h-5 text-violet shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                            </svg>
+                            {detail.readinessNote}
+                        </p>
+                    </RevealDiv>
+                </div>
+            </section>
+
+            {/* ═══════════════ THE PROBLEM ═══════════════ */}
+            <section className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24">
+                <div className="mx-auto max-w-[1240px] px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+                        <RevealDiv>
+                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                THE PROBLEM_
+                            </p>
+                            <h2 className="font-display text-[clamp(2rem,4vw,2.9rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black">
+                                {detail.problemTitle}
+                            </h2>
+                        </RevealDiv>
+                        <RevealDiv delay={100}>
+                            <div className="space-y-5">
+                                {detail.problemBody.map((para, i) => (
+                                    <p key={i} className="text-[17px] leading-[1.5] text-black/60">
+                                        {para}
+                                    </p>
+                                ))}
+                            </div>
+                        </RevealDiv>
+                    </div>
+                </div>
+            </section>
+
             {/* ═══════════════ STACKED GROUP: About Course + Learning ═══════════════ */}
             <div className="relative z-[0] isolate">
                 {/* ═══════════════ ABOUT COURSE CARD ═══════════════ */}
@@ -971,9 +1367,9 @@ export default function CoursesShow({ slug }) {
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                    {LEARNING_CARDS.map((card, i) => (
+                                    {detail.outcomes.map((outcome, i) => (
                                         <RevealDiv
-                                            key={card.num}
+                                            key={i}
                                             delay={i * 50}
                                         >
                                             <div
@@ -984,16 +1380,13 @@ export default function CoursesShow({ slug }) {
                                                 }`}
                                             >
                                                 <span className="text-sm font-semibold text-black/30 mb-5">
-                                                    {card.num}
+                                                    {String(i + 1).padStart(2, "0")}
                                                 </span>
                                                 <h3
                                                     className={`text-[20px] font-bold leading-[1.1] ${i % 2 === 1 ? "text-black" : "text-[#765bc4]"}`}
                                                 >
-                                                    {card.title}
+                                                    {outcome}
                                                 </h3>
-                                                <p className="mt-4 text-[15px] leading-[1.2] text-black/55">
-                                                    {card.desc}
-                                                </p>
                                             </div>
                                         </RevealDiv>
                                     ))}
@@ -1003,6 +1396,37 @@ export default function CoursesShow({ slug }) {
                     </RevealDiv>
                 </div>
             </div>
+
+                {/* ═══════════════ HOW IT WORKS ═══════════════ */}
+                <section id="how-it-works" className="bg-ink py-20 sm:py-24">
+                    <div className="mx-auto max-w-[1240px] px-6">
+                        <RevealDiv>
+                            <div className="text-center mb-12">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                    HOW IT WORKS_
+                                </p>
+                                <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
+                                    How it works
+                                </h2>
+                            </div>
+                        </RevealDiv>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {detail.howItWorks.map((row, i) => (
+                                <RevealDiv key={i} delay={(i % 3) * 60}>
+                                    <div className="h-full rounded-[18px] border border-black/[0.06] bg-white/60 backdrop-blur-sm p-6 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(152,44,220,0.08)] transition-all duration-300">
+                                        <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-violet mb-3">
+                                            {row.label}
+                                        </p>
+                                        <p className="text-[15.5px] leading-[1.5] text-black/75">
+                                            {row.value}
+                                        </p>
+                                    </div>
+                                </RevealDiv>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
                 {/* ═══════════════ MASTER THESE TOOLS ═══════════════ */}
                 <section id="tools" className="bg-ink border-y border-black/[0.06] overflow-hidden">
@@ -1014,6 +1438,9 @@ export default function CoursesShow({ slug }) {
                             <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
                                 Master These Tools
                             </h2>
+                            <p className="mt-3 text-[15px] text-black/45 max-w-xl mx-auto">
+                                {detail.toolsNote}
+                            </p>
                         </div>
                     </RevealDiv>
 
@@ -1024,7 +1451,7 @@ export default function CoursesShow({ slug }) {
                                     key={set}
                                     className="flex items-center shrink-0"
                                 >
-                                    {TOOLS.map((tool, i) => (
+                                    {detail.tools.map((tool, i) => (
                                         <span
                                             key={`${set}-${tool}`}
                                             className="flex items-center"
@@ -1032,7 +1459,7 @@ export default function CoursesShow({ slug }) {
                                             <span className="text-[28px] sm:text-[40px] font-bold tracking-[-0.04em] text-black/20 hover:text-violet/40 transition-colors duration-300 cursor-default">
                                                 {tool}
                                             </span>
-                                            {i < TOOLS.length - 1 && (
+                                            {i < detail.tools.length - 1 && (
                                                 <span className="mx-8 text-xl text-lime/50">
                                                     ✦
                                                 </span>
@@ -1064,7 +1491,7 @@ export default function CoursesShow({ slug }) {
 
                         <RevealDiv delay={100}>
                             <div className="rounded-[20px] border border-black/[0.08] bg-white/60 backdrop-blur-sm overflow-hidden">
-                                {CURRICULUM_MODULES.map((mod, i) => {
+                                {detail.modules.map((mod, i) => {
                                     const isOpen = openModules.has(i);
                                     return (
                                         <div
@@ -1168,6 +1595,129 @@ export default function CoursesShow({ slug }) {
                     </div>
                 </section>
 
+                {/* ═══════════════ THE FINAL PROJECT ═══════════════ */}
+                <section id="final-project" className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24">
+                    <div className="mx-auto max-w-[1240px] px-6">
+                        <RevealDiv>
+                            <div className="max-w-[720px] mb-12">
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                    THE FINAL PROJECT_
+                                </p>
+                                <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
+                                    The Final Project
+                                </h2>
+                                <p className="mt-4 text-[17px] leading-[1.5] text-black/60">
+                                    {detail.finalProject.intro}
+                                </p>
+                            </div>
+                        </RevealDiv>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {detail.finalProject.tracks.map((track, i) => (
+                                <RevealDiv key={i} delay={(i % 3) * 60}>
+                                    <div className="h-full min-h-[150px] rounded-[18px] bg-white border border-black/[0.05] p-6 flex flex-col gap-4 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(152,44,220,0.08)] transition-all duration-300">
+                                        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-violet">
+                                            Track {String(i + 1).padStart(2, "0")}
+                                        </span>
+                                        <div>
+                                            <h3 className="text-[17px] font-bold text-black mb-1.5">
+                                                {track.title}
+                                            </h3>
+                                            <p className="text-[14.5px] leading-[1.45] text-black/55">
+                                                {track.desc}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </RevealDiv>
+                            ))}
+                        </div>
+
+                        <RevealDiv delay={120}>
+                            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 rounded-[18px] bg-white border border-black/[0.05] px-6 sm:px-8 py-6">
+                                <div className="flex-1">
+                                    <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-violet mb-1.5">
+                                        Grading & outcome
+                                    </p>
+                                    <p className="text-[15px] leading-[1.5] text-black/70">
+                                        {detail.finalProject.grading}
+                                    </p>
+                                    {detail.finalProject.leave && (
+                                        <p className="mt-2 text-[15px] leading-[1.5] text-black/70">
+                                            <span className="font-semibold text-black">You leave with:</span>{" "}
+                                            {detail.finalProject.leave}
+                                        </p>
+                                    )}
+                                </div>
+                                {detail.finalProject.cta && (
+                                    <Link
+                                        href="/contact"
+                                        className="shrink-0 inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                                    >
+                                        {detail.finalProject.cta}
+                                    </Link>
+                                )}
+                                {!detail.finalProject.cta && (
+                                    <Link
+                                        href="/contact"
+                                        className="shrink-0 inline-flex items-center justify-center rounded-full border border-violet/25 px-7 py-3.5 text-sm font-semibold text-violet hover:bg-violet/5 transition-all duration-300"
+                                    >
+                                        Enquire Now
+                                    </Link>
+                                )}
+                            </div>
+                        </RevealDiv>
+                    </div>
+                </section>
+
+                {/* ═══════════════ YOUR INSTRUCTOR ═══════════════ */}
+                <section id="instructor" className="bg-ink py-20 sm:py-24">
+                    <div className="mx-auto max-w-[1240px] px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-14 items-center">
+                            <RevealDiv>
+                                <div className="relative overflow-hidden rounded-[22px] border border-black/[0.04] shadow-[0_16px_48px_rgba(152,44,220,0.12)]">
+                                    <img
+                                        src="/assets/images/team-1.webp"
+                                        alt={detail.instructor.name}
+                                        className="w-full aspect-[4/5] object-cover"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 pt-16">
+                                        <h3 className="font-display text-[22px] font-bold text-white">
+                                            {detail.instructor.name}
+                                        </h3>
+                                        <p className="mt-1 text-sm text-white/70">
+                                            {detail.instructor.tagline}
+                                        </p>
+                                    </div>
+                                </div>
+                            </RevealDiv>
+
+                            <RevealDiv delay={100}>
+                                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                    YOUR INSTRUCTOR_
+                                </p>
+                                <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] leading-[1.08] text-black">
+                                    Learn directly from people who actually use these tools daily
+                                </h2>
+                                <p className="mt-5 text-[16.5px] leading-[1.6] text-black/60">
+                                    {detail.instructor.bio}
+                                </p>
+                                <ul className="mt-7 space-y-3.5">
+                                    {detail.instructor.points.map((point, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-[15px] leading-[1.5] text-black/75">
+                                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white shadow-[0_2px_8px_rgba(152,44,220,.25)]">
+                                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                                </svg>
+                                            </span>
+                                            {point}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </RevealDiv>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ═══════════════ CTA BANNER ═══════════════ */}
                 <div className="bg-surface relative overflow-hidden">
                     <div className="absolute inset-0 pointer-events-none">
@@ -1199,9 +1749,98 @@ export default function CoursesShow({ slug }) {
           
                 <TestimonialSlider />
           
+            {/* ═══════════════ PRICING ═══════════════ */}
+            <section id="pricing" className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24">
+                <div className="mx-auto max-w-[1240px] px-6">
+                    <RevealDiv>
+                        <div className="text-center mb-12">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
+                                PRICING_
+                            </p>
+                            <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
+                                Pricing
+                            </h2>
+                            <p className="mt-3 text-[15px] text-black/45 max-w-xl mx-auto">
+                                {typeof course.emi === "string"
+                                    ? course.emi
+                                    : course.emi
+                                      ? "No-cost EMI available — contact us for the payment plan."
+                                      : "Contact us for the current batch pricing and instalment options."}
+                            </p>
+                        </div>
+                    </RevealDiv>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-start max-w-[1000px] mx-auto">
+                        <RevealDiv>
+                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-8 sm:p-10">
+                                <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-violet mb-2">
+                                    Course fee
+                                </p>
+                                <div className="flex items-baseline gap-2">
+                                    <span className="font-display text-[38px] sm:text-[44px] font-bold tracking-[-0.03em] text-black">
+                                        {course.price}
+                                    </span>
+                                </div>
+                                <p className="mt-2 text-sm text-black/45">
+                                    {typeof course.classesPerWeek === "number"
+                                        ? `${course.classesPerWeek} classes a week · ${course.duration}`
+                                        : `${course.duration} · ${course.hours}`}
+                                </p>
+                                <div className="mt-8 flex flex-col gap-3">
+                                    <Link
+                                        href="/contact"
+                                        className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-4 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                                    >
+                                        Enquire & Reserve a Seat
+                                    </Link>
+                                    <Link
+                                        href="/contact"
+                                        className="inline-flex items-center justify-center rounded-full border border-black/[0.08] px-8 py-4 text-sm font-semibold text-black/70 hover:bg-black/[0.02] transition-all duration-300"
+                                    >
+                                        Get a Call Back
+                                    </Link>
+                                </div>
+                                <p className="mt-6 text-[13.5px] text-black/50">
+                                    {detail.teamPricing}
+                                </p>
+                            </div>
+                        </RevealDiv>
+
+                        <RevealDiv delay={100}>
+                            <div className="rounded-[22px] bg-white border border-black/[0.05] p-8 sm:p-10">
+                                <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-violet mb-5">
+                                    What is included
+                                </p>
+                                <ul className="space-y-3.5">
+                                    {detail.pricingIncludes.map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-[15px] leading-[1.5] text-black/70">
+                                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white shadow-[0_2px_8px_rgba(152,44,220,.25)]">
+                                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                                </svg>
+                                            </span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </RevealDiv>
+                    </div>
+
+                    <RevealDiv delay={120}>
+                        <p className="mt-8 max-w-[1000px] mx-auto flex items-start gap-3 rounded-[16px] border border-lime/30 bg-lime/[0.08] px-6 py-4 text-[14.5px] leading-relaxed text-black/70">
+                            <svg className="mt-0.5 w-5 h-5 shrink-0 text-[#765bc4]" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            {detail.guarantee}
+                        </p>
+                    </RevealDiv>
+                </div>
+            </section>
+
             {/* ═══════════════ FAQ ═══════════════ */}
          
-                  <FaqSection />
+                  <FaqSection faqs={detail.faqs} />
         
         </PublicLayout>
     );

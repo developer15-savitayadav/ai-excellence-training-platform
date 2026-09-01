@@ -28,9 +28,10 @@ const FAQS = [
     },
 ];
 
-export default function FaqSection() {
+export default function FaqSection({ faqs }) {
     const [openFaq, setOpenFaq] = useState(null);
     const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
+    const items = faqs && faqs.length ? faqs : FAQS;
 
     return (
         <section id="faq" className="bg-white py-20 sm:py-24">
@@ -50,7 +51,7 @@ export default function FaqSection() {
 
                 <RevealDiv delay={100}>
                     <div className="mx-auto max-w-[640px] space-y-3">
-                        {FAQS.map((faq, index) => {
+                        {items.map((faq, index) => {
                             const isOpen = openFaq === index;
                             return (
                                 <div
