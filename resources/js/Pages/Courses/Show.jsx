@@ -678,12 +678,12 @@ const COURSE_DETAILS = {
             "The single most powerful tool of this generation is being used at 5% of its capability. Generic prompt → generic answer → give up. This course fixes exactly that.",
         ],
         outcomes: [
-            "Use ChatGPT, Claude and Gemini to save hours every day",
-            "Write prompts that produce the output you want — first try",
-            "Build a personal AI workflow for your role, subject or business",
-            "Create images, decks, documents and social content in minutes",
-            "Feed AI your own knowledge (drag-and-drop) for memory and grounded answers",
-            "Verify AI output, spot hallucinations and stay safe",
+            { title: "AI Fluency", desc: "Use ChatGPT, Claude and Gemini to save hours every day" },
+            { title: "Prompt Mastery", desc: "Write prompts that produce the output you want — first try" },
+            { title: "Personal Workflow", desc: "Build a personal AI workflow for your role, subject or business" },
+            { title: "Content Creation", desc: "Create images, decks, documents and social content in minutes" },
+            { title: "Memory & Grounding", desc: "Feed AI your own knowledge (drag-and-drop) for memory and grounded answers" },
+            { title: "Safety & Verification", desc: "Verify AI output, spot hallucinations and stay safe" },
         ],
         howItWorks: [
             { label: "Length", value: "4 weeks" },
@@ -924,12 +924,12 @@ const COURSE_DETAILS = {
             "Python is the world's most in-demand beginner language — the gateway to software development, data science, AI, automation, and testing. One language, a hundred career paths. This course makes sure you learn it properly: by writing code every single day, not by watching videos.",
         ],
         outcomes: [
-            "Installation, IDEs, variables, data types, input/output, operators",
-            "Conditions, loops, patterns, problem-solving drills",
-            "Strings, lists, tuples, sets, dictionaries — and when to use each",
-            "Functions, arguments, scope, built-in modules, file handling",
-            "Classes, objects, inheritance, exception handling",
-            "Working with libraries (NumPy/Pandas intro), APIs basics, final project build & presentation",
+            { title: "Core Basics", desc: "Installation, IDEs, variables, data types, input/output, operators" },
+            { title: "Control Flow", desc: "Conditions, loops, patterns, problem-solving drills" },
+            { title: "Data Structures", desc: "Strings, lists, tuples, sets, dictionaries — and when to use each" },
+            { title: "Functions & Files", desc: "Functions, arguments, scope, built-in modules, file handling" },
+            { title: "OOP & Error Handling", desc: "Classes, objects, inheritance, exception handling" },
+            { title: "Real-World Python", desc: "Working with libraries (NumPy/Pandas intro), APIs basics, final project build & presentation" },
         ],
         howItWorks: [
             { label: "Duration", value: "6 weeks" },
@@ -1066,12 +1066,12 @@ const COURSE_DETAILS = {
             "Most AI courses show you screenshots. Here, every session is hands-on: you prompt, you build, you publish. By the end, you won't just \"know about AI\" — you'll have a prompt library, a custom AI assistant, AI-generated content pieces, and a working automation, all built by you.",
         ],
         outcomes: [
-            "How LLMs work, hallucinations, capabilities and limits; tour of ChatGPT, Claude, Gemini, Perplexity",
-            "Prompt structure, role/context/format, few-shot prompting, chain-of-thought, iteration techniques; build your prompt library",
-            "Summarization, data extraction, research with citations, report and presentation generation",
-            "Image generation (Midjourney/DALL·E-class tools), voice and music, AI video basics, design tools like Canva AI and Gamma",
-            "Build your own GPT/Claude Project on your documents; no-code automations connecting AI to email, sheets, and forms",
-            "Detecting errors and bias, privacy, disclosure; build and present your final project",
+            { title: "LLM Foundations", desc: "How LLMs work, hallucinations, capabilities and limits; tour of ChatGPT, Claude, Gemini, Perplexity" },
+            { title: "Prompt Engineering", desc: "Prompt structure, role/context/format, few-shot prompting, chain-of-thought, iteration techniques; build your prompt library" },
+            { title: "Documents & Research", desc: "Summarization, data extraction, research with citations, report and presentation generation" },
+            { title: "Creative AI", desc: "Image generation (Midjourney/DALL·E-class tools), voice and music, AI video basics, design tools like Canva AI and Gamma" },
+            { title: "Custom Assistants", desc: "Build your own GPT/Claude Project on your documents; no-code automations connecting AI to email, sheets, and forms" },
+            { title: "Responsible AI + Capstone", desc: "Detecting errors and bias, privacy, disclosure; build and present your final project" },
         ],
         howItWorks: [
             { label: "Duration", value: "6 weeks" },
@@ -1214,10 +1214,10 @@ const COURSE_DETAILS = {
             "Draft your marketing content in minutes. Reply to customer enquiries automatically. Summarize reports, contracts, and meetings. Analyze your sales data in plain language. Create product photos and ads without a designer. The businesses adopting these tools are simply outrunning the ones that aren't — this program puts you on the right side of that gap.",
         ],
         outcomes: [
-            "How AI tools work, what they can and can't do; hands-on with ChatGPT/Claude/Gemini for emails, proposals, reports, and research",
-            "Social media content, ad copy, product images, brochures, and videos with AI; building a monthly content calendar in one sitting",
-            "Automating enquiries, follow-ups, quotations, and reports; a custom AI assistant trained on your price lists, policies, or FAQs",
-            "Analyzing sales/customer data with AI, safety and privacy for business data, evaluating AI vendors and pricing; build your 90-day AI adoption roadmap",
+            { title: "AI Essentials", desc: "How AI tools work, what they can and can't do; hands-on with ChatGPT/Claude/Gemini for emails, proposals, reports, and research" },
+            { title: "Marketing & Content", desc: "Social media content, ad copy, product images, brochures, and videos with AI; building a monthly content calendar in one sitting" },
+            { title: "Operations & Automation", desc: "Automating enquiries, follow-ups, quotations, and reports; a custom AI assistant trained on your price lists, policies, or FAQs" },
+            { title: "Data & Roadmap", desc: "Analyzing sales/customer data with AI, safety and privacy for business data, evaluating AI vendors and pricing; build your 90-day AI adoption roadmap" },
         ],
         pricingIncludes: [
             "Limited to [20] for individual attention",
@@ -1369,10 +1369,10 @@ const COURSE_DETAILS = {
             "Training and documentation are provided as per standard AKTU-pattern requirements. Please confirm your college's specific format/duration rules with your training coordinator — our team will match the documentation accordingly.",
         ],
         outcomes: [
-            "Core concepts of your chosen track with daily hands-on labs",
-            "Advanced topics, tools of the trade, weekly assessments, mini-projects",
-            "Individual project built under mentor guidance — the project you'll submit to your college",
-            "Project report as per university format, presentation practice, mock viva, final demo",
+            { title: "Core Concepts", desc: "Core concepts of your chosen track with daily hands-on labs" },
+            { title: "Advanced Skills", desc: "Advanced topics, tools of the trade, weekly assessments, mini-projects" },
+            { title: "Individual Project", desc: "Individual project built under mentor guidance — the project you'll submit to your college" },
+            { title: "Documentation & Viva", desc: "Project report as per university format, presentation practice, mock viva, final demo" },
         ],
         pricingIncludes: [
             "Industrial training certificate (45 days) on completion",
@@ -1525,6 +1525,10 @@ function buildDetail(course) {
         (Array.isArray(course.whatYouLearn) ? course.whatYouLearn : null) ||
         fallbackOutcomes;
 
+    const normalizedOutcomes = outcomes.map((o) =>
+        typeof o === "string" ? { title: o, desc: null } : o,
+    );
+
     const howItWorks =
         override.howItWorks ||
         [
@@ -1616,7 +1620,7 @@ function buildDetail(course) {
             `Most learners stop at the surface: a few tools, a few prompts, generic answers.`,
             `This program takes you from 5% to confident, practical use — real tasks, real projects, real outcomes.`,
         ],
-        outcomes,
+        outcomes: normalizedOutcomes,
         howItWorks,
         modules: buildModules(course, weeks, months, outcomes),
         finalProject,
@@ -2345,10 +2349,16 @@ export default function CoursesShow({ slug }) {
                                                     )}
                                                 </span>
                                                 <h3
-                                                    className={`text-[20px]  leading-[1.1] ${i % 2 === 1 ? "text-black" : "text-[#765bc4]"}`}
+                                                    className={`text-[20px]  leading-[1.15] ${i % 2 === 1 ? "text-black" : "text-[#765bc4]"}`}
                                                 >
-                                                    {outcome}
+                                                    {outcome.title}
                                                 </h3>
+                                                {outcome.desc && (
+                                                    <p className="mt-2 text-[14px] leading-[1.5] text-black/55">
+                                                        {outcome.desc}
+                                                    </p>
+                                                )}
+                                                
                                             </div>
                                         </RevealDiv>
                                     ))}
@@ -2453,7 +2463,7 @@ export default function CoursesShow({ slug }) {
                     </div>
                 </RevealDiv>
 
-                <div className="relative overflow-hidden border-y border-black/[0.06] py-10 sm:py-12 group/marquee">
+                <div className="relative overflow-hidden border-y border-black/[0.06] py-6 sm:py-6 group/marquee">
                     <div className="flex w-max animate-[marquee_30s_linear_infinite] group-hover/marquee:[animation-play-state:paused] items-center">
                         {[0, 1].map((set) => (
                             <div
@@ -2471,8 +2481,8 @@ export default function CoursesShow({ slug }) {
                                                     src={tool.logo}
                                                     alt={tool.name}
                                                     className="
-                                                        w-10 h-10
-                                                        sm:w-12 sm:h-12
+                                                        w-full h-full
+                                                        sm:w-20 sm:h-20
                                                         object-contain
                                                         opacity-70
                                                         group-hover/tool:opacity-100
@@ -2725,9 +2735,9 @@ export default function CoursesShow({ slug }) {
                         <RevealDiv>
                             <div className="relative overflow-hidden rounded-[22px] border border-black/[0.04] shadow-[0_16px_48px_rgba(152,44,220,0.12)]">
                                 <img
-                                    src="/assets/images/team-1.webp"
+                                    src="/assets/images/instructor.jpeg"
                                     alt={detail.instructor.name}
-                                    className="w-full aspect-[4/5] object-cover"
+                                    className="w-full h-[500px] aspect-[4/5] object-cover"
                                 />
                                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 pt-16">
                                     <h3 className="font-display text-[22px] font-bold text-white">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 import { Link } from '@inertiajs/react';
 import PublicLayout from '../Layouts/PublicLayout';
 import Button from '../Components/ui/Button';
@@ -89,8 +90,7 @@ const CONTACT_INFO = [
 ];
 
 export default function Contact() {
-    const [submitted, setSubmitted] = useState(false);
-    const [data, setData] = useState({
+    const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         phone: '',
         email: '',
@@ -99,42 +99,20 @@ export default function Contact() {
         batchTiming: '',
         message: '',
     });
-    const [errors, setErrors] = useState({});
+    const [submitted, setSubmitted] = useState(() => false);
 
-    const validate = () => {
-        const errs = {};
-        if (!data.name.trim()) errs.name = 'Name is required.';
-        if (!data.phone.trim()) {
-            errs.phone = 'Phone number is required.';
-        } else if (!/^[+]?[\d\s-]{8,15}$/.test(data.phone.trim())) {
-            errs.phone = 'Please enter a valid phone number.';
-        }
-        if (!data.email.trim()) {
-            errs.email = 'Email is required.';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-            errs.email = 'Please enter a valid email address.';
-        }
-        if (!data.audience) errs.audience = 'Please select who you are.';
-        if (!data.program) errs.program = 'Please select a program.';
-        if (!data.message.trim()) {
-            errs.message = 'Please tell us how we can help.';
-        } else if (data.message.trim().length < 10) {
-            errs.message = 'Message must be at least 10 characters.';
-        }
-        return errs;
+    const handleChange = (field) => (e) => {
+        setData(field, e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const clientErrors = validate();
-        setErrors(clientErrors);
-        if (Object.keys(clientErrors).length > 0) return;
-        setSubmitted(true);
-    };
-
-    const handleChange = (field) => (e) => {
-        setData((prev) => ({ ...prev, [field]: e.target.value }));
-        if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
+        post('/contact', {
+            preserveScroll: true,
+            onSuccess: () => {
+                setSubmitted(true);
+            },
+        });
     };
 
     const inputClass =
@@ -212,15 +190,7 @@ export default function Contact() {
                                             className="mt-8 rounded-full border border-black/10 bg-white px-6 py-2.5 text-sm font-semibold text-black transition-all hover:bg-black hover:text-white"
                                             onClick={() => {
                                                 setSubmitted(false);
-                                                setData({
-                                                    name: '',
-                                                    phone: '',
-                                                    email: '',
-                                                    audience: '',
-                                                    program: '',
-                                                    batchTiming: '',
-                                                    message: '',
-                                                });
+                                                reset();
                                             }}
                                         >
                                             Submit Another Enquiry
@@ -378,9 +348,12 @@ export default function Contact() {
 
                                             <button
                                                 type="submit"
-                                                className="w-full rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] py-3.5 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(152,44,220,.25)] transition-all hover:shadow-[0_8px_24px_rgba(152,44,220,.35)] hover:-translate-y-0.5"
+                                                disabled={processing}
+                                                className="w-full rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] py-3.5 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(152,44,220,.25)] transition-all hover:shadow-[0_8px_24px_rgba(152,44,220,.35)] hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
                                             >
-                                                Book a Free Counselling Session
+                                                {processing
+                                                    ? 'Submitting...'
+                                                    : 'Book a Free Counselling Session'}
                                             </button>
                                         </form>
                                     </>

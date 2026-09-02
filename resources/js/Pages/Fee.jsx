@@ -64,6 +64,8 @@ const BUNDLES = [
         description:
             "Start with Python fundamentals and fast-track into our flagship AI & ML diploma — bundled savings available.",
         accent: "lime",
+        image: "/assets/images/python-package.png",
+        href: "/contact",
     },
     {
         tag: "MARKETER COMBO",
@@ -71,6 +73,8 @@ const BUNDLES = [
         description:
             "Master prompt engineering and apply it directly to AI-powered marketing — bundled savings available.",
         accent: "violet",
+        image: "/assets/images/Generative-ai.png",
+        href: "/contact",
     },
 ];
 
@@ -79,7 +83,7 @@ export default function Fee() {
         <PublicLayout>
             {/* ═══════════════ HERO BANNER ═══════════════ */}
             <section
-                className="relative overflow-hidden bg-cover bg-center"
+                className="relative overflow-hidden bg-cover bg-center -mt-24 pt-[220px] pb-[40px]"
                 style={{ backgroundImage: "url('/assets/images/rumi_darwaza.png')" }}
             >
                 <div className="absolute inset-0 bg-black/60" />

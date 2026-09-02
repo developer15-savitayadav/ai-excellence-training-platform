@@ -28,6 +28,7 @@ Route::get('/instructors/{slug}', [InstructorController::class, 'show'])->name('
 Route::get('/resources', [ResourceController::class, 'index'])->name('resources.index');
 Route::get('/resources/{slug}', [ResourceController::class, 'show'])->name('resources.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/fee', [FeeController::class, 'index'])->name('fee');
 Route::get('/programmes', [ProgrammesController::class, 'index'])->name('programmes');
 Route::get('/career', [CareerController::class, 'index'])->name('career');

@@ -368,7 +368,7 @@ export default function Career() {
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="h-[52px] w-full flex items-center justify-start pl-6 text-sm text-muted"
+                                    className="h-[52px] w-full flex items-center justify-center pl-6 text-sm text-muted"
                                 >
                                     <CellValue value={row.short} />
                                 </div>
@@ -383,7 +383,7 @@ export default function Career() {
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="h-[52px] w-full flex items-center justify-start pl-6 text-sm text-muted"
+                                    className="h-[52px] w-full flex items-center justify-center pl-6 text-sm text-muted"
                                 >
                                     <CellValue value={row.professional} />
                                 </div>
@@ -398,7 +398,7 @@ export default function Career() {
                             {TIER_ROWS.map((row) => (
                                 <div
                                     key={row.service}
-                                    className="min-h-[52px] w-full flex items-center justify-start pl-6 text-left text-sm font-medium text-violet-950 leading-snug py-1"
+                                    className="min-h-[52px] w-full flex items-center justify-center pl-6 text-left text-sm font-medium text-violet-950 leading-snug py-1"
                                 >
                                     <CellValue value={row.career} />
                                 </div>

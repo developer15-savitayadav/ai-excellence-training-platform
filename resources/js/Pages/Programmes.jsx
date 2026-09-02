@@ -94,7 +94,7 @@ export default function Programmes() {
                                 <div
                                     key={track.name}
                                     className="flex items-center justify-center h-14 rounded-2xl bg-black/[0.03] border border-black/[0.06] hover:border-violet/30 hover:bg-violet/5 hover:-translate-y-0.5 transition-all duration-200"
-                                >
+                                > 
                                     <img
                                         src={track.image}
                                         alt={track.name}
@@ -171,7 +171,7 @@ export default function Programmes() {
                         <div className="relative rounded-[24px] overflow-hidden min-h-[500px] max-lg:min-h-[460px] flex items-center ">
                             {/* Background photo */}
                             <img
-                                src="/assets/images/corporate-training-banner.jpeg"
+                                src="/assets/images/corporate-training-banner.png"
                                 alt=""
                                 className="absolute inset-0 w-full h-full object-cover object-top"
                             />
@@ -225,7 +225,7 @@ export default function Programmes() {
                             <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 items-center">
                                 <div className="rounded-2xl overflow-hidden">
                                     <img
-                                        src="/assets/images/school-workshop.jpg"
+                                        src="/assets/images/school-workshop.png"
                                         alt="School Workshop"
                                         className="w-full h-[350px] object-cover object-top"
                                     />

@@ -109,14 +109,14 @@ export default function BeliefsSection() {
             : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
     const radius = 16 + eased * 8;
-    const textOpacity = Math.min(1, Math.max(0, (progress - 0.4) / 0.4));
-    const textShift = (1 - textOpacity) * 16;
+const textOpacity = 1;
+const textShift = 0;
 
     const cardWidth =
         trackWidth > 0 ? (trackWidth - FINAL_GAP * (CARDS.length - 1)) / CARDS.length : 0;
 
     return (
-        <section ref={sectionRef} className="relative bg-white" style={{ height: "260vh" }}>
+        <section ref={sectionRef} className="relative bg-white" style={{ height: "160vh" }}>
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="max-w-[1240px] mx-auto h-full flex flex-col justify-center px-6">
                     <div className="text-center mb-10">
