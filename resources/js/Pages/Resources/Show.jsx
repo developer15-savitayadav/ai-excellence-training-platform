@@ -5,7 +5,8 @@ import Badge from '../../Components/ui/Badge';
 
 function EyeBrow({ children, color = 'violet' }) {
     return (
-        <p className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}>
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === 'lime' ? 'bg-[#eec369]' : 'bg-[#982cdc]'}`} />
             {children}
         </p>
     );

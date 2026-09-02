@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PublicLayout from "../Layouts/PublicLayout";
+import Placementsnapshot from "../Components/Placementsnapshot";
 import {
     ArrowRight,
     Play,
@@ -231,42 +232,18 @@ const trustedBrands = [
     { name: "Meta", src: "/assets/images/meta.jpg" },
     { name: "TCS", src: "/assets/images/tcs.webp" },
 ];
-const placements = [
-    {
-        title: "Placement 1",
-        description:
-            "Build intelligent products and turn your AI knowledge into career opportunities.",
-        image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-        title: "Placement 2",
-        description:
-            "Work on practical AI projects that demonstrate your ability to solve real problems.",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-        title: "Placement 3",
-        description:
-            "Ship production-ready ML pipelines and gain the confidence to lead technical teams.",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85",
-    },
-    {
-        title: "Placement 4",
-        description:
-            "Translate AI research into business impact with roles across product and strategy.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85",
-    },
-];
 
 function SectionLabel({ children, light = false }) {
     return (
         <div
-            className={`mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] ${
-                light ? "text-white/50" : "text-black/45"
+            className={`mb-3 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] backdrop-blur-sm transition-colors duration-300 ${
+                light
+                    ? "border-white/15 bg-white/10 text-white/85 hover:bg-white/15"
+                    : "border-black/10 bg-white/60 text-black/70 hover:bg-white/80"
             }`}
         >
             <span
-                className={`h-[3px] w-3 rounded-full ${
+                className={`w-1.5 h-1.5 rounded-full animate-pulse ${
                     light ? "bg-[#eec369]" : "bg-[#982cdc]"
                 }`}
             />
@@ -487,6 +464,7 @@ const courseOfferData = {
             title: "AI Tools Mastery",
             description:
                 "Get hands-on with the AI tools professionals use daily — from content creation to workflow automation.",
+            slug: "ai-tools-mastery",
             image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -495,6 +473,7 @@ const courseOfferData = {
             title: "Python Foundation",
             description:
                 "Build a solid programming base in Python — the language behind every AI and data career.",
+            slug: "python-programming-foundation",
             image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -503,6 +482,7 @@ const courseOfferData = {
             title: "Generative AI & Prompt Engineering",
             description:
                 "Learn to communicate with AI models effectively and build reliable prompt workflows for daily tasks.",
+            slug: "generative-ai-prompt-engineering",
             image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -511,6 +491,7 @@ const courseOfferData = {
             title: "AI for Business Owners",
             description:
                 "Understand practical AI use cases to cut costs, save time and grow revenue in your business.",
+            slug: "ai-for-business",
             image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -519,6 +500,7 @@ const courseOfferData = {
             title: "AKTU Summer/Winter Training",
             description:
                 "AKTU-aligned industrial training program covering AI fundamentals with certification for engineering students.",
+            slug: "summer-winter-training",
             image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
         },
     ],
@@ -529,7 +511,7 @@ const courseOfferData = {
             title: "Digital Marketing with AI",
             description:
                 "Combine core digital marketing skills with AI tools to plan, create and optimise campaigns faster.",
-            // price: "₹24,999",
+            slug: "digital-marketing-ai",
             popular: true,
             image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80",
         },
@@ -539,7 +521,7 @@ const courseOfferData = {
             title: "Python for Data Analytics",
             description:
                 "Turn raw data into clear business insights using Python, pandas and practical visualisation techniques.",
-            // price: "₹27,999",
+            slug: "python-data-analytics",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -548,7 +530,7 @@ const courseOfferData = {
             title: "Applied Machine Learning",
             description:
                 "Master practical ML workflows — from data preparation to model training, evaluation and deployment.",
-            //  price: "₹29,999",
+            slug: "applied-machine-learning",
             image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80",
         },
     ],
@@ -561,6 +543,7 @@ const courseOfferData = {
                 "A complete placement-backed path from programming foundations to deployed AI and ML systems.",
             price: "₹79,999",
             popular: true,
+            slug: "advanced-diploma-ai-ml",
             image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -569,7 +552,7 @@ const courseOfferData = {
             title: "AI-Powered Digital Marketing Specialist",
             description:
                 "Become a digital marketer who leverages AI for strategy, content, ads and analytics — placement support included.",
-            // price: "₹64,999",
+            slug: "ai-digital-marketing-specialist",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
         },
         {
@@ -578,7 +561,7 @@ const courseOfferData = {
             title: "Data Science & AI Career Track with Internship",
             description:
                 "Master statistics, machine learning and AI with a guaranteed internship and dedicated interview preparation.",
-            // price: "₹74,999",
+            slug: "data-science-ai-career-track",
             image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
         },
     ],
@@ -628,8 +611,12 @@ function MentorCard({ mentor }) {
     );
 }
 function OfferCourseCard({ course }) {
+    const courseHref = `/courses/${course.slug}`;
     return (
-        <div className="group h-full bg-white border border-black/5 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative p-3">
+        <Link
+            href={courseHref}
+            className="group block h-full bg-white border border-black/5 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative p-3"
+        >
             {course.popular && (
                 <div className="absolute top-3 right-3 bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white text-[8px] font-bold uppercase tracking-wider px-3 py-1 rounded-[14px] z-10 shadow-sm">
                     Popular
@@ -659,13 +646,17 @@ function OfferCourseCard({ course }) {
                 <p className="text-sm text-black/60 leading-relaxed">
                     {course.description}
                 </p>
-                <div className="mt-4 pt-4 border-t border-black/5">
+                <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between gap-3">
                     <span className="text-2xl font-bold text-black">
                         {course.price}
                     </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-black text-white text-[13px] font-semibold px-5 py-2.5 transition-all duration-300 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:shadow-[0_8px_20px_-4px_rgba(152,44,220,.45)]">
+                        View Details
+                        <ArrowRight size={14} />
+                    </span>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 
@@ -674,9 +665,8 @@ export default function Home() {
     const visiblePrograms = programs.filter((p) => p.tab === activeTab);
     const [whyRef, whyInView] = useInView(0.15);
     const stackRef = useRef(null);
-    
-    const placementScrollRef = useRef(null);
-    const placementTrackRef = useRef(null);
+
+ 
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -714,43 +704,8 @@ export default function Home() {
 
         return () => ctx.revert();
     }, []);
-    
-     useEffect(() => {
-        const viewport = placementScrollRef.current;
-        const track = placementTrackRef.current;
-        if (!viewport || !track) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-            return;
 
-        let raf = 0;
-        const update = () => {
-            raf = 0;
-            const maxScroll = track.scrollWidth - viewport.clientWidth;
-            const rect = viewport.getBoundingClientRect();
-            const vh = window.innerHeight;
-            const sectionCenter = rect.top + rect.height / 2;
-            const viewportCenter = vh / 2;
-            const halfBand = Math.max(rect.height, 1);
-            let progress =
-                0.5 -
-                (sectionCenter - viewportCenter) / (2 * halfBand);
-            progress = Math.min(Math.max(progress, 0), 1);
-            track.style.transform = `translate3d(${-progress * maxScroll}px, 0, 0)`;
-        };
-        const onScroll = () => {
-            if (!raf) raf = requestAnimationFrame(update);
-        };
-        update();
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll);
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            window.removeEventListener("resize", onScroll);
-            if (raf) cancelAnimationFrame(raf);
-        };
-    }, []);
 
-    
     const [offerTab, setOfferTab] = useState(courseTabs[0].id);
     const [slideIndex, setSlideIndex] = useState(0);
     const [perView, setPerView] = useState(3);
@@ -1115,9 +1070,10 @@ export default function Home() {
                 <section className="overflow-hidden px-5 py-20 bg-[#f5f5f2]">
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center">
-                            <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc] mb-3">
+<div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 OUR COURSES
-                            </p>
+                            </div>
                             <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.04em] text-black">
                                 Our Programs at a Glance
                             </h2>
@@ -1290,9 +1246,10 @@ export default function Home() {
                     <div className="mx-auto max-w-[1050px]">
                         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]  items-center">
                             <div>
-                                <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc] mb-3">
+                                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     WHY US?
-                                </p>
+                                </div>
                                 <h2
                                     className="text-[clamp(28px,4vw,38px)] font-bold leading-[1.08] tracking-[-0.04em] text-black"
                                     style={{
@@ -1376,12 +1333,10 @@ export default function Home() {
                 <section className="px-5 py-20 bg-[#f5f5f2] overflow-hidden">
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center mb-12">
-                            <div className="inline-flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-[#982cdc] animate-pulse" />
-                                <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc]">
-                                    OUR MENTORS
-                                </p>
-                            </div>
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                            OUR MENTORS
+                        </div>
 
                             <h2 className="text-[clamp(28px,4vw,42px)] font-bold tracking-[-0.04em] text-black">
                                 Meet the People Behind
@@ -1473,12 +1428,10 @@ export default function Home() {
                 <section className="px-5 py-20 bg-[#f5f5f2] overflow-hidden">
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center mb-12">
-                            <div className="inline-flex items-center gap-2 mb-3">
-                                <span className="w-2 h-2 rounded-full bg-[#982cdc] animate-pulse" />
-                                <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc]">
-                                    TESTIMONIAL
-                                </p>
-                            </div>
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                            TESTIMONIAL
+                        </div>
 
                             <h2 className="text-[clamp(28px,4vw,42px)] font-bold tracking-[-0.04em] text-black">
                                 Real People. Real Results.
@@ -1572,74 +1525,8 @@ export default function Home() {
                 </section>
 
                 {/* PLACEMENT */}
-                <section className="border-t border-black/5 bg-[#f5f5f2]">
-                    <div className="mx-auto max-w-[1050px] px-5 pt-20">
-                        <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc] mb-3">
-                            YOUR NEXT STEP
-                        </p>
 
-                        <h2 className="text-[clamp(28px,4vw,42px)] font-bold tracking-[-0.04em] text-black">
-                            Placement Snapshot
-                        </h2>
-
-                        <p className="mt-3 text-[clamp(15px,1.1vw,17px)] text-black/50 max-w-2xl">
-                            See where our graduates are making an impact in the
-                            AI industry
-                        </p>
-                    </div>
-
-                    {/* Vertical-scroll-driven horizontal carousel (full width) */}
-                    <div
-                        className="placement-viewport"
-                        ref={placementScrollRef}
-                    >
-                            <div
-                                className="placement-track"
-                                ref={placementTrackRef}
-                            >
-                                {placements.map((placement) => (
-                                    <div
-                                        key={placement.image}
-                                        className="group placement-card"
-                                    >
-                                        <div className="relative h-[300px] overflow-hidden rounded-xl">
-                                            <img
-                                                src={placement.image}
-                                                alt={placement.title}
-                                                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                                            <div className="absolute bottom-4 left-4">
-                                                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                                                    Placed
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div className="mt-4 flex items-start justify-between gap-4">
-                                            <div>
-                                                <h3 className="text-[clamp(18px,1.4vw,22px)] font-bold text-black">
-                                                    {placement.title}
-                                                </h3>
-                                                <p className="mt-2 max-w-[460px] text-[clamp(14px,1vw,16px)] leading-[1.6] text-black/50">
-                                                    {placement.description}
-                                                </p>
-                                            </div>
-
-                                            <Link
-                                                href="/placements"
-                                                className="mt-1 shrink-0 rounded-full bg-black px-6 py-2.5 text-[clamp(13px,1vw,15px)] font-semibold text-white transition hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] hover:shadow-[0_8px_25px_rgba(152,44,220,.25)]"
-                                            >
-                                                Explore →
-                                            </Link>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            </div>
-                </section>
-
+                <Placementsnapshot/>
                 {/* FINAL CTA */}
                 <section className="border-t border-black/5 px-5 py-24 text-center bg-[#f5f5f2]">
                     <div className="mx-auto max-w-[700px]">

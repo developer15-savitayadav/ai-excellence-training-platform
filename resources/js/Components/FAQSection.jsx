@@ -1,6 +1,17 @@
 import { useState } from "react";
 import RevealDiv from "./RevealDiv";
-
+function EyeBrow({ children, color = "violet" }) {
+    return (
+        <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+                <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+                />
+                {children}
+            </div>
+        </div>
+    );
+}
 const FAQS = [
     {
         question: "What is your agency's core or niche?",
@@ -38,9 +49,7 @@ export default function FaqSection({ faqs }) {
             <div className="mx-auto max-w-[1240px] px-6">
                 <RevealDiv>
                     <div className="text-center mb-12">
-                        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
-                            FAQ_
-                        </p>
+                        <EyeBrow>FAQ</EyeBrow>
                         <h2 className="mx-auto max-w-[500px] font-display text-[clamp(2rem,4vw,2.7rem)] font-bold leading-[1.05] tracking-[-0.04em] text-black">
                             Frequently Asked
                             <br />

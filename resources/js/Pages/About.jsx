@@ -1,14 +1,18 @@
 import PublicLayout from "../Layouts/PublicLayout";
 import Button from "../Components/ui/Button";
 import { Link } from "@inertiajs/react";
+import Beliefssection from "../Components/Beliefssection";
 
 function EyeBrow({ children, color = "violet" }) {
     return (
-        <p
-            className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}
-        >
-            {children}
-        </p>
+        <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+                <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+                />
+                {children}
+            </div>
+        </div>
     );
 }
 
@@ -176,28 +180,43 @@ const OUR_PROGRAMS = [
     {
         key: "short-term",
         label: "Short-Term Courses",
-        subtitle: "4–6 weeks · Beginner-friendly · Fee fully adjustable if you upgrade within 60 days",
-        courses: "AI Tools Mastery · Python Programming Foundation · Generative AI & Prompt Engineering",
+        subtitle:
+            "4–6 weeks · Beginner-friendly · Fee fully adjustable if you upgrade within 60 days",
+        courses:
+            "AI Tools Mastery · Python Programming Foundation · Generative AI & Prompt Engineering",
     },
     {
         key: "professional",
         label: "Professional Certificates",
         subtitle: "3–4 months · Portfolio + career services · No-cost EMI",
-        courses: "Digital Marketing with AI · Python for Data Analytics · Applied Machine Learning",
+        courses:
+            "Digital Marketing with AI · Python for Data Analytics · Applied Machine Learning",
     },
     {
         key: "career",
         label: "Career Programs",
-        subtitle: "6–9 months · Full career services · Lifetime re-attendance · No-cost EMI",
-        courses: "Advanced Diploma in AI & ML · AI-Powered Digital Marketing · Data Science & AI Career Track",
+        subtitle:
+            "6–9 months · Full career services · Lifetime re-attendance · No-cost EMI",
+        courses:
+            "Advanced Diploma in AI & ML · AI-Powered Digital Marketing · Data Science & AI Career Track",
     },
 ];
 
 const PLACEMENT_SUPPORT = [
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                />
             </svg>
         ),
         title: "Dedicated Placement Coordinator",
@@ -205,17 +224,38 @@ const PLACEMENT_SUPPORT = [
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"
+                />
             </svg>
         ),
         title: "Hiring Partner Network",
-        description: "Growing across Lucknow, Noida, Gurgaon and remote-first startups.",
+        description:
+            "Growing across Lucknow, Noida, Gurgaon and remote-first startups.",
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                />
             </svg>
         ),
         title: "Quarterly Placement Drives",
@@ -223,8 +263,18 @@ const PLACEMENT_SUPPORT = [
     },
     {
         icon: (
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                />
             </svg>
         ),
         title: "Alumni Referral Programme",
@@ -282,70 +332,92 @@ export default function About() {
                     <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[150px] pb-16 max-lg:pt-[56px] text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-white/15 backdrop-blur-sm mb-6">
-                        <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
-                        </span>
-                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6  py-16 max-lg:pt-[56px] text-center">
+                        <EyeBrow>
                             AI Excellence Academy
-                        </span>
-                    </div>
-
+                       </EyeBrow>
                     <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08] text-white max-w-4xl mx-auto">
                         <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                             Built in Lucknow,
                         </span>
                         <br className="hidden sm:block" />
                         <span className="text-black">
-                            {" "}for Lucknow's AI Talent
+                            {" "}
+                            for Lucknow's AI Talent
                         </span>
                     </h1>
 
                     <p className="text-black/85 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-                        AI Excellence Academy was founded on a simple observation: Lucknow has thousands of bright students and ambitious professionals, but the training available to them is either outdated, certificate-only, or priced for metro cities.
+                        AI Excellence Academy was founded on a simple
+                        observation: Lucknow has thousands of bright students
+                        and ambitious professionals, but the training available
+                        to them is either outdated, certificate-only, or priced
+                        for metro cities.
                     </p>
 
                     <div className="mt-7 flex flex-wrap gap-3 justify-center">
-                        <Link href="/courses" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.45)] hover:shadow-[0_10px_28px_rgba(152,44,220,.6)] hover:-translate-y-0.5 transition-all duration-300">
+                        <Link
+                            href="/courses"
+                            className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.45)] hover:shadow-[0_10px_28px_rgba(152,44,220,.6)] hover:-translate-y-0.5 transition-all duration-300"
+                        >
                             Explore Courses
                         </Link>
-                        <Link href="/contact" className="rounded-full bg-black/10 border border-black/20 px-7 py-3.5 text-sm font-semibold text-black backdrop-blur-sm hover:bg-black/20 hover:-translate-y-0.5 transition-all duration-300">
+                        <Link
+                            href="/contact"
+                            className="rounded-full bg-black/10 border border-black/20 px-7 py-3.5 text-sm font-semibold text-black backdrop-blur-sm hover:bg-black/20 hover:-translate-y-0.5 transition-all duration-300"
+                        >
                             Visit Our Campus
                         </Link>
                     </div>
                 </div>
 
                 {/* ═══════════════ IMAGE + FLOATING STAT BAR ═══════════════ */}
-                <div className="relative z-[1] mt-8">
-                    {/* Image */}
-                    <img
-                        src="/assets/images/team-1.webp"
-                        alt="The AI Excellence Academy team"
-                        loading="eager"
-                        className="w-full h-[300px] sm:h-[340px] lg:h-[360px] object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,13,13,0.55)_0%,rgba(7,13,13,0)_40%,rgba(7,13,13,0)_70%,rgba(7,13,13,0.4)_100%)]" />
+                <div className="relative z-[1] mx-auto max-w-[1240px] px-6 mt-8 pb-16">
+                    <div className="relative overflow-hidden rounded-t-[28px]">
+                        {/* Image */}
+                        <img
+                            src="/assets/images/team-1.webp"
+                            alt="The AI Excellence Academy team"
+                            loading="eager"
+                            className="w-full h-[300px] sm:h-[340px] lg:h-[500px] object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,13,13,0.55)_0%,rgba(7,13,13,0)_40%,rgba(7,13,13,0)_70%,rgba(7,13,13,0.4)_100%)]" />
 
-                    {/* Stat Bar — floats over the top of the image */}
-                    <div className="absolute inset-x-0 top-6 sm:top-8 z-20 border-t border-white/10 bg-[#0b1212]/40 backdrop-blur-sm">
-                        <div className="mx-auto max-w-[1240px] px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/[0.08]">
-                            <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
-                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Location</span>
-                                <span className="text-lg font-bold text-white">Gomti Nagar, Lucknow</span>
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
-                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Workstations</span>
-                                <span className="text-lg font-bold text-white">25</span>
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
-                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Batch Size</span>
-                                <span className="text-lg font-bold text-white">20–25 max</span>
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
-                                <span className="text-xs text-white/60 font-medium uppercase tracking-wider">Lab Hours</span>
-                                <span className="text-lg font-bold text-white">10 AM – 7 PM</span>
+                        {/* Stat Bar — floats over the top of the image */}
+                        <div className="absolute inset-x-0 top-0 sm:top-0 z-20 border-t border-white/10 bg-[#0b1212]/40 backdrop-blur-sm">
+                            <div className="px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/[0.08]">
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                    <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
+                                        Location
+                                    </span>
+                                    <span className="text-lg font-bold text-white">
+                                        Gomti Nagar, Lucknow
+                                    </span>
+                                </div>
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                    <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
+                                        Workstations
+                                    </span>
+                                    <span className="text-lg font-bold text-white">
+                                        25
+                                    </span>
+                                </div>
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                    <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
+                                        Batch Size
+                                    </span>
+                                    <span className="text-lg font-bold text-white">
+                                        20–25 max
+                                    </span>
+                                </div>
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                    <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
+                                        Lab Hours
+                                    </span>
+                                    <span className="text-lg font-bold text-white">
+                                        10 AM – 7 PM
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -353,69 +425,13 @@ export default function About() {
             </section>
 
             {/* ═══════════════ WHAT WE BELIEVE ═══════════════ */}
-            <section className="relative">
-                <div
-                    className="absolute inset-0 opacity-[0.03]"
-                    style={{
-                        backgroundImage:
-                            "radial-gradient(circle, white 1px, transparent 1px)",
-                        backgroundSize: "24px 24px",
-                    }}
-                />
-                <div className="relative max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
-                    <div className="text-center mb-16">
-                        <EyeBrow color="violet">WHAT WE BELIEVE_</EyeBrow>
-                        <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
-                            Our Principles
-                        </h2>
-                        <p className="text-muted text-lg mt-4 max-w-xl mx-auto">
-                            The three beliefs that shape how we teach, mentor,
-                            and place every single learner.
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {BELIEFS.map((b) => (
-                            <div
-                                key={b.number}
-                                className="relative bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-8 hover:border-black/[0.18] hover:-translate-y-0.5 transition-all duration-[220ms]"
-                            >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center shrink-0">
-                                        <svg
-                                            className="w-6 h-6 text-violet"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth={1.5}
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d={b.iconPath}
-                                            />
-                                        </svg>
-                                    </div>
-                                    <span className="font-mono text-3xl font-bold text-black/[0.06]">
-                                        {b.number}
-                                    </span>
-                                </div>
-                                <h3 className="font-display text-xl font-semibold text-body mb-3">
-                                    {b.title}
-                                </h3>
-                                <p className="text-muted leading-relaxed">
-                                    {b.description}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
+            <Beliefssection />
             {/* ═══════════════ THE DIFFERENCE ═══════════════ */}
             <section className="bg-[#F5F5F2]">
                 <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow>THE DIFFERENCE_</EyeBrow>
+                        <EyeBrow>THE DIFFERENCE</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             The AI Excellence Academy Difference
                         </h2>
@@ -509,11 +525,8 @@ export default function About() {
                 </div>
             </section>
 
- 
- 
-
             {/* ═══════════════ OUR CAMPUS ═══════════════ */}
-            <section className="relative">
+            {/* <section className="relative">
                 <div className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1">
@@ -560,7 +573,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        {/* Campus visual */}
+                 
                         <div className="flex-1 w-full max-w-md">
                             <div className="relative">
                                 <div className="absolute -inset-4 bg-violet/8 rounded-3xl blur-2xl" />
@@ -616,34 +629,38 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ═══════════════ CTA ═══════════════ */}
-            <section className="relative overflow-hidden bg-[#F5F5F2]">
+            <section className="relative overflow-hidden bg-surface">
                 <div
                     className="absolute inset-0"
                     style={{
                         backgroundImage:
-                            "radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px)",
+                            "radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)",
                         backgroundSize: "22px 22px",
                     }}
                 />
                 <div className="relative z-10 max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px] text-center">
-                    <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold text-body leading-tight">
+                    <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-semibold text-white leading-tight">
                         Start Your AI Journey Today
                     </h2>
-                    <p className="text-muted text-lg mt-4 max-w-lg mx-auto">
+                    <p className="text-white/70 text-lg mt-4 max-w-lg mx-auto">
                         Whether you&apos;re here to learn AI fundamentals or
                         master advanced techniques, we&apos;re ready to help you
                         succeed.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mt-8">
                         <Button href="/register">Get Started</Button>
-                        <Button variant="secondary" href="/contact">
+                        <Button
+                            variant="secondary"
+                            href="/contact"
+                            className="!border-white/30 hover:!bg-white/10 hover:!border-white/60"
+                        >
                             Contact Us
                         </Button>
                     </div>
-                    <p className="font-mono text-xs text-muted mt-6">
+                    <p className="font-mono text-xs text-white/60 mt-6">
                         Drop in any weekday for a campus tour
                     </p>
                 </div>

@@ -183,26 +183,39 @@ export default function OfflineCourses() {
         {/* Why Us */}
         <div className="mx-auto max-w-[1240px] px-6 py-16">
           <div className="text-center mb-12">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#982cdc] mb-3">WHY OFFLINE_</p>
+            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm"><span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />WHY OFFLINE_</p>
             <h2 className="text-[clamp(1.75rem,3vw,2.75rem)] font-bold text-black">
               Why Learn With Us Offline
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WHY_US.map((item) => (
-              <div key={item.title} className="bg-white border border-black/5 rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,.03)] hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(0,0,0,.06)] transition-all duration-300">
-                <span className="text-2xl mb-3 block">{item.icon}</span>
-                <h3 className="font-bold text-black mb-1">{item.title}</h3>
-                <p className="text-sm text-black/50">{item.desc}</p>
-              </div>
-            ))}
+{WHY_US.map((item) => (
+    <div
+        key={item.title}
+        className="bg-white border border-black/5 rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,.03)] hover:-translate-y-0.5 hover:shadow-[0_12px_36px_rgba(0,0,0,.06)] transition-all duration-300"
+    >
+        <img
+            src={item.image}
+            alt={item.title}
+            className="w-10 h-10 mb-3 object-contain"
+        />
+
+        <h3 className="font-bold text-black mb-1">
+            {item.title}
+        </h3>
+
+        <p className="text-sm text-black/50">
+            {item.desc}
+        </p>
+    </div>
+))}
           </div>
         </div>
 
         {/* Batches */}
         <div id="batches" className="mx-auto max-w-[1240px] px-6 py-16">
           <div className="text-center mb-12">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#982cdc] mb-3">BATCHES_</p>
+            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm"><span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />BATCHES_</p>
             <h2 className="text-[clamp(1.75rem,3vw,2.75rem)] font-bold text-black">
               Upcoming Batches
             </h2>
@@ -323,7 +336,7 @@ export default function OfflineCourses() {
           <div className="bg-white border border-black/5 rounded-2xl p-8 lg:p-12 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#982cdc] mb-3">VISIT US_</p>
+                <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm"><span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />VISIT US_</p>
                 <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-black mb-4">
                   Our Campus in Gomti Nagar
                 </h2>

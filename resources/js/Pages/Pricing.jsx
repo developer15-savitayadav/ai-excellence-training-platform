@@ -8,7 +8,8 @@ import Accordion from '../Components/ui/Accordion';
 
 function EyeBrow({ children, color = 'violet' }) {
     return (
-        <p className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}>
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === 'lime' ? 'bg-[#eec369]' : 'bg-[#982cdc]'}`} />
             {children}
         </p>
     );
@@ -299,7 +300,7 @@ export default function Pricing() {
             <section className="max-w-[1240px] mx-auto px-6 py-[120px] max-lg:py-[72px]">
                 <div className="max-w-3xl mx-auto">
                     <div className="text-center mb-12">
-                        <EyeBrow>FAQ_</EyeBrow>
+                        <EyeBrow>FAQ</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             Billing Questions
                         </h2>

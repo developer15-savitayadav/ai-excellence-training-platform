@@ -6,11 +6,14 @@ import TestimonialSlider from "../Components/TestimonialSlider";
 import FaqSection from "../Components/FAQSection";
 function EyeBrow({ children, color = "violet" }) {
     return (
-        <p
-            className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}
-        >
-            {children}
-        </p>
+        <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+                <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+                />
+                {children}
+            </div>
+        </div>
     );
 }
 
@@ -504,7 +507,7 @@ export default function Career() {
             <section className="relative">
                 <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
-                        <EyeBrow color="violet">HOW IT WORKS_</EyeBrow>
+                        <EyeBrow color="violet">HOW IT WORKS</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
                             Our Placement Engine
                         </h2>

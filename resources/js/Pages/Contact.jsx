@@ -2,7 +2,18 @@ import { useState } from 'react';
 import { Link } from '@inertiajs/react';
 import PublicLayout from '../Layouts/PublicLayout';
 import Button from '../Components/ui/Button';
-
+function EyeBrow({ children, color = "violet" }) {
+    return (
+        <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+                <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+                />
+                {children}
+            </div>
+        </div>
+    );
+}
 const AUDIENCE_OPTIONS = [
     'Student',
     'Professional',
@@ -140,14 +151,11 @@ export default function Contact() {
                 </div>
 
                 <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
-                        <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
-                        </span>
-                        <span className="font-mono text-[11px] text-violet uppercase tracking-wider">
+                    <div className="inline-flex items-center ">
+                        
+                         <EyeBrow>
                             Get in Touch
-                        </span>
+                         </EyeBrow>
                     </div>
 
                     <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">

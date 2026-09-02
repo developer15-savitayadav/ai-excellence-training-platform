@@ -5,9 +5,8 @@ import FaqSection from "../Components/FAQSection";
 
 function EyeBrow({ children, color = "violet" }) {
     return (
-        <p
-            className={`font-mono text-xs uppercase tracking-[0.08em] text-${color} mb-3`}
-        >
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`} />
             {children}
         </p>
     );
@@ -15,126 +14,42 @@ function EyeBrow({ children, color = "violet" }) {
 
 const PAYMENT_OPTIONS = [
     {
-        icon: (
-            <svg
-                className="w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
-                />
-            </svg>
-        ),
+        image: "/assets/images/003-payment-protection.png",
         title: "No-cost EMI",
         description:
             "Pay monthly on all Professional and Career programs — no lump sum required.",
         accent: "lime",
     },
     {
-        icon: (
-            <svg
-                className="w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342"
-                />
-            </svg>
-        ),
+        image: "/assets/images/004-businesswoman.png",
         title: "Women in Tech Scholarship",
         description:
             "Limited seats every year dedicated to women entering the AI workforce.",
         accent: "violet",
     },
     {
-        icon: (
-            <svg
-                className=" w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
-                />
-            </svg>
-        ),
+        image: "/assets/images/002-cup.png",
         title: "Merit Scholarship",
         description:
             "Based on our free entrance test — reward the best students can earn.",
         accent: "lime",
     },
     {
-        icon: (
-            <svg
-                className="w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                />
-            </svg>
-        ),
+        image: "/assets/images/005-group.png",
         title: "Early-bird & Group Benefits",
         description:
             "Early-bird, group and full-payment discounts — ask your counsellor.",
         accent: "violet",
     },
     {
-        icon: (
-            <svg
-                className="w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                />
-            </svg>
-        ),
+        image: "/assets/images/001-gift.png",
         title: "Referral Rewards",
         description:
             "Earn rewards when someone you refer enrols in any program.",
         accent: "lime",
     },
     {
-        icon: (
-            <svg
-                className=" w-10 h-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
-                />
-            </svg>
-        ),
+        image: "/assets/images/006-growth.png",
         title: "Upgrade Credit",
         description:
             "Full short-course fee adjusted against a long program if you upgrade within 60 days.",
@@ -163,7 +78,11 @@ export default function Fee() {
     return (
         <PublicLayout>
             {/* ═══════════════ HERO BANNER ═══════════════ */}
-            <section className="relative overflow-hidden bg-black">
+            <section
+                className="relative overflow-hidden bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/images/rumi_darwaza.png')" }}
+            >
+                <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute -top-32 left-[8%] w-[520px] h-[300px] rounded-full bg-violet/[0.07] blur-[120px]" />
                     <div className="absolute top-[30%] right-[5%] w-[420px] h-[250px] rounded-full bg-lime/[0.06] blur-[110px]" />
@@ -181,7 +100,7 @@ export default function Fee() {
                         </span>
                     </h1>
 
-                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                    <p className="text-white text-lg mt-5 max-w-xl leading-relaxed">
                         We keep our fee structure transparent and flexible — and
                         we prefer to discuss it with you personally, so we can
                         match the right program and payment plan to your goals
@@ -195,7 +114,7 @@ export default function Fee() {
                         >
                             Contact us
                         </Link>
-                        <span className="text-sm font-semibold text-black">
+                        <span className="text-sm font-semibold text-white">
                             to know pricing
                         </span>
                     </div>
@@ -247,13 +166,19 @@ export default function Fee() {
                                 key={option.title}
                                 className="bg-[#ffd05a] rounded-0 p-6 min-h-[160px] flex items-start gap-4 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255,208,90,.35)] transition-all duration-300"
                             >
-                                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shrink-0">
-                                    {option.icon}
+                                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center shrink-0 overflow-hidden">
+                                    <img
+                                        src={option.image}
+                                        alt={option.title}
+                                        className="w-12 h-12 object-contain"
+                                    />
                                 </div>
+
                                 <div className="pt-1">
                                     <h3 className="font-display text-base font-bold text-black leading-snug mb-1.5">
                                         {option.title}
                                     </h3>
+
                                     <p className="text-black leading-relaxed text-[16px] mt-4">
                                         {option.description}
                                     </p>
