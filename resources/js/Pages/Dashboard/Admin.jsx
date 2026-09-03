@@ -216,7 +216,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
         >
             <div className="space-y-6">
                 {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 border-b border-panel pb-2">
+                <div className="flex flex-wrap gap-2 border-b border-black/[0.08] pb-2">
                     {tabs.map(tab => (
                         <button
                             key={tab.id}
@@ -224,7 +224,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                             className={`px-4 py-2 rounded-lg font-body text-sm transition-all duration-200 ${
                                 activeTab === tab.id
                                     ? 'bg-lime/10 text-lime border border-lime/30'
-                                    : 'text-muted hover:text-body hover:bg-surface'
+                                    : 'text-muted hover:text-body hover:bg-black/[0.03]'
                             }`}
                         >
                             <span className="mr-2">{tab.icon}</span>
@@ -243,22 +243,22 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
 
                         {/* Stats */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-lime">{stats.totalUsers.toLocaleString()}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Users</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 248 this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-violet">{stats.totalCourses}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Courses</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 12 this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-success">${stats.revenue.toLocaleString()}</div>
                                 <div className="text-muted font-body text-sm mt-1">Revenue</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 15% this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-body">{stats.activeLearners.toLocaleString()}</div>
                                 <div className="text-muted font-body text-sm mt-1">Active Learners</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 5.2% this week</div>
@@ -269,7 +269,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                             {/* Recent Activity */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Recent Activity</h2>
-                                <Card className="bg-surface border-panel divide-y divide-panel">
+                                <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                                     {recentActivity.map(activity => (
                                         <div key={activity.id} className="flex items-center gap-3 px-5 py-3">
                                             <span className="text-xl">{activity.icon}</span>
@@ -285,7 +285,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                             {/* Quick Actions */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Quick Actions</h2>
-                                <Card className="p-6 bg-surface border-panel space-y-3">
+                                <Card className="p-6 bg-white border-black/[0.08] space-y-3">
                                     <Button
                                         className="w-full justify-start"
                                         variant="secondary"
@@ -355,7 +355,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                     className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
                                         userRoleFilter === role
                                             ? 'bg-lime/10 text-lime border border-lime/30'
-                                            : 'text-muted hover:text-body hover:bg-surface border border-transparent'
+                                            : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
                                     }`}
                                 >
                                     {role === 'all' ? 'All' : role.charAt(0).toUpperCase() + role.slice(1)}s
@@ -364,11 +364,11 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                         </div>
 
                         {/* Users Table */}
-                        <Card className="bg-surface border-panel overflow-hidden">
+                        <Card className="bg-white border-black/[0.08] overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full">
                                     <thead>
-                                        <tr className="border-b border-panel">
+                                        <tr className="border-b border-black/[0.08]">
                                             <th className="text-left px-6 py-4 font-display font-semibold text-body text-sm">User</th>
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Role</th>
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Joined</th>
@@ -376,9 +376,9 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                             <th className="text-right px-6 py-4 font-display font-semibold text-body text-sm">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-panel">
+                                    <tbody className="divide-y divide-black/[0.08]">
                                         {filteredUsers.map(u => (
-                                            <tr key={u.id} className="hover:bg-panel/30 transition-colors">
+                                            <tr key={u.id} className="hover:bg-black/[0.03] transition-colors">
                                                 <td className="px-6 py-4">
                                                     <div className="flex items-center gap-3">
                                                         <Avatar name={u.name} className="w-8 h-8" />
@@ -392,7 +392,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                                     <select
                                                         value={u.role}
                                                         onChange={(e) => handleChangeRole(u.id, e.target.value)}
-                                                        className="px-3 py-1 bg-panel border border-panel rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
+                                                        className="px-3 py-1 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
                                                     >
                                                         <option value="student">Student</option>
                                                         <option value="instructor">Instructor</option>
@@ -437,7 +437,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                 className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
                                     courseTab === 'published'
                                         ? 'bg-lime/10 text-lime border border-lime/30'
-                                        : 'text-muted hover:text-body hover:bg-surface border border-transparent'
+                                        : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
                                 }`}
                             >
                                 Published ({courses.published.length})
@@ -447,7 +447,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                 className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
                                     courseTab === 'pending'
                                         ? 'bg-lime/10 text-lime border border-lime/30'
-                                        : 'text-muted hover:text-body hover:bg-surface border border-transparent'
+                                        : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
                                 }`}
                             >
                                 Pending Approval ({pendingCourses.length})
@@ -458,7 +458,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                         {courseTab === 'published' && (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {courses.published.map(course => (
-                                    <Card key={course.id} className="p-5 bg-surface border-panel">
+                                    <Card key={course.id} className="p-5 bg-white border-black/[0.08]">
                                         <div className="flex items-center justify-between mb-3">
                                             <Badge variant="success">{course.status}</Badge>
                                             <StarRating rating={course.rating} size="sm" />
@@ -492,13 +492,13 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                         {courseTab === 'pending' && (
                             <div className="space-y-3">
                                 {pendingCourses.length === 0 ? (
-                                    <Card className="p-12 bg-surface border-panel text-center">
+                                    <Card className="p-12 bg-white border-black/[0.08] text-center">
                                         <div className="text-4xl mb-4">✅</div>
                                         <p className="text-muted font-body">No pending courses to review.</p>
                                     </Card>
                                 ) : (
                                     pendingCourses.map(course => (
-                                        <Card key={course.id} className="p-5 bg-surface border-panel">
+                                        <Card key={course.id} className="p-5 bg-white border-black/[0.08]">
                                             <div className="flex items-center justify-between">
                                                 <div className="flex-1">
                                                     <div className="flex items-center gap-2 mb-1">
@@ -541,7 +541,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
 
                         {/* Add Category Form */}
                         {showAddCategory && (
-                            <Card className="p-6 bg-surface border-panel border-lime/30">
+                            <Card className="p-6 bg-white border-black/[0.08] border-lime/30">
                                 <h2 className="font-display font-semibold text-body mb-4">New Category</h2>
                                 <div className="space-y-4">
                                     <div>
@@ -551,7 +551,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                             value={newCategory.name}
                                             onChange={(e) => setNewCategory(prev => ({ ...prev, name: e.target.value }))}
                                             placeholder="e.g., Generative AI"
-                                            className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                            className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                         />
                                     </div>
                                     <div>
@@ -561,7 +561,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                             value={newCategory.description}
                                             onChange={(e) => setNewCategory(prev => ({ ...prev, description: e.target.value }))}
                                             placeholder="Brief description..."
-                                            className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                            className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                         />
                                     </div>
                                     <Button onClick={handleAddCategory}>Create Category</Button>
@@ -570,7 +570,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                         )}
 
                         {/* Categories List */}
-                        <Card className="bg-surface border-panel divide-y divide-panel">
+                        <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                             {categoryList.map(cat => (
                                 <div key={cat.id} className="px-6 py-4">
                                     {editingCategory === cat.id ? (
@@ -579,13 +579,13 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                                 type="text"
                                                 value={editCategoryForm.name}
                                                 onChange={(e) => setEditCategoryForm(prev => ({ ...prev, name: e.target.value }))}
-                                                className="w-full px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
+                                                className="w-full px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
                                             />
                                             <input
                                                 type="text"
                                                 value={editCategoryForm.description}
                                                 onChange={(e) => setEditCategoryForm(prev => ({ ...prev, description: e.target.value }))}
-                                                className="w-full px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
+                                                className="w-full px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
                                             />
                                             <div className="flex gap-2">
                                                 <Button size="sm" onClick={() => handleSaveEditCategory(cat.id)}>Save</Button>
@@ -636,7 +636,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                     className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
                                         orderFilter === status
                                             ? 'bg-lime/10 text-lime border border-lime/30'
-                                            : 'text-muted hover:text-body hover:bg-surface border border-transparent'
+                                            : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
                                     }`}
                                 >
                                     {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -645,11 +645,11 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                         </div>
 
                         {/* Orders Table */}
-                        <Card className="bg-surface border-panel overflow-hidden">
+                        <Card className="bg-white border-black/[0.08] overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full">
                                     <thead>
-                                        <tr className="border-b border-panel">
+                                        <tr className="border-b border-black/[0.08]">
                                             <th className="text-left px-6 py-4 font-display font-semibold text-body text-sm">Order ID</th>
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">User</th>
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Course</th>
@@ -658,9 +658,9 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Status</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-panel">
+                                    <tbody className="divide-y divide-black/[0.08]">
                                         {filteredOrders.map(order => (
-                                            <tr key={order.id} className="hover:bg-panel/30 transition-colors">
+                                            <tr key={order.id} className="hover:bg-black/[0.03] transition-colors">
                                                 <td className="px-6 py-4 font-mono text-sm text-body">{order.id}</td>
                                                 <td className="px-4 py-4 font-body text-sm text-body">{order.user}</td>
                                                 <td className="px-4 py-4 font-body text-sm text-muted max-w-[200px] truncate">{order.course}</td>
@@ -691,7 +691,7 @@ export default function Admin({ user: propUser, stats: propStats, users: propUse
 
                         <div className="space-y-4">
                             {reviewList.map(review => (
-                                <Card key={review.id} className="p-5 bg-surface border-panel">
+                                <Card key={review.id} className="p-5 bg-white border-black/[0.08]">
                                     <div className="flex items-start justify-between gap-4">
                                         <div className="flex-1">
                                             <div className="flex items-center gap-2 mb-2">

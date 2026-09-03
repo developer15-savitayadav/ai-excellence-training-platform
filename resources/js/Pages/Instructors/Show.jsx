@@ -213,7 +213,7 @@ export default function InstructorsShow() {
                     </h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {REVIEWS.map((review, idx) => (
-                            <Card key={idx}>
+                            <Card key={idx} className="bg-panel">
                                 <StarRating rating={review.rating} size="sm" />
                                 <p className="text-sm text-body/80 mt-4 leading-relaxed">
                                     &ldquo;{review.text}&rdquo;

@@ -5,7 +5,7 @@ const Card = forwardRef(function Card({ className = '', hover = true, children, 
         <div
             ref={ref}
             className={[
-                'border border-black/[0.08] bg-panel p-7',
+                'border border-black/[0.08] p-7',
                 hover && 'transition-all duration-[220ms] hover:-translate-y-[2px] hover:border-black/[0.18]',
                 className,
             ]

@@ -64,11 +64,49 @@ const recentActivity = [
 
 export default function Student({ user: propUser, enrollments: propEnrollments, certificates: propCertificates, notifications: propNotifications, recommendations: propRecommendations, wishlist: propWishlist }) {
     const user = propUser || staticData.user
-    const enrollments = propEnrollments || staticData.enrollments
-    const certificates = propCertificates || staticData.certificates
-    const notifications = propNotifications || staticData.notifications
-    const recommendations = propRecommendations || staticData.recommendations
-    const wishlist = propWishlist || staticData.wishlist
+    const enrollments = (propEnrollments || staticData.enrollments).map(e => {
+        if (e.course) return e
+        return {
+            ...e,
+            course: {
+                id: e.courseId,
+                title: e.title,
+                slug: e.slug,
+                instructor: typeof e.instructor === 'object' ? e.instructor.name : e.instructor,
+                image: e.image,
+                level: e.level,
+                duration: typeof e.duration === 'number' ? `${e.duration} hours` : e.duration,
+            },
+            progress: e.progress,
+            last_accessed: e.lastAccessed,
+        }
+    })
+    const certificates = (propCertificates || staticData.certificates).map(c => {
+        if (c.course && c.verification_code) return c
+        return {
+            id: c.id,
+            course: c.courseName || c.course,
+            issued_at: c.completionDate || c.issued_at,
+            verification_code: c.verification_code || c.code,
+            instructor: c.instructorName || c.instructor,
+        }
+    })
+    const notifications = (propNotifications || staticData.notifications).map(n => ({
+        ...n,
+        icon: n.icon || (n.type === 'course_update' ? '📚' : n.type === 'achievement' ? '🏆' : n.type === 'reminder' ? '⏰' : n.type === 'community' ? '💬' : n.type === 'promotion' ? '✨' : n.type === 'milestone' ? '🏅' : n.type === 'system' ? '🔧' : '🔔'),
+        time: n.time || (n.createdAt ? new Date(n.createdAt).toLocaleDateString() : ''),
+    }))
+    const recommendations = (propRecommendations || staticData.recommendations).map(r => ({
+        ...r,
+        instructor: typeof r.instructor === 'object' ? r.instructor.name : r.instructor,
+        level: r.level || (r.duration ? `${r.duration} hours` : 'N/A'),
+        students: r.students || 0,
+    }))
+    const wishlist = (propWishlist || staticData.wishlist).map(w => ({
+        ...w,
+        instructor: typeof w.instructor === 'object' ? w.instructor.name : w.instructor,
+        level: w.level || 'N/A',
+    }))
 
     const [activeTab, setActiveTab] = useState('dashboard')
     const [notificationList, setNotificationList] = useState(notifications)
@@ -122,7 +160,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
         >
             <div className="space-y-6">
                 {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 border-b border-panel pb-2">
+                <div className="flex flex-wrap gap-2 border-b border-black/[0.08] pb-2">
                     {tabs.map(tab => (
                         <button
                             key={tab.id}
@@ -130,7 +168,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                             className={`px-4 py-2 rounded-lg font-body text-sm transition-all duration-200 ${
                                 activeTab === tab.id
                                     ? 'bg-lime/10 text-lime border border-lime/30'
-                                    : 'text-muted hover:text-body hover:bg-surface'
+                                    : 'text-muted hover:text-body hover:bg-black/[0.03]'
                             }`}
                         >
                             <span className="mr-2">{tab.icon}</span>
@@ -160,19 +198,19 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
 
                         {/* Stats Row */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-lime">{stats.coursesEnrolled}</div>
                                 <div className="text-muted font-body text-sm mt-1">Courses Enrolled</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-violet">{stats.hoursLearned}</div>
                                 <div className="text-muted font-body text-sm mt-1">Hours Learned</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-success">{stats.certificates}</div>
                                 <div className="text-muted font-body text-sm mt-1">Certificates</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-danger">{stats.streak} days</div>
                                 <div className="text-muted font-body text-sm mt-1">Learning Streak</div>
                             </Card>
@@ -182,9 +220,9 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                         {inProgressCourse && (
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Continue Learning</h2>
-                                <Card className="p-6 bg-surface border-panel">
+                                <Card className="p-6 bg-white border-black/[0.08]">
                                     <div className="flex flex-col md:flex-row md:items-center gap-4">
-                                        <div className="w-full md:w-48 h-28 bg-panel rounded-xl flex items-center justify-center text-2xl">
+                                        <div className="w-full md:w-48 h-28 bg-black/[0.03] rounded-xl flex items-center justify-center text-2xl">
                                             🧠
                                         </div>
                                         <div className="flex-1">
@@ -212,7 +250,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                         {/* Recent Activity */}
                         <div>
                             <h2 className="text-lg font-display font-semibold text-body mb-4">Recent Activity</h2>
-                            <Card className="bg-surface border-panel divide-y divide-panel">
+                            <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                                 {recentActivity.map(activity => (
                                     <div key={activity.id} className="flex items-center gap-3 px-6 py-4">
                                         <span className="text-xl">{activity.icon}</span>
@@ -230,7 +268,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                             <h2 className="text-lg font-display font-semibold text-body mb-4">Recommended for You</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {recommendations.map(rec => (
-                                    <Card key={rec.id} className="p-5 bg-surface border-panel hover:border-lime/30 transition-colors">
+                                    <Card key={rec.id} className="p-5 bg-white border-black/[0.08] hover:border-lime/30 transition-colors">
                                         <h3 className="font-display font-semibold text-body">{rec.title}</h3>
                                         <p className="text-muted font-body text-sm mt-1">{rec.instructor}</p>
                                         <div className="flex items-center gap-2 mt-2">
@@ -266,8 +304,8 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {filteredCourses.map(enrollment => (
-                                <Card key={enrollment.id} className="bg-surface border-panel overflow-hidden">
-                                    <div className="h-40 bg-panel flex items-center justify-center text-4xl">
+                                <Card key={enrollment.id} className="bg-white border-black/[0.08] overflow-hidden">
+                                    <div className="h-40 bg-black/[0.03] flex items-center justify-center text-4xl">
                                         {enrollment.course.title.includes('Deep') && '🧠'}
                                         {enrollment.course.title.includes('Natural') && '💬'}
                                         {enrollment.course.title.includes('Computer') && '👁'}
@@ -314,7 +352,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                         <h1 className="text-2xl font-display font-bold text-body">My Certificates</h1>
 
                         {certificates.length === 0 ? (
-                            <Card className="p-12 bg-surface border-panel text-center">
+                            <Card className="p-12 bg-white border-black/[0.08] text-center">
                                 <div className="text-4xl mb-4">🏆</div>
                                 <p className="text-muted font-body">No certificates yet. Complete a course to earn one!</p>
                             </Card>
@@ -323,7 +361,7 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                                 {certificates.map(cert => (
                                     <div
                                         key={cert.id}
-                                        className="bg-panel border border-lime/30 rounded-2xl p-6 relative overflow-hidden"
+                                        className="bg-black/[0.03] border border-lime/30 rounded-2xl p-6 relative overflow-hidden"
                                     >
                                         <div className="absolute top-4 right-4 text-4xl opacity-20">🏆</div>
                                         <div className="flex items-center gap-2 mb-4">
@@ -373,15 +411,15 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                         <h1 className="text-2xl font-display font-bold text-body">My Wishlist</h1>
 
                         {wishlistState.length === 0 ? (
-                            <Card className="p-12 bg-surface border-panel text-center">
+                            <Card className="p-12 bg-white border-black/[0.08] text-center">
                                 <div className="text-4xl mb-4">♥</div>
                                 <p className="text-muted font-body">Your wishlist is empty.</p>
                             </Card>
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {wishlistState.map(item => (
-                                    <Card key={item.id} className="p-5 bg-surface border-panel">
-                                        <div className="h-32 bg-panel rounded-xl flex items-center justify-center text-3xl mb-4">
+                                    <Card key={item.id} className="p-5 bg-white border-black/[0.08]">
+                                        <div className="h-32 bg-black/[0.03] rounded-xl flex items-center justify-center text-3xl mb-4">
                                             {item.title.includes('Generative') && '✨'}
                                             {item.title.includes('MLOps') && '🚀'}
                                             {item.title.includes('Ethics') && '⚖️'}
@@ -429,12 +467,12 @@ export default function Student({ user: propUser, enrollments: propEnrollments, 
                             )}
                         </div>
 
-                        <Card className="bg-surface border-panel divide-y divide-panel">
+                        <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                             {notificationList.map(notification => (
                                 <div
                                     key={notification.id}
                                     onClick={() => handleMarkAsRead(notification.id)}
-                                    className={`flex items-start gap-4 px-6 py-4 cursor-pointer transition-colors hover:bg-panel/50 ${
+                                    className={`flex items-start gap-4 px-6 py-4 cursor-pointer transition-colors hover:bg-black/[0.04] ${
                                         !notification.read ? 'bg-lime/5' : ''
                                     }`}
                                 >

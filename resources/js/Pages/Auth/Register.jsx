@@ -21,7 +21,7 @@ function PasswordStrengthBar({ password }) {
     if (!password) return null;
 
     return (
-        <div className="mt-2">
+        <div className="mt-1">
             <div className="flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                     <div
@@ -32,7 +32,7 @@ function PasswordStrengthBar({ password }) {
                     />
                 ))}
             </div>
-            <p className="text-xs text-muted mt-1">
+            <p className="text-xs text-muted mt-0.5">
                 {labels[score]}
             </p>
         </div>
@@ -88,168 +88,190 @@ export default function Register() {
 
     const displayErrors = { ...validationErrors, ...pageErrors };
 
+    const inputClass =
+        'h-10 w-full rounded-xl border border-black/10 bg-white px-4 text-[15px] text-body placeholder:text-muted/50 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition-all focus:border-violet/50 focus:ring-2 focus:ring-violet/10';
+
     return (
         <AuthLayout>
             <Head title="Create Account" />
 
-            <div className="text-center mb-8">
-                <h1 className="font-display text-3xl font-bold text-body">Create Your Account</h1>
-                <p className="text-muted mt-2">Start your AI learning journey today</p>
+            <div className="mb-3">
+                <h1 className="font-display text-[1.6rem] sm:text-[1.75rem] font-bold tracking-[-0.035em] text-body">
+                    Create your account
+                </h1>
+                <p className="mt-1 text-sm text-muted">
+                    Start your AI learning journey today.
+                </p>
             </div>
 
-            <form onSubmit={submit} className="space-y-5">
-                <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-body mb-1.5">
-                        Full Name
-                    </label>
-                    <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        value={data.name}
-                        onChange={(e) => setData('name', e.target.value)}
-                        autoComplete="name"
-                        required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
-                        placeholder="Jane Smith"
-                    />
-                    {displayErrors.name && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.name}</p>
-                    )}
+            <form onSubmit={submit} className="space-y-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                        <label htmlFor="name" className="mb-1 block text-sm font-medium text-body">
+                            Full Name
+                        </label>
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            value={data.name}
+                            onChange={(e) => setData('name', e.target.value)}
+                            autoComplete="name"
+                            required
+                            className={inputClass}
+                            placeholder="Jane Smith"
+                        />
+                        {displayErrors.name && (
+                            <p className="mt-1 text-sm text-danger">{displayErrors.name}</p>
+                        )}
+                    </div>
+
+                    <div>
+                        <label htmlFor="email" className="mb-1 block text-sm font-medium text-body">
+                            Email
+                        </label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            value={data.email}
+                            onChange={(e) => setData('email', e.target.value)}
+                            autoComplete="username"
+                            required
+                            className={inputClass}
+                            placeholder="you@example.com"
+                        />
+                        {displayErrors.email && (
+                            <p className="mt-1 text-sm text-danger">{displayErrors.email}</p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                        <label htmlFor="password" className="mb-1 block text-sm font-medium text-body">
+                            Password
+                        </label>
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            value={data.password}
+                            onChange={(e) => setData('password', e.target.value)}
+                            autoComplete="new-password"
+                            required
+                            className={inputClass}
+                            placeholder="Min. 8 characters"
+                        />
+                        <PasswordStrengthBar password={data.password} />
+                        {displayErrors.password && (
+                            <p className="mt-1 text-sm text-danger">{displayErrors.password}</p>
+                        )}
+                    </div>
+
+                    <div>
+                        <label
+                            htmlFor="password_confirmation"
+                            className="mb-1 block text-sm font-medium text-body"
+                        >
+                            Confirm Password
+                        </label>
+                        <input
+                            id="password_confirmation"
+                            type="password"
+                            name="password_confirmation"
+                            value={data.password_confirmation}
+                            onChange={(e) => setData('password_confirmation', e.target.value)}
+                            autoComplete="new-password"
+                            required
+                            className={inputClass}
+                            placeholder="Repeat your password"
+                        />
+                        {displayErrors.password_confirmation && (
+                            <p className="mt-1 text-sm text-danger">
+                                {displayErrors.password_confirmation}
+                            </p>
+                        )}
+                    </div>
                 </div>
 
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-body mb-1.5">
-                        Email
-                    </label>
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        onChange={(e) => setData('email', e.target.value)}
-                        autoComplete="username"
-                        required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
-                        placeholder="you@example.com"
-                    />
-                    {displayErrors.email && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.email}</p>
-                    )}
-                </div>
-
-                <div>
-                    <label htmlFor="password" className="block text-sm font-medium text-body mb-1.5">
-                        Password
-                    </label>
-                    <input
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        onChange={(e) => setData('password', e.target.value)}
-                        autoComplete="new-password"
-                        required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
-                        placeholder="Min. 8 characters"
-                    />
-                    <PasswordStrengthBar password={data.password} />
-                    {displayErrors.password && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.password}</p>
-                    )}
-                </div>
-
-                <div>
-                    <label htmlFor="password_confirmation" className="block text-sm font-medium text-body mb-1.5">
-                        Confirm Password
-                    </label>
-                    <input
-                        id="password_confirmation"
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        onChange={(e) => setData('password_confirmation', e.target.value)}
-                        autoComplete="new-password"
-                        required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
-                        placeholder="Repeat your password"
-                    />
-                    {displayErrors.password_confirmation && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.password_confirmation}</p>
-                    )}
-                </div>
-
-                <div>
-                    <label className="block text-sm font-medium text-body mb-3">I am a...</label>
-                    <div className="grid grid-cols-2 gap-3">
+                    <label className="mb-1.5 block text-sm font-medium text-body">I am a...</label>
+                    <div className="grid grid-cols-2 gap-2.5">
                         <button
                             type="button"
                             onClick={() => setData('role', 'student')}
-                            className={`rounded-xl border-2 p-5 text-left transition-all ${
+                            className={`rounded-xl border-2 p-3 text-left transition-all ${
                                 data.role === 'student'
-                                    ? 'border-lime bg-lime/[0.06] shadow-[0_0_30px_-8px_rgba(238,195,105,.2)]'
-                                    : 'border-black/[0.12] bg-black/[0.02] hover:border-black/20'
+                                    ? 'border-violet bg-violet/[0.05] shadow-[0_0_30px_-8px_rgba(152,44,220,.18)]'
+                                    : 'border-black/10 bg-white hover:border-black/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)]'
                             }`}
                         >
-                            <div className="text-2xl mb-2">🎓</div>
-                            <div className="font-display font-semibold text-body">Student</div>
-                            <div className="text-xs text-muted mt-1">I want to learn AI</div>
+                            <div className="mb-0.5 text-base">🎓</div>
+                            <div className="font-display font-semibold text-body text-sm">Student</div>
+                            <div className="mt-0.5 text-[11px] text-muted">I want to learn AI</div>
                         </button>
                         <button
                             type="button"
                             onClick={() => setData('role', 'instructor')}
-                            className={`rounded-xl border-2 p-5 text-left transition-all ${
+                            className={`rounded-xl border-2 p-3 text-left transition-all ${
                                 data.role === 'instructor'
-                                    ? 'border-violet bg-violet/[0.06] shadow-[0_0_30px_-8px_rgba(152,44,220,.2)]'
-                                    : 'border-black/[0.12] bg-black/[0.02] hover:border-black/20'
+                                    ? 'border-violet bg-violet/[0.05] shadow-[0_0_30px_-8px_rgba(152,44,220,.18)]'
+                                    : 'border-black/10 bg-white hover:border-black/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)]'
                             }`}
                         >
-                            <div className="text-2xl mb-2">📚</div>
-                            <div className="font-display font-semibold text-body">Instructor</div>
-                            <div className="text-xs text-muted mt-1">I want to teach AI</div>
+                            <div className="mb-0.5 text-base">📚</div>
+                            <div className="font-display font-semibold text-body text-sm">Instructor</div>
+                            <div className="mt-0.5 text-[11px] text-muted">I want to teach AI</div>
                         </button>
                     </div>
                     {displayErrors.role && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.role}</p>
+                        <p className="mt-1 text-sm text-danger">{displayErrors.role}</p>
                     )}
                 </div>
 
                 <div>
-                    <label className="flex items-start gap-3 cursor-pointer">
+                    <label className="flex cursor-pointer items-start gap-3">
                         <input
                             type="checkbox"
                             checked={data.terms}
                             onChange={(e) => setData('terms', e.target.checked)}
-                            className="mt-1 h-4 w-4 rounded border-black/20 bg-black/[0.04] text-lime focus:ring-lime/30"
+                            className="mt-0.5 h-4 w-4 rounded border-black/20 bg-white text-violet focus:ring-violet/30"
                         />
                         <span className="text-sm text-muted">
                             I agree to the{' '}
-                            <Link href="/terms" className="text-violet hover:text-lime transition-colors">
+                            <Link href="/terms" className="text-violet hover:text-violet/70 transition-colors">
                                 Terms of Service
                             </Link>{' '}
                             and{' '}
-                            <Link href="/privacy" className="text-violet hover:text-lime transition-colors">
+                            <Link
+                                href="/privacy"
+                                className="text-violet hover:text-violet/70 transition-colors"
+                            >
                                 Privacy Policy
                             </Link>
                         </span>
                     </label>
                     {displayErrors.terms && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.terms}</p>
+                        <p className="mt-1 text-sm text-danger">{displayErrors.terms}</p>
                     )}
                 </div>
 
                 <Button
                     type="submit"
                     disabled={processing}
-                    className="w-full"
+                    className="h-11 w-full text-base"
                 >
                     {processing ? 'Creating account...' : 'Create Account'}
                 </Button>
             </form>
 
-            <p className="text-center text-sm text-muted mt-8">
+            <p className="mt-3 text-center text-sm text-muted">
                 Already have an account?{' '}
-                <Link href="/login" className="text-violet font-semibold hover:text-lime transition-colors">
+                <Link
+                    href="/login"
+                    className="font-semibold text-violet transition-colors hover:text-violet/70"
+                >
                     Sign in
                 </Link>
             </p>

@@ -211,7 +211,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
         >
             <div className="space-y-6">
                 {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 border-b border-panel pb-2">
+                <div className="flex flex-wrap gap-2 border-b border-black/[0.08] pb-2">
                     {tabs.map(tab => (
                         <button
                             key={tab.id}
@@ -219,7 +219,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             className={`px-4 py-2 rounded-lg font-body text-sm transition-all duration-200 ${
                                 activeTab === tab.id
                                     ? 'bg-lime/10 text-lime border border-lime/30'
-                                    : 'text-muted hover:text-body hover:bg-surface'
+                                    : 'text-muted hover:text-body hover:bg-black/[0.03]'
                             }`}
                         >
                             <span className="mr-2">{tab.icon}</span>
@@ -245,19 +245,19 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
 
                         {/* Stats */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-lime">{analytics.totalStudents}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Students</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-success">${analytics.totalRevenue.toLocaleString()}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Revenue</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-violet">{analytics.avgRating}</div>
                                 <div className="text-muted font-body text-sm mt-1">Avg Rating</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-body">{analytics.activeCourses}</div>
                                 <div className="text-muted font-body text-sm mt-1">Active Courses</div>
                             </Card>
@@ -266,7 +266,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                         {/* Revenue Chart */}
                         <div>
                             <h2 className="text-lg font-display font-semibold text-body mb-4">Revenue (Last 6 Months)</h2>
-                            <Card className="p-6 bg-surface border-panel">
+                            <Card className="p-6 bg-white border-black/[0.08]">
                                 <div className="flex items-end gap-3 h-48">
                                     {analytics.monthlyRevenue.map((month, i) => (
                                         <div key={i} className="flex-1 flex flex-col items-center">
@@ -286,7 +286,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             {/* Recent Enrollments */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Recent Enrollments</h2>
-                                <Card className="bg-surface border-panel divide-y divide-panel">
+                                <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                                     {analytics.recentEnrollments.map(enrollment => (
                                         <div key={enrollment.id} className="flex items-center gap-3 px-5 py-3">
                                             <Avatar name={enrollment.student} className="w-8 h-8" />
@@ -303,7 +303,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             {/* Recent Reviews */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Recent Reviews</h2>
-                                <Card className="bg-surface border-panel divide-y divide-panel">
+                                <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
                                     {analytics.recentReviews.map(review => (
                                         <div key={review.id} className="px-5 py-4">
                                             <div className="flex items-center justify-between">
@@ -340,11 +340,11 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                         </div>
 
                         {/* Course Table */}
-                        <Card className="bg-surface border-panel overflow-hidden">
+                        <Card className="bg-white border-black/[0.08] overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full">
                                     <thead>
-                                        <tr className="border-b border-panel">
+                                        <tr className="border-b border-black/[0.08]">
                                             <th className="text-left px-6 py-4 font-display font-semibold text-body text-sm">Course</th>
                                             <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Status</th>
                                             <th className="text-right px-4 py-4 font-display font-semibold text-body text-sm">Students</th>
@@ -354,9 +354,9 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                             <th className="text-right px-6 py-4 font-display font-semibold text-body text-sm">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-panel">
+                                    <tbody className="divide-y divide-black/[0.08]">
                                         {filteredCourses.map(course => (
-                                            <tr key={course.id} className="hover:bg-panel/30 transition-colors">
+                                            <tr key={course.id} className="hover:bg-black/[0.03] transition-colors">
                                                 <td className="px-6 py-4">
                                                     <div className="font-body text-sm text-body font-medium">{course.title}</div>
                                                     <div className="text-muted font-body text-xs mt-0.5">/{course.slug}</div>
@@ -424,7 +424,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                         </div>
 
                         {published ? (
-                            <Card className="p-12 bg-surface border-panel text-center">
+                            <Card className="p-12 bg-white border-black/[0.08] text-center">
                                 <div className="text-5xl mb-4">🎉</div>
                                 <h2 className="text-xl font-display font-bold text-body mb-2">Course Submitted!</h2>
                                 <p className="text-muted font-body">Your course has been submitted for review. You will be notified once it is approved.</p>
@@ -454,13 +454,13 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                         : 'text-muted'
                                                 }`}
                                             >
-                                                <span className="w-6 h-6 rounded-full bg-panel flex items-center justify-center text-xs font-mono">
+                                                <span className="w-6 h-6 rounded-full bg-black/[0.03] flex items-center justify-center text-xs font-mono">
                                                     {builderStep > step.id ? '✓' : step.id}
                                                 </span>
                                                 <span className="hidden sm:inline">{step.name}</span>
                                             </button>
                                             {i < buildSteps.length - 1 && (
-                                                <div className={`w-8 h-px mx-1 ${builderStep > step.id ? 'bg-success' : 'bg-panel'}`} />
+                                                <div className={`w-8 h-px mx-1 ${builderStep > step.id ? 'bg-success' : 'bg-black/[0.03]'}`} />
                                             )}
                                         </div>
                                     ))}
@@ -468,7 +468,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
 
                                 {/* Step 1: Course Details */}
                                 {builderStep === 1 && (
-                                    <Card className="p-6 bg-surface border-panel space-y-6">
+                                    <Card className="p-6 bg-white border-black/[0.08] space-y-6">
                                         <h2 className="font-display font-semibold text-body text-lg">Course Details</h2>
                                         <div>
                                             <label className="block font-body text-sm text-muted mb-2">Course Title</label>
@@ -477,7 +477,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                 value={courseForm.title}
                                                 onChange={(e) => setCourseForm(prev => ({ ...prev, title: e.target.value }))}
                                                 placeholder="e.b., Advanced Neural Architectures"
-                                                className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                             />
                                         </div>
                                         <div>
@@ -487,7 +487,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                 onChange={(e) => setCourseForm(prev => ({ ...prev, description: e.target.value }))}
                                                 placeholder="Describe what students will learn in this course..."
                                                 rows={4}
-                                                className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
+                                                className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
                                             />
                                         </div>
                                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -496,7 +496,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                 <select
                                                     value={courseForm.category}
                                                     onChange={(e) => setCourseForm(prev => ({ ...prev, category: e.target.value }))}
-                                                    className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body focus:outline-none focus:border-lime/50"
+                                                    className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body focus:outline-none focus:border-lime/50"
                                                 >
                                                     <option value="ai-ml">AI & Machine Learning</option>
                                                     <option value="deep-learning">Deep Learning</option>
@@ -512,7 +512,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                 <select
                                                     value={courseForm.level}
                                                     onChange={(e) => setCourseForm(prev => ({ ...prev, level: e.target.value }))}
-                                                    className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body focus:outline-none focus:border-lime/50"
+                                                    className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body focus:outline-none focus:border-lime/50"
                                                 >
                                                     <option value="beginner">Beginner</option>
                                                     <option value="intermediate">Intermediate</option>
@@ -526,13 +526,13 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                     value={courseForm.price}
                                                     onChange={(e) => setCourseForm(prev => ({ ...prev, price: e.target.value }))}
                                                     placeholder="79.99"
-                                                    className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                    className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                 />
                                             </div>
                                         </div>
                                         <div>
                                             <label className="block font-body text-sm text-muted mb-2">Thumbnail</label>
-                                            <div className="w-full h-32 border-2 border-dashed border-panel rounded-xl flex flex-col items-center justify-center text-muted hover:border-lime/30 transition-colors cursor-pointer">
+                                            <div className="w-full h-32 border-2 border-dashed border-black/[0.08] rounded-xl flex flex-col items-center justify-center text-muted hover:border-lime/30 transition-colors cursor-pointer">
                                                 <span className="text-2xl mb-1">📷</span>
                                                 <span className="font-body text-sm">Click to upload or drag and drop</span>
                                                 <span className="font-body text-xs mt-1">PNG, JPG, up to 2MB</span>
@@ -548,7 +548,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                 {builderStep === 2 && (
                                     <div className="space-y-4">
                                         {sections.map((section, sIdx) => (
-                                            <Card key={section.id} className="p-6 bg-surface border-panel">
+                                            <Card key={section.id} className="p-6 bg-white border-black/[0.08]">
                                                 <div className="flex items-center gap-3 mb-4">
                                                     <span className="font-mono text-sm text-muted">#{sIdx + 1}</span>
                                                     <input
@@ -556,13 +556,13 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                         value={section.title}
                                                         onChange={(e) => updateSectionTitle(section.id, e.target.value)}
                                                         placeholder="Section title..."
-                                                        className="flex-1 px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                        className="flex-1 px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                     />
                                                 </div>
 
                                                 <div className="space-y-3 ml-6">
                                                     {section.lessons.map((lesson, lIdx) => (
-                                                        <div key={lesson.id} className="bg-panel/50 rounded-xl p-4 space-y-3">
+                                                        <div key={lesson.id} className="bg-black/[0.04] rounded-xl p-4 space-y-3">
                                                             <div className="flex items-center gap-2">
                                                                 <div className="flex flex-col gap-0.5">
                                                                     <button
@@ -581,12 +581,12 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                                     value={lesson.title}
                                                                     onChange={(e) => updateLesson(section.id, lesson.id, 'title', e.target.value)}
                                                                     placeholder="Lesson title..."
-                                                                    className="flex-1 px-3 py-1.5 bg-surface border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                                    className="flex-1 px-3 py-1.5 bg-white border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                                 />
                                                                 <select
                                                                     value={lesson.type}
                                                                     onChange={(e) => updateLesson(section.id, lesson.id, 'type', e.target.value)}
-                                                                    className="px-3 py-1.5 bg-surface border border-panel rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
+                                                                    className="px-3 py-1.5 bg-white border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
                                                                 >
                                                                     <option value="article">📝 Article</option>
                                                                     <option value="video">🎬 Video</option>
@@ -601,7 +601,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                                     value={lesson.content}
                                                                     onChange={(e) => updateLesson(section.id, lesson.id, 'content', e.target.value)}
                                                                     placeholder="Video URL..."
-                                                                    className="w-full px-3 py-1.5 bg-surface border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                                    className="w-full px-3 py-1.5 bg-white border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                                 />
                                                             )}
                                                             {lesson.type === 'article' && (
@@ -610,7 +610,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                                     onChange={(e) => updateLesson(section.id, lesson.id, 'content', e.target.value)}
                                                                     placeholder="Write your article content..."
                                                                     rows={3}
-                                                                    className="w-full px-3 py-1.5 bg-surface border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
+                                                                    className="w-full px-3 py-1.5 bg-white border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
                                                                 />
                                                             )}
                                                         </div>
@@ -641,7 +641,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                 {builderStep === 3 && (
                                     <div className="space-y-4">
                                         {quizQuestions.map((q, qIdx) => (
-                                            <Card key={q.id} className="p-6 bg-surface border-panel">
+                                            <Card key={q.id} className="p-6 bg-white border-black/[0.08]">
                                                 <div className="flex items-center gap-3 mb-4">
                                                     <span className="font-mono text-sm text-muted">Q{qIdx + 1}</span>
                                                     <input
@@ -649,7 +649,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                         value={q.question}
                                                         onChange={(e) => updateQuizQuestion(q.id, 'question', e.target.value)}
                                                         placeholder="Enter your question..."
-                                                        className="flex-1 px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                        className="flex-1 px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                     />
                                                 </div>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ml-6 mb-3">
@@ -660,7 +660,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                                 className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-mono transition-colors ${
                                                                     q.correct === optIdx
                                                                         ? 'bg-lime border-lime text-black'
-                                                                        : 'border-panel text-muted hover:border-lime/50'
+                                                                        : 'border-black/[0.08] text-muted hover:border-lime/50'
                                                                 }`}
                                                             >
                                                                 {String.fromCharCode(65 + optIdx)}
@@ -670,7 +670,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                                 value={opt}
                                                                 onChange={(e) => updateQuizOption(q.id, optIdx, e.target.value)}
                                                                 placeholder={`Option ${String.fromCharCode(65 + optIdx)}`}
-                                                                className="flex-1 px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
+                                                                className="flex-1 px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
                                                             />
                                                         </div>
                                                     ))}
@@ -681,7 +681,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                         onChange={(e) => updateQuizQuestion(q.id, 'explanation', e.target.value)}
                                                         placeholder="Explanation for the correct answer..."
                                                         rows={2}
-                                                        className="w-full px-3 py-1.5 bg-panel border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
+                                                        className="w-full px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
                                                     />
                                                 </div>
                                             </Card>
@@ -701,9 +701,9 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
 
                                 {/* Step 4: Publish */}
                                 {builderStep === 4 && (
-                                    <Card className="p-6 bg-surface border-panel space-y-6">
+                                    <Card className="p-6 bg-white border-black/[0.08] space-y-6">
                                         <h2 className="font-display font-semibold text-body text-lg">Course Preview & Publish</h2>
-                                        <div className="bg-panel rounded-xl p-6 space-y-4">
+                                        <div className="bg-black/[0.03] rounded-xl p-6 space-y-4">
                                             <div>
                                                 <span className="text-muted font-body text-xs uppercase tracking-wider">Title</span>
                                                 <p className="font-display font-semibold text-body text-lg mt-1">
@@ -759,22 +759,22 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
 
                         {/* Overview Stats */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-lime">{analytics.totalStudents}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Students</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 12% this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-success">${analytics.totalRevenue.toLocaleString()}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Revenue</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 8% this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-violet">{analytics.avgRating}</div>
                                 <div className="text-muted font-body text-sm mt-1">Avg Rating</div>
                                 <div className="text-success font-mono text-xs mt-2">↑ 0.1 this month</div>
                             </Card>
-                            <Card className="p-5 bg-surface border-panel">
+                            <Card className="p-5 bg-white border-black/[0.08]">
                                 <div className="text-3xl font-display font-bold text-body">{totalRatings}</div>
                                 <div className="text-muted font-body text-sm mt-1">Total Reviews</div>
                                 <div className="text-muted font-mono text-xs mt-2">→ steady</div>
@@ -784,7 +784,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                         {/* Enrollment Trends */}
                         <div>
                             <h2 className="text-lg font-display font-semibold text-body mb-4">Enrollment Trends</h2>
-                            <Card className="p-6 bg-surface border-panel">
+                            <Card className="p-6 bg-white border-black/[0.08]">
                                 <div className="flex items-end gap-3 h-48">
                                     {analytics.enrollmentTrends.map((month, i) => (
                                         <div key={i} className="flex-1 flex flex-col items-center">
@@ -804,7 +804,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             {/* Revenue by Course */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Revenue by Course</h2>
-                                <Card className="p-6 bg-surface border-panel space-y-4">
+                                <Card className="p-6 bg-white border-black/[0.08] space-y-4">
                                     {courseList.filter(c => c.revenue > 0).map(course => (
                                         <div key={course.id}>
                                             <div className="flex justify-between text-sm mb-1">
@@ -820,7 +820,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             {/* Completion Rates */}
                             <div>
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Completion Rates</h2>
-                                <Card className="p-6 bg-surface border-panel space-y-4">
+                                <Card className="p-6 bg-white border-black/[0.08] space-y-4">
                                     {courseList.filter(c => c.completionRate > 0).map(course => (
                                         <div key={course.id}>
                                             <div className="flex justify-between text-sm mb-1">
@@ -836,12 +836,12 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                             {/* Rating Distribution */}
                             <div className="lg:col-span-2">
                                 <h2 className="text-lg font-display font-semibold text-body mb-4">Rating Distribution</h2>
-                                <Card className="p-6 bg-surface border-panel">
+                                <Card className="p-6 bg-white border-black/[0.08]">
                                     <div className="space-y-3">
                                         {[5, 4, 3, 2, 1].map(star => (
                                             <div key={star} className="flex items-center gap-3">
                                                 <span className="font-body text-sm text-muted w-8 text-right">{star}★</span>
-                                                <div className="flex-1 h-4 bg-panel rounded-full overflow-hidden">
+                                                <div className="flex-1 h-4 bg-black/[0.03] rounded-full overflow-hidden">
                                                     <div
                                                         className="h-full bg-lime/50 rounded-full transition-all duration-500"
                                                         style={{ width: `${(analytics.ratingDistribution[star] / totalRatings) * 100}%` }}
@@ -867,7 +867,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
 
                         <div className="space-y-4">
                             {questionList.map(q => (
-                                <Card key={q.id} className="bg-surface border-panel">
+                                <Card key={q.id} className="bg-white border-black/[0.08]">
                                     <div
                                         className="px-6 py-4 cursor-pointer"
                                         onClick={() => setExpandedQuestion(expandedQuestion === q.id ? null : q.id)}
@@ -895,7 +895,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                     </div>
 
                                     {expandedQuestion === q.id && (
-                                        <div className="px-6 pb-4 border-t border-panel pt-4">
+                                        <div className="px-6 pb-4 border-t border-black/[0.08] pt-4">
                                             {q.replied && q.reply && (
                                                 <div className="bg-lime/5 border border-lime/20 rounded-xl p-4 mb-4">
                                                     <div className="flex items-center gap-2 mb-2">
@@ -912,7 +912,7 @@ export default function Instructor({ user: propUser, courses: propCourses, analy
                                                         onChange={(e) => setReplyText(prev => ({ ...prev, [q.id]: e.target.value }))}
                                                         placeholder="Type your reply..."
                                                         rows={3}
-                                                        className="w-full px-4 py-2 bg-panel border border-panel rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
+                                                        className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm placeholder:text-muted/50 focus:outline-none focus:border-lime/50 resize-none"
                                                     />
                                                     <Button
                                                         size="sm"

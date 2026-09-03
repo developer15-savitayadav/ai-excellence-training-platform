@@ -48,8 +48,8 @@ function SidebarContent({ user, navigation, onLinkClick }) {
                         className={[
                             'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                             item.current
-                                ? 'bg-white/[0.06] text-lime'
-                                : 'text-muted hover:text-body hover:bg-white/[0.04]',
+                                ? 'bg-black/[0.04] text-violet'
+                                : 'text-muted hover:text-body hover:bg-black/[0.04]',
                         ].join(' ')}
                     >
                         <span className="shrink-0">{item.icon}</span>
@@ -61,7 +61,7 @@ function SidebarContent({ user, navigation, onLinkClick }) {
             <div className="border-t border-black/[0.08] p-3">
                 <button
                     onClick={handleLogout}
-                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted hover:text-danger hover:bg-white/[0.04] transition-colors"
+                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted hover:text-danger hover:bg-black/[0.04] transition-colors"
                 >
                     <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
@@ -82,7 +82,7 @@ export default function DashboardLayout({ children, navigation = defaultNavigati
         <div className="min-h-screen bg-ink">
             {/* Desktop sidebar */}
             <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-30 lg:flex lg:w-64 lg:flex-col">
-                <div className="flex grow flex-col overflow-y-auto bg-surface border-r border-black/[0.08]">
+                <div className="flex grow flex-col overflow-y-auto bg-white border-r border-black/[0.08]">
                     <SidebarContent user={user} navigation={navigation} />
                 </div>
             </div>
@@ -94,7 +94,7 @@ export default function DashboardLayout({ children, navigation = defaultNavigati
                         className="fixed inset-0 bg-black/40 backdrop-blur-sm"
                         onClick={() => setSidebarOpen(false)}
                     />
-                    <div className="fixed inset-y-0 left-0 z-50 w-64 bg-surface border-r border-black/[0.08]">
+                    <div className="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-black/[0.08]">
                         <SidebarContent
                             user={user}
                             navigation={navigation}
@@ -107,10 +107,10 @@ export default function DashboardLayout({ children, navigation = defaultNavigati
             {/* Main column */}
             <div className="lg:pl-64">
                 {/* Mobile top bar */}
-                <div className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-black/[0.08] bg-surface/70 backdrop-blur-xl px-4 lg:hidden">
+                <div className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-black/[0.08] bg-ink/70 backdrop-blur-xl px-4 lg:hidden">
                     <button
                         onClick={() => setSidebarOpen(true)}
-                        className="flex items-center justify-center h-10 w-10 rounded-lg hover:bg-white/[0.06] transition-colors"
+                        className="flex items-center justify-center h-10 w-10 rounded-lg hover:bg-black/[0.04] transition-colors"
                         aria-label="Open menu"
                     >
                         <svg className="h-6 w-6 text-body" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

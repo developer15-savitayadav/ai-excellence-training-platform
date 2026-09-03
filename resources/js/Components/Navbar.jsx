@@ -1,21 +1,29 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link, usePage, router } from '@inertiajs/react';   
-import { Search, ArrowRight, ArrowUpRight, LayoutDashboard, UserRound, LogOut } from 'lucide-react';
-import CoursesMegaMenu from './CoursesMegaMenu';
+import { useState, useRef, useEffect } from "react";
+import { Link, usePage, router } from "@inertiajs/react";
+import {
+    Search,
+    ArrowRight,
+    ArrowUpRight,
+    LayoutDashboard,
+    UserRound,
+    LogOut,
+} from "lucide-react";
+import CoursesMegaMenu from "./CoursesMegaMenu";
 
 const navLinks = [
-    { name: 'Home', href: '/' },
-    {name:'About',href: '/about' },
-    { name: 'Fee', href: '/fee' },
-    { name: 'Programmes', href: '/programmes' },
-    { name: 'Career', href: '/career' },
-    { name: 'Contact', href: '/contact' },
-
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Fee", href: "/fee" },
+    { name: "Programmes", href: "/programmes" },
+    { name: "Career", href: "/career" },
+    { name: "Contact", href: "/contact" },
 ];
 
 function isActive(url, href) {
-    if (href === '/') return url === '/';
-    return url === href || url.startsWith(`${href}/`) || url.startsWith(`${href}?`);
+    if (href === "/") return url === "/";
+    return (
+        url === href || url.startsWith(`${href}/`) || url.startsWith(`${href}?`)
+    );
 }
 
 function Logo() {
@@ -32,11 +40,25 @@ function Logo() {
 
 function HamburgerIcon({ open }) {
     return (
-        <svg className="h-5 w-5 text-black" fill="none" viewBox="0 0 24 24" strokeWidth={1.75} stroke="currentColor">
+        <svg
+            className="h-5 w-5 text-black"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.75}
+            stroke="currentColor"
+        >
             {open ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                />
             ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
             )}
         </svg>
     );
@@ -50,42 +72,48 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState("");
     const dropdownRef = useRef(null);
 
     useEffect(() => {
         function handleClickOutside(e) {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(e.target)
+            ) {
                 setUserDropdownOpen(false);
             }
         }
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
+        return () =>
+            document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 10);
         onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
     useEffect(() => {
-        document.body.style.overflow = mobileOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
+        document.body.style.overflow = mobileOpen ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
+        };
     }, [mobileOpen]);
 
     function handleLogout() {
         setUserDropdownOpen(false);
         setMobileOpen(false);
-        router.post('/logout');
+        router.post("/logout");
     }
 
     function handleSearch(e) {
         e.preventDefault();
         if (searchQuery.trim()) {
             setMobileOpen(false);
-            router.get('/courses', { search: searchQuery });
+            router.get("/courses", { search: searchQuery });
         }
     }
 
@@ -95,8 +123,8 @@ export default function Navbar() {
                 <nav
                     className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-1 rounded-2xl border pl-6 pr-6 transition-all duration-300 ${
                         scrolled
-                            ? 'border-black/[0.08] bg-white shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl'
-                            : 'border-black/[0.05] bg-white shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg'
+                            ? "border-black/[0.08] bg-white shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl"
+                            : "border-black/[0.05] bg-white shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg"
                     }`}
                 >
                     <Logo />
@@ -109,13 +137,17 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
-                                        active ? 'text-black' : 'text-black/55 hover:text-black'
+                                        active
+                                            ? "text-black"
+                                            : "text-black/55 hover:text-black"
                                     }`}
                                 >
                                     {link.name}
                                     <span
                                         className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
-                                            active ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+                                            active
+                                                ? "scale-x-100 opacity-100"
+                                                : "scale-x-0 opacity-0"
                                         }`}
                                     />
                                 </Link>
@@ -129,13 +161,17 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
-                                        active ? 'text-black' : 'text-black/55 hover:text-black'
+                                        active
+                                            ? "text-black"
+                                            : "text-black/55 hover:text-black"
                                     }`}
                                 >
                                     {link.name}
                                     <span
                                         className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
-                                            active ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+                                            active
+                                                ? "scale-x-100 opacity-100"
+                                                : "scale-x-0 opacity-0"
                                         }`}
                                     />
                                 </Link>
@@ -144,7 +180,10 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        <form onSubmit={handleSearch} className="relative hidden lg:block">
+                        <form
+                            onSubmit={handleSearch}
+                            className="relative hidden lg:block"
+                        >
                             <input
                                 type="text"
                                 placeholder="Search courses..."
@@ -160,27 +199,39 @@ export default function Navbar() {
                                 <>
                                     <div className="relative" ref={dropdownRef}>
                                         <button
-                                            onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                                            onClick={() =>
+                                                setUserDropdownOpen(
+                                                    !userDropdownOpen,
+                                                )
+                                            }
                                             className={`flex items-center gap-1.5 rounded-full border p-1 pr-2.5 transition-all duration-200 ${
                                                 userDropdownOpen
-                                                    ? 'border-black/[0.12] bg-white shadow-sm'
-                                                    : 'border-transparent hover:border-black/[0.08] hover:bg-white/70'
+                                                    ? "border-black/[0.12] bg-white shadow-sm"
+                                                    : "border-transparent hover:border-black/[0.08] hover:bg-white/70"
                                             }`}
                                             aria-label="Account menu"
                                         >
                                             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-[13px] font-semibold text-white">
-                                                {user.name?.charAt(0)?.toUpperCase() || '?'}
+                                                {user.name
+                                                    ?.charAt(0)
+                                                    ?.toUpperCase() || "?"}
                                             </span>
                                             <svg
                                                 className={`h-3.5 w-3.5 text-black/40 transition-transform duration-200 ${
-                                                    userDropdownOpen ? 'rotate-180' : ''
+                                                    userDropdownOpen
+                                                        ? "rotate-180"
+                                                        : ""
                                                 }`}
                                                 fill="none"
                                                 viewBox="0 0 24 24"
                                                 strokeWidth={2}
                                                 stroke="currentColor"
                                             >
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                                />
                                             </svg>
                                         </button>
 
@@ -188,20 +239,50 @@ export default function Navbar() {
                                             <div className="absolute right-0 top-full mt-0 w-60 origin-top-right rounded-2xl border border-black/[0.08] bg-white/95 p-1.5 shadow-[0_24px_60px_-15px_rgba(15,22,22,0.28)] backdrop-blur-xl">
                                                 <div className="mb-1 flex items-center gap-3 rounded-xl bg-black/[0.03] px-3 py-2.5">
                                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-sm font-semibold text-white">
-                                                        {user.name?.charAt(0)?.toUpperCase() || '?'}
+                                                        {user.name
+                                                            ?.charAt(0)
+                                                            ?.toUpperCase() ||
+                                                            "?"}
                                                     </span>
                                                     <div className="min-w-0">
-                                                        <p className="truncate text-[13px] font-semibold text-black">{user.name}</p>
-                                                        <p className="truncate text-xs text-black/50">{user.email}</p>
+                                                        <p className="truncate text-[13px] font-semibold text-black">
+                                                            {user.name}
+                                                        </p>
+                                                        <p className="truncate text-xs text-black/50">
+                                                            {user.email}
+                                                        </p>
                                                     </div>
                                                 </div>
+
+                                                <div className="my-1 h-px bg-black/[0.06]" />
+
+                                                <Link
+                                                    href="/logout"
+                                                    method="post"
+                                                    as="button"
+                                                    className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-[13.5px] font-medium text-black/70 transition-colors hover:bg-red-500/[0.06] hover:text-red-500"
+                                                >
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        strokeWidth={2}
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            d="M8.25 9V5.25A2.25 2.25 0 0110.5 3h6a2.25 2.25 0 012.25 2.25v13.5A2.25 2.25 0 0116.5 21h-6a2.25 2.25 0 01-2.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3H21"
+                                                        />
+                                                    </svg>
+                                                    Log out
+                                                </Link>
                                             </div>
                                         )}
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    
                                     <Link
                                         href="/register"
                                         className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
@@ -217,8 +298,8 @@ export default function Navbar() {
                             onClick={() => setMobileOpen(!mobileOpen)}
                             className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 md:hidden ${
                                 mobileOpen
-                                    ? 'border-black/[0.12] bg-black text-white'
-                                    : 'border-black/[0.08] bg-white/70 hover:bg-white'
+                                    ? "border-black/[0.12] bg-black text-white"
+                                    : "border-black/[0.08] bg-white/70 hover:bg-white"
                             }`}
                             aria-label="Toggle menu"
                         >
@@ -236,19 +317,28 @@ export default function Navbar() {
                     />
                     <div className="absolute inset-x-3 top-[84px] animate-menu-pop overflow-hidden rounded-3xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)]">
                         <div className="max-h-[calc(100vh-120px)] overflow-y-auto p-3">
-                            <form onSubmit={handleSearch} className="relative mb-2">
+                            <form
+                                onSubmit={handleSearch}
+                                className="relative mb-2"
+                            >
                                 <input
                                     type="text"
                                     placeholder="Search courses..."
                                     value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    onChange={(e) =>
+                                        setSearchQuery(e.target.value)
+                                    }
                                     className="w-full rounded-2xl border border-black/[0.08] bg-black/[0.03] px-4 py-3 pl-11 text-sm text-black outline-none transition-all placeholder:text-black/35 focus:border-[#982cdc]/40 focus:bg-white focus:ring-4 focus:ring-[#982cdc]/[0.08]"
                                 />
                                 <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
                             </form>
 
                             <div className="">
-                                <CoursesMegaMenu onMobileNavigate={() => setMobileOpen(false)} />
+                                <CoursesMegaMenu
+                                    onMobileNavigate={() =>
+                                        setMobileOpen(false)
+                                    }
+                                />
                                 {navLinks.map((link) => {
                                     const active = isActive(url, link.href);
                                     return (
@@ -257,15 +347,19 @@ export default function Navbar() {
                                             href={link.href}
                                             className={`group flex items-center justify-between rounded-2xl px-4 py-1 text-[15px] font-medium transition-colors ${
                                                 active
-                                                    ? 'bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent'
-                                                    : 'text-black/65 hover:bg-black/[0.04] hover:text-black'
+                                                    ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent"
+                                                    : "text-black/65 hover:bg-black/[0.04] hover:text-black"
                                             }`}
                                             onClick={() => setMobileOpen(false)}
                                         >
-                                            <span className={active ? '' : ''}>{link.name}</span>
+                                            <span className={active ? "" : ""}>
+                                                {link.name}
+                                            </span>
                                             <ArrowUpRight
                                                 className={`h-4 w-4 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-                                                    active ? 'text-[#982cdc]' : 'text-black/25'
+                                                    active
+                                                        ? "text-[#982cdc]"
+                                                        : "text-black/25"
                                                 }`}
                                             />
                                         </Link>
@@ -278,11 +372,17 @@ export default function Navbar() {
                                     <div className="space-y-0.5">
                                         <div className="flex items-center gap-3 rounded-2xl bg-black/[0.03] px-4 py-3">
                                             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-sm font-semibold text-white">
-                                                {user.name?.charAt(0)?.toUpperCase() || '?'}
+                                                {user.name
+                                                    ?.charAt(0)
+                                                    ?.toUpperCase() || "?"}
                                             </span>
                                             <div className="min-w-0">
-                                                <p className="truncate text-sm font-semibold text-black">{user.name}</p>
-                                                <p className="truncate text-xs text-black/50">{user.email}</p>
+                                                <p className="truncate text-sm font-semibold text-black">
+                                                    {user.name}
+                                                </p>
+                                                <p className="truncate text-xs text-black/50">
+                                                    {user.email}
+                                                </p>
                                             </div>
                                         </div>
                                         <Link

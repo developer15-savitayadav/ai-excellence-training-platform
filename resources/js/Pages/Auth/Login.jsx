@@ -60,24 +60,31 @@ export default function Login({ status, canResetPassword }) {
 
     const displayErrors = { ...validationErrors, ...pageErrors };
 
+    const inputClass =
+        'h-10 w-full rounded-xl border border-black/10 bg-white px-4 text-[15px] text-body placeholder:text-muted/50 shadow-[0_1px_2px_rgba(0,0,0,0.03)] outline-none transition-all focus:border-violet/50 focus:ring-2 focus:ring-violet/10';
+
     return (
         <AuthLayout>
             <Head title="Sign In" />
 
-            <div className="text-center mb-8">
-                <h1 className="font-display text-3xl font-bold text-body">Welcome Back</h1>
-                <p className="text-muted mt-2">Sign in to your AI Excellence Academy account</p>
+            <div className="mb-3">
+                <h1 className="font-display text-[1.6rem] sm:text-[1.75rem] font-bold tracking-[-0.035em] text-body">
+                    Welcome back
+                </h1>
+                <p className="mt-1 text-sm text-muted">
+                    Sign in to continue your learning journey.
+                </p>
             </div>
 
             {status && (
-                <div className="mb-4 text-sm font-medium text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg px-4 py-3">
+                <div className="mb-3 rounded-lg border border-green-400/20 bg-green-400/10 px-4 py-2.5 text-sm font-medium text-green-400">
                     {status}
                 </div>
             )}
 
-            <form onSubmit={submit} className="space-y-5">
+            <form onSubmit={submit} className="space-y-2.5">
                 <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-body mb-1.5">
+                    <label htmlFor="email" className="mb-1 block text-sm font-medium text-body">
                         Email
                     </label>
                     <input
@@ -88,16 +95,16 @@ export default function Login({ status, canResetPassword }) {
                         onChange={(e) => setData('email', e.target.value)}
                         autoComplete="username"
                         required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
+                        className={inputClass}
                         placeholder="you@example.com"
                     />
                     {displayErrors.email && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.email}</p>
+                        <p className="mt-1 text-sm text-danger">{displayErrors.email}</p>
                     )}
                 </div>
 
                 <div>
-                    <label htmlFor="password" className="block text-sm font-medium text-body mb-1.5">
+                    <label htmlFor="password" className="mb-1 block text-sm font-medium text-body">
                         Password
                     </label>
                     <input
@@ -108,29 +115,29 @@ export default function Login({ status, canResetPassword }) {
                         onChange={(e) => setData('password', e.target.value)}
                         autoComplete="current-password"
                         required
-                        className="w-full rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-body placeholder:text-muted/50 outline-none transition-colors focus:border-lime/50 focus:ring-1 focus:ring-lime/30"
+                        className={inputClass}
                         placeholder="Enter your password"
                     />
                     {displayErrors.password && (
-                        <p className="mt-1.5 text-sm text-danger">{displayErrors.password}</p>
+                        <p className="mt-1 text-sm text-danger">{displayErrors.password}</p>
                     )}
                 </div>
 
                 <div className="flex items-center justify-between">
-                    <label className="flex items-center gap-2 cursor-pointer">
+                    <label className="flex cursor-pointer items-center gap-2">
                         <input
                             type="checkbox"
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
-                            className="h-4 w-4 rounded border-black/20 bg-black/[0.04] text-lime focus:ring-lime/30"
+                            className="h-4 w-4 rounded border-black/20 bg-white text-violet focus:ring-violet/30"
                         />
                         <span className="text-sm text-muted">Remember me</span>
                     </label>
                     {canResetPassword && (
                         <Link
                             href="/forgot-password"
-                            className="text-sm text-violet hover:text-lime transition-colors"
+                            className="text-sm font-medium text-violet transition-colors hover:text-violet/70"
                         >
                             Forgot password?
                         </Link>
@@ -140,42 +147,30 @@ export default function Login({ status, canResetPassword }) {
                 <Button
                     type="submit"
                     disabled={processing}
-                    className="w-full"
+                    className="h-11 w-full text-base"
                 >
                     {processing ? 'Signing in...' : 'Sign In'}
                 </Button>
             </form>
 
-            <div className="relative my-6">
+            <div className="relative my-3">
                 <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-black/[0.08]" />
+                    <div className="w-full border-t border-black/10" />
                 </div>
                 <div className="relative flex justify-center">
                     <span className="bg-ink px-4 text-sm text-muted">or continue with</span>
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-                <button
-                    type="button"
-                    className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-sm font-medium text-body transition-all hover:border-black/20 hover:bg-black/[0.08]"
-                >
-                    <GoogleIcon />
-                    Google
-                </button>
-                <button
-                    type="button"
-                    className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.12] bg-black/[0.04] px-4 py-3 text-sm font-medium text-body transition-all hover:border-black/20 hover:bg-black/[0.08]"
-                >
-                    <GitHubIcon />
-                    GitHub
-                </button>
-            </div>
+ 
 
-            <p className="text-center text-sm text-muted mt-8">
+            <p className="mt-3 text-center text-sm text-muted">
                 Don&apos;t have an account?{' '}
-                <Link href="/register" className="text-violet font-semibold hover:text-lime transition-colors">
-                    Sign up
+                <Link
+                    href="/register"
+                    className="font-semibold text-violet transition-colors hover:text-violet/70"
+                >
+                    Sign in
                 </Link>
             </p>
         </AuthLayout>
