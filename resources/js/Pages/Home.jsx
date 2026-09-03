@@ -465,7 +465,7 @@ const courseOfferData = {
             description:
                 "Get hands-on with the AI tools professionals use daily — from content creation to workflow automation.",
             slug: "ai-tools-mastery",
-            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/AI-tools-mastery.png",
         },
         {
             lessons: "28 Lessons",
@@ -474,7 +474,7 @@ const courseOfferData = {
             description:
                 "Build a solid programming base in Python — the language behind every AI and data career.",
             slug: "python-programming-foundation",
-            image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/python-programming-foundation.png",
         },
         {
             lessons: "24 Lessons",
@@ -483,7 +483,7 @@ const courseOfferData = {
             description:
                 "Learn to communicate with AI models effectively and build reliable prompt workflows for daily tasks.",
             slug: "generative-ai-prompt-engineering",
-            image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/generative-ai-prompt-engineering.png",
         },
         {
             lessons: "18 Lessons",
@@ -492,7 +492,7 @@ const courseOfferData = {
             description:
                 "Understand practical AI use cases to cut costs, save time and grow revenue in your business.",
             slug: "ai-for-business",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/AI-for-business-owners.png",
         },
         {
             lessons: "32 Lessons",
@@ -501,7 +501,7 @@ const courseOfferData = {
             description:
                 "AKTU-aligned industrial training program covering AI fundamentals with certification for engineering students.",
             slug: "summer-winter-training",
-            image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/AKTU-summer-winter-training.png",
         },
     ],
     certificates: [
@@ -513,7 +513,7 @@ const courseOfferData = {
                 "Combine core digital marketing skills with AI tools to plan, create and optimise campaigns faster.",
             slug: "digital-marketing-ai",
             popular: true,
-            image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/digital-marketing-ai.png",
         },
         {
             lessons: "48 Lessons",
@@ -522,7 +522,7 @@ const courseOfferData = {
             description:
                 "Turn raw data into clear business insights using Python, pandas and practical visualisation techniques.",
             slug: "python-data-analytics",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/python-data-analytics.png",
         },
         {
             lessons: "44 Lessons",
@@ -531,7 +531,7 @@ const courseOfferData = {
             description:
                 "Master practical ML workflows — from data preparation to model training, evaluation and deployment.",
             slug: "applied-machine-learning",
-            image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/applied-machine-learning.png",
         },
     ],
     career: [
@@ -544,7 +544,7 @@ const courseOfferData = {
             price: "₹79,999",
             popular: true,
             slug: "advanced-diploma-ai-ml",
-            image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/advanced-diploma-ai-ml.png",
         },
         {
             lessons: "96 Lessons",
@@ -553,7 +553,7 @@ const courseOfferData = {
             description:
                 "Become a digital marketer who leverages AI for strategy, content, ads and analytics — placement support included.",
             slug: "ai-digital-marketing-specialist",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/ai-digital-marketing-specialist.jpeg",
         },
         {
             lessons: "110 Lessons",
@@ -562,30 +562,30 @@ const courseOfferData = {
             description:
                 "Master statistics, machine learning and AI with a guaranteed internship and dedicated interview preparation.",
             slug: "data-science-ai-career-track",
-            image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+            image: "/assets/images/data-science-ai-career-track.jpeg",
         },
     ],
 };
 const mentors = [
     {
-        name: "Artur William",
-        role: "CEO & Co-Founder",
-        image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=500&q=80",
+        name: "Arjun Mehta",
+        role: "AI & Machine Learning Expert",
+        image: "/assets/images/mentors1.png",
     },
     {
-        name: "Devon Carter",
-        role: "AI Research Lead",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80",
+        name: "Priya Kapoor",
+        role: "Data Science & Analytics Mentor",
+        image: "/assets/images/mentors2.png",
     },
     {
-        name: "Marco Ellison",
-        role: "Head of Curriculum",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80",
+        name: "Rahul Sharma",
+        role: "Python & Software Development Mentor",
+        image: "/assets/images/mentors3.png",
     },
     {
-        name: "Ryan Cooper",
-        role: "Senior ML Mentor",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80",
+        name: "Vikram Malhotra",
+        role: "Career & Technology Mentor",
+        image: "/assets/images/mentors4.png",
     },
 ];
 

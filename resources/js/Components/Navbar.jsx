@@ -22,7 +22,7 @@ function Logo() {
     return (
         <Link href="/" className="flex shrink-0 items-center gap-2">
             <img
-                src="/assets/images/logoExtra1 1.png"
+                src="/assets/images/logoExtra1.png"
                 alt="AI Excellence Academy"
                 className="h-20 w-50 object-contain"
             />

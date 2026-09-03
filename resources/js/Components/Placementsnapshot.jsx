@@ -7,25 +7,25 @@ const placements = [
         title: "Placement 1",
         description:
             "Build intelligent products and turn your AI knowledge into career opportunities.",
-        image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=85",
+        image: "/assets/images/placement1.png",
     },
     {
         title: "Placement 2",
         description:
             "Work on practical AI projects that demonstrate your ability to solve real problems.",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
+        image: "/assets/images/placement2.png",
     },
     {
         title: "Placement 3",
         description:
             "Ship production-ready ML pipelines and gain the confidence to lead technical teams.",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85",
+        image: "/assets/images/placement3.png",
     },
     {
         title: "Placement 4",
         description:
             "Translate AI research into business impact with roles across product and strategy.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85",
+        image: "/assets/images/placement4.png",
     },
 ];
 
