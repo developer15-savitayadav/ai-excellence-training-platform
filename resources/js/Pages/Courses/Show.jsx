@@ -635,6 +635,7 @@ const DEFAULT_PRICING_INCLUDES = [
 
 const COURSE_DETAILS = {
     "ai-tools-mastery": {
+        heroImage: "/assets/images/AI-tools-course.png",
         eyebrow: "4-Week Live Cohort · Hands-On · No Coding Required",
         trustLine: "25 seats per cohort · Certificate of completion included",
         whoItsForHeadline: "Built for people who need results, not theory",
@@ -678,12 +679,30 @@ const COURSE_DETAILS = {
             "The single most powerful tool of this generation is being used at 5% of its capability. Generic prompt → generic answer → give up. This course fixes exactly that.",
         ],
         outcomes: [
-            { title: "AI Fluency", desc: "Use ChatGPT, Claude and Gemini to save hours every day" },
-            { title: "Prompt Mastery", desc: "Write prompts that produce the output you want — first try" },
-            { title: "Personal Workflow", desc: "Build a personal AI workflow for your role, subject or business" },
-            { title: "Content Creation", desc: "Create images, decks, documents and social content in minutes" },
-            { title: "Memory & Grounding", desc: "Feed AI your own knowledge (drag-and-drop) for memory and grounded answers" },
-            { title: "Safety & Verification", desc: "Verify AI output, spot hallucinations and stay safe" },
+            {
+                title: "AI Fluency",
+                desc: "Use ChatGPT, Claude and Gemini to save hours every day",
+            },
+            {
+                title: "Prompt Mastery",
+                desc: "Write prompts that produce the output you want — first try",
+            },
+            {
+                title: "Personal Workflow",
+                desc: "Build a personal AI workflow for your role, subject or business",
+            },
+            {
+                title: "Content Creation",
+                desc: "Create images, decks, documents and social content in minutes",
+            },
+            {
+                title: "Memory & Grounding",
+                desc: "Feed AI your own knowledge (drag-and-drop) for memory and grounded answers",
+            },
+            {
+                title: "Safety & Verification",
+                desc: "Verify AI output, spot hallucinations and stay safe",
+            },
         ],
         howItWorks: [
             { label: "Length", value: "4 weeks" },
@@ -881,6 +900,7 @@ const COURSE_DETAILS = {
         ],
     },
     "python-programming-foundation": {
+        heroImage: "/assets/images/python-course.png",
         eyebrow:
             "6-Week Live Course · Beginner-Friendly · Certificate Included",
         trustLine:
@@ -924,12 +944,30 @@ const COURSE_DETAILS = {
             "Python is the world's most in-demand beginner language — the gateway to software development, data science, AI, automation, and testing. One language, a hundred career paths. This course makes sure you learn it properly: by writing code every single day, not by watching videos.",
         ],
         outcomes: [
-            { title: "Core Basics", desc: "Installation, IDEs, variables, data types, input/output, operators" },
-            { title: "Control Flow", desc: "Conditions, loops, patterns, problem-solving drills" },
-            { title: "Data Structures", desc: "Strings, lists, tuples, sets, dictionaries — and when to use each" },
-            { title: "Functions & Files", desc: "Functions, arguments, scope, built-in modules, file handling" },
-            { title: "OOP & Error Handling", desc: "Classes, objects, inheritance, exception handling" },
-            { title: "Real-World Python", desc: "Working with libraries (NumPy/Pandas intro), APIs basics, final project build & presentation" },
+            {
+                title: "Core Basics",
+                desc: "Installation, IDEs, variables, data types, input/output, operators",
+            },
+            {
+                title: "Control Flow",
+                desc: "Conditions, loops, patterns, problem-solving drills",
+            },
+            {
+                title: "Data Structures",
+                desc: "Strings, lists, tuples, sets, dictionaries — and when to use each",
+            },
+            {
+                title: "Functions & Files",
+                desc: "Functions, arguments, scope, built-in modules, file handling",
+            },
+            {
+                title: "OOP & Error Handling",
+                desc: "Classes, objects, inheritance, exception handling",
+            },
+            {
+                title: "Real-World Python",
+                desc: "Working with libraries (NumPy/Pandas intro), APIs basics, final project build & presentation",
+            },
         ],
         howItWorks: [
             { label: "Duration", value: "6 weeks" },
@@ -1023,6 +1061,7 @@ const COURSE_DETAILS = {
         ],
     },
     "generative-ai-prompt-engineering": {
+         heroImage: "/assets/images/ai-hero-robot.png",
         eyebrow: "6-Week Live Course · Hands-On · Beginner to Builder",
         trustLine:
             "Next batch starts [DATE] · No coding required · Certificate + portfolio project",
@@ -1066,12 +1105,30 @@ const COURSE_DETAILS = {
             "Most AI courses show you screenshots. Here, every session is hands-on: you prompt, you build, you publish. By the end, you won't just \"know about AI\" — you'll have a prompt library, a custom AI assistant, AI-generated content pieces, and a working automation, all built by you.",
         ],
         outcomes: [
-            { title: "LLM Foundations", desc: "How LLMs work, hallucinations, capabilities and limits; tour of ChatGPT, Claude, Gemini, Perplexity" },
-            { title: "Prompt Engineering", desc: "Prompt structure, role/context/format, few-shot prompting, chain-of-thought, iteration techniques; build your prompt library" },
-            { title: "Documents & Research", desc: "Summarization, data extraction, research with citations, report and presentation generation" },
-            { title: "Creative AI", desc: "Image generation (Midjourney/DALL·E-class tools), voice and music, AI video basics, design tools like Canva AI and Gamma" },
-            { title: "Custom Assistants", desc: "Build your own GPT/Claude Project on your documents; no-code automations connecting AI to email, sheets, and forms" },
-            { title: "Responsible AI + Capstone", desc: "Detecting errors and bias, privacy, disclosure; build and present your final project" },
+            {
+                title: "LLM Foundations",
+                desc: "How LLMs work, hallucinations, capabilities and limits; tour of ChatGPT, Claude, Gemini, Perplexity",
+            },
+            {
+                title: "Prompt Engineering",
+                desc: "Prompt structure, role/context/format, few-shot prompting, chain-of-thought, iteration techniques; build your prompt library",
+            },
+            {
+                title: "Documents & Research",
+                desc: "Summarization, data extraction, research with citations, report and presentation generation",
+            },
+            {
+                title: "Creative AI",
+                desc: "Image generation (Midjourney/DALL·E-class tools), voice and music, AI video basics, design tools like Canva AI and Gamma",
+            },
+            {
+                title: "Custom Assistants",
+                desc: "Build your own GPT/Claude Project on your documents; no-code automations connecting AI to email, sheets, and forms",
+            },
+            {
+                title: "Responsible AI + Capstone",
+                desc: "Detecting errors and bias, privacy, disclosure; build and present your final project",
+            },
         ],
         howItWorks: [
             { label: "Duration", value: "6 weeks" },
@@ -1169,6 +1226,7 @@ const COURSE_DETAILS = {
         ],
     },
     "ai-for-business": {
+         heroImage: "/assets/images/ai-hero-robot.png",
         eyebrow:
             "4-Week Weekend Program · For Busy Professionals · Saturday–Sunday Only",
         trustLine:
@@ -1214,10 +1272,22 @@ const COURSE_DETAILS = {
             "Draft your marketing content in minutes. Reply to customer enquiries automatically. Summarize reports, contracts, and meetings. Analyze your sales data in plain language. Create product photos and ads without a designer. The businesses adopting these tools are simply outrunning the ones that aren't — this program puts you on the right side of that gap.",
         ],
         outcomes: [
-            { title: "AI Essentials", desc: "How AI tools work, what they can and can't do; hands-on with ChatGPT/Claude/Gemini for emails, proposals, reports, and research" },
-            { title: "Marketing & Content", desc: "Social media content, ad copy, product images, brochures, and videos with AI; building a monthly content calendar in one sitting" },
-            { title: "Operations & Automation", desc: "Automating enquiries, follow-ups, quotations, and reports; a custom AI assistant trained on your price lists, policies, or FAQs" },
-            { title: "Data & Roadmap", desc: "Analyzing sales/customer data with AI, safety and privacy for business data, evaluating AI vendors and pricing; build your 90-day AI adoption roadmap" },
+            {
+                title: "AI Essentials",
+                desc: "How AI tools work, what they can and can't do; hands-on with ChatGPT/Claude/Gemini for emails, proposals, reports, and research",
+            },
+            {
+                title: "Marketing & Content",
+                desc: "Social media content, ad copy, product images, brochures, and videos with AI; building a monthly content calendar in one sitting",
+            },
+            {
+                title: "Operations & Automation",
+                desc: "Automating enquiries, follow-ups, quotations, and reports; a custom AI assistant trained on your price lists, policies, or FAQs",
+            },
+            {
+                title: "Data & Roadmap",
+                desc: "Analyzing sales/customer data with AI, safety and privacy for business data, evaluating AI vendors and pricing; build your 90-day AI adoption roadmap",
+            },
         ],
         pricingIncludes: [
             "Limited to [20] for individual attention",
@@ -1332,6 +1402,7 @@ const COURSE_DETAILS = {
         ],
     },
     "summer-winter-training": {
+         heroImage: "/assets/images/ai-hero-robot.png",
         eyebrow:
             "45-Day Industrial Training · For B.Tech / MCA / BCA Students · AKTU-Compliant",
         trustLine:
@@ -1369,10 +1440,22 @@ const COURSE_DETAILS = {
             "Training and documentation are provided as per standard AKTU-pattern requirements. Please confirm your college's specific format/duration rules with your training coordinator — our team will match the documentation accordingly.",
         ],
         outcomes: [
-            { title: "Core Concepts", desc: "Core concepts of your chosen track with daily hands-on labs" },
-            { title: "Advanced Skills", desc: "Advanced topics, tools of the trade, weekly assessments, mini-projects" },
-            { title: "Individual Project", desc: "Individual project built under mentor guidance — the project you'll submit to your college" },
-            { title: "Documentation & Viva", desc: "Project report as per university format, presentation practice, mock viva, final demo" },
+            {
+                title: "Core Concepts",
+                desc: "Core concepts of your chosen track with daily hands-on labs",
+            },
+            {
+                title: "Advanced Skills",
+                desc: "Advanced topics, tools of the trade, weekly assessments, mini-projects",
+            },
+            {
+                title: "Individual Project",
+                desc: "Individual project built under mentor guidance — the project you'll submit to your college",
+            },
+            {
+                title: "Documentation & Viva",
+                desc: "Project report as per university format, presentation practice, mock viva, final demo",
+            },
         ],
         pricingIncludes: [
             "Industrial training certificate (45 days) on completion",
@@ -1493,6 +1576,2324 @@ const COURSE_DETAILS = {
                 answer: "Yes — groups of [5+] students from the same college get [X%] off. Ask about our campus coordinator program.",
             },
         ],
+    },
+    "digital-marketing-with-ai": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "3-Month Professional Course · Live · Hands-On · Placement Support",
+        trustLine: "5 days a week · Real ad budget included · Certificate + portfolio",
+        whoItsForHeadline: "Built for people who want to master marketing the way agencies actually do it in 2026",
+        whoItsForBullets: [
+            "Graduates and freshers targeting agency, brand or freelance marketing roles",
+            "Business owners who want to run their own digital marketing without an agency",
+            "Working professionals in marketing, sales or content who want AI-powered skills",
+            "Freelancers who want to offer complete digital marketing services to clients",
+        ],
+        audience: [
+            {
+                label: "Freshers & Graduates",
+                desc: "Graduates and freshers targeting agency, brand or freelance marketing roles",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Business Owners",
+                desc: "Business owners who want to run their own digital marketing without an agency",
+                img: "/assets/images/shop-owners.png",
+                tone: "gold",
+            },
+            {
+                label: "Marketing Professionals",
+                desc: "Working professionals in marketing, sales or content who want AI-powered skills",
+                img: "/assets/images/teacher.png",
+                tone: "white",
+            },
+            {
+                label: "Freelancers",
+                desc: "Freelancers who want to offer complete digital marketing services to clients",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior marketing experience needed. If you use social media and can write an email, you have the foundation.",
+        problemTitle: "Marketing has changed. Most courses haven't.",
+        problemBody: [
+            "Digital marketing in 2026 is not about posting on Instagram and hoping for the best. It is AI-assisted SEO, automated ad bidding, data-driven creative testing, and full-funnel analytics. The marketers who understand this are the ones agencies fight to hire. This course makes you one of them.",
+        ],
+        outcomes: [
+            {
+                title: "Digital Ecosystem",
+                desc: "Understand the full digital landscape — funnels, buyer psychology, KPIs, and how every channel fits together",
+            },
+            {
+                title: "SEO with AI",
+                desc: "Keyword research, on-page and technical SEO, AI content briefs, and GEO/AEO for AI-powered search",
+            },
+            {
+                title: "Paid Ads Mastery",
+                desc: "Meta Ads — campaign structure, audiences, creative testing, Advantage+ — and Google Ads — Search, Performance Max, AI bidding",
+            },
+            {
+                title: "Content & Creative with AI",
+                desc: "AI copywriting, image generation, short-form video, brand voice systems, and social media management",
+            },
+            {
+                title: "Analytics & Reporting",
+                desc: "GA4, Search Console, Looker Studio dashboards, and AI-assisted reporting that impresses clients and employers",
+            },
+            {
+                title: "Live Campaign Portfolio",
+                desc: "A real ad campaign with a real budget — a complete case study you can show any employer or client",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "3 months" },
+            { label: "Total hours", value: "100 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — real campaigns, real budgets, real results",
+            },
+            {
+                label: "Live campaign",
+                value: "You run a live ad campaign with a real ad budget funded by the academy",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing and campaign review during the course",
+            },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Digital Marketing Foundations",
+                topics: [
+                    "The digital ecosystem — channels, funnels, buyer psychology, KPIs",
+                    "Introduction to AI in marketing — tools, workflows, and the 2026 landscape",
+                ],
+            },
+            {
+                week: 2,
+                title: "Websites & Landing Pages",
+                topics: [
+                    "WordPress fundamentals and AI site builders",
+                    "Landing page design, conversion basics, and CRO essentials",
+                ],
+            },
+            {
+                week: 3,
+                title: "SEO Foundations",
+                topics: [
+                    "Keyword research with AI tools — search volume, intent, competition analysis",
+                    "On-page SEO — meta tags, heading structure, internal linking, content optimization",
+                ],
+            },
+            {
+                week: 4,
+                title: "Advanced SEO with AI",
+                topics: [
+                    "Technical SEO — site speed, crawlability, schema markup, Core Web Vitals",
+                    "AI content briefs, GEO/AEO for AI search, and competitive gap analysis",
+                ],
+            },
+            {
+                week: 5,
+                title: "Content & Creative with AI",
+                topics: [
+                    "AI copywriting for ads, emails, and social — brand voice and tone systems",
+                    "Image generation with AI, short-form video creation, and Canva AI workflows",
+                ],
+            },
+            {
+                week: 6,
+                title: "Social Media Management",
+                topics: [
+                    "Organic strategy — platform-specific content, calendars, community management",
+                    "AI scheduling tools, analytics dashboards, and performance tracking",
+                ],
+            },
+            {
+                week: 7,
+                title: "Meta Ads",
+                topics: [
+                    "Campaign structure — objectives, ad sets, audiences, and budget allocation",
+                    "Creative testing frameworks, Advantage+, and retargeting strategies",
+                ],
+            },
+            {
+                week: 8,
+                title: "Google Ads",
+                topics: [
+                    "Search campaigns — keyword match types, ad copy, Quality Score, AI bidding",
+                    "Performance Max, Keyword Planner, and cross-campaign attribution",
+                ],
+            },
+            {
+                week: 9,
+                title: "Email & WhatsApp Marketing",
+                topics: [
+                    "Email automation — sequences, segmentation, A/B testing, deliverability",
+                    "WhatsApp marketing — broadcast lists, chatbots, AI personalization",
+                ],
+            },
+            {
+                week: 10,
+                title: "Analytics & Data",
+                topics: [
+                    "GA4 setup, events, conversions, and user journey tracking",
+                    "Search Console, Looker Studio dashboards, and AI-assisted reporting",
+                ],
+            },
+            {
+                week: 11,
+                title: "Live Campaign Sprint",
+                topics: [
+                    "Launch and manage a real ad campaign with a real budget",
+                    "Optimize in real time — creative rotation, bid adjustments, audience refinement",
+                ],
+            },
+            {
+                week: 12,
+                title: "Capstone & Career",
+                topics: [
+                    "Compile campaign case study with full-funnel metrics and ROI analysis",
+                    "Portfolio review, resume building, LinkedIn optimization, and mock interviews",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "A complete digital marketing campaign — from strategy to live execution — with real results you can present to any employer or client.",
+            tracks: [
+                {
+                    title: "Agency Track",
+                    desc: "Full-funnel campaign for a real or simulated brand — SEO, ads, content, analytics",
+                },
+                {
+                    title: "Freelancer Track",
+                    desc: "Client-ready marketing proposal with channel strategy, budget, and projected KPIs",
+                },
+                {
+                    title: "Business Owner Track",
+                    desc: "Marketing plan for your own business with live ad setup and conversion tracking",
+                },
+            ],
+            grading:
+                "Graded on campaign performance metrics, completeness of deliverables, and case study presentation.",
+            leave: "A portfolio-ready campaign case study with real metrics, plus the full Professional career services package.",
+            cta: "Enrol Now",
+        },
+        tools: [
+            "Google Ads",
+            "Meta Ads Manager",
+            "Google Analytics 4",
+            "Search Console",
+            "Looker Studio",
+            "SEMrush / Ubersuggest",
+            "ChatGPT / Claude for marketing copy",
+            "Midjourney / DALL-E for ad creatives",
+            "Canva AI",
+            "Mailchimp / Brevo",
+            "WhatsApp Business API",
+            "WordPress",
+            "Notion / Trello",
+            "+ 8 more unlocked during the course",
+        ],
+        toolsNote:
+            "Most tools run on free tiers. Ad budget is funded by the academy for the live campaign project.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Digital Marketing Practitioner · 6+ Years Agency Experience",
+            bio: "Live, in-person, taught by practitioners who run real campaigns — not by someone who just reads about marketing.",
+            points: [
+                "6+ years running digital marketing campaigns for agencies and brands",
+                "Managed ad budgets of ₹50L+ across Meta, Google, and programmatic platforms",
+                "Trained 50+ marketing professionals and students at the academy",
+                "Every technique is tested on live campaigns before it reaches the classroom",
+            ],
+        },
+        pricingIncludes: [
+            "All 60 live, instructor-led sessions over 3 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real ad budget for the live campaign project",
+            "Final project feedback and case study review",
+            "Certificate of completion",
+            "Professional career services package",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel confident running digital marketing campaigns, we'll make it right.",
+        faqs: [
+            {
+                question: "I have zero marketing experience. Will I cope?",
+                answer: "Yes — this course starts from the foundations of the digital ecosystem, funnels, and buyer psychology. No prior marketing experience is required.",
+            },
+            {
+                question: "What does the 'live campaign with real budget' mean?",
+                answer: "You will run an actual ad campaign on Meta or Google using a real ad budget provided by the academy. You manage the campaign, optimize it, and present the results — just like you would at an agency.",
+            },
+            {
+                question: "Will I learn both SEO and paid ads?",
+                answer: "Yes. The course covers organic search (SEO with AI), paid search (Google Ads), paid social (Meta Ads), email marketing, and analytics — the full stack.",
+            },
+            {
+                question: "What tools will I use?",
+                answer: "Google Ads, Meta Ads Manager, GA4, Search Console, Looker Studio, SEMrush, ChatGPT/Claude for copy, Midjourney/DALL-E for creatives, Canva AI, Mailchimp, WordPress, and more.",
+            },
+            {
+                question: "Will I get a certificate?",
+                answer: "Yes — you earn a certificate of completion after finishing the campaign case study, graded on performance metrics and deliverables.",
+            },
+            {
+                question: "Can this help me get a marketing job?",
+                answer: "Yes. You graduate with a live campaign case study, a complete portfolio, and the Professional career services package including resume building, LinkedIn optimization, mock interviews, and job referrals.",
+            },
+            {
+                question: "Do I need a laptop?",
+                answer: "Yes. You need a laptop with a browser for running ads, managing campaigns, and using analytics tools. A smartphone is helpful but not sufficient.",
+            },
+            {
+                question: "How is this different from free YouTube marketing courses?",
+                answer: "Structure, accountability, a live campaign with real money, and career services. You don't just watch — you build, launch, optimize, and present results that go on your resume.",
+            },
+        ],
+        heroCta: "Enrol Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "digital-marketing-ai": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "3-Month Professional Course · Live · Hands-On · Placement Support",
+        trustLine: "5 days a week · Real ad budget included · Certificate + portfolio",
+        whoItsForHeadline: "Built for people who want to master marketing the way agencies actually do it in 2026",
+        whoItsForBullets: [
+            "Graduates and freshers targeting agency, brand or freelance marketing roles",
+            "Business owners who want to run their own digital marketing without an agency",
+            "Working professionals in marketing, sales or content who want AI-powered skills",
+            "Freelancers who want to offer complete digital marketing services to clients",
+        ],
+        audience: [
+            {
+                label: "Freshers & Graduates",
+                desc: "Graduates and freshers targeting agency, brand or freelance marketing roles",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Business Owners",
+                desc: "Business owners who want to run their own digital marketing without an agency",
+                img: "/assets/images/shop-owners.png",
+                tone: "gold",
+            },
+            {
+                label: "Marketing Professionals",
+                desc: "Working professionals in marketing, sales or content who want AI-powered skills",
+                img: "/assets/images/teacher.png",
+                tone: "white",
+            },
+            {
+                label: "Freelancers",
+                desc: "Freelancers who want to offer complete digital marketing services to clients",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior marketing experience needed. If you use social media and can write an email, you have the foundation.",
+        problemTitle: "Marketing has changed. Most courses haven't.",
+        problemBody: [
+            "Digital marketing in 2026 is not about posting on Instagram and hoping for the best. It is AI-assisted SEO, automated ad bidding, data-driven creative testing, and full-funnel analytics. The marketers who understand this are the ones agencies fight to hire. This course makes you one of them.",
+        ],
+        outcomes: [
+            {
+                title: "Digital Ecosystem",
+                desc: "Understand the full digital landscape — funnels, buyer psychology, KPIs, and how every channel fits together",
+            },
+            {
+                title: "SEO with AI",
+                desc: "Keyword research, on-page and technical SEO, AI content briefs, and GEO/AEO for AI-powered search",
+            },
+            {
+                title: "Paid Ads Mastery",
+                desc: "Meta Ads — campaign structure, audiences, creative testing, Advantage+ — and Google Ads — Search, Performance Max, AI bidding",
+            },
+            {
+                title: "Content & Creative with AI",
+                desc: "AI copywriting, image generation, short-form video, brand voice systems, and social media management",
+            },
+            {
+                title: "Analytics & Reporting",
+                desc: "GA4, Search Console, Looker Studio dashboards, and AI-assisted reporting that impresses clients and employers",
+            },
+            {
+                title: "Live Campaign Portfolio",
+                desc: "A real ad campaign with a real budget — a complete case study you can show any employer or client",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "3 months" },
+            { label: "Total hours", value: "100 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — real campaigns, real budgets, real results",
+            },
+            {
+                label: "Live campaign",
+                value: "You run a live ad campaign with a real ad budget funded by the academy",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing and campaign review during the course",
+            },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Digital Marketing Foundations",
+                topics: [
+                    "The digital ecosystem — channels, funnels, buyer psychology, KPIs",
+                    "Introduction to AI in marketing — tools, workflows, and the 2026 landscape",
+                ],
+            },
+            {
+                week: 2,
+                title: "Websites & Landing Pages",
+                topics: [
+                    "WordPress fundamentals and AI site builders",
+                    "Landing page design, conversion basics, and CRO essentials",
+                ],
+            },
+            {
+                week: 3,
+                title: "SEO Foundations",
+                topics: [
+                    "Keyword research with AI tools — search volume, intent, competition analysis",
+                    "On-page SEO — meta tags, heading structure, internal linking, content optimization",
+                ],
+            },
+            {
+                week: 4,
+                title: "Advanced SEO with AI",
+                topics: [
+                    "Technical SEO — site speed, crawlability, schema markup, Core Web Vitals",
+                    "AI content briefs, GEO/AEO for AI search, and competitive gap analysis",
+                ],
+            },
+            {
+                week: 5,
+                title: "Content & Creative with AI",
+                topics: [
+                    "AI copywriting for ads, emails, and social — brand voice and tone systems",
+                    "Image generation with AI, short-form video creation, and Canva AI workflows",
+                ],
+            },
+            {
+                week: 6,
+                title: "Social Media Management",
+                topics: [
+                    "Organic strategy — platform-specific content, calendars, community management",
+                    "AI scheduling tools, analytics dashboards, and performance tracking",
+                ],
+            },
+            {
+                week: 7,
+                title: "Meta Ads",
+                topics: [
+                    "Campaign structure — objectives, ad sets, audiences, and budget allocation",
+                    "Creative testing frameworks, Advantage+, and retargeting strategies",
+                ],
+            },
+            {
+                week: 8,
+                title: "Google Ads",
+                topics: [
+                    "Search campaigns — keyword match types, ad copy, Quality Score, AI bidding",
+                    "Performance Max, Keyword Planner, and cross-campaign attribution",
+                ],
+            },
+            {
+                week: 9,
+                title: "Email & WhatsApp Marketing",
+                topics: [
+                    "Email automation — sequences, segmentation, A/B testing, deliverability",
+                    "WhatsApp marketing — broadcast lists, chatbots, AI personalization",
+                ],
+            },
+            {
+                week: 10,
+                title: "Analytics & Data",
+                topics: [
+                    "GA4 setup, events, conversions, and user journey tracking",
+                    "Search Console, Looker Studio dashboards, and AI-assisted reporting",
+                ],
+            },
+            {
+                week: 11,
+                title: "Live Campaign Sprint",
+                topics: [
+                    "Launch and manage a real ad campaign with a real budget",
+                    "Optimize in real time — creative rotation, bid adjustments, audience refinement",
+                ],
+            },
+            {
+                week: 12,
+                title: "Capstone & Career",
+                topics: [
+                    "Compile campaign case study with full-funnel metrics and ROI analysis",
+                    "Portfolio review, resume building, LinkedIn optimization, and mock interviews",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "A complete digital marketing campaign — from strategy to live execution — with real results you can present to any employer or client.",
+            tracks: [
+                {
+                    title: "Agency Track",
+                    desc: "Full-funnel campaign for a real or simulated brand — SEO, ads, content, analytics",
+                },
+                {
+                    title: "Freelancer Track",
+                    desc: "Client-ready marketing proposal with channel strategy, budget, and projected KPIs",
+                },
+                {
+                    title: "Business Owner Track",
+                    desc: "Marketing plan for your own business with live ad setup and conversion tracking",
+                },
+            ],
+            grading:
+                "Graded on campaign performance metrics, completeness of deliverables, and case study presentation.",
+            leave: "A portfolio-ready campaign case study with real metrics, plus the full Professional career services package.",
+            cta: "Enrol Now",
+        },
+        tools: [
+            "Google Ads",
+            "Meta Ads Manager",
+            "Google Analytics 4",
+            "Search Console",
+            "Looker Studio",
+            "SEMrush / Ubersuggest",
+            "ChatGPT / Claude for marketing copy",
+            "Midjourney / DALL-E for ad creatives",
+            "Canva AI",
+            "Mailchimp / Brevo",
+            "WhatsApp Business API",
+            "WordPress",
+            "Notion / Trello",
+            "+ 8 more unlocked during the course",
+        ],
+        toolsNote:
+            "Most tools run on free tiers. Ad budget is funded by the academy for the live campaign project.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Digital Marketing Practitioner · 6+ Years Agency Experience",
+            bio: "Live, in-person, taught by practitioners who run real campaigns — not by someone who just reads about marketing.",
+            points: [
+                "6+ years running digital marketing campaigns for agencies and brands",
+                "Managed ad budgets of ₹50L+ across Meta, Google, and programmatic platforms",
+                "Trained 50+ marketing professionals and students at the academy",
+                "Every technique is tested on live campaigns before it reaches the classroom",
+            ],
+        },
+        pricingIncludes: [
+            "All 60 live, instructor-led sessions over 3 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real ad budget for the live campaign project",
+            "Final project feedback and case study review",
+            "Certificate of completion",
+            "Professional career services package",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel confident running digital marketing campaigns, we'll make it right.",
+        faqs: [
+            {
+                question: "I have zero marketing experience. Will I cope?",
+                answer: "Yes — this course starts from the foundations of the digital ecosystem, funnels, and buyer psychology. No prior marketing experience is required.",
+            },
+            {
+                question: "What does the 'live campaign with real budget' mean?",
+                answer: "You will run an actual ad campaign on Meta or Google using a real ad budget provided by the academy. You manage the campaign, optimize it, and present the results — just like you would at an agency.",
+            },
+            {
+                question: "Will I learn both SEO and paid ads?",
+                answer: "Yes. The course covers organic search (SEO with AI), paid search (Google Ads), paid social (Meta Ads), email marketing, and analytics — the full stack.",
+            },
+            {
+                question: "What tools will I use?",
+                answer: "Google Ads, Meta Ads Manager, GA4, Search Console, Looker Studio, SEMrush, ChatGPT/Claude for copy, Midjourney/DALL-E for creatives, Canva AI, Mailchimp, WordPress, and more.",
+            },
+            {
+                question: "Will I get a certificate?",
+                answer: "Yes — you earn a certificate of completion after finishing the campaign case study, graded on performance metrics and deliverables.",
+            },
+            {
+                question: "Can this help me get a marketing job?",
+                answer: "Yes. You graduate with a live campaign case study, a complete portfolio, and the Professional career services package including resume building, LinkedIn optimization, mock interviews, and job referrals.",
+            },
+            {
+                question: "Do I need a laptop?",
+                answer: "Yes. You need a laptop with a browser for running ads, managing campaigns, and using analytics tools. A smartphone is helpful but not sufficient.",
+            },
+            {
+                question: "How is this different from free YouTube marketing courses?",
+                answer: "Structure, accountability, a live campaign with real money, and career services. You don't just watch — you build, launch, optimize, and present results that go on your resume.",
+            },
+        ],
+        heroCta: "Enrol Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "python-for-data-analytics": {
+        heroImage: "/assets/images/python-course.png",
+        eyebrow: "3-Month Professional Course · Live · Hands-On · Placement Support",
+        trustLine: "5 days a week · Certificate + GitHub portfolio · Career services included",
+        whoItsForHeadline: "The fastest route into data analyst and business analyst roles",
+        whoItsForBullets: [
+            "Graduates from any stream who want to break into data analytics",
+            "Commerce and finance professionals looking to add analytical skills",
+            "Freshers targeting data analyst, business analyst, or MIS roles",
+            "Working professionals who want to move from spreadsheets to Python and dashboards",
+        ],
+        audience: [
+            {
+                label: "Freshers & Graduates",
+                desc: "Graduates from any stream who want to break into data analytics",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Commerce & Finance Pros",
+                desc: "Commerce and finance professionals looking to add analytical skills",
+                img: "/assets/images/teacher.png",
+                tone: "gold",
+            },
+            {
+                label: "Career Switchers",
+                desc: "Working professionals who want to move from spreadsheets to Python and dashboards",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+            {
+                label: "MIS & Analyst Aspirants",
+                desc: "Freshers targeting data analyst, business analyst, or MIS roles",
+                img: "/assets/images/exam-aspirants.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior coding experience needed. If you can use Excel, you can learn Python for data analytics.",
+        problemTitle: "Excel is not enough anymore.",
+        problemBody: [
+            "Every job description for analyst roles now asks for Python, SQL, and dashboards. The candidates who can clean data in Pandas, query databases in SQL, and present insights in Power BI are the ones getting callbacks. This course takes you from Excel to all three — in three months, with real projects on your GitHub.",
+        ],
+        outcomes: [
+            {
+                title: "Python for Data",
+                desc: "Python fundamentals, data types, loops, functions — applied specifically to data work, not web dev",
+            },
+            {
+                title: "Pandas & NumPy",
+                desc: "Data manipulation, filtering, grouping, merging, pivot tables — the analyst's daily toolkit",
+            },
+            {
+                title: "SQL for Analytics",
+                desc: "SELECT, JOINs, subqueries, window functions, CTEs — query real databases like a pro",
+            },
+            {
+                title: "Data Cleaning",
+                desc: "Handle missing values, duplicates, inconsistent formats, and messy real-world datasets",
+            },
+            {
+                title: "Visualization & Dashboards",
+                desc: "Matplotlib, Seaborn, and Power BI — from raw charts to interactive dashboards that drive decisions",
+            },
+            {
+                title: "Statistics for Analysts",
+                desc: "Descriptive statistics, distributions, correlation, hypothesis testing — the math behind the insights",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "3 months" },
+            { label: "Total hours", value: "96 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — code along with real datasets every session",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing and project review during the course",
+            },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Python Foundations",
+                topics: [
+                    "Installation, IDEs, variables, data types, operators, input/output",
+                    "Strings, lists, tuples, sets, dictionaries — and when to use each",
+                ],
+            },
+            {
+                week: 2,
+                title: "Python Control Flow & Functions",
+                topics: [
+                    "Conditions, loops, list comprehensions, function definitions",
+                    "File handling — reading CSVs, writing output files, error handling",
+                ],
+            },
+            {
+                week: 3,
+                title: "Introduction to Pandas",
+                topics: [
+                    "DataFrames, Series, indexing, selecting, filtering, sorting",
+                    "Reading CSV and Excel files, inspecting data with describe() and info()",
+                ],
+            },
+            {
+                week: 4,
+                title: "Pandas Deep Dive",
+                topics: [
+                    "Groupby, aggregation, pivot tables, melt, merge, and join",
+                    "Handling missing values, duplicates, and data type conversions",
+                ],
+            },
+            {
+                week: 5,
+                title: "NumPy Essentials",
+                topics: [
+                    "Arrays, broadcasting, vectorized operations, indexing, slicing",
+                    "Statistical functions — mean, median, std, percentiles, random sampling",
+                ],
+            },
+            {
+                week: 6,
+                title: "SQL Foundations",
+                topics: [
+                    "SELECT, WHERE, ORDER BY, GROUP BY, HAVING, aggregate functions",
+                    "INNER, LEFT, RIGHT, FULL joins — querying related tables",
+                ],
+            },
+            {
+                week: 7,
+                title: "Advanced SQL",
+                topics: [
+                    "Subqueries, CTEs, window functions, CASE statements",
+                    "DATE functions, string functions, and real-world query patterns",
+                ],
+            },
+            {
+                week: 8,
+                title: "Data Cleaning & Transformation",
+                topics: [
+                    "Real-world messy datasets — fixing inconsistencies, standardizing formats",
+                    "Feature engineering basics — creating new columns, binning, encoding",
+                ],
+            },
+            {
+                week: 9,
+                title: "Descriptive Statistics",
+                topics: [
+                    "Mean, median, mode, variance, standard deviation, distributions",
+                    "Correlation, scatter plots, and identifying patterns in data",
+                ],
+            },
+            {
+                week: 10,
+                title: "Visualization with Matplotlib & Seaborn",
+                topics: [
+                    "Bar charts, line charts, histograms, box plots, heatmaps",
+                    "Customizing plots — titles, labels, legends, color palettes, subplots",
+                ],
+            },
+            {
+                week: 11,
+                title: "Power BI Dashboards",
+                topics: [
+                    "Power BI Desktop — importing data, transforming data, building relationships",
+                    "Creating interactive dashboards with slicers, filters, and DAX basics",
+                ],
+            },
+            {
+                week: 12,
+                title: "Capstone Project & Career",
+                topics: [
+                    "End-to-end analysis project — from raw data to dashboard and presentation",
+                    "Portfolio review, GitHub setup, resume building, and mock interviews",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "An end-to-end data analysis project — from raw dataset to clean data, insights, and an interactive dashboard — ready for your GitHub and resume.",
+            tracks: [
+                {
+                    title: "Business Analytics",
+                    desc: "Analyze a real business dataset — sales, revenue, customer behavior — and present actionable insights",
+                },
+                {
+                    title: "Finance Analytics",
+                    desc: "Financial data analysis — budgeting, forecasting, expense categorization with visualizations",
+                },
+                {
+                    title: "Marketing Analytics",
+                    desc: "Campaign performance analysis — conversion funnels, channel attribution, ROI metrics",
+                },
+            ],
+            grading:
+                "Graded on data quality, analysis depth, visualization clarity, and presentation.",
+            leave: "A portfolio of analysis projects and dashboards on GitHub, plus the full Professional career services package.",
+            cta: "Enrol Now",
+        },
+        tools: [
+            "Python 3.x",
+            "Jupyter Notebook",
+            "VS Code",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Seaborn",
+            "Power BI Desktop",
+            "MySQL / PostgreSQL",
+            "Google Sheets (for comparison)",
+            "Git & GitHub",
+            "ChatGPT / Claude for learning support",
+        ],
+        toolsNote:
+            "All tools are free and open-source. Power BI Desktop is free on Windows.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Data Analytics Practitioner · 5+ Years Industry Experience",
+            bio: "Live, in-person, taught by practitioners who work with data daily — not by someone who just teaches from slides.",
+            points: [
+                "5+ years working with data analytics, Python, SQL, and dashboards in industry",
+                "Built analytics pipelines for e-commerce, finance, and marketing teams",
+                "Trained 40+ professionals and students in data analytics at the academy",
+                "Every project uses real-world datasets, not toy examples",
+            ],
+        },
+        pricingIncludes: [
+            "All 60 live, instructor-led sessions over 3 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real-world datasets for every project",
+            "Final project feedback and dashboard review",
+            "Certificate of completion",
+            "Professional career services package",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel confident working with data in Python, SQL, and Power BI, we'll make it right.",
+        faqs: [
+            {
+                question: "I come from a non-technical background. Can I learn this?",
+                answer: "Yes. The course starts from Python basics and assumes no coding experience. If you can use Excel, you can learn Python for data analytics.",
+            },
+            {
+                question: "What's the difference between this and the Applied Machine Learning course?",
+                answer: "This course focuses on data analysis — cleaning, exploring, visualizing, and presenting data. The ML course goes further into predictive modeling, algorithms, and deployment.",
+            },
+            {
+                question: "Will I learn SQL too?",
+                answer: "Yes. SQL is a core part of the curriculum — you'll learn to query databases, write complex joins, use window functions, and build analytical queries.",
+            },
+            {
+                question: "What jobs can I get after this course?",
+                answer: "Data Analyst, Business Analyst, MIS Executive, Reporting Analyst, Junior BI Analyst — roles that require Python, SQL, and dashboarding skills.",
+            },
+            {
+                question: "Will I work on real datasets?",
+                answer: "Yes. Every project uses real-world datasets from e-commerce, finance, marketing, and healthcare — not toy CSVs with perfect data.",
+            },
+            {
+                question: "Will I get a certificate?",
+                answer: "Yes — you earn a certificate of completion after finishing the capstone project, graded on analysis quality and dashboard presentation.",
+            },
+            {
+                question: "Do I need a powerful laptop?",
+                answer: "No. Any laptop that runs Python and a browser will work. Power BI Desktop requires Windows, but all other tools work on any OS.",
+            },
+            {
+                question: "Can this help me get a job?",
+                answer: "Yes. You graduate with a GitHub portfolio of analysis projects and the full Professional career services package — resume building, LinkedIn optimization, mock interviews, and job referrals.",
+            },
+        ],
+        heroCta: "Enrol Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "python-data-analytics": {
+        heroImage: "/assets/images/python-course.png",
+        eyebrow: "3-Month Professional Course · Live · Hands-On · Placement Support",
+        trustLine: "5 days a week · Certificate + GitHub portfolio · Career services included",
+        whoItsForHeadline: "The fastest route into data analyst and business analyst roles",
+        whoItsForBullets: [
+            "Graduates from any stream who want to break into data analytics",
+            "Commerce and finance professionals looking to add analytical skills",
+            "Freshers targeting data analyst, business analyst, or MIS roles",
+            "Working professionals who want to move from spreadsheets to Python and dashboards",
+        ],
+        audience: [
+            {
+                label: "Freshers & Graduates",
+                desc: "Graduates from any stream who want to break into data analytics",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Commerce & Finance Pros",
+                desc: "Commerce and finance professionals looking to add analytical skills",
+                img: "/assets/images/teacher.png",
+                tone: "gold",
+            },
+            {
+                label: "Career Switchers",
+                desc: "Working professionals who want to move from spreadsheets to Python and dashboards",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+            {
+                label: "MIS & Analyst Aspirants",
+                desc: "Freshers targeting data analyst, business analyst, or MIS roles",
+                img: "/assets/images/exam-aspirants.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior coding experience needed. If you can use Excel, you can learn Python for data analytics.",
+        problemTitle: "Excel is not enough anymore.",
+        problemBody: [
+            "Every job description for analyst roles now asks for Python, SQL, and dashboards. The candidates who can clean data in Pandas, query databases in SQL, and present insights in Power BI are the ones getting callbacks. This course takes you from Excel to all three — in three months, with real projects on your GitHub.",
+        ],
+        outcomes: [
+            {
+                title: "Python for Data",
+                desc: "Python fundamentals, data types, loops, functions — applied specifically to data work, not web dev",
+            },
+            {
+                title: "Pandas & NumPy",
+                desc: "Data manipulation, filtering, grouping, merging, pivot tables — the analyst's daily toolkit",
+            },
+            {
+                title: "SQL for Analytics",
+                desc: "SELECT, JOINs, subqueries, window functions, CTEs — query real databases like a pro",
+            },
+            {
+                title: "Data Cleaning",
+                desc: "Handle missing values, duplicates, inconsistent formats, and messy real-world datasets",
+            },
+            {
+                title: "Visualization & Dashboards",
+                desc: "Matplotlib, Seaborn, and Power BI — from raw charts to interactive dashboards that drive decisions",
+            },
+            {
+                title: "Statistics for Analysts",
+                desc: "Descriptive statistics, distributions, correlation, hypothesis testing — the math behind the insights",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "3 months" },
+            { label: "Total hours", value: "96 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — code along with real datasets every session",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing and project review during the course",
+            },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Python Foundations",
+                topics: [
+                    "Installation, IDEs, variables, data types, operators, input/output",
+                    "Strings, lists, tuples, sets, dictionaries — and when to use each",
+                ],
+            },
+            {
+                week: 2,
+                title: "Python Control Flow & Functions",
+                topics: [
+                    "Conditions, loops, list comprehensions, function definitions",
+                    "File handling — reading CSVs, writing output files, error handling",
+                ],
+            },
+            {
+                week: 3,
+                title: "Introduction to Pandas",
+                topics: [
+                    "DataFrames, Series, indexing, selecting, filtering, sorting",
+                    "Reading CSV and Excel files, inspecting data with describe() and info()",
+                ],
+            },
+            {
+                week: 4,
+                title: "Pandas Deep Dive",
+                topics: [
+                    "Groupby, aggregation, pivot tables, melt, merge, and join",
+                    "Handling missing values, duplicates, and data type conversions",
+                ],
+            },
+            {
+                week: 5,
+                title: "NumPy Essentials",
+                topics: [
+                    "Arrays, broadcasting, vectorized operations, indexing, slicing",
+                    "Statistical functions — mean, median, std, percentiles, random sampling",
+                ],
+            },
+            {
+                week: 6,
+                title: "SQL Foundations",
+                topics: [
+                    "SELECT, WHERE, ORDER BY, GROUP BY, HAVING, aggregate functions",
+                    "INNER, LEFT, RIGHT, FULL joins — querying related tables",
+                ],
+            },
+            {
+                week: 7,
+                title: "Advanced SQL",
+                topics: [
+                    "Subqueries, CTEs, window functions, CASE statements",
+                    "DATE functions, string functions, and real-world query patterns",
+                ],
+            },
+            {
+                week: 8,
+                title: "Data Cleaning & Transformation",
+                topics: [
+                    "Real-world messy datasets — fixing inconsistencies, standardizing formats",
+                    "Feature engineering basics — creating new columns, binning, encoding",
+                ],
+            },
+            {
+                week: 9,
+                title: "Descriptive Statistics",
+                topics: [
+                    "Mean, median, mode, variance, standard deviation, distributions",
+                    "Correlation, scatter plots, and identifying patterns in data",
+                ],
+            },
+            {
+                week: 10,
+                title: "Visualization with Matplotlib & Seaborn",
+                topics: [
+                    "Bar charts, line charts, histograms, box plots, heatmaps",
+                    "Customizing plots — titles, labels, legends, color palettes, subplots",
+                ],
+            },
+            {
+                week: 11,
+                title: "Power BI Dashboards",
+                topics: [
+                    "Power BI Desktop — importing data, transforming data, building relationships",
+                    "Creating interactive dashboards with slicers, filters, and DAX basics",
+                ],
+            },
+            {
+                week: 12,
+                title: "Capstone Project & Career",
+                topics: [
+                    "End-to-end analysis project — from raw data to dashboard and presentation",
+                    "Portfolio review, GitHub setup, resume building, and mock interviews",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "An end-to-end data analysis project — from raw dataset to clean data, insights, and an interactive dashboard — ready for your GitHub and resume.",
+            tracks: [
+                {
+                    title: "Business Analytics",
+                    desc: "Analyze a real business dataset — sales, revenue, customer behavior — and present actionable insights",
+                },
+                {
+                    title: "Finance Analytics",
+                    desc: "Financial data analysis — budgeting, forecasting, expense categorization with visualizations",
+                },
+                {
+                    title: "Marketing Analytics",
+                    desc: "Campaign performance analysis — conversion funnels, channel attribution, ROI metrics",
+                },
+            ],
+            grading:
+                "Graded on data quality, analysis depth, visualization clarity, and presentation.",
+            leave: "A portfolio of analysis projects and dashboards on GitHub, plus the full Professional career services package.",
+            cta: "Enrol Now",
+        },
+        tools: [
+            "Python 3.x",
+            "Jupyter Notebook",
+            "VS Code",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Seaborn",
+            "Power BI Desktop",
+            "MySQL / PostgreSQL",
+            "Google Sheets (for comparison)",
+            "Git & GitHub",
+            "ChatGPT / Claude for learning support",
+        ],
+        toolsNote:
+            "All tools are free and open-source. Power BI Desktop is free on Windows.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Data Analytics Practitioner · 5+ Years Industry Experience",
+            bio: "Live, in-person, taught by practitioners who work with data daily — not by someone who just teaches from slides.",
+            points: [
+                "5+ years working with data analytics, Python, SQL, and dashboards in industry",
+                "Built analytics pipelines for e-commerce, finance, and marketing teams",
+                "Trained 40+ professionals and students in data analytics at the academy",
+                "Every project uses real-world datasets, not toy examples",
+            ],
+        },
+        pricingIncludes: [
+            "All 60 live, instructor-led sessions over 3 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real-world datasets for every project",
+            "Final project feedback and dashboard review",
+            "Certificate of completion",
+            "Professional career services package",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel confident working with data in Python, SQL, and Power BI, we'll make it right.",
+        faqs: [
+            {
+                question: "I come from a non-technical background. Can I learn this?",
+                answer: "Yes. The course starts from Python basics and assumes no coding experience. If you can use Excel, you can learn Python for data analytics.",
+            },
+            {
+                question: "What's the difference between this and the Applied Machine Learning course?",
+                answer: "This course focuses on data analysis — cleaning, exploring, visualizing, and presenting data. The ML course goes further into predictive modeling, algorithms, and deployment.",
+            },
+            {
+                question: "Will I learn SQL too?",
+                answer: "Yes. SQL is a core part of the curriculum — you'll learn to query databases, write complex joins, use window functions, and build analytical queries.",
+            },
+            {
+                question: "What jobs can I get after this course?",
+                answer: "Data Analyst, Business Analyst, MIS Executive, Reporting Analyst, Junior BI Analyst — roles that require Python, SQL, and dashboarding skills.",
+            },
+            {
+                question: "Will I work on real datasets?",
+                answer: "Yes. Every project uses real-world datasets from e-commerce, finance, marketing, and healthcare — not toy CSVs with perfect data.",
+            },
+            {
+                question: "Will I get a certificate?",
+                answer: "Yes — you earn a certificate of completion after finishing the capstone project, graded on analysis quality and dashboard presentation.",
+            },
+            {
+                question: "Do I need a powerful laptop?",
+                answer: "No. Any laptop that runs Python and a browser will work. Power BI Desktop requires Windows, but all other tools work on any OS.",
+            },
+            {
+                question: "Can this help me get a job?",
+                answer: "Yes. You graduate with a GitHub portfolio of analysis projects and the full Professional career services package — resume building, LinkedIn optimization, mock interviews, and job referrals.",
+            },
+        ],
+        heroCta: "Enrol Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "applied-machine-learning": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "4-Month Professional Course · Live · Hands-On · From Data to Deployed Model",
+        trustLine: "Prerequisite: Python Foundation or entrance test · Certificate + deployed capstone",
+        whoItsForHeadline: "From data to deployed model in four months",
+        whoItsForBullets: [
+            "Graduates and freshers who want to break into machine learning and data science roles",
+            "Analysts and developers who want to move from descriptive analytics to predictive modeling",
+            "Career changers with Python skills who want hands-on ML experience",
+            "Students preparing for placements in AI/ML or data science tracks",
+        ],
+        audience: [
+            {
+                label: "Freshers & Graduates",
+                desc: "Graduates and freshers who want to break into machine learning and data science roles",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Analysts & Developers",
+                desc: "Analysts and developers who want to move from descriptive analytics to predictive modeling",
+                img: "/assets/images/teacher.png",
+                tone: "gold",
+            },
+            {
+                label: "Career Changers",
+                desc: "Career changers with Python skills who want hands-on ML experience",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+            {
+                label: "Placement Aspirants",
+                desc: "Students preparing for placements in AI/ML or data science tracks",
+                img: "/assets/images/exam-aspirants.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "You need solid Python fundamentals — variables, loops, functions, Pandas basics. Take our Python Foundation course or pass the entrance test.",
+        problemTitle: "Knowing Python is not the same as building models.",
+        problemBody: [
+            "Most Python courses stop at loops and functions. Most data science courses stop at Jupyter notebooks. This course starts where those end — you learn to clean data, engineer features, train models, evaluate them properly, and deploy them as working applications. That is what employers actually test for.",
+        ],
+        outcomes: [
+            {
+                title: "Data Wrangling",
+                desc: "Pandas, NumPy, cleaning messy data, feature engineering — preparing data for modeling",
+            },
+            {
+                title: "Visualization",
+                desc: "Matplotlib, Seaborn, exploratory data analysis that reveals patterns and outliers",
+            },
+            {
+                title: "SQL for Data",
+                desc: "Querying databases, joins, aggregations, and subqueries for data extraction",
+            },
+            {
+                title: "Supervised Learning",
+                desc: "Linear regression, logistic regression, decision trees, random forest, XGBoost, SVMs",
+            },
+            {
+                title: "Unsupervised Learning",
+                desc: "K-Means clustering, hierarchical clustering, PCA, dimensionality reduction",
+            },
+            {
+                title: "Model Deployment",
+                desc: "Streamlit, Flask, model serialization, building and sharing working ML applications",
+            },
+            {
+                title: "Capstone Project",
+                desc: "An end-to-end ML project — from raw data to a deployed model on your GitHub",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "4 months" },
+            { label: "Total hours", value: "128 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — code along with real datasets every session",
+            },
+            {
+                label: "Prerequisite",
+                value: "Python Foundation course or entrance test",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing and project review during the course",
+            },
+        ],
+        weeks: [
+            {
+                week: 1,
+                title: "Math Intuition & Data Foundations",
+                topics: [
+                    "Statistics essentials — mean, variance, standard deviation, distributions",
+                    "Probability basics, Bayes' theorem, and their relevance to ML",
+                ],
+            },
+            {
+                week: 2,
+                title: "Python for Data Science",
+                topics: [
+                    "NumPy arrays, broadcasting, vectorized operations",
+                    "Pandas review — DataFrames, groupby, merge, pivot — applied to ML datasets",
+                ],
+            },
+            {
+                week: 3,
+                title: "Data Cleaning & Feature Engineering",
+                topics: [
+                    "Handling missing values, outliers, and inconsistent data types",
+                    "Feature creation, encoding categorical variables, scaling numerical features",
+                ],
+            },
+            {
+                week: 4,
+                title: "Visualization & EDA",
+                topics: [
+                    "Matplotlib and Seaborn for exploratory data analysis",
+                    "Distribution plots, correlation heatmaps, pair plots, and identifying patterns",
+                ],
+            },
+            {
+                week: 5,
+                title: "SQL for Data Work",
+                topics: [
+                    "SELECT, JOINs, GROUP BY, HAVING, subqueries, CTEs",
+                    "Window functions and analytical queries for feature extraction",
+                ],
+            },
+            {
+                week: 6,
+                title: "Introduction to Machine Learning",
+                topics: [
+                    "What ML is, types of learning — supervised, unsupervised, reinforcement",
+                    "Train-test split, cross-validation, overfitting, underfitting, bias-variance tradeoff",
+                ],
+            },
+            {
+                week: 7,
+                title: "Linear & Logistic Regression",
+                topics: [
+                    "Linear regression — cost function, gradient descent, evaluation metrics",
+                    "Logistic regression — sigmoid, decision boundary, confusion matrix, ROC-AUC",
+                ],
+            },
+            {
+                week: 8,
+                title: "Decision Trees & Ensembles",
+                topics: [
+                    "Decision trees — Gini, entropy, pruning, feature importance",
+                    "Random forest, bagging, boosting — AdaBoost, Gradient Boosting, XGBoost",
+                ],
+            },
+            {
+                week: 9,
+                title: "Model Evaluation & Tuning",
+                topics: [
+                    "Metrics — accuracy, precision, recall, F1, RMSE, MAE, R²",
+                    "Grid search, random search, hyperparameter tuning, learning curves",
+                ],
+            },
+            {
+                week: 10,
+                title: "Unsupervised Learning",
+                topics: [
+                    "K-Means clustering — elbow method, silhouette score",
+                    "Hierarchical clustering, PCA, dimensionality reduction techniques",
+                ],
+            },
+            {
+                week: 11,
+                title: "Support Vector Machines & Advanced Topics",
+                topics: [
+                    "SVMs — kernel trick, margin, support vectors",
+                    "Naive Bayes, KNN, ensemble stacking, and when to use which model",
+                ],
+            },
+            {
+                week: 12,
+                title: "Feature Engineering Mastery",
+                topics: [
+                    "Advanced feature engineering — text features, date features, interaction terms",
+                    "Feature selection methods — mutual information, recursive feature elimination",
+                ],
+            },
+            {
+                week: 13,
+                title: "Model Serialization & Pipelines",
+                topics: [
+                    "Saving and loading models with joblib and pickle",
+                    "Building sklearn pipelines for reproducible workflows",
+                ],
+            },
+            {
+                week: 14,
+                title: "Deployment with Streamlit",
+                topics: [
+                    "Building interactive ML web apps with Streamlit",
+                    "User inputs, model prediction, displaying results, and deploying to Streamlit Cloud",
+                ],
+            },
+            {
+                week: 15,
+                title: "Deployment with Flask",
+                topics: [
+                    "Building REST APIs with Flask for model serving",
+                    "Request handling, JSON responses, and deploying to a cloud platform",
+                ],
+            },
+            {
+                week: 16,
+                title: "Capstone Project & Career",
+                topics: [
+                    "Complete end-to-end ML project — data to deployed model",
+                    "Portfolio review, GitHub optimization, resume building, mock interviews",
+                ],
+            },
+        ],
+        finalProject: {
+            intro: "A deployed machine learning application — from raw data through model training to a live web app — hosted on your GitHub and ready for interviews.",
+            tracks: [
+                {
+                    title: "Predictive Analytics",
+                    desc: "Predict house prices, customer churn, or loan default with a deployed Streamlit app",
+                },
+                {
+                    title: "Classification",
+                    desc: "Spam detection, disease prediction, or fraud detection with a Flask API",
+                },
+                {
+                    title: "Recommendation System",
+                    desc: "Product or content recommendation engine with a working interface",
+                },
+            ],
+            grading:
+                "Graded on data handling, model performance, code quality, deployment functionality, and presentation.",
+            leave: "A deployed capstone model and a GitHub portfolio, plus the full Professional career services package.",
+            cta: "Enrol Now",
+        },
+        tools: [
+            "Python 3.x",
+            "Jupyter Notebook",
+            "VS Code",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "XGBoost",
+            "Matplotlib",
+            "Seaborn",
+            "Streamlit",
+            "Flask",
+            "MySQL / PostgreSQL",
+            "Git & GitHub",
+            "Joblib / Pickle",
+        ],
+        toolsNote:
+            "All tools are free and open-source. You will deploy your capstone to Streamlit Cloud or a similar free platform.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "ML Engineer & Trainer · 5+ Years Building Production Models",
+            bio: "Live, in-person, taught by practitioners who deploy ML models in production — not by someone who only teaches from textbooks.",
+            points: [
+                "5+ years building and deploying machine learning models in industry",
+                "Experience with supervised learning, NLP, and recommendation systems",
+                "Trained 30+ professionals and students in ML at the academy",
+                "Every technique is tested on real datasets before it reaches the classroom",
+            ],
+        },
+        pricingIncludes: [
+            "All 80 live, instructor-led sessions over 4 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real-world datasets for every project",
+            "Final project feedback and deployment review",
+            "Certificate of completion",
+            "Professional career services package",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session and complete the final project, and you don't feel confident building and deploying ML models, we'll make it right.",
+        faqs: [
+            {
+                question: "What are the prerequisites for this course?",
+                answer: "Solid Python fundamentals — variables, loops, functions, and basic Pandas. Either complete our Python Foundation course or pass our entrance test.",
+            },
+            {
+                question: "Is this course more about theory or practice?",
+                answer: "Practice. You write code every session. Math intuition is covered where needed, but the focus is on building, evaluating, and deploying real models.",
+            },
+            {
+                question: "Will I deploy a real model?",
+                answer: "Yes. Your capstone project is a fully deployed ML application — a Streamlit app or Flask API — live on the internet and on your GitHub.",
+            },
+            {
+                question: "What kind of models will I build?",
+                answer: "Regression, classification, clustering, ensemble methods, and recommendation systems — the core algorithms used in industry.",
+            },
+            {
+                question: "Can this help me get an ML job?",
+                answer: "Yes. You graduate with a deployed capstone, a GitHub portfolio, and the full Professional career services package including resume building and job referrals.",
+            },
+            {
+                question: "How does this differ from the Advanced Diploma?",
+                answer: "This is a focused 4-month Professional course on ML specifically. The Advanced Diploma is a 6-month Career program that covers ML plus deep learning, NLP, generative AI, and deployment in depth.",
+            },
+            {
+                question: "Will I learn deep learning?",
+                answer: "This course focuses on classical ML and deployment. Deep learning (neural networks, TensorFlow, CNNs) is covered in the Advanced Diploma in AI & ML.",
+            },
+            {
+                question: "Do I need a powerful laptop?",
+                answer: "No. Scikit-learn models run on any laptop. If you train large neural networks later, cloud platforms can help, but this course does not require a GPU.",
+            },
+        ],
+        heroCta: "Enrol Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "advanced-diploma-ai-ml": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "6-Month Career Program · Flagship Course · Live · Placement Support",
+        trustLine: "5 days a week, 2 hours a day · 7 deployed projects · Full career services",
+        whoItsForHeadline: "Six months. Seven deployed projects. A portfolio that gets you interviews.",
+        whoItsForBullets: [
+            "Freshers and career changers who want to become AI/ML engineers, data scientists or AI developers",
+            "Graduates ready to put in the work for a serious career transformation",
+            "Developers who want to add ML and deep learning to their skill set",
+            "Students who want the strongest possible portfolio before entering the job market",
+        ],
+        audience: [
+            {
+                label: "Freshers & Career Changers",
+                desc: "Freshers and career changers who want to become AI/ML engineers, data scientists or AI developers",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Graduates",
+                desc: "Graduates ready to put in the work for a serious career transformation",
+                img: "/assets/images/exam-aspirants.png",
+                tone: "gold",
+            },
+            {
+                label: "Developers",
+                desc: "Developers who want to add ML and deep learning to their skill set",
+                img: "/assets/images/teacher.png",
+                tone: "white",
+            },
+            {
+                label: "Job Seekers",
+                desc: "Students who want the strongest possible portfolio before entering the job market",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior ML experience required. Basic Python is helpful — we review the essentials in Month 1. This course demands consistency: 5 days a week, every week.",
+        problemTitle: "This is not a certificate course. This is a career program.",
+        problemBody: [
+            "Six months of daily practice, seven deployed projects, and a portfolio that proves you can do the work. Most AI courses give you a certificate and a Jupyter notebook. This one gives you deployed models on GitHub, a capstone project, interview prep, and job referrals. The difference shows up on your resume and in your interviews.",
+        ],
+        outcomes: [
+            {
+                title: "Programming & Data Foundations",
+                desc: "Python deep-dive, Git and GitHub, Jupyter, Pandas, NumPy, SQL — the full foundation",
+            },
+            {
+                title: "Statistics & Data Analysis",
+                desc: "Descriptive and inferential statistics, hypothesis testing, EDA, visualization, Power BI",
+            },
+            {
+                title: "Core Machine Learning",
+                desc: "Regression, classification, decision trees, random forest, XGBoost, clustering, model evaluation, feature engineering",
+            },
+            {
+                title: "Deep Learning",
+                desc: "Neural networks, TensorFlow/Keras, CNNs for computer vision, RNNs, transfer learning",
+            },
+            {
+                title: "NLP & Generative AI",
+                desc: "Text processing, embeddings, transformers, LLM APIs, RAG systems, LangChain, building AI agents, fine-tuning basics",
+            },
+            {
+                title: "Deployment & MLOps",
+                desc: "Streamlit, FastAPI, Hugging Face Spaces, cloud basics, MLOps introduction, CI/CD concepts",
+            },
+            {
+                title: "Capstone Portfolio",
+                desc: "6 graded projects + 1 capstone, all deployed and live on your GitHub",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "6 months" },
+            { label: "Total hours", value: "220 hours" },
+            { label: "Schedule", value: "5 days a week, 2 hours a day" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — every session includes coding",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Doubt-clearing",
+                value: "Daily doubt-clearing lab access, 10 AM – 7 PM",
+            },
+        ],
+        monthlyJourney: [
+            {
+                month: 1,
+                title: "Programming & Data Foundations",
+                hours: "40 hrs",
+                topics: "Python deep-dive, Git and GitHub, Jupyter, Pandas, NumPy, SQL",
+                detail: [
+                    "Python refresher — data types, control flow, functions, OOP, error handling",
+                    "Git and GitHub — version control, branches, pull requests, portfolio setup",
+                    "Jupyter Notebooks — workflow, markdown, magic commands",
+                    "Pandas — DataFrames, indexing, groupby, merge, pivot, apply",
+                    "NumPy — arrays, broadcasting, vectorized operations",
+                    "SQL — SELECT, JOINs, subqueries, window functions, CTEs",
+                ],
+            },
+            {
+                month: 2,
+                title: "Statistics & Data Analysis",
+                hours: "36 hrs",
+                topics: "Descriptive and inferential statistics, hypothesis testing, EDA, visualization, Power BI",
+                detail: [
+                    "Descriptive statistics — central tendency, dispersion, distributions",
+                    "Inferential statistics — sampling, confidence intervals, p-values",
+                    "Hypothesis testing — t-tests, chi-square, ANOVA",
+                    "EDA — univariate, bivariate, multivariate analysis with Matplotlib and Seaborn",
+                    "Power BI — data import, transformations, DAX basics, interactive dashboards",
+                ],
+            },
+            {
+                month: 3,
+                title: "Core Machine Learning",
+                hours: "40 hrs",
+                topics: "Regression, classification, decision trees, random forest, XGBoost, clustering, model evaluation, feature engineering",
+                detail: [
+                    "Linear and logistic regression — cost functions, gradient descent, evaluation",
+                    "Decision trees, random forest, gradient boosting, XGBoost",
+                    "Model evaluation — confusion matrix, ROC-AUC, precision, recall, F1, RMSE",
+                    "Hyperparameter tuning — grid search, random search, cross-validation",
+                    "Clustering — K-Means, hierarchical, DBSCAN, PCA",
+                    "Feature engineering — encoding, scaling, selection, transformation",
+                ],
+            },
+            {
+                month: 4,
+                title: "Deep Learning",
+                hours: "40 hrs",
+                topics: "Neural networks, TensorFlow/Keras, CNNs for computer vision, RNNs, transfer learning",
+                detail: [
+                    "Neural network fundamentals — perceptrons, activation functions, backpropagation",
+                    "TensorFlow and Keras — building, training, and evaluating neural networks",
+                    "CNNs — convolution, pooling, architectures (VGG, ResNet), image classification",
+                    "RNNs and LSTMs — sequence data, time series, text classification",
+                    "Transfer learning — using pre-trained models, fine-tuning, data augmentation",
+                ],
+            },
+            {
+                month: 5,
+                title: "NLP & Generative AI",
+                hours: "40 hrs",
+                topics: "Text processing, embeddings, transformers, LLM APIs, RAG systems, LangChain, building AI agents, fine-tuning basics",
+                detail: [
+                    "Text preprocessing — tokenization, stemming, lemmatization, TF-IDF",
+                    "Word embeddings — Word2Vec, GloVe, sentence transformers",
+                    "Transformers — attention mechanism, BERT, GPT architecture",
+                    "LLM APIs — OpenAI, Anthropic, prompt engineering for production",
+                    "RAG systems — document loading, chunking, vector stores, retrieval",
+                    "LangChain — chains, agents, tools, building AI applications",
+                ],
+            },
+            {
+                month: 6,
+                title: "Deployment, Capstone & Career",
+                hours: "24 hrs",
+                topics: "Streamlit, FastAPI, Hugging Face Spaces, cloud basics, MLOps introduction, capstone project, portfolio build, interview preparation",
+                detail: [
+                    "Streamlit — interactive ML apps, user inputs, visualization, deployment",
+                    "FastAPI — REST APIs for model serving, request handling, JSON responses",
+                    "Hugging Face Spaces — model hosting, Gradio interfaces",
+                    "Cloud basics — AWS/GCP essentials for ML deployment",
+                    "MLOps introduction — experiment tracking, model versioning, CI/CD concepts",
+                    "Capstone project — end-to-end from data to deployed application",
+                ],
+            },
+        ],
+        weeks: [
+            { week: 1, title: "Month 1 — Python Deep-Dive", topics: ["Variables, data types, control flow, functions, OOP, error handling"] },
+            { week: 2, title: "Month 1 — Git, Jupyter & Pandas", topics: ["Git/GitHub workflow, Jupyter Notebooks, Pandas DataFrames, indexing, filtering"] },
+            { week: 3, title: "Month 1 — Pandas Advanced & NumPy", topics: ["Groupby, merge, pivot, apply — NumPy arrays, broadcasting, vectorized ops"] },
+            { week: 4, title: "Month 1 — SQL & Foundations Wrap", topics: ["SELECT, JOINs, subqueries, window functions, CTEs — Month 1 project"] },
+            { week: 5, title: "Month 2 — Descriptive Statistics", topics: ["Central tendency, dispersion, distributions, visual summaries"] },
+            { week: 6, title: "Month 2 — Inferential Statistics", topics: ["Sampling, confidence intervals, p-values, t-tests, chi-square"] },
+            { week: 7, title: "Month 2 — EDA & Visualization", topics: ["Matplotlib, Seaborn, univariate/bivariate analysis, correlation"] },
+            { week: 8, title: "Month 2 — Power BI & Statistics Wrap", topics: ["Power BI dashboards, DAX basics, Month 2 project"] },
+            { week: 9, title: "Month 3 — Regression Models", topics: ["Linear regression, logistic regression, evaluation metrics"] },
+            { week: 10, title: "Month 3 — Trees & Ensembles", topics: ["Decision trees, random forest, XGBoost, gradient boosting"] },
+            { week: 11, title: "Month 3 — Model Evaluation & Tuning", topics: ["Grid search, cross-validation, learning curves, metrics deep-dive"] },
+            { week: 12, title: "Month 3 — Clustering & Feature Engineering", topics: ["K-Means, PCA, encoding, scaling, feature selection — Month 3 project"] },
+            { week: 13, title: "Month 4 — Neural Network Foundations", topics: ["Perceptrons, activation functions, backpropagation, TensorFlow/Keras intro"] },
+            { week: 14, title: "Month 4 — CNNs for Computer Vision", topics: ["Convolution, pooling, VGG, ResNet, image classification"] },
+            { week: 15, title: "Month 4 — RNNs & Sequence Models", topics: ["RNNs, LSTMs, time series forecasting, text classification"] },
+            { week: 16, title: "Month 4 — Transfer Learning & DL Wrap", topics: ["Pre-trained models, fine-tuning, data augmentation — Month 4 project"] },
+            { week: 17, title: "Month 5 — Text Processing & Embeddings", topics: ["Tokenization, TF-IDF, Word2Vec, sentence transformers"] },
+            { week: 18, title: "Month 5 — Transformers & LLM APIs", topics: ["Attention mechanism, BERT, GPT, OpenAI/Anthropic API integration"] },
+            { week: 19, title: "Month 5 — RAG Systems", topics: ["Document loading, chunking, vector stores, retrieval-augmented generation"] },
+            { week: 20, title: "Month 5 — LangChain & AI Agents", topics: ["Chains, agents, tools, building AI applications — Month 5 project"] },
+            { week: 21, title: "Month 6 — Streamlit & FastAPI", topics: ["Interactive ML apps, REST APIs for model serving"] },
+            { week: 22, title: "Month 6 — Hugging Face & Cloud", topics: ["Model hosting, Gradio, AWS/GCP basics, MLOps intro"] },
+            { week: 23, title: "Month 6 — Capstone Sprint", topics: ["End-to-end capstone — data to deployed application"] },
+            { week: 24, title: "Month 6 — Portfolio & Career", topics: ["GitHub portfolio, resume building, LinkedIn, mock interviews, placement prep"] },
+        ],
+        finalProject: {
+            intro: "A deployed, end-to-end AI/ML application — from raw data through model training to a live web interface — hosted on your GitHub and ready for interviews.",
+            tracks: [
+                {
+                    title: "Computer Vision",
+                    desc: "Image classification or object detection with a deployed Streamlit app",
+                },
+                {
+                    title: "NLP",
+                    desc: "Text classification, sentiment analysis, or chatbot with a FastAPI backend",
+                },
+                {
+                    title: "Predictive Analytics",
+                    desc: "Customer churn, demand forecasting, or fraud detection with a deployed interface",
+                },
+                {
+                    title: "Generative AI",
+                    desc: "RAG application or AI agent with document understanding and LLM integration",
+                },
+                {
+                    title: "Recommendation System",
+                    desc: "Product or content recommendation engine with a working web interface",
+                },
+            ],
+            grading:
+                "Graded on code quality, model performance, deployment functionality, documentation, and presentation.",
+            leave: "6 graded projects + 1 capstone, all deployed and live on your GitHub.",
+            cta: "Apply Now",
+        },
+        tools: [
+            "Python 3.x",
+            "Jupyter Notebook",
+            "VS Code",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "XGBoost",
+            "TensorFlow / Keras",
+            "PyTorch (intro)",
+            "Matplotlib",
+            "Seaborn",
+            "Power BI Desktop",
+            "MySQL / PostgreSQL",
+            "Streamlit",
+            "FastAPI",
+            "Flask",
+            "Hugging Face Transformers",
+            "LangChain",
+            "OpenAI API",
+            "Git & GitHub",
+            "Docker (intro)",
+            "AWS / GCP (intro)",
+        ],
+        toolsNote:
+            "All primary tools are free. Cloud platforms offer free tiers sufficient for the course projects.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "AI/ML Engineer & Trainer · 6+ Years Building Production Systems",
+            bio: "Live, in-person, taught by practitioners who build and deploy AI systems — not by someone who only teaches from textbooks.",
+            points: [
+                "6+ years building machine learning and AI systems in industry",
+                "Experience across computer vision, NLP, and generative AI applications",
+                "Trained 60+ professionals and students in AI/ML at the academy",
+                "Every technique is tested on real projects before it reaches the classroom",
+            ],
+        },
+        pricingIncludes: [
+            "All 120 live, instructor-led sessions over 6 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real-world datasets for every project",
+            "6 graded projects + 1 capstone with deployment",
+            "Certificate of completion",
+            "Full career services package — resume building, LinkedIn and GitHub optimization, 5+ mock interviews, 20 hours of aptitude and communication training, priority job referrals",
+            "Lifetime batch re-attendance",
+            "Daily doubt-clearing lab access, 10 AM – 7 PM",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session, complete all 7 projects, and you don't feel ready for an AI/ML role, we'll make it right.",
+        faqs: [
+            {
+                question: "What are the prerequisites?",
+                answer: "Basic Python knowledge — variables, loops, functions. We review the essentials in Month 1, but you should be comfortable writing simple Python programs.",
+            },
+            {
+                question: "Is this the same as the Applied Machine Learning course?",
+                answer: "No. The Applied ML course is 4 months and covers classical ML and deployment. This is a 6-month Career program that adds deep learning, NLP, generative AI, LangChain, and full career services.",
+            },
+            {
+                question: "Will I really build 7 deployed projects?",
+                answer: "Yes. Every month includes a graded project, and the final month includes a capstone. All 7 are deployed and live on your GitHub by the time you graduate.",
+            },
+            {
+                question: "What career services are included?",
+                answer: "1-on-1 resume building, LinkedIn and GitHub optimization, 5+ mock interviews, 20 hours of aptitude and communication training, and priority job referrals to hiring partners.",
+            },
+            {
+                question: "Can I attend if I miss sessions?",
+                answer: "Every session is recorded, and you get lifetime batch re-attendance. However, this course demands daily consistency — missing regularly will make it harder to keep up.",
+            },
+            {
+                question: "What jobs can I target after this course?",
+                answer: "AI/ML Engineer, Data Scientist, ML Developer, AI Developer, Junior NLP Engineer — roles that require hands-on ML, deep learning, and deployment skills.",
+            },
+            {
+                question: "Is the daily doubt-clearing lab in-person or online?",
+                answer: "Both. The lab runs 10 AM – 7 PM daily — walk in at the academy or join online for instant help.",
+            },
+            {
+                question: "Do I need a powerful laptop?",
+                answer: "A mid-range laptop (8GB RAM, dual-core processor) is sufficient for most of the course. For deep learning training, we use cloud platforms with free GPU tiers.",
+            },
+            {
+                question: "What is lifetime batch re-attendance?",
+                answer: "After completing the course, you can re-attend any future batch of the same course — for free, forever. Great for revision or catching topics you missed.",
+            },
+            {
+                question: "How is this different from online Udemy/Coursera courses?",
+                answer: "Live instruction, daily doubt-clearing, graded projects, deployment practice, career services, and job referrals. A recorded course can't correct your code, review your project, or prepare you for interviews.",
+            },
+        ],
+        heroCta: "Apply Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "ai-digital-marketing-specialist": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "6-Month Career Program · Live · Multi-Campaign Portfolio · Placement Support",
+        trustLine: "5 days a week · Multiple live campaigns · Full career services package",
+        whoItsForHeadline: "Become the marketer agencies are competing to hire",
+        whoItsForBullets: [
+            "Graduates and professionals who want a complete, career-grade marketing education",
+            "Marketers who want AI-driven content systems, automation, and performance analytics",
+            "Freelancers building an agency-level portfolio with multi-campaign case studies",
+            "Career switchers targeting senior marketing, growth, or performance roles",
+        ],
+        audience: [
+            {
+                label: "Graduates & Professionals",
+                desc: "Graduates and professionals who want a complete, career-grade marketing education",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "AI-Powered Marketers",
+                desc: "Marketers who want AI-driven content systems, automation, and performance analytics",
+                img: "/assets/images/teacher.png",
+                tone: "gold",
+            },
+            {
+                label: "Freelancers & Agency Builders",
+                desc: "Freelancers building an agency-level portfolio with multi-campaign case studies",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+            {
+                label: "Career Switchers",
+                desc: "Career switchers targeting senior marketing, growth, or performance roles",
+                img: "/assets/images/shop-owners.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "No prior marketing experience required. This course covers everything from the foundations to advanced campaign management — with AI at its core.",
+        problemTitle: "Marketing talent is everywhere. Marketing skill is rare.",
+        problemBody: [
+            "Every graduate knows how to post on Instagram. Very few know how to build a full-funnel campaign, manage a ₹1L+ ad budget, set up marketing automation, analyze attribution across channels, and present results that drive business decisions. That gap is where the careers and the money are. This course closes it.",
+        ],
+        outcomes: [
+            {
+                title: "Full-Stack Marketing",
+                desc: "SEO, paid ads (Meta + Google), content, email, WhatsApp, social media — the complete digital marketing stack",
+            },
+            {
+                title: "Advanced Paid Media",
+                desc: "Multi-platform ad management, budget optimization, A/B testing at scale, and attribution modeling",
+            },
+            {
+                title: "Marketing Automation",
+                desc: "Email sequences, lead scoring, CRM integration, chatbots, and automated campaign workflows",
+            },
+            {
+                title: "AI Content Systems",
+                desc: "AI-driven content production pipelines, brand voice consistency, and scalable content strategies",
+            },
+            {
+                title: "Performance Analytics",
+                desc: "GA4, multi-touch attribution, Looker Studio dashboards, and AI-assisted performance reporting",
+            },
+            {
+                title: "Multi-Campaign Portfolio",
+                desc: "Multiple live campaigns across platforms with real results — a portfolio that demonstrates real skill",
+            },
+            {
+                title: "Client & Campaign Management",
+                desc: "Brief writing, client communication, reporting cadences, and agency workflow management",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "6 months" },
+            { label: "Total hours", value: "200 hours" },
+            { label: "Schedule", value: "5 classes a week" },
+            {
+                label: "Session format",
+                value: "Live, instructor-led, hands-on — real campaigns, real budgets, real results",
+            },
+            {
+                label: "Live campaigns",
+                value: "Multiple live ad campaigns with real budgets across Meta, Google, and other platforms",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+            {
+                label: "Support",
+                value: "Personal doubt-clearing, campaign review, and career guidance during the course",
+            },
+        ],
+        weeks: [
+            { week: 1, title: "Digital Marketing Foundations & Ecosystem", topics: ["Digital landscape, funnels, buyer psychology, KPIs", "AI in marketing — tools, workflows, and the 2026 landscape"] },
+            { week: 2, title: "Websites, Landing Pages & CRO", topics: ["WordPress and AI site builders", "Landing page design, conversion rate optimization, A/B testing basics"] },
+            { week: 3, title: "SEO Foundations with AI", topics: ["Keyword research, on-page SEO, content optimization", "AI content briefs, search intent mapping"] },
+            { week: 4, title: "Advanced SEO & Technical", topics: ["Technical SEO — site speed, schema, crawlability", "GEO/AEO for AI search, competitive analysis"] },
+            { week: 5, title: "Content & Creative with AI", topics: ["AI copywriting for ads, emails, social", "Image generation, video creation, Canva AI workflows"] },
+            { week: 6, title: "Social Media Strategy & Management", topics: ["Platform-specific content strategy, calendars", "Community management, AI scheduling tools"] },
+            { week: 7, title: "Meta Ads Foundations", topics: ["Campaign structure, objectives, audiences, budgets", "Ad creative testing, pixel setup, conversion events"] },
+            { week: 8, title: "Meta Ads Advanced", topics: ["Advantage+, retargeting, lookalike audiences", "Campaign optimization, scaling, attribution"] },
+            { week: 9, title: "Google Ads — Search & Shopping", topics: ["Keyword match types, ad copy, Quality Score", "Shopping campaigns, product feed optimization"] },
+            { week: 10, title: "Google Ads — PMax & Display", topics: ["Performance Max campaigns, audience signals", "Display and YouTube ads, cross-campaign strategy"] },
+            { week: 11, title: "Email Marketing Automation", topics: ["Sequences, segmentation, A/B testing, deliverability", "CRM integration, lead scoring, welcome flows"] },
+            { week: 12, title: "WhatsApp & Conversational Marketing", topics: ["WhatsApp broadcast, chatbot setup, AI personalization", "Conversational funnels, lead qualification bots"] },
+            { week: 13, title: "Marketing Automation Workflows", topics: ["Multi-channel automation — email + WhatsApp + ads", "Lead nurture sequences, retargeting automation"] },
+            { week: 14, title: "AI Content Production Systems", topics: ["Building scalable content pipelines with AI", "Brand voice systems, content calendars, repurposing"] },
+            { week: 15, title: "Analytics — GA4 & Search Console", topics: ["GA4 events, conversions, user journeys", "Search Console, organic performance tracking"] },
+            { week: 16, title: "Analytics — Looker Studio & Attribution", topics: ["Looker Studio dashboards, cross-channel reporting", "Multi-touch attribution, AI-assisted analysis"] },
+            { week: 17, title: "Live Campaign 1 — Meta", topics: ["Launch and manage a live Meta ad campaign", "Optimize — creative rotation, bid strategy, audience refinement"] },
+            { week: 18, title: "Live Campaign 1 — Results & Analysis", topics: ["Analyze campaign performance, extract insights", "Build campaign case study with full-funnel metrics"] },
+            { week: 19, title: "Live Campaign 2 — Google", topics: ["Launch and manage a live Google Ads campaign", "Optimize — keyword management, bid adjustments, Quality Score"] },
+            { week: 20, title: "Live Campaign 2 — Results & Analysis", topics: ["Cross-campaign comparison, attribution analysis", "Present findings with data-driven recommendations"] },
+            { week: 21, title: "Live Campaign 3 — Multi-Channel", topics: ["Orchestrate a multi-channel campaign across Meta + Google + email", "Budget allocation, channel-specific creative, unified tracking"] },
+            { week: 22, title: "Client Management & Reporting", topics: ["Brief writing, client communication, reporting cadences", "Agency workflow, project management, stakeholder presentations"] },
+            { week: 23, title: "Portfolio Compilation & Case Studies", topics: ["Compile all campaign results into a professional portfolio", "Case study writing — problem, strategy, execution, results"] },
+            { week: 24, title: "Career Services & Interview Prep", topics: ["Resume building, LinkedIn optimization, GitHub portfolio", "Mock interviews, job referrals, placement preparation"] },
+        ],
+        finalProject: {
+            intro: "A multi-campaign portfolio demonstrating end-to-end digital marketing skill — from strategy through execution to measurable results — with professional case studies.",
+            tracks: [
+                {
+                    title: "Agency Track",
+                    desc: "Full-funnel multi-platform campaigns for a simulated brand — strategy, execution, analytics, reporting",
+                },
+                {
+                    title: "Growth Track",
+                    desc: "Growth marketing experiments — A/B tests, conversion optimization, retention campaigns with real metrics",
+                },
+                {
+                    title: "Freelancer Track",
+                    desc: "Client-ready campaign portfolio — proposals, execution, results, and testimonials",
+                },
+            ],
+            grading:
+                "Graded on campaign performance, portfolio completeness, case study quality, and presentation.",
+            leave: "A multi-campaign portfolio with real results, plus the full Career-tier services package including 5+ mock interviews, aptitude and communication training, and priority placement referrals.",
+            cta: "Apply Now",
+        },
+        tools: [
+            "Google Ads",
+            "Meta Ads Manager",
+            "Google Analytics 4",
+            "Search Console",
+            "Looker Studio",
+            "SEMrush / Ahrefs",
+            "ChatGPT / Claude for marketing",
+            "Midjourney / DALL-E for creatives",
+            "Canva AI",
+            "Mailchimp / Brevo",
+            "WhatsApp Business API",
+            "HubSpot CRM (free tier)",
+            "Zapier / Make",
+            "WordPress",
+            "Notion / Trello",
+            "+ 10 more unlocked during the course",
+        ],
+        toolsNote:
+            "Most tools run on free tiers. Ad budgets for live campaigns are funded by the academy.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Senior Marketing Strategist · 8+ Years Agency & Brand Experience",
+            bio: "Live, in-person, taught by practitioners who have managed multi-crore marketing budgets — not by someone who just teaches theory.",
+            points: [
+                "8+ years in digital marketing — agency, brand, and freelance experience",
+                "Managed ad budgets of ₹1Cr+ across Meta, Google, and programmatic platforms",
+                "Specialist in AI-powered marketing systems and automation",
+                "Trained 80+ marketing professionals and students at the academy",
+            ],
+        },
+        pricingIncludes: [
+            "All 120 live, instructor-led sessions over 6 months",
+            "Lifetime access to all session recordings",
+            "The complete curriculum workbook (PDF)",
+            "Real ad budget for multiple live campaigns",
+            "Multi-campaign portfolio review and case study feedback",
+            "Certificate of completion",
+            "Full Career services package — 5+ mock interviews, aptitude and communication training, priority placement referrals",
+            "Lifetime batch re-attendance",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you attend every session, complete all live campaigns, and you don't feel ready for a career in digital marketing, we'll make it right.",
+        faqs: [
+            {
+                question: "How is this different from the 3-month Digital Marketing course?",
+                answer: "The 3-month course covers the full stack in a focused format. This 6-month Career program extends it with advanced paid media, marketing automation, AI content systems, multiple live campaigns, client management training, and the full Career-tier services package.",
+            },
+            {
+                question: "Will I run multiple live campaigns?",
+                answer: "Yes. You run at least 3 live campaigns across Meta and Google with real ad budgets. Each campaign is analyzed, optimized, and presented as a case study in your portfolio.",
+            },
+            {
+                question: "What career services are included?",
+                answer: "Resume building, LinkedIn optimization, GitHub portfolio setup, 5+ mock interviews, 20 hours of aptitude and communication training, and priority job referrals to hiring partners.",
+            },
+            {
+                question: "Will I learn marketing automation?",
+                answer: "Yes. The course covers email automation, WhatsApp chatbots, CRM integration, lead scoring, and multi-channel automation workflows — skills that separate junior from mid-level marketers.",
+            },
+            {
+                question: "What jobs can I target after this course?",
+                answer: "Digital Marketing Specialist, Performance Marketing Executive, Growth Marketing Manager, Marketing Automation Specialist, Agency Account Manager — roles that require multi-channel expertise and campaign management skills.",
+            },
+            {
+                question: "Do I need prior marketing experience?",
+                answer: "No. The course starts from foundations and builds progressively. Whether you're a fresh graduate or a professional switching careers, the curriculum is designed to take you from zero to career-ready.",
+            },
+            {
+                question: "Is the daily schedule manageable?",
+                answer: "5 days a week, 2 hours a day — it's structured like a job. This is a Career program, so the commitment mirrors a full-time role. The investment pays off in placement readiness.",
+            },
+            {
+                question: "What is lifetime batch re-attendance?",
+                answer: "After completing the course, you can re-attend any future batch of the same course — for free, forever. Great for revision, catching new tools, or reinforcing skills.",
+            },
+        ],
+        heroCta: "Apply Now",
+        heroCtaSecondary: "Download Syllabus",
+    },
+    "data-science-ai-career-track": {
+        heroImage: "/assets/images/ai-hero-robot.png",
+        eyebrow: "9-Month Career Track · Internship Included · Flagship Program · Placement Support",
+        trustLine: "Complete AI/ML curriculum + 3-month internship · Certificate + experience letter",
+        whoItsForHeadline: "Graduate with a portfolio, an internship certificate and an experience letter",
+        whoItsForBullets: [
+            "Students who want the strongest possible start — real work experience on their CV before their first job application",
+            "Freshers who know they need internships but can't find one on their own",
+            "Career changers who want both deep technical skills and professional experience",
+            "Graduates competing with NCR candidates who already have internships on their resumes",
+        ],
+        audience: [
+            {
+                label: "Students & Freshers",
+                desc: "Students who want the strongest possible start — real work experience on their CV before their first job application",
+                img: "/assets/images/students.png",
+                tone: "gold",
+            },
+            {
+                label: "Internship Seekers",
+                desc: "Freshers who know they need internships but can't find one on their own",
+                img: "/assets/images/exam-aspirants.png",
+                tone: "gold",
+            },
+            {
+                label: "Career Changers",
+                desc: "Career changers who want both deep technical skills and professional experience",
+                img: "/assets/images/job-seekers.png",
+                tone: "white",
+            },
+            {
+                label: "Regional Competitors",
+                desc: "Graduates competing with NCR candidates who already have internships on their resumes",
+                img: "/assets/images/teacher.png",
+                tone: "white",
+            },
+        ],
+        readinessNote:
+            "Basic Python knowledge recommended. This is a 9-month commitment — 6 months of intensive learning followed by 3 months of supervised internship work.",
+        problemTitle: "Lucknow freshers compete with NCR candidates who often already have internships.",
+        problemBody: [
+            "When a recruiter sees two resumes — one from Delhi with a 3-month internship at a startup, and one from Lucknow with only coursework — they pick Delhi every time. This track closes that gap. You complete the full Advanced Diploma curriculum, then spend 3 months working on live projects under supervision, and graduate with an experience letter, not just a certificate.",
+        ],
+        outcomes: [
+            {
+                title: "Full AI/ML Stack",
+                desc: "The complete Advanced Diploma curriculum — Python, data analysis, ML, deep learning, NLP, generative AI, deployment",
+            },
+            {
+                title: "Real Work Experience",
+                desc: "3 months working on live client or academy projects under supervision — with an experience letter to prove it",
+            },
+            {
+                title: "Advanced MLOps",
+                desc: "Docker, cloud deployment (AWS/GCP basics), experiment tracking, and production ML workflows",
+            },
+            {
+                title: "Professional Skills",
+                desc: "Business communication, client-handling, presentation skills, and stakeholder management",
+            },
+            {
+                title: "Portfolio & Internship Certificate",
+                desc: "7+ deployed projects, an internship completion certificate, and an experience letter",
+            },
+            {
+                title: "Priority Placement Queue",
+                desc: "Priority access to job referrals and placement support — ahead of standard batch candidates",
+            },
+        ],
+        howItWorks: [
+            { label: "Duration", value: "9 months (6 months curriculum + 3 months internship)" },
+            { label: "Total hours", value: "320 hours" },
+            { label: "Schedule", value: "5 days a week" },
+            {
+                label: "Months 1–6",
+                value: "Complete Advanced Diploma in AI & ML curriculum",
+            },
+            {
+                label: "Months 7–9",
+                value: "Live internship — client projects, MLOps, professional skills",
+            },
+            {
+                label: "Deliverables",
+                value: "Portfolio + internship certificate + experience letter",
+            },
+            { label: "Class size", value: "Small, limited-seat cohorts" },
+            { label: "Recordings", value: "Sessions recorded for revision" },
+        ],
+        monthlyJourney: [
+            {
+                month: 1,
+                title: "Programming & Data Foundations",
+                hours: "40 hrs",
+                topics: "Python deep-dive, Git and GitHub, Jupyter, Pandas, NumPy, SQL",
+                detail: "Same as Advanced Diploma Month 1 — the complete foundation for everything that follows.",
+            },
+            {
+                month: 2,
+                title: "Statistics & Data Analysis",
+                hours: "36 hrs",
+                topics: "Descriptive and inferential statistics, hypothesis testing, EDA, visualization, Power BI",
+                detail: "Same as Advanced Diploma Month 2 — the analytical backbone of your skill set.",
+            },
+            {
+                month: 3,
+                title: "Core Machine Learning",
+                hours: "40 hrs",
+                topics: "Regression, classification, decision trees, random forest, XGBoost, clustering, model evaluation, feature engineering",
+                detail: "Same as Advanced Diploma Month 3 — classical ML algorithms and evaluation.",
+            },
+            {
+                month: 4,
+                title: "Deep Learning",
+                hours: "40 hrs",
+                topics: "Neural networks, TensorFlow/Keras, CNNs for computer vision, RNNs, transfer learning",
+                detail: "Same as Advanced Diploma Month 4 — neural networks and computer vision.",
+            },
+            {
+                month: 5,
+                title: "NLP & Generative AI",
+                hours: "40 hrs",
+                topics: "Text processing, embeddings, transformers, LLM APIs, RAG systems, LangChain, building AI agents, fine-tuning basics",
+                detail: "Same as Advanced Diploma Month 5 — NLP, LLMs, and generative AI.",
+            },
+            {
+                month: 6,
+                title: "Deployment & Capstone",
+                hours: "24 hrs",
+                topics: "Streamlit, FastAPI, Hugging Face Spaces, cloud basics, MLOps intro, capstone project",
+                detail: "Same as Advanced Diploma Month 6 — deployment and your first capstone.",
+            },
+            {
+                month: 7,
+                title: "Internship — Live Projects",
+                hours: "40 hrs",
+                topics: "Working on live client or academy projects under mentor supervision",
+                detail: [
+                    "Assignment to a supervised project team — real client or academy data",
+                    "Daily standups, sprint planning, and code reviews",
+                    "Applying ML/AI skills to production-quality problems",
+                    "Documentation and process discipline",
+                ],
+            },
+            {
+                month: 8,
+                title: "Advanced MLOps & Cloud",
+                hours: "40 hrs",
+                topics: "Docker, AWS/GCP basics, experiment tracking, production ML workflows",
+                detail: [
+                    "Docker — containerizing ML applications, Dockerfiles, image management",
+                    "Cloud basics — AWS Sagemaker or GCP Vertex AI introduction",
+                    "Experiment tracking — MLflow, Weights & Biases basics",
+                    "Production ML — monitoring, retraining, CI/CD for models",
+                ],
+            },
+            {
+                month: 9,
+                title: "Professional Skills & Placement",
+                hours: "20 hrs",
+                topics: "Business communication, client handling, portfolio finalization, placement queue",
+                detail: [
+                    "Business communication — writing briefs, reports, and presenting findings",
+                    "Client-handling skills — managing expectations, status updates, delivery",
+                    "Portfolio finalization — GitHub cleanup, case study compilation",
+                    "Experience letter, internship certificate, and priority placement queue",
+                ],
+            },
+        ],
+        weeks: [
+            { week: 1, title: "Month 1 — Python Deep-Dive", topics: ["Variables, data types, control flow, functions, OOP, error handling"] },
+            { week: 2, title: "Month 1 — Git, Jupyter & Pandas", topics: ["Git/GitHub workflow, Jupyter Notebooks, Pandas DataFrames"] },
+            { week: 3, title: "Month 1 — Pandas Advanced & NumPy", topics: ["Groupby, merge, pivot — NumPy arrays, broadcasting"] },
+            { week: 4, title: "Month 1 — SQL & Foundations Wrap", topics: ["SELECT, JOINs, window functions — Month 1 project"] },
+            { week: 5, title: "Month 2 — Statistics Foundations", topics: ["Central tendency, dispersion, distributions"] },
+            { week: 6, title: "Month 2 — Inferential Statistics", topics: ["Sampling, confidence intervals, hypothesis testing"] },
+            { week: 7, title: "Month 2 — EDA & Visualization", topics: ["Matplotlib, Seaborn, correlation analysis"] },
+            { week: 8, title: "Month 2 — Power BI & Statistics Wrap", topics: ["Dashboards, DAX — Month 2 project"] },
+            { week: 9, title: "Month 3 — Regression Models", topics: ["Linear and logistic regression, evaluation metrics"] },
+            { week: 10, title: "Month 3 — Trees & Ensembles", topics: ["Decision trees, random forest, XGBoost"] },
+            { week: 11, title: "Month 3 — Model Evaluation & Tuning", topics: ["Grid search, cross-validation, learning curves"] },
+            { week: 12, title: "Month 3 — Clustering & Feature Eng", topics: ["K-Means, PCA, encoding, scaling — Month 3 project"] },
+            { week: 13, title: "Month 4 — Neural Networks", topics: ["Perceptrons, backpropagation, TensorFlow/Keras"] },
+            { week: 14, title: "Month 4 — CNNs", topics: ["Convolution, pooling, image classification"] },
+            { week: 15, title: "Month 4 — RNNs & Sequences", topics: ["LSTMs, time series, text classification"] },
+            { week: 16, title: "Month 4 — Transfer Learning", topics: ["Pre-trained models, fine-tuning — Month 4 project"] },
+            { week: 17, title: "Month 5 — Text & Embeddings", topics: ["Tokenization, TF-IDF, Word2Vec, transformers"] },
+            { week: 18, title: "Month 5 — LLMs & APIs", topics: ["GPT, BERT, OpenAI/Anthropic API integration"] },
+            { week: 19, title: "Month 5 — RAG & LangChain", topics: ["Vector stores, retrieval, chains, agents"] },
+            { week: 20, title: "Month 5 — AI Agents & GenAI Wrap", topics: ["Building AI applications — Month 5 project"] },
+            { week: 21, title: "Month 6 — Streamlit & FastAPI", topics: ["ML apps, REST APIs, model serving"] },
+            { week: 22, title: "Month 6 — Cloud & MLOps Intro", topics: ["Hugging Face Spaces, Docker intro, cloud basics"] },
+            { week: 23, title: "Month 6 — Capstone Sprint", topics: ["End-to-end capstone project"] },
+            { week: 24, title: "Month 6 — Portfolio & Review", topics: ["GitHub cleanup, portfolio presentation"] },
+            { week: 25, title: "Month 7 — Internship Kickoff", topics: ["Project assignment, team onboarding, sprint planning"] },
+            { week: 26, title: "Month 7 — Live Project Work", topics: ["Daily standups, feature development, code reviews"] },
+            { week: 27, title: "Month 7 — Project Delivery", topics: ["Testing, documentation, client presentation prep"] },
+            { week: 28, title: "Month 7 — Project Review", topics: ["Client feedback, iteration, retrospective"] },
+            { week: 29, title: "Month 8 — Docker Deep-Dive", topics: ["Containerizing ML apps, Docker Compose, image management"] },
+            { week: 30, title: "Month 8 — Cloud for ML", topics: ["AWS Sagemaker / GCP Vertex AI, cloud deployment"] },
+            { week: 31, title: "Month 8 — MLOps Workflows", topics: ["MLflow, experiment tracking, model versioning"] },
+            { week: 32, title: "Month 8 — Production ML", topics: ["Monitoring, retraining, CI/CD for ML — Month 8 project"] },
+            { week: 33, title: "Month 9 — Business Communication", topics: ["Writing briefs, reports, presenting findings to stakeholders"] },
+            { week: 34, title: "Month 9 — Client Handling", topics: ["Managing expectations, status updates, delivery discipline"] },
+            { week: 35, title: "Month 9 — Portfolio Finalization", topics: ["GitHub cleanup, case study compilation, resume update"] },
+            { week: 36, title: "Month 9 — Placement Prep", topics: ["Experience letter, internship certificate, priority placement queue"] },
+        ],
+        finalProject: {
+            intro: "Multiple deployed projects across 6 months of learning, plus a supervised internship project delivered to a real client or the academy — with an experience letter to prove it.",
+            tracks: [
+                {
+                    title: "AI/ML Engineer Track",
+                    desc: "End-to-end ML pipeline — data to deployment — on a live project with production-quality code",
+                },
+                {
+                    title: "Data Science Track",
+                    desc: "Advanced analytics and modeling on a real dataset, with business recommendations and a deployed dashboard",
+                },
+                {
+                    title: "GenAI Track",
+                    desc: "RAG system or AI agent built and deployed for a real use case, with LLM integration and evaluation",
+                },
+            ],
+            grading:
+                "Graded on technical quality, deployment functionality, project impact, professional conduct during internship, and final presentation.",
+            leave: "A portfolio of 7+ deployed projects, an internship completion certificate, an experience letter, and the full Career-tier services package with priority placement.",
+            cta: "Apply Now",
+        },
+        tools: [
+            "Python 3.x",
+            "Jupyter Notebook",
+            "VS Code",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "XGBoost",
+            "TensorFlow / Keras",
+            "PyTorch (intro)",
+            "Matplotlib",
+            "Seaborn",
+            "Power BI Desktop",
+            "MySQL / PostgreSQL",
+            "Streamlit",
+            "FastAPI",
+            "Flask",
+            "Hugging Face Transformers",
+            "LangChain",
+            "OpenAI API",
+            "Docker",
+            "AWS / GCP (intro)",
+            "MLflow",
+            "Git & GitHub",
+        ],
+        toolsNote:
+            "All primary tools are free. Cloud platforms offer free tiers for internship and capstone projects.",
+        instructor: {
+            name: "Your Lead Instructor",
+            tagline: "Senior AI/ML Engineer & Trainer · 7+ Years Industry Experience",
+            bio: "Live, in-person, taught by practitioners who build production AI systems and manage real projects — not by someone who only teaches from slides.",
+            points: [
+                "7+ years building ML and AI systems across industry and consulting",
+                "Experience managing projects and mentoring junior engineers",
+                "Specialist in end-to-end ML pipelines, deployment, and MLOps",
+                "Trained 100+ professionals and students in AI/ML at the academy",
+            ],
+        },
+        pricingIncludes: [
+            "All 180 live, instructor-led sessions over 9 months",
+            "Lifetime access to all session recordings",
+            "The complete Advanced Diploma curriculum workbook (PDF)",
+            "Real-world datasets for every project",
+            "7+ graded projects with deployment",
+            "Supervised internship with live project work",
+            "Internship completion certificate",
+            "Experience letter",
+            "Full Career services package — resume building, LinkedIn and GitHub optimization, 5+ mock interviews, 20 hours of aptitude and communication training, priority job referrals",
+            "Lifetime batch re-attendance",
+            "Daily doubt-clearing lab access, 10 AM – 7 PM",
+        ],
+        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        guarantee:
+            "If you complete the full 9 months — curriculum, internship, and all projects — and you don't feel ready for an AI/ML role, we'll make it right.",
+        faqs: [
+            {
+                question: "How is this different from the Advanced Diploma?",
+                answer: "The Advanced Diploma is 6 months of curriculum. This track includes all 6 months of curriculum PLUS 3 months of supervised internship, MLOps training, professional skills, and an experience letter.",
+            },
+            {
+                question: "What does the internship involve?",
+                answer: "Months 7–9 involve working on live client or academy projects under mentor supervision. You participate in daily standups, sprint planning, code reviews, and project delivery — just like at a real company.",
+            },
+            {
+                question: "Will I get an experience letter?",
+                answer: "Yes. You receive both an internship completion certificate and an experience letter after completing Months 7–9. These go on your resume and LinkedIn.",
+            },
+            {
+                question: "Why is this better than finding my own internship?",
+                answer: "Finding a quality ML internship on your own is extremely competitive, especially from Lucknow. This track guarantees you supervised, meaningful project work with a certificate and experience letter — no application stress.",
+            },
+            {
+                question: "What is the priority placement queue?",
+                answer: "Career Track graduates get priority access to job referrals and placement support — ahead of standard batch candidates. You're first in line when hiring partners have openings.",
+            },
+            {
+                question: "Can I work while doing this course?",
+                answer: "Months 1–6 are intensive (5 days/week, 2 hours/day). Months 7–9 are more flexible but still require daily engagement. Full-time commitment is strongly recommended.",
+            },
+            {
+                question: "What jobs can I target after this track?",
+                answer: "AI/ML Engineer, Data Scientist, ML Developer, AI Developer, NLP Engineer, MLOps Engineer — you have both the technical skills AND the professional experience that recruiters look for.",
+            },
+            {
+                question: "Is the experience letter recognized by employers?",
+                answer: "Yes. Our experience letters are on official academy letterhead and detail your role, projects, and duration. They are recognized by employers as valid professional experience.",
+            },
+            {
+                question: "What is the total time commitment?",
+                answer: "9 months — approximately 320 hours total. Months 1–6 are structured learning. Months 7–9 are internship work with some additional training sessions.",
+            },
+            {
+                question: "Do I need a powerful laptop?",
+                answer: "A mid-range laptop (8GB RAM) is sufficient for most of the course. For deep learning training and cloud deployment, we provide access to cloud platforms with free GPU tiers.",
+            },
+        ],
+        heroCta: "Apply Now",
+        heroCtaSecondary: "Download Syllabus",
     },
 };
 
@@ -1639,8 +4040,33 @@ function buildDetail(course) {
         heroCta: override.heroCta || "Enrol Now",
         heroCtaSecondary: override.heroCtaSecondary || "Download Curriculum",
         heroCtaSecondaryHref: override.heroCtaSecondaryHref || "#about-course",
+        heroImage:
+            override.heroImage ||
+            course.image ||
+            HERO_IMAGES[course.slug] ||
+            "/assets/images/ai-hero-robot.png",
     };
 }
+
+const HERO_IMAGES = {
+    "ai-tools-mastery": "/assets/images/ai-hero-robot.png",
+    "python-programming-foundation":
+        "/assets/images/ai-hero-robot.png",
+    "generative-ai-prompt-engineering":
+        "/assets/images/ai-hero-robot.png",
+    "ai-for-business": "/assets/images/ai-hero-robot.png",
+    "summer-winter-training": "/assets/images/ai-hero-robot.png",
+    "digital-marketing-with-ai": "/assets/images/ai-hero-robot.png",
+    "digital-marketing-ai": "/assets/images/ai-hero-robot.png",
+    "python-for-data-analytics": "/assets/images/ai-hero-robot.png",
+    "python-data-analytics": "/assets/images/ai-hero-robot.png",
+    "applied-machine-learning": "/assets/images/ai-hero-robot.png",
+    "advanced-diploma-ai-ml": "/assets/images/ai-hero-robot.png",
+    "ai-digital-marketing-specialist":
+        "/assets/images/ai-hero-robot.png",
+    "data-science-ai-career-track":
+        "/assets/images/ai-hero-robot.png",
+};
 
 function buildModules(course, weeks, months, outcomes) {
     if (weeks && weeks.length) {
@@ -1958,8 +4384,8 @@ export default function CoursesShow({ slug }) {
 
                         <RevealDiv delay={120}>
                             <img
-                                src="/assets/images/ai-hero-robot.png"
-                                alt=""
+                                src={detail.heroImage}
+                                alt={course.title}
                                 className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto object-contain drop-shadow-[0_20px_60px_rgba(152,44,220,0.12)]"
                             />
                         </RevealDiv>
@@ -2057,7 +4483,7 @@ export default function CoursesShow({ slug }) {
 
                                         {/* Copy */}
                                         <div className="absolute bottom-7 left-7 right-7">
-                                            <p className="font-display text-[19px] sm:text-[21px] font-medium leading-[1.45] text-white/95 max-w-[34ch]">
+                                            <p className="font-display text-[16px] sm:text-[16px] font-medium leading-[1.45] text-white/95 max-w-[34ch]">
                                                 {detail.readinessNote}
                                             </p>
                                         </div>
@@ -2096,7 +4522,7 @@ export default function CoursesShow({ slug }) {
                     "
                                         >
                                             {/* Image */}
-                                            <div className="w-[100px] h-[82px] sm:w-[105px] sm:h-[88px] shrink-0 rounded-[13px] overflow-hidden">
+                                            <div className="w-[100px] h-[136px] sm:w-[105px] sm:h-[136px] shrink-0 rounded-[13px] overflow-hidden">
                                                 <img
                                                     src={item.img}
                                                     alt={item.label}
@@ -2358,7 +4784,6 @@ export default function CoursesShow({ slug }) {
                                                         {outcome.desc}
                                                     </p>
                                                 )}
-                                                
                                             </div>
                                         </RevealDiv>
                                     ))}

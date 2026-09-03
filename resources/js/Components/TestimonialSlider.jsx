@@ -1,29 +1,40 @@
 import { useState, useEffect } from "react";
 import RevealDiv from "./RevealDiv";
-
+function EyeBrow({ children, color = "violet" }) {
+    return (
+        <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+                <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+                />
+                {children}
+            </div>
+        </div>
+    );
+}
 const TESTIMONIALS = [
     {
         name: "Priya Sharma",
         role: "AI & Automation Analyst at Uber",
-        img: "/assets/images/job-seekers.png",
+        img: "/assets/images/teacher.png",
         quote: "This Academy not only provided me with the technical knowledge required for my role as an Analyst & Automation at Uber but also instilled in me the confidence to tackle real-world challenges. Their dedicated faculty made the learning experience enriching and rewarding.",
     },
     {
         name: "Rohit Verma",
         role: "Data Analyst at TCS",
-        img: "/assets/images/teacher.png",
+        img: "/assets/images/job-seekers.png",
         quote: "I came in with zero coding background. The Python Foundation and Advanced Diploma gave me the skills and confidence to land a data analyst role within two months of completing the program. The mock interviews were a game-changer.",
     },
     {
         name: "Anjali Gupta",
         role: "Digital Marketing Lead at Webchutney",
-        img: "/assets/images/job-seekers.png",
+        img: "/assets/images/teacher.png",
         quote: "The Digital Marketing with AI program was hands down the best investment I made. Running a live campaign with a real budget set this course apart from everything else in Lucknow. I had a portfolio ready before I even graduated.",
     },
     {
         name: "Vikas Patel",
         role: "Freelance AI Consultant",
-        img: "/assets/images/teacher.png",
+        img: "/assets/images/job-seekers.png",
         quote: "After the Generative AI & Prompt Engineering course, I started freelancing on Upwork within weeks. The practical approach to prompt engineering and automation workflows gave me a real edge. Already earning back my investment.",
     },
 ];
@@ -63,7 +74,10 @@ export default function TestimonialSlider() {
                 <RevealDiv>
                     <div className="text-center mb-14">
                         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-violet mb-2">
-                            TESTIMONIALS_
+                                                     <EyeBrow>
+                            TESTIMONIALS
+
+                         </EyeBrow>
                         </p>
                         <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
                             Alumni&apos;s Testimonies
