@@ -860,7 +860,7 @@ export default function Home() {
                                 <div>
                                     <div className="flex items-end gap-1.5">
                                         <span className="text-[40px] font-bold leading-none tracking-[-0.04em] text-white mb-6">
-                                            45%
+                                            85%
                                         </span>
                                         <span className="mb-1.5 text-sm font-bold text-[#ffd6f2]">
                                             ↑

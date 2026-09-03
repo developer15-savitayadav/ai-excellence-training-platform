@@ -7,7 +7,9 @@ import RevealDiv, { useReveal } from "../Components/RevealDiv";
 function EyeBrow({ children, color = "violet" }) {
     return (
         <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`} />
+            <span
+                className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+            />
             {children}
         </p>
     );
@@ -93,13 +95,11 @@ export default function Programmes() {
                             {TRACKS.map((track) => (
                                 <div
                                     key={track.name}
-                                    className="flex items-center justify-center h-14 rounded-2xl bg-black/[0.03] border border-black/[0.06] hover:border-violet/30 hover:bg-violet/5 hover:-translate-y-0.5 transition-all duration-200"
-                                > 
-                                    <img
-                                        src={track.image}
-                                        alt={track.name}
-                                        className="w-full h-full object-contain shrink-0 rounded-2xl"
-                                    />
+                                    className="flex items-center justify-center h-14 px-4 rounded-2xl bg-black/[0.03] border border-black/[0.06] hover:border-violet/30 hover:bg-violet/5 hover:-translate-y-0.5 transition-all duration-200"
+                                >
+                                    <span className="text-sm font-semibold text-gray-800 text-center">
+                                        {track.name}
+                                    </span>
                                 </div>
                             ))}
                         </div>

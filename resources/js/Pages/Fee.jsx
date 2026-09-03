@@ -73,7 +73,7 @@ const BUNDLES = [
         description:
             "Master prompt engineering and apply it directly to AI-powered marketing — bundled savings available.",
         accent: "violet",
-        image: "/assets/images/Generative-ai.png",
+        image: "/assets/images/generative-ai-package.png",
         href: "/contact",
     },
 ];
