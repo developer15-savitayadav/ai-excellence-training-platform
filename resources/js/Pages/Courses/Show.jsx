@@ -511,7 +511,7 @@ const TOOL_LOGOS = {
     "DALL·E": "/assets/images/dalle.png",
     "Adobe Firefly": "/assets/images/adobe-firefly.png",
     Ideogram: "/assets/images/ideogram.png",
-    ElevenLabs: "/assets/images/elevenlabs.png",
+    ElevenLabs: "/assets/images/elevenlabs.png",  
     Suno: "/assets/images/suno.png",
     Runway: "/assets/images/runway.png",
     HeyGen: "/assets/images/heygen.png",
