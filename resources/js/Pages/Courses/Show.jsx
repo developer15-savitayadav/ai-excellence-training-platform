@@ -497,7 +497,7 @@ const CURRICULUM_MODULES = [
 
 const TOOL_LOGOS = {
     ChatGPT: "/assets/images/chatgpt.png",
-    Claude: "/assets/images/claude.webp",
+    Claude: "/assets/images/claude.jpg",
     Gemini: "/assets/images/gemini.jpg",
     Midjourney: "/assets/images/midjourney.jfif",
     "Canva AI": "/assets/images/canva-ai.png",
@@ -506,7 +506,7 @@ const TOOL_LOGOS = {
     LangChain: "/assets/images/langchain.png",
     "Hugging Face": "/assets/images/hugging-face.png",
     "Power BI": "/assets/images/power-bi.png",
-    Perplexity: "/assets/images/perplexity.png",
+    Perplexity: "/assets/images/perplexity.jpg",
     NotebookLM: "/assets/images/notebooklm.png",
     "DALL·E": "/assets/images/dalle.png",
     "Adobe Firefly": "/assets/images/adobe-firefly.png",
@@ -542,9 +542,9 @@ const normalizeTool = (tool) => {
 
 const TOOLS = [
     { name: "ChatGPT", logo: "/assets/images/chatgpt.png" },
-    { name: "Claude", logo: "/assets/images/claude.webp" },
+    { name: "Claude", logo: "/assets/images/claude.jpg" },
     { name: "Gemini", logo: "/assets/images/gemini.jpg" },
-    { name: "Perplexity", logo: "/assets/images/perplexity.png" },
+    { name: "Perplexity", logo: "/assets/images/perplexity.jpg" },
     { name: "NotebookLM", logo: "/assets/images/notebooklm.png" },
     { name: "DALL·E", logo: "/assets/images/dalle.png" },
     { name: "Midjourney", logo: "/assets/images/midjourney.jfif" },
