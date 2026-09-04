@@ -58,13 +58,13 @@ const tabs = [
             {
                 name: "Digital Marketing with AI",
                 tagline: "Professional",
-                href: "/courses/digital-marketing-ai",
+                href: "/courses/digital-marketing-with-ai",
                 icon: TrendingUp,
             },
             {
                 name: "Python for Data Analytics",
                 tagline: "Data-Driven Decisions",
-                href: "/courses/python-data-analytics",
+                href: "/courses/python-for-data-analytics",
                 icon: BarChart3,
             },
             {
