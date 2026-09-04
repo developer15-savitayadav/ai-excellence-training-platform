@@ -1048,7 +1048,7 @@ const COURSE_DETAILS = {
         ],
     },
     "generative-ai-prompt-engineering": {
-         heroImage: "/assets/images/ai-hero-robot.png",
+         heroImage: "/assets/images/generative-ai-prompt-engineering.png",
         eyebrow: "6-Week Live Course · Hands-On · Beginner to Builder",
         trustLine:
             "Next batch starts [DATE] · No coding required · Certificate + portfolio project",
@@ -3895,9 +3895,9 @@ function buildDetail(course) {
 const HERO_IMAGES = {
     "ai-tools-mastery": "/assets/images/ai-hero-robot.png",
     "python-programming-foundation":
-        "/assets/images/ai-hero-robot.png",
+        "/assets/images/python-course.png",
     "generative-ai-prompt-engineering":
-        "/assets/images/ai-hero-robot.png",
+        "/assets/images/generative-ai-prompt-engineering.png",
     "ai-for-business": "/assets/images/ai-hero-robot.png",
     "summer-winter-training": "/assets/images/ai-hero-robot.png",
     "digital-marketing-with-ai": "/assets/images/ai-hero-robot.png",
@@ -4619,7 +4619,7 @@ export default function CoursesShow({ slug }) {
                                                     )}
                                                 </span>
                                                 <h3
-                                                    className={`text-[20px]  leading-[1.15] ${i % 2 === 1 ? "text-black" : "text-[#765bc4]"}`}
+                                                    className={`text-[20px] font-bold leading-[1.1] ${i % 2 === 1 ? "text-black" : "text-[#765bc4]"}`}
                                                 >
                                                     {outcome.title}
                                                 </h3>
