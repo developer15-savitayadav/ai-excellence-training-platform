@@ -59,7 +59,7 @@ const SHORT_TERM = [
             "Two mini projects on your own GitHub profile — for example, an expense tracker and a data-cleaning tool.",
         upgradeBenefit:
             "This course is the recommended prerequisite for our Advanced Diploma and Career Track. Enrol in either within 60 days and your full course fee is adjusted against the fee.",
-        cta: "Next batch starts [DATE] · [Online / Classroom / Hybrid] · No prior coding experience needed",
+        cta: "Next batch starts [DATE] · [Classroom] · No prior coding experience needed",
     },
     {
         id: 3,
@@ -149,7 +149,7 @@ const SHORT_TERM = [
             "We partner directly with training and placement departments for on-campus or in-house batches. See our College Partnerships page.",
         walkAwayWith: null,
         upgradeBenefit: null,
-        cta: "Summer batch: [DATES] · Winter batch: [DATES] · [Online / Classroom] · Certificate on completion",
+        cta: "Summer batch: [DATES] · Winter batch: [DATES] · [Classroom] · Certificate on completion",
     },
     {
         id: 6,
@@ -500,12 +500,31 @@ const TOOL_LOGOS = {
     Claude: "/assets/images/claude.webp",
     Gemini: "/assets/images/gemini.jpg",
     Midjourney: "/assets/images/midjourney.jfif",
-    "Canva AI": "/assets/images/canva-ai.jfif",
+    "Canva AI": "/assets/images/canva-ai.png",
     Python: "/assets/images/python.png",
     TensorFlow: "/assets/images/tensorflow.png",
     LangChain: "/assets/images/langchain.png",
     "Hugging Face": "/assets/images/hugging-face.png",
     "Power BI": "/assets/images/power-bi.png",
+    Perplexity: "/assets/images/perplexity.png",
+    NotebookLM: "/assets/images/notebooklm.png",
+    "DALL·E": "/assets/images/dalle.png",
+    "Adobe Firefly": "/assets/images/adobe-firefly.png",
+    Ideogram: "/assets/images/ideogram.png",
+    ElevenLabs: "/assets/images/elevenlabs.png",
+    Suno: "/assets/images/suno.png",
+    Runway: "/assets/images/runway.png",
+    HeyGen: "/assets/images/heygen.png",
+    Descript: "/assets/images/descript.png",
+    "Notion AI": "/assets/images/notion.png",
+    Gamma: "/assets/images/gamma.png",
+    Zapier: "/assets/images/zapier.png",
+    Make: "/assets/images/make.png",
+    n8n: "/assets/images/n8n.png",
+    Cursor: "/assets/images/cursor.png",
+    "Claude Code": "/assets/images/claude-code.png",
+    Replit: "/assets/images/replit.png",
+    Lovable: "/assets/images/lovable.png",
 };
 
 const normalizeTool = (tool) => {
@@ -522,46 +541,30 @@ const normalizeTool = (tool) => {
 };
 
 const TOOLS = [
-    {
-        name: "ChatGPT",
-        logo: "/assets/images/chatgpt.png",
-    },
-    {
-        name: "Claude",
-        logo: "/assets/images/claude.webp",
-    },
-    {
-        name: "Gemini",
-        logo: "/assets/images/gemini.jpg",
-    },
-    {
-        name: "Midjourney",
-        logo: "/assets/images/midjourney.jfif",
-    },
-    {
-        name: "Canva AI",
-        logo: "/assets/images/canva-ai.jfif",
-    },
-    {
-        name: "Python",
-        logo: "/assets/images/python.png",
-    },
-    {
-        name: "TensorFlow",
-        logo: "/assets/images/tensorflow.png",
-    },
-    {
-        name: "LangChain",
-        logo: "/assets/images/langchain.png",
-    },
-    {
-        name: "Hugging Face",
-        logo: "/assets/images/hugging-face.png",
-    },
-    {
-        name: "Power BI",
-        logo: "/assets/images/power-bi.png",
-    },
+    { name: "ChatGPT", logo: "/assets/images/chatgpt.png" },
+    { name: "Claude", logo: "/assets/images/claude.webp" },
+    { name: "Gemini", logo: "/assets/images/gemini.jpg" },
+    { name: "Perplexity", logo: "/assets/images/perplexity.png" },
+    { name: "NotebookLM", logo: "/assets/images/notebooklm.png" },
+    { name: "DALL·E", logo: "/assets/images/dalle.png" },
+    { name: "Midjourney", logo: "/assets/images/midjourney.jfif" },
+    { name: "Adobe Firefly", logo: "/assets/images/adobe-firefly.png" },
+    { name: "Ideogram", logo: "/assets/images/ideogram.png" },
+    { name: "ElevenLabs", logo: "/assets/images/elevenlabs.png" },
+    { name: "Suno", logo: "/assets/images/suno.png" },
+    { name: "Runway", logo: "/assets/images/runway.png" },
+    { name: "HeyGen", logo: "/assets/images/heygen.png" },
+    { name: "Descript", logo: "/assets/images/descript.png" },
+    { name: "Canva AI", logo: "/assets/images/canva-ai.png" },
+    { name: "Gamma", logo: "/assets/images/gamma.png" },
+    { name: "Notion AI", logo: "/assets/images/notion.png" },
+    { name: "Zapier", logo: "/assets/images/zapier.png" },
+    { name: "Make", logo: "/assets/images/make.png" },
+    { name: "n8n", logo: "/assets/images/n8n.png" },
+    { name: "Cursor", logo: "/assets/images/cursor.png" },
+    { name: "Claude Code", logo: "/assets/images/claude-code.png" },
+    { name: "Replit", logo: "/assets/images/replit.png" },
+    { name: "Lovable", logo: "/assets/images/lovable.png" },
 ];
 
 const WHO_IT_FOR = [
@@ -805,24 +808,8 @@ const COURSE_DETAILS = {
             leave: "Your Personal AI Toolkit — a working document that captures your prompts, workflows and favourite tools (template included).",
             cta: "Reserve Your Seat",
         },
-        tools: [
-            "ChatGPT",
-            "Claude",
-            "Gemini",
-            "Perplexity",
-            "NotebookLM",
-            "Canva AI",
-            "Midjourney",
-            "Microsoft Copilot",
-            "Google Vids",
-            "ChatGPT Canvas",
-            "Claude Artifacts",
-            "ElevenLabs",
-            "Descript",
-            "+ 12 more unlocked during the course",
-        ],
         toolsNote:
-            "23 tools in total — most available on a free tier. A budget note caps your real spend.",
+            "24 industry-leading tools — available on free or freemium tiers. A budget note caps your real spend.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "AI Practitioner & Trainer · Lucknow",
@@ -895,7 +882,7 @@ const COURSE_DETAILS = {
             },
             {
                 question: "Where and when does the course run?",
-                answer: "The course runs as a live cohort at our Lucknow academy and online. Contact us for the schedule of the next batch.",
+                answer: "The course runs as a live cohort at our Lucknow academy. Contact us for the schedule of the next batch.",
             },
         ],
     },
@@ -904,7 +891,7 @@ const COURSE_DETAILS = {
         eyebrow:
             "6-Week Live Course · Beginner-Friendly · Certificate Included",
         trustLine:
-            "Next batch starts [DATE] · [Online / Classroom / Hybrid] · No prior coding experience needed",
+            "Next batch starts [DATE] · [Classroom] · No prior coding experience needed",
         whoItsForHeadline: "Who This Is For",
         whoItsForBullets: [
             "Absolute beginners taking their first step into programming",
@@ -975,7 +962,7 @@ const COURSE_DETAILS = {
                 label: "Schedule",
                 value: "[5 days/week, 1.5–2 hrs/day] — [Batch timings]",
             },
-            { label: "Mode", value: "[Online live / Classroom / Hybrid]" },
+            { label: "Mode", value: "[Classroom]" },
             {
                 label: "Practice",
                 value: "Daily coding assignments + weekly tests",
@@ -1133,7 +1120,7 @@ const COURSE_DETAILS = {
         howItWorks: [
             { label: "Duration", value: "6 weeks" },
             { label: "Schedule", value: "[Days/week and timings]" },
-            { label: "Mode", value: "[Online live / Classroom / Hybrid]" },
+            { label: "Mode", value: "[Classroom]" },
             {
                 label: "Prerequisites",
                 value: "None — no coding needed",
@@ -1301,7 +1288,7 @@ const COURSE_DETAILS = {
                 label: "Schedule",
                 value: "Saturday & Sunday, [TIMINGS] ([X] hours/weekend)",
             },
-            { label: "Mode", value: "[Classroom / Online live / Hybrid]" },
+            { label: "Mode", value: "[Classroom]" },
             {
                 label: "Batch size",
                 value: "Limited to [20] for individual attention",
@@ -1406,7 +1393,7 @@ const COURSE_DETAILS = {
         eyebrow:
             "45-Day Industrial Training · For B.Tech / MCA / BCA Students · AKTU-Compliant",
         trustLine:
-            "Summer batch: [DATES] · Winter batch: [DATES] · [Online / Classroom] · Certificate on completion",
+            "Summer batch: [DATES] · Winter batch: [DATES] · [Classroom] · Certificate on completion",
         whoItsForHeadline: "Who This Is For",
         whoItsForBullets: [
             "B.Tech students (CSE, IT, ECE, and allied branches) needing mandatory summer/winter industrial training",
@@ -1472,7 +1459,7 @@ const COURSE_DETAILS = {
                 value: "Summer: [MONTHS] · Winter: [MONTHS]",
             },
             { label: "Schedule", value: "[Days/week, hours/day]" },
-            { label: "Mode", value: "[Classroom / Online live / Hybrid]" },
+            { label: "Mode", value: "[Classroom]" },
             {
                 label: "Deliverables",
                 value: "Certificate + project + report guidance + viva prep",
@@ -1555,8 +1542,8 @@ const COURSE_DETAILS = {
                 answer: "Each student builds and submits an individual project with mentor guidance, so your report and viva are entirely your own work. Group projects can be arranged if your college requires them.",
             },
             {
-                question: "Can I join online if I'm home for the vacation?",
-                answer: "Yes — the program is available [online live / in classroom / in hybrid mode], with the same certificate and deliverables in every mode.",
+                question: "Where does the training take place?",
+                answer: "The training runs at our Lucknow academy in a live, classroom format. All sessions are conducted in-person with hands-on labs.",
             },
             {
                 question: "I'm from a non-CS branch. Can I still enroll?",
@@ -1784,24 +1771,8 @@ const COURSE_DETAILS = {
             leave: "A portfolio-ready campaign case study with real metrics, plus the full Professional career services package.",
             cta: "Enrol Now",
         },
-        tools: [
-            "Google Ads",
-            "Meta Ads Manager",
-            "Google Analytics 4",
-            "Search Console",
-            "Looker Studio",
-            "SEMrush / Ubersuggest",
-            "ChatGPT / Claude for marketing copy",
-            "Midjourney / DALL-E for ad creatives",
-            "Canva AI",
-            "Mailchimp / Brevo",
-            "WhatsApp Business API",
-            "WordPress",
-            "Notion / Trello",
-            "+ 8 more unlocked during the course",
-        ],
         toolsNote:
-            "Most tools run on free tiers. Ad budget is funded by the academy for the live campaign project.",
+            "24 industry-leading tools — available on free or freemium tiers. Ad budget is funded by the academy for the live campaign project.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Digital Marketing Practitioner · 6+ Years Agency Experience",
@@ -2069,24 +2040,8 @@ const COURSE_DETAILS = {
             leave: "A portfolio-ready campaign case study with real metrics, plus the full Professional career services package.",
             cta: "Enrol Now",
         },
-        tools: [
-            "Google Ads",
-            "Meta Ads Manager",
-            "Google Analytics 4",
-            "Search Console",
-            "Looker Studio",
-            "SEMrush / Ubersuggest",
-            "ChatGPT / Claude for marketing copy",
-            "Midjourney / DALL-E for ad creatives",
-            "Canva AI",
-            "Mailchimp / Brevo",
-            "WhatsApp Business API",
-            "WordPress",
-            "Notion / Trello",
-            "+ 8 more unlocked during the course",
-        ],
         toolsNote:
-            "Most tools run on free tiers. Ad budget is funded by the academy for the live campaign project.",
+            "24 industry-leading tools — available on free or freemium tiers. Ad budget is funded by the academy for the live campaign project.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Digital Marketing Practitioner · 6+ Years Agency Experience",
@@ -2350,22 +2305,8 @@ const COURSE_DETAILS = {
             leave: "A portfolio of analysis projects and dashboards on GitHub, plus the full Professional career services package.",
             cta: "Enrol Now",
         },
-        tools: [
-            "Python 3.x",
-            "Jupyter Notebook",
-            "VS Code",
-            "Pandas",
-            "NumPy",
-            "Matplotlib",
-            "Seaborn",
-            "Power BI Desktop",
-            "MySQL / PostgreSQL",
-            "Google Sheets (for comparison)",
-            "Git & GitHub",
-            "ChatGPT / Claude for learning support",
-        ],
         toolsNote:
-            "All tools are free and open-source. Power BI Desktop is free on Windows.",
+            "24 industry-leading tools — available on free or freemium tiers.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Data Analytics Practitioner · 5+ Years Industry Experience",
@@ -2629,22 +2570,8 @@ const COURSE_DETAILS = {
             leave: "A portfolio of analysis projects and dashboards on GitHub, plus the full Professional career services package.",
             cta: "Enrol Now",
         },
-        tools: [
-            "Python 3.x",
-            "Jupyter Notebook",
-            "VS Code",
-            "Pandas",
-            "NumPy",
-            "Matplotlib",
-            "Seaborn",
-            "Power BI Desktop",
-            "MySQL / PostgreSQL",
-            "Google Sheets (for comparison)",
-            "Git & GitHub",
-            "ChatGPT / Claude for learning support",
-        ],
         toolsNote:
-            "All tools are free and open-source. Power BI Desktop is free on Windows.",
+            "24 industry-leading tools — available on free or freemium tiers.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Data Analytics Practitioner · 5+ Years Industry Experience",
@@ -2948,24 +2875,8 @@ const COURSE_DETAILS = {
             leave: "A deployed capstone model and a GitHub portfolio, plus the full Professional career services package.",
             cta: "Enrol Now",
         },
-        tools: [
-            "Python 3.x",
-            "Jupyter Notebook",
-            "VS Code",
-            "Pandas",
-            "NumPy",
-            "Scikit-learn",
-            "XGBoost",
-            "Matplotlib",
-            "Seaborn",
-            "Streamlit",
-            "Flask",
-            "MySQL / PostgreSQL",
-            "Git & GitHub",
-            "Joblib / Pickle",
-        ],
         toolsNote:
-            "All tools are free and open-source. You will deploy your capstone to Streamlit Cloud or a similar free platform.",
+            "24 industry-leading tools — available on free or freemium tiers. You will deploy your capstone to Streamlit Cloud or a similar free platform.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "ML Engineer & Trainer · 5+ Years Building Production Models",
@@ -3253,32 +3164,8 @@ const COURSE_DETAILS = {
             leave: "6 graded projects + 1 capstone, all deployed and live on your GitHub.",
             cta: "Apply Now",
         },
-        tools: [
-            "Python 3.x",
-            "Jupyter Notebook",
-            "VS Code",
-            "Pandas",
-            "NumPy",
-            "Scikit-learn",
-            "XGBoost",
-            "TensorFlow / Keras",
-            "PyTorch (intro)",
-            "Matplotlib",
-            "Seaborn",
-            "Power BI Desktop",
-            "MySQL / PostgreSQL",
-            "Streamlit",
-            "FastAPI",
-            "Flask",
-            "Hugging Face Transformers",
-            "LangChain",
-            "OpenAI API",
-            "Git & GitHub",
-            "Docker (intro)",
-            "AWS / GCP (intro)",
-        ],
         toolsNote:
-            "All primary tools are free. Cloud platforms offer free tiers sufficient for the course projects.",
+            "24 industry-leading tools — available on free or freemium tiers. Cloud platforms offer free tiers sufficient for the course projects.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "AI/ML Engineer & Trainer · 6+ Years Building Production Systems",
@@ -3330,8 +3217,8 @@ const COURSE_DETAILS = {
                 answer: "AI/ML Engineer, Data Scientist, ML Developer, AI Developer, Junior NLP Engineer — roles that require hands-on ML, deep learning, and deployment skills.",
             },
             {
-                question: "Is the daily doubt-clearing lab in-person or online?",
-                answer: "Both. The lab runs 10 AM – 7 PM daily — walk in at the academy or join online for instant help.",
+                question: "Is the daily doubt-clearing lab in-person?",
+                answer: "Yes. The lab runs 10 AM – 7 PM daily at our Lucknow academy — walk in anytime for instant help from instructors and peers.",
             },
             {
                 question: "Do I need a powerful laptop?",
@@ -3488,26 +3375,8 @@ const COURSE_DETAILS = {
             leave: "A multi-campaign portfolio with real results, plus the full Career-tier services package including 5+ mock interviews, aptitude and communication training, and priority placement referrals.",
             cta: "Apply Now",
         },
-        tools: [
-            "Google Ads",
-            "Meta Ads Manager",
-            "Google Analytics 4",
-            "Search Console",
-            "Looker Studio",
-            "SEMrush / Ahrefs",
-            "ChatGPT / Claude for marketing",
-            "Midjourney / DALL-E for creatives",
-            "Canva AI",
-            "Mailchimp / Brevo",
-            "WhatsApp Business API",
-            "HubSpot CRM (free tier)",
-            "Zapier / Make",
-            "WordPress",
-            "Notion / Trello",
-            "+ 10 more unlocked during the course",
-        ],
         toolsNote:
-            "Most tools run on free tiers. Ad budgets for live campaigns are funded by the academy.",
+            "24 industry-leading tools — available on free or freemium tiers. Ad budgets for live campaigns are funded by the academy.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Senior Marketing Strategist · 8+ Years Agency & Brand Experience",
@@ -3796,33 +3665,8 @@ const COURSE_DETAILS = {
             leave: "A portfolio of 7+ deployed projects, an internship completion certificate, an experience letter, and the full Career-tier services package with priority placement.",
             cta: "Apply Now",
         },
-        tools: [
-            "Python 3.x",
-            "Jupyter Notebook",
-            "VS Code",
-            "Pandas",
-            "NumPy",
-            "Scikit-learn",
-            "XGBoost",
-            "TensorFlow / Keras",
-            "PyTorch (intro)",
-            "Matplotlib",
-            "Seaborn",
-            "Power BI Desktop",
-            "MySQL / PostgreSQL",
-            "Streamlit",
-            "FastAPI",
-            "Flask",
-            "Hugging Face Transformers",
-            "LangChain",
-            "OpenAI API",
-            "Docker",
-            "AWS / GCP (intro)",
-            "MLflow",
-            "Git & GitHub",
-        ],
         toolsNote:
-            "All primary tools are free. Cloud platforms offer free tiers for internship and capstone projects.",
+            "24 industry-leading tools — available on free or freemium tiers. Cloud platforms offer free tiers for internship and capstone projects.",
         instructor: {
             name: "Your Lead Instructor",
             tagline: "Senior AI/ML Engineer & Trainer · 7+ Years Industry Experience",
@@ -4906,14 +4750,14 @@ export default function CoursesShow({ slug }) {
                                                     src={tool.logo}
                                                     alt={tool.name}
                                                     className="
-                                                        w-full h-full
+                                                        w-full h-full grayscale 
                                                         sm:w-20 sm:h-20
                                                         object-contain
                                                         opacity-70
                                                         group-hover/tool:opacity-100
                                                         transition-all
                                                         duration-300
-                                                        group-hover/tool:scale-110
+                                                        group-hover/tool:scale-110 hover:grayscale-0
                                                     "
                                                 />
                                             </span>

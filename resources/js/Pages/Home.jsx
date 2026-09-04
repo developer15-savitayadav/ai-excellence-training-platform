@@ -224,7 +224,7 @@ const learners = [
     },
 ];
 const trustedBrands = [
-    { name: "Microsoft", src: "/assets/images/microsoft.avif" },
+    { name: "Microsoft", src: "/assets/images/microsoft.jpg" },
     { name: "Amazon", src: "/assets/images/amazon.png" },
     { name: "Google", src: "/assets/images/google.png" },
     { name: "Nvidia", src: "/assets/images/nvidia.png" },
