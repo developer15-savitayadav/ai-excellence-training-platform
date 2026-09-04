@@ -422,7 +422,6 @@ const CAREER = [
     },
 ];
 
-
 const TOOL_LOGOS = {
     ChatGPT: "/assets/images/chatgpt.png",
     Claude: "/assets/images/claude.jpg",
@@ -3778,7 +3777,9 @@ function buildDetail(course) {
         faqs: override.faqs || null,
         heroCta: override.heroCta || "Enrol Now",
         heroCtaSecondary: override.heroCtaSecondary || "Download Curriculum",
-        heroCtaSecondaryHref: override.heroCtaSecondaryHref || "#about-course",
+        heroCtaSecondaryHref:
+            override.heroCtaSecondaryHref ||
+            `/assets/docx/${course.slug}-curriculum.pdf`,
         heroImage:
             override.heroImage ||
             course.image ||
@@ -4091,12 +4092,26 @@ export default function CoursesShow({ slug }) {
                                     >
                                         {detail.heroCta}
                                     </Link>
-                                    <Link
-                                        href={detail.heroCtaSecondaryHref}
-                                        className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300"
-                                    >
-                                        {detail.heroCtaSecondary}
-                                    </Link>
+                                    {detail.heroCtaSecondaryHref.startsWith(
+                                        "/assets/",
+                                    ) ? (
+                                        <a
+                                            href={detail.heroCtaSecondaryHref}
+                                            download
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300"
+                                        >
+                                            {detail.heroCtaSecondary}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            href={detail.heroCtaSecondaryHref}
+                                            className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300"
+                                        >
+                                            {detail.heroCtaSecondary}
+                                        </Link>
+                                    )}
                                 </div>
                                 <p className="mt-5 inline-flex items-center gap-2 text-[13px] text-black/50">
                                     <svg

@@ -483,7 +483,7 @@ const courseOfferData = {
             description:
                 "Learn to communicate with AI models effectively and build reliable prompt workflows for daily tasks.",
             slug: "generative-ai-prompt-engineering",
-            image: "/assets/images/generative-ai-prompt-engineering.png",
+            image: "/assets/images/generative-ai-thumb-bg.jpeg",
         },
         {
             lessons: "18 Lessons",
@@ -784,7 +784,7 @@ export default function Home() {
                             </Link>
                             <Link
                                 href="/courses"
-                                className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black px-8 py-3.5 text-sm font-semibold text-white transition hover:border-black/25 hover:bg-white/80"
+                                className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black px-8 py-3.5 text-sm font-semibold text-white transition hover:border-black/25 hover:bg-white/80 hover:text-black "
                             >
                                 Explore Courses
                             </Link>
