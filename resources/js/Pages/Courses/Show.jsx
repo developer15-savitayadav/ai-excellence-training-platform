@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PublicLayout from "../../Layouts/PublicLayout";
@@ -3635,6 +3635,29 @@ const COURSE_DETAILS = {
     },
 };
 
+const SEO_META = {
+    "python-programming-foundation": {
+        title: "Python Programming Course – 6 Weeks Live",
+        description:
+            "Learn Python from zero in 6 weeks. Live classes, daily practice, real projects & certificate. No coding background needed. Batch starts [DATE].",
+    },
+    "generative-ai-prompt-engineering": {
+        title: "Generative AI & Prompt Engineering Course",
+        description:
+            "Master ChatGPT, Claude & AI tools in 6 weeks. Hands-on labs, custom assistants, automation & capstone project. No coding required.",
+    },
+    "ai-for-business": {
+        title: "AI for Business Owners – Weekend Program",
+        description:
+            "4-weekend AI program for business owners & professionals. Automate marketing, operations & customer replies. Sat–Sun only. [City] & online.",
+    },
+    "summer-winter-training": {
+        title: "45-Day Summer/Winter Training (AKTU)",
+        description:
+            "AKTU-compliant 45-day industrial training for B.Tech/MCA/BCA. Certificate, live project, report & viva prep. Summer & winter batches.",
+    },
+};
+
 function buildDetail(course) {
     const override = COURSE_DETAILS[course.slug] || {};
     const whoItsForBullets =
@@ -3969,6 +3992,7 @@ export default function CoursesShow({ slug }) {
 
     const course = ALL_COURSES.find((c) => c.slug === slug);
     const detail = course ? buildDetail(course) : null;
+    const seo = SEO_META[slug] || {};
 
     const timelineRef = useRef(null);
 
@@ -4033,6 +4057,7 @@ export default function CoursesShow({ slug }) {
 
     return (
         <PublicLayout>
+            <Head title={seo.title}>{seo.description && <meta name="description" content={seo.description} />}</Head>
             <StickyNav />
             <section className="min-h-screen bg-ink">
                 {/* ═══════════════ HERO ═══════════════ */}

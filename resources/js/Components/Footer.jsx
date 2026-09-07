@@ -74,7 +74,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-sm font-semibold text-white mb-4">Main Pages</h3>
                         <ul className="space-y-2.5">
-                            {['About us', 'Contact us', 'FAQ', 'Blog', 'Career Services'].map((item) => (
+                            {['About us', 'Contact us', 'FAQ', 'Blog', 'Career'].map((item) => (
                                 <li key={item}>
                                     <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white/55 hover:text-white transition-colors">
                                         {item}
@@ -89,15 +89,15 @@ export default function Footer() {
                         <h3 className="text-sm font-semibold text-white mb-4">Courses</h3>
                         <ul className="space-y-2.5">
                             {[
-                                'Data Science & Analytics',
-                                'Digital Marketing With AI',
-                                'Software Development Courses',
-                                'Placement Program',
-                                'DSA Courses'
-                            ].map((item) => (
-                                <li key={item}>
-                                    <Link href={`/courses`} className="text-sm text-white/55 hover:text-white transition-colors">
-                                        {item}
+                                { name: 'Python Programming Foundation', slug: 'python-programming-foundation' },
+                                { name: 'Generative AI & Prompt Engineering', slug: 'generative-ai-prompt-engineering' },
+                                { name: 'AI for Business Owners (Weekend)', slug: 'ai-for-business' },
+                                { name: 'Summer / Winter Training (AKTU)', slug: 'summer-winter-training' },
+                                { name: 'Advanced Diploma in AI & ML', slug: 'advanced-diploma-ai-ml' }
+                            ].map((course) => (
+                                <li key={course.slug}>
+                                    <Link href={`/courses/${course.slug}`} className="text-sm text-white/55 hover:text-white transition-colors">
+                                        {course.name}
                                     </Link>
                                 </li>
                             ))}

@@ -204,7 +204,6 @@ const WHO_IT_FOR = [
         color: "light",
     },
 ];
-
 const TOOLS = [
     "ChatGPT",
     "Claude",
@@ -217,6 +216,38 @@ const TOOLS = [
     "Hugging Face",
     "Power BI",
 ];
+
+const TOOL_ICONS = {
+    ChatGPT: "/assets/images/chatgpt.png",
+    Claude: "/assets/images/claude.jpg",
+    Gemini: "/assets/images/gemini.jpg",
+    Midjourney: "/assets/images/midjourney.jfif",
+    "Canva AI": "/assets/images/canva-ai.png",
+    Python: "/assets/images/python.png",
+    TensorFlow: "/assets/images/tensorflow.png",
+    LangChain: "/assets/images/langchain.png",
+    "Hugging Face": "/assets/images/hugging-face.png",
+    "Power BI": "/assets/images/power-bi.png",
+    Perplexity: "/assets/images/perplexity.jpg",
+    NotebookLM: "/assets/images/notebooklm.png",
+    "DALL·E": "/assets/images/dalle.png",
+    "Adobe Firefly": "/assets/images/adobe-firefly.png",
+    Ideogram: "/assets/images/Ideogram.png",
+    ElevenLabs: "/assets/images/elevenlabs.png",
+    Suno: "/assets/images/suno.png",
+    Runway: "/assets/images/runway.png",
+    HeyGen: "/assets/images/HeyGen.png",
+    Descript: "/assets/images/descript.png",
+    "Notion AI": "/assets/images/notion.png",
+    Gamma: "/assets/images/Gamma.png",
+    Zapier: "/assets/images/zapier.png",
+    Make: "/assets/images/make.png",
+    n8n: "/assets/images/n8n.png",
+    Cursor: "/assets/images/cursor.png",
+    "Claude Code": "/assets/images/claude-code.png",
+    Replit: "/assets/images/replit.png",
+    Lovable: "/assets/images/lovable.png",
+};
 
 const TIERS = [
     {
@@ -792,9 +823,15 @@ export default function CoursesIndex() {
                                             key={`${set}-${tool}`}
                                             className="flex items-center"
                                         >
-                                            <span className="text-[28px] sm:text-[40px] font-bold tracking-[-0.04em] text-black/20 hover:text-violet/40 transition-colors duration-300 cursor-default">
-                                                {tool}
-                                            </span>
+                                            {TOOL_ICONS[tool] && (
+                                                <img
+                                                    src={TOOL_ICONS[tool]}
+                                                    alt={tool}
+                                                    loading="lazy"
+                                                    title={tool}
+                                                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default"
+                                                />
+                                            )}
                                             {i < TOOLS.length - 1 && (
                                                 <span className="mx-8 text-xl text-lime/50">
                                                     ✦
