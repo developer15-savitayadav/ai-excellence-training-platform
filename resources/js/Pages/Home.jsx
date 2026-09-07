@@ -200,6 +200,7 @@ const learners = [
         description:
             "BCA, B.Tech, BSc, BBA and commerce graduates who want a career, not just a degree.",
         icon: GraduationCap,
+        image: "/assets/images/students.png",
     },
     {
         title: "Working",
@@ -207,6 +208,7 @@ const learners = [
         description:
             "Marketers, analysts, engineers and managers who need AI skills to stay relevant.",
         icon: Briefcase,
+        image: "/assets/images/job-seekers.png",
     },
     {
         title: "Business",
@@ -214,6 +216,7 @@ const learners = [
         description:
             "Shop owners, agency founders and entrepreneurs who want AI to save time and grow revenue.",
         icon: Building2,
+        image: "/assets/images/shop-owners.png",
     },
     {
         title: "Career",
@@ -221,6 +224,7 @@ const learners = [
         description:
             "Anyone ready to move into data, AI or digital marketing from a different field.",
         icon: ArrowUpRight,
+        image: "/assets/images/exam-aspirants.png",
     },
 ];
 const trustedBrands = [
@@ -1396,28 +1400,47 @@ export default function Home() {
                             {learners.map((learner, index) => (
                                 <div
                                     key={learner.title}
-                                    className="group relative flex min-h-[350px] flex-col rounded-2xl border border-white/[0.07] bg-[#0f1616] p-6 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:rotate-[9deg] hover:border-white/20 hover:bg-white hover:shadow-[0_2px_55px_rgba(255,255,255,0.35)]"
+                                    className="group relative flex min-h-[350px] flex-col rounded-2xl border border-white/[0.07] bg-[#0f1616] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:rotate-[9deg] hover:border-white/20 hover:bg-white hover:shadow-[0_2px_55px_rgba(255,255,255,0.35)]"
                                 >
-                                    <div className="flex items-start justify-between">
-                                        <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-white/80 transition-all duration-300 group-hover:border-black/10 group-hover:bg-black group-hover:text-white">
+                                    {/* Top — image */}
+                                    <div className="relative mx-6 mt-6">
+                                        <div className="relative h-[150px] overflow-hidden rounded-xl">
+                                            <img
+                                                src={learner.image}
+                                                alt={learner.title}
+                                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+
+                                            {/* Subtle overlay for visibility */}
+                                            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,13,13,0)_55%,rgba(7,13,13,0.5))]" />
+                                        </div>
+
+                                        {/* Floating icon badge overlapping the image edge */}
+                                        <span className="absolute left-[8px] top-[8px] flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white text-[#0f1616] shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition-all duration-300 group-hover:border-black/10 group-hover:bg-black group-hover:text-white">
                                             <learner.icon
                                                 size={22}
                                                 strokeWidth={1.75}
                                             />
                                         </span>
-
-                                        <span className="font-mono text-xs text-white/25 transition-colors duration-300 group-hover:text-black/30">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
                                     </div>
 
-                                    <h3 className="mt-auto pt-8 text-[17px] font-semibold leading-snug tracking-[-0.02em] transition-colors duration-300 group-hover:text-black">
-                                        {learner.title} {learner.subtitle}
-                                    </h3>
+                                    {/* Bottom — content */}
+                                    <div className="relative z-10 flex flex-1 flex-col px-6 pb-6 pt-8">
+                                        <div className="mt-auto flex items-baseline justify-between gap-3">
+                                            <h3 className="text-[17px] font-semibold leading-snug tracking-[-0.02em] transition-colors duration-300 group-hover:text-black">
+                                                {learner.title}{" "}
+                                                {learner.subtitle}
+                                            </h3>
 
-                                    <p className="mt-2.5 text-[13px] leading-[1.65] text-white/45 transition-colors duration-300 group-hover:text-black/55">
-                                        {learner.description}
-                                    </p>
+                                            <span className="shrink-0 font-mono text-xs text-white/25 transition-colors duration-300 group-hover:text-black/30">
+                                                {String(index + 1).padStart(2, "0")}
+                                            </span>
+                                        </div>
+
+                                        <p className="mt-2.5 text-[13px] leading-[1.65] text-white/45 transition-colors duration-300 group-hover:text-black/55">
+                                            {learner.description}
+                                        </p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
