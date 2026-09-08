@@ -216,7 +216,7 @@ const learners = [
         description:
             "Shop owners, agency founders and entrepreneurs who want AI to save time and grow revenue.",
         icon: Building2,
-        image: "/assets/images/shop-owners.png",
+        image: "/assets/images/business-owner.png",
     },
     {
         title: "Career",
