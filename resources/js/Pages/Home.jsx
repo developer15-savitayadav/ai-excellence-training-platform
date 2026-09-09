@@ -515,7 +515,7 @@ const courseOfferData = {
             title: "Digital Marketing with AI",
             description:
                 "Combine core digital marketing skills with AI tools to plan, create and optimise campaigns faster.",
-            slug: "digital-marketing-ai",
+            slug: "digital-marketing-with-ai",
             popular: true,
             image: "/assets/images/digital-marketing-ai.png",
         },
@@ -525,7 +525,7 @@ const courseOfferData = {
             title: "Python for Data Analytics",
             description:
                 "Turn raw data into clear business insights using Python, pandas and practical visualisation techniques.",
-            slug: "python-data-analytics",
+            slug: "python-for-data-analytics",
             image: "/assets/images/python-data-analytics.png",
         },
         {

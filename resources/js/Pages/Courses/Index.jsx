@@ -67,7 +67,7 @@ const PROFESSIONAL = [
     {
         id: 6,
         title: "Digital Marketing with AI — Professional",
-        slug: "digital-marketing-ai",
+        slug: "digital-marketing-with-ai",
         duration: "3 months",
         hours: "100 hrs",
         tagline: "Learn marketing the way agencies practise it in 2026",
@@ -77,7 +77,7 @@ const PROFESSIONAL = [
     {
         id: 7,
         title: "Python for Data Analytics",
-        slug: "python-data-analytics",
+        slug: "python-for-data-analytics",
         duration: "3 months",
         hours: "96 hrs",
         tagline: "Turn raw data into decisions",
