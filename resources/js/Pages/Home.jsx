@@ -24,33 +24,33 @@ const programTabs = [
 // Add this data
 const testimonials = [
     {
-        quote: "The most valuable aspect of working with Scalient Agency is their proactive communication and their genuineness partnership. We never felt like just another client or distant.",
-        name: "Alistair Finch",
-        position: "Chief Operating Officer (COO)",
+        quote: "The practical projects completely changed the way I understood AI. I stopped just watching tutorials and started building solutions that I could confidently showcase.",
+        name: "Rahul Sharma",
+        position: "AI & Machine Learning Engineer",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
     },
     {
-        quote: "The practical projects completely changed the way I understood AI. I stopped just watching tutorials and started building solutions that I could confidently showcase.",
-        name: "Sarah Johnson",
-        position: "Data Scientist",
+        quote: "The training gave me a strong foundation in Python, data science, and machine learning. The hands-on approach made learning much easier and more practical.",
+        name: "Priya Mehta",
+        position: "Data Science Professional",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
     },
     {
-        quote: "Our previous campaigns felt like throwing spaghetti at the wall. The team brought incredible discipline and data analysis to our budget.",
-        name: "Edward Hayes",
-        position: "Chief Operating Officer (COO)",
+        quote: "The projects and real-world assignments helped me understand how AI is actually used in software companies. It gave me much more confidence in my technical skills.",
+        name: "Arjun Kapoor",
+        position: "Software Developer",
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
     },
     {
-        quote: "The creative concepts they developed for our new product launch were fresh, engaging, and perfectly on brand.",
-        name: "James O'Connell",
-        position: "Founder & Head of Strategy",
+        quote: "The instructors explained complex AI concepts in a simple and practical way. I was able to apply what I learned directly to my own software projects.",
+        name: "Amit Verma",
+        position: "AI Software Developer",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80",
     },
     {
-        quote: "They delivered a comprehensive strategy that immediately focused our entire team. The difference in our engagement metrics was noticeable within the first 60 days.",
-        name: "Maria Gonzalez",
-        position: "Marketing Director",
+        quote: "The combination of AI, Python, automation, and industry-focused projects made the learning experience extremely valuable for my career growth.",
+        name: "Neha Gupta",
+        position: "AI & Automation Specialist",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
     },
 ];
@@ -1549,7 +1549,7 @@ export default function Home() {
 
                 {/* PLACEMENT */}
 
-                <Placementsnapshot/>
+                {/* <Placementsnapshot/> */}
                 {/* FINAL CTA */}
                 <section className="border-t border-black/5 px-5 py-24 text-center bg-[#f5f5f2]">
                     <div className="mx-auto max-w-[700px]">

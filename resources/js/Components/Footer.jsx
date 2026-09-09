@@ -1,5 +1,5 @@
-import { Link } from '@inertiajs/react';
-import { Sparkles } from 'lucide-react';
+import { Link } from "@inertiajs/react";
+import { Sparkles } from "lucide-react";
 
 function FacebookIcon() {
     return (
@@ -34,10 +34,10 @@ function YouTubeIcon() {
 }
 
 const socialLinks = [
-    { name: 'Facebook', href: 'https://facebook.com', icon: FacebookIcon },
-    { name: 'Twitter', href: 'https://twitter.com', icon: TwitterIcon },
-    { name: 'Instagram', href: 'https://instagram.com', icon: InstagramIcon },
-    { name: 'YouTube', href: 'https://youtube.com', icon: YouTubeIcon },
+    { name: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
+    { name: "Twitter", href: "https://twitter.com", icon: TwitterIcon },
+    { name: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
+    { name: "YouTube", href: "https://youtube.com", icon: YouTubeIcon },
 ];
 
 export default function Footer() {
@@ -51,11 +51,15 @@ export default function Footer() {
                             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)]">
                                 <Sparkles size={14} className="text-white" />
                             </div>
-                            <span className="text-sm font-semibold text-white">AI Excellence Academy</span>
+                            <span className="text-sm font-semibold text-white">
+                                AI Excellence Academy
+                            </span>
                         </div>
 
-                        <h3 className="text-lg font-bold text-white mb-3">Sign up for our newsletter today.</h3>
-                        
+                        <h3 className="text-lg font-bold text-white mb-3">
+                            Sign up for our newsletter today.
+                        </h3>
+
                         <div className="flex flex-col gap-2 sm:flex-row  rounded-[8px] border border-white/20 bg-white/5">
                             <input
                                 type="email"
@@ -66,17 +70,32 @@ export default function Footer() {
                                 Subscribe
                             </button>
                         </div>
-                        
-                        <p className="text-xs text-white/40 mt-2">No spam, Just valued update.</p>
+
+                        <p className="text-xs text-white/40 mt-2">
+                            No spam, Just valued update.
+                        </p>
                     </div>
 
                     {/* Main Pages */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white mb-4">Main Pages</h3>
+                        <h3 className="text-sm font-semibold text-white mb-4">
+                            Quick Links
+                        </h3>
+
                         <ul className="space-y-2.5">
-                            {['About us', 'Contact us', 'FAQ', 'Blog', 'Career'].map((item) => (
+                            {[
+                                "About",
+                                "Courses",
+                                "Fee",
+                                "Programmes",
+                                "Career",
+                                "Contact",
+                            ].map((item) => (
                                 <li key={item}>
-                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-white/55 hover:text-white transition-colors">
+                                    <Link
+                                        href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                                        className="text-sm text-white/55 hover:text-white transition-colors"
+                                    >
                                         {item}
                                     </Link>
                                 </li>
@@ -86,17 +105,37 @@ export default function Footer() {
 
                     {/* Courses */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white mb-4">Courses</h3>
+                        <h3 className="text-sm font-semibold text-white mb-4">
+                            Courses
+                        </h3>
                         <ul className="space-y-2.5">
                             {[
-                                { name: 'Python Programming Foundation', slug: 'python-programming-foundation' },
-                                { name: 'Generative AI & Prompt Engineering', slug: 'generative-ai-prompt-engineering' },
-                                { name: 'AI for Business Owners (Weekend)', slug: 'ai-for-business' },
-                                { name: 'Summer / Winter Training (AKTU)', slug: 'summer-winter-training' },
-                                { name: 'Advanced Diploma in AI & ML', slug: 'advanced-diploma-ai-ml' }
+                                {
+                                    name: "Python Programming Foundation",
+                                    slug: "python-programming-foundation",
+                                },
+                                {
+                                    name: "Generative AI & Prompt Engineering",
+                                    slug: "generative-ai-prompt-engineering",
+                                },
+                                {
+                                    name: "AI for Business Owners (Weekend)",
+                                    slug: "ai-for-business",
+                                },
+                                {
+                                    name: "Summer / Winter Training (AKTU)",
+                                    slug: "summer-winter-training",
+                                },
+                                {
+                                    name: "Advanced Diploma in AI & ML",
+                                    slug: "advanced-diploma-ai-ml",
+                                },
                             ].map((course) => (
                                 <li key={course.slug}>
-                                    <Link href={`/courses/${course.slug}`} className="text-sm text-white/55 hover:text-white transition-colors">
+                                    <Link
+                                        href={`/courses/${course.slug}`}
+                                        className="text-sm text-white/55 hover:text-white transition-colors"
+                                    >
                                         {course.name}
                                     </Link>
                                 </li>
@@ -106,7 +145,9 @@ export default function Footer() {
 
                     {/* Social Media */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white/70 mb-4">Social Media</h3>
+                        <h3 className="text-sm font-semibold text-white/70 mb-4">
+                            Social Media
+                        </h3>
                         <div className="flex flex-col gap-4">
                             {socialLinks.map((social) => (
                                 <a
@@ -121,18 +162,30 @@ export default function Footer() {
                                 </a>
                             ))}
                         </div>
-                        
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
                 <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex flex-wrap gap-4">
-                        <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy policy</Link>
+                        <Link
+                            href="/privacy"
+                            className="hover:text-white/60 transition-colors"
+                        >
+                            Privacy policy
+                        </Link>
                         <span className="text-white/20">|</span>
-                        <span>@Copyright 2026 | Design & developed by Nextupgrad Web Solutions Pvt. Ltd.</span>
+                        <span>
+                            @Copyright 2026 | Design & developed by Nextupgrad
+                            Web Solutions Pvt. Ltd.
+                        </span>
                     </div>
-                    <Link href="/terms" className="hover:text-white/60 transition-colors">Terms of Use</Link>
+                    <Link
+                        href="/terms"
+                        className="hover:text-white/60 transition-colors"
+                    >
+                        Terms of Use
+                    </Link>
                 </div>
             </div>
         </footer>

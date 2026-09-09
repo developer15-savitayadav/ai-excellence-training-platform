@@ -48,7 +48,7 @@ const BATCH_TIMINGS = [
 const CONTACT_INFO = [
     {
         label: 'Visit Us',
-        value: 'Gomti Nagar, Lucknow',
+        value: '6V 272 Sector 6 Gomti Nagar Vistar, Lucknow – Uttar Pradesh, India',
         href: null,
         icon: (
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -79,7 +79,7 @@ const CONTACT_INFO = [
     },
     {
         label: 'Email',
-        value: '[Email]',
+        value: 'admission@aiexecellenceacademy.com',
         href: 'mailto:[Email]',
         icon: (
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
