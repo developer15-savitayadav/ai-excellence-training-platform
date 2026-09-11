@@ -3940,7 +3940,7 @@ function StickyNav() {
                         ? "translate-y-0 opacity-100"
                         : "translate-y-6 opacity-0 pointer-events-none"
                 }`}
-                style={{ width: "min(700px, calc(100% - 32px))" }}
+                style={{ width: "min(960px, calc(100% - 32px))" }}
             >
                 <div className="flex items-center gap-1 rounded-[20px] bg-white/92 backdrop-blur-xl border border-black/[0.07] shadow-[0_8px_32px_rgba(0,0,0,.12),0_2px_8px_rgba(0,0,0,.06)] px-2 py-1.5">
                     <div className="flex items-center gap-0.5 flex-1 overflow-x-auto no-scrollbar">
