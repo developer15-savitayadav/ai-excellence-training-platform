@@ -670,8 +670,6 @@ export default function Home() {
     const [whyRef, whyInView] = useInView(0.15);
     const stackRef = useRef(null);
 
- 
-
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -708,7 +706,6 @@ export default function Home() {
 
         return () => ctx.revert();
     }, []);
-
 
     const [offerTab, setOfferTab] = useState(courseTabs[0].id);
     const [slideIndex, setSlideIndex] = useState(0);
@@ -1074,7 +1071,7 @@ export default function Home() {
                 <section className="overflow-hidden px-5 py-20 bg-[#f5f5f2]">
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center">
-<div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 OUR COURSES
                             </div>
@@ -1284,26 +1281,26 @@ export default function Home() {
                                     style={{
                                         transitionDelay: `${index * 90}ms`,
                                     }}
-                                    className={`group relative grid grid-cols-[24px_1fr_36px] items-center gap-4 overflow-hidden border-b border-black/5 py-6 pl-1 pr-2 transition-all duration-700 ease-out sm:grid-cols-[28px_220px_1fr_44px] sm:gap-8 sm:py-7 sm:pl-2 sm:pr-4 ${
+                                    className={`group relative flex flex-col items-start gap-4 overflow-hidden border-b border-black/5 py-6 pl-1 pr-2 transition-all duration-700 ease-out sm:grid sm:grid-cols-[28px_220px_1fr_44px] sm:items-center sm:gap-8 sm:py-7 sm:pl-2 sm:pr-4 ${
                                         whyInView
                                             ? "translate-y-0 opacity-100"
                                             : "translate-y-6 opacity-0"
                                     } motion-reduce:transition-none motion-reduce:transform-none`}
                                 >
-                                    <span className="-ml-1 select-none font-mono text-[13px] font-normal leading-none text-black/25 transition-colors duration-300 group-hover:text-[#982cdc] sm:-ml-2">
+                                    <span className="select-none font-mono text-[13px] font-normal leading-none text-black/25 transition-colors duration-300 group-hover:text-[#982cdc] sm:-ml-2">
                                         {index + 1}
                                     </span>
 
-                                    <h3 className="max-w-[200px] text-[clamp(17px,1.4vw,20px)] font-bold leading-[1.3] tracking-[-0.02em] text-black">
+                                    <h3 className="max-w-none text-[clamp(17px,1.4vw,20px)] font-bold leading-[1.3] tracking-[-0.02em] text-black sm:max-w-[200px]">
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-[14px] leading-[1.6] text-black sm:text-[14px]">
+                                    <p className="text-[14px] leading-[1.6] text-black">
                                         {item.description}
                                     </p>
 
-                                    {/* Hover preview thumbnail — centered */}
-                                    <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-20 w-32 -translate-x-1/2 -translate-y-1/2 scale-90 overflow-hidden rounded-lg opacity-0 shadow-[0_15px_35px_-8px_rgba(0,0,0,.4)] transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 lg:block z-10">
+                                    {/* Hover preview thumbnail */}
+                                    <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-20 w-32 -translate-x-1/2 -translate-y-1/2 scale-90 overflow-hidden rounded-lg opacity-0 shadow-[0_15px_35px_-8px_rgba(0,0,0,.4)] transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 lg:block">
                                         <img
                                             src={item.image}
                                             alt=""
@@ -1312,7 +1309,7 @@ export default function Home() {
                                         />
                                     </div>
 
-                                    <div className="flex h-9 w-9 items-center justify-center justify-self-end rounded-full border border-black/12 transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white">
+                                    <div className="flex h-9 w-9 items-center justify-center self-end rounded-full border border-black/12 transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white sm:justify-self-end">
                                         <svg
                                             className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                                             fill="none"
@@ -1338,9 +1335,9 @@ export default function Home() {
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center mb-12">
                             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                            OUR MENTORS
-                        </div>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                                OUR MENTORS
+                            </div>
 
                             <h2 className="text-[clamp(28px,4vw,42px)] font-bold tracking-[-0.04em] text-black">
                                 Meet the People Behind
@@ -1357,7 +1354,7 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                             {mentors.map((mentor) => (
                                 <MentorCard key={mentor.name} mentor={mentor} />
                             ))}
@@ -1433,7 +1430,10 @@ export default function Home() {
                                             </h3>
 
                                             <span className="shrink-0 font-mono text-xs text-white/25 transition-colors duration-300 group-hover:text-black/30">
-                                                {String(index + 1).padStart(2, "0")}
+                                                {String(index + 1).padStart(
+                                                    2,
+                                                    "0",
+                                                )}
                                             </span>
                                         </div>
 
@@ -1452,9 +1452,9 @@ export default function Home() {
                     <div className="mx-auto max-w-[1050px]">
                         <div className="text-center mb-12">
                             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                            TESTIMONIAL
-                        </div>
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                                TESTIMONIAL
+                            </div>
 
                             <h2 className="text-[clamp(28px,4vw,42px)] font-bold tracking-[-0.04em] text-black">
                                 Real People. Real Results.

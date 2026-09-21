@@ -60,12 +60,13 @@ export default function Footer() {
                             Sign up for our newsletter today.
                         </h3>
 
-                        <div className="flex flex-col gap-2 sm:flex-row  rounded-[8px] border border-white/20 bg-white/5">
+                        <div className="flex flex-col gap-2 rounded-[8px] border border-white/20 bg-white/5 lg:flex-row">
                             <input
                                 type="email"
                                 placeholder="Your email"
-                                className="flex-1 min-w-0 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#982cdc]/50 transition-colors"
+                                className="min-w-0 flex-1 px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#982cdc]/50 transition-colors"
                             />
+
                             <button className="rounded-[8px] bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity">
                                 Subscribe
                             </button>

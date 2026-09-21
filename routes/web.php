@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
@@ -46,5 +46,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get('/learn', function () {
+    return redirect()->route('courses.index');
+})->name('learn.index');
 require __DIR__.'/auth.php';
