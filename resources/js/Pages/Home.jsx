@@ -690,7 +690,13 @@ export default function Home() {
                 scrollTrigger: {
                     trigger: el,
                     start: "top top+=50",
-                    end: "+=2226",
+                    end: () =>
+                        window.innerWidth < 1024
+                            ? "+=" +
+                              Math.round(
+                                  Math.min(2226, window.innerHeight * 2.6)
+                              )
+                            : "+=2226",
                     pin: true,
                     scrub: 1,
                     anticipatePin: 1,
@@ -1448,9 +1454,9 @@ export default function Home() {
                 </section>
 
                 {/* TESTIMONIAL */}
-                <section className="px-5 py-20 bg-[#f5f5f2] overflow-hidden">
+                <section className="px-5 py-12 sm:py-14 md:py-16 lg:py-20 bg-[#f5f5f2] overflow-hidden">
                     <div className="mx-auto max-w-[1050px]">
-                        <div className="text-center mb-12">
+                        <div className="text-center mb-8 lg:mb-12">
                             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 TESTIMONIAL
@@ -1523,7 +1529,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        <div className="mt-10 flex justify-center">
+                        <div className="mt-8 flex justify-center lg:mt-10">
                             <Link
                                 href="/testimonials"
                                 className=" group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"

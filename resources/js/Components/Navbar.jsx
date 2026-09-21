@@ -32,7 +32,7 @@ function Logo() {
             <img
                 src="/assets/images/logoExtra1.png"
                 alt="AI Excellence Academy"
-                className="h-20 w-50 object-contain"
+                className="h-14 w-36 object-contain sm:h-16 sm:w-40 md:h-14 md:w-36 lg:h-20 lg:w-30"
             />
         </Link>
     );
@@ -69,7 +69,15 @@ export default function Navbar() {
     const url = usePage().url;
     const user = auth?.user;
 
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [mobileMenu, setMobileMenu] = useState(false);
+    const [mobileShown, setMobileShown] = useState(false);
+    const [mobileClosing, setMobileClosing] = useState(false);
+    const mobileTimer = useRef(null);
+    const [searchOpen, setSearchOpen] = useState(false);
+    const [searchShown, setSearchShown] = useState(false);
+    const [searchClosing, setSearchClosing] = useState(false);
+    const searchTimer = useRef(null);
+    const searchInputRef = useRef(null);
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
@@ -97,31 +105,109 @@ export default function Navbar() {
     }, []);
 
     useEffect(() => {
-        document.body.style.overflow = mobileOpen ? "hidden" : "";
+        document.body.style.overflow = mobileMenu || searchOpen ? "hidden" : "";
         return () => {
             document.body.style.overflow = "";
         };
-    }, [mobileOpen]);
+    }, [mobileMenu, searchOpen]);
+
+    useEffect(
+        () => () => {
+            clearTimeout(mobileTimer.current);
+            clearTimeout(searchTimer.current);
+        },
+        [],
+    );
+
+    function openMobileMenu() {
+        clearTimeout(mobileTimer.current);
+        setMobileClosing(false);
+        setMobileMenu(true);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => setMobileShown(true));
+        });
+    }
+
+    function closeMobileMenu() {
+        if (!mobileMenu || mobileClosing) return;
+        setMobileClosing(true);
+        setMobileShown(false);
+        mobileTimer.current = setTimeout(() => {
+            setMobileMenu(false);
+            setMobileClosing(false);
+        }, 250);
+    }
+
+    function toggleMobileMenu() {
+        if (mobileMenu && !mobileClosing) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    function openSearchModal() {
+        clearTimeout(searchTimer.current);
+        setSearchClosing(false);
+        setSearchOpen(true);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => setSearchShown(true));
+        });
+    }
+
+    function closeSearchModal() {
+        if (!searchOpen || searchClosing) return;
+        setSearchClosing(true);
+        setSearchShown(false);
+        searchTimer.current = setTimeout(() => {
+            setSearchOpen(false);
+            setSearchClosing(false);
+        }, 250);
+    }
+
+    function toggleSearchModal() {
+        if (searchOpen && !searchClosing) {
+            closeSearchModal();
+        } else {
+            openSearchModal();
+        }
+    }
+
+    useEffect(() => {
+        if (!searchShown) return;
+        const t = setTimeout(() => searchInputRef.current?.focus(), 60);
+        return () => clearTimeout(t);
+    }, [searchShown]);
+
+    useEffect(() => {
+        if (!searchOpen) return;
+        function onKeyDown(e) {
+            if (e.key === "Escape") closeSearchModal();
+        }
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.removeEventListener("keydown", onKeyDown);
+    }, [searchOpen]);
 
     function handleLogout() {
         setUserDropdownOpen(false);
-        setMobileOpen(false);
+        closeMobileMenu();
         router.post("/logout");
     }
 
     function handleSearch(e) {
         e.preventDefault();
         if (searchQuery.trim()) {
-            setMobileOpen(false);
+            closeMobileMenu();
+            closeSearchModal();
             router.get("/courses", { search: searchQuery });
         }
     }
 
     return (
         <>
-            <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-5">
+            <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-5 md:px-4 lg:px-5">
                 <nav
-                    className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-1 rounded-2xl border pl-6 pr-6 transition-all duration-300 ${
+                    className={`mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-1 rounded-2xl border pl-6 pr-6 transition-all duration-300 md:pl-4 md:pr-4 lg:pl-6 lg:pr-6 ${
                         scrolled
                             ? "border-black/[0.08] bg-white shadow-[0_16px_45px_-15px_rgba(15,22,22,0.25)] backdrop-blur-xl"
                             : "border-black/[0.05] bg-white shadow-[0_8px_30px_-18px_rgba(15,22,22,0.2)] backdrop-blur-lg"
@@ -129,14 +215,14 @@ export default function Navbar() {
                 >
                     <Logo />
 
-                    <div className="hidden items-center gap-1 md:flex">
+                    <div className="hidden items-center gap-1 md:flex md:gap-0.5 lg:gap-1">
                         {navLinks.slice(0, 2).map((link) => {
                             const active = isActive(url, link.href);
                             return (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 md:px-2 md:text-[13px] lg:px-4 lg:text-[16px] ${
                                         active
                                             ? "text-black"
                                             : "text-black/55 hover:text-black"
@@ -144,7 +230,7 @@ export default function Navbar() {
                                 >
                                     {link.name}
                                     <span
-                                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
+                                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 md:inset-x-2 lg:inset-x-4 ${
                                             active
                                                 ? "scale-x-100 opacity-100"
                                                 : "scale-x-0 opacity-0"
@@ -160,7 +246,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 md:px-2 md:text-[13px] lg:px-4 lg:text-[16px] ${
                                         active
                                             ? "text-black"
                                             : "text-black/55 hover:text-black"
@@ -168,7 +254,7 @@ export default function Navbar() {
                                 >
                                     {link.name}
                                     <span
-                                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
+                                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 md:inset-x-2 lg:inset-x-4 ${
                                             active
                                                 ? "scale-x-100 opacity-100"
                                                 : "scale-x-0 opacity-0"
@@ -182,7 +268,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-2">
                         <form
                             onSubmit={handleSearch}
-                            className="relative hidden lg:block"
+                            className="relative hidden min-[1025px]:block"
                         >
                             <input
                                 type="text"
@@ -285,7 +371,7 @@ export default function Navbar() {
                                 <>
                                     <Link
                                         href="/register"
-                                        className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
+                                        className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)] md:px-3 md:py-1.5 md:text-[13px] lg:px-5 lg:py-2 lg:text-[13.5px]"
                                     >
                                         Get Started
                                         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -295,27 +381,51 @@ export default function Navbar() {
                         </div>
 
                         <button
-                            onClick={() => setMobileOpen(!mobileOpen)}
+                            onClick={toggleSearchModal}
                             className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 md:hidden ${
-                                mobileOpen
+                                searchOpen && searchShown
+                                    ? "border-black/[0.12] bg-white text-black"
+                                    : "border-black/[0.08] bg-white/70 hover:bg-white"
+                            }`}
+                            aria-label="Open search"
+                        >
+                            <Search className="h-5 w-5 text-black" />
+                        </button>
+
+                        <button
+                            onClick={toggleMobileMenu}
+                            className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-200 md:hidden ${
+                                mobileMenu
                                     ? "border-black/[0.12] bg-black text-white"
                                     : "border-black/[0.08] bg-white/70 hover:bg-white"
                             }`}
                             aria-label="Toggle menu"
                         >
-                            <HamburgerIcon open={mobileOpen} />
+                            <HamburgerIcon open={mobileMenu} />
                         </button>
                     </div>
                 </nav>
             </header>
 
-            {mobileOpen && (
-                <div className="fixed inset-0 z-40 md:hidden">
+            {mobileMenu && (
+                <div
+                    className={`fixed inset-0 z-40 md:hidden ${
+                        mobileShown ? "" : "pointer-events-none"
+                    }`}
+                >
                     <div
-                        className="absolute inset-0 bg-[#0f1616]/30 backdrop-blur-sm"
-                        onClick={() => setMobileOpen(false)}
+                        className={`absolute inset-0 bg-[#0f1616]/30 backdrop-blur-sm transition-opacity duration-300 ${
+                            mobileShown ? "opacity-100" : "opacity-0"
+                        }`}
+                        onClick={closeMobileMenu}
                     />
-                    <div className="absolute inset-x-3 top-[84px] animate-menu-pop overflow-hidden rounded-3xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)]">
+                    <div
+                        className={`absolute inset-x-3 top-[84px] overflow-hidden rounded-3xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)] transition-all duration-300 ease-out ${
+                            mobileShown
+                                ? "translate-y-0 scale-100 opacity-100"
+                                : "-translate-y-3 scale-[0.98] opacity-0"
+                        }`}
+                    >
                         <div className="max-h-[calc(100vh-120px)] overflow-y-auto p-3">
                             <form
                                 onSubmit={handleSearch}
@@ -336,7 +446,7 @@ export default function Navbar() {
                             <div className="">
                                 <CoursesMegaMenu
                                     onMobileNavigate={() =>
-                                        setMobileOpen(false)
+                                        closeMobileMenu()
                                     }
                                 />
                                 {navLinks.map((link) => {
@@ -350,7 +460,7 @@ export default function Navbar() {
                                                     ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent"
                                                     : "text-black/65 hover:bg-black/[0.04] hover:text-black"
                                             }`}
-                                            onClick={() => setMobileOpen(false)}
+                                            onClick={() => closeMobileMenu()}
                                         >
                                             <span className={active ? "" : ""}>
                                                 {link.name}
@@ -388,7 +498,7 @@ export default function Navbar() {
                                         <Link
                                             href="/dashboard"
                                             className="flex items-center gap-2.5 rounded-2xl px-4 py-3 text-[15px] text-black/65 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                            onClick={() => setMobileOpen(false)}
+                                            onClick={() => closeMobileMenu()}
                                         >
                                             <LayoutDashboard className="h-4 w-4" />
                                             Dashboard
@@ -396,7 +506,7 @@ export default function Navbar() {
                                         <Link
                                             href="/profile"
                                             className="flex items-center gap-2.5 rounded-2xl px-4 py-3 text-[15px] text-black/65 transition-colors hover:bg-black/[0.04] hover:text-black"
-                                            onClick={() => setMobileOpen(false)}
+                                            onClick={() => closeMobileMenu()}
                                         >
                                             <UserRound className="h-4 w-4" />
                                             Profile
@@ -414,7 +524,7 @@ export default function Navbar() {
                                         <Link
                                             href="/register"
                                             className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)]"
-                                            onClick={() => setMobileOpen(false)}
+                                            onClick={() => closeMobileMenu()}
                                         >
                                             Get Started
                                             <ArrowRight className="h-4 w-4" />
@@ -422,7 +532,7 @@ export default function Navbar() {
                                         <Link
                                             href="/login"
                                             className="inline-flex w-full items-center justify-center rounded-full border border-black/[0.1] bg-white px-6 py-3 text-sm font-semibold text-black/70 transition-colors hover:bg-black/[0.03]"
-                                            onClick={() => setMobileOpen(false)}
+                                            onClick={() => closeMobileMenu()}
                                         >
                                             Log in
                                         </Link>
@@ -430,6 +540,78 @@ export default function Navbar() {
                                 )}
                             </div>
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {searchOpen && (
+                <div
+                    className={`fixed inset-0 z-[60] flex items-center justify-center p-4 md:hidden sm:p-6 ${
+                        searchShown ? "" : "pointer-events-none"
+                    }`}
+                >
+                    <div
+                        className={`absolute inset-0 bg-[#0f1616]/40 backdrop-blur-sm transition-opacity duration-300 ${
+                            searchShown ? "opacity-100" : "opacity-0"
+                        }`}
+                        onClick={closeSearchModal}
+                    />
+                    <div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Search courses"
+                        className={`relative w-full max-w-md rounded-3xl border border-black/[0.07] bg-white p-5 shadow-[0_30px_70px_-20px_rgba(15,22,22,0.4)] transition-all duration-300 ease-out sm:p-6 ${
+                            searchShown
+                                ? "translate-y-0 scale-100 opacity-100"
+                                : "translate-y-4 scale-95 opacity-0"
+                        }`}
+                    >
+                        <div className="mb-4 flex items-center justify-between sm:mb-5">
+                            <h3 className="text-[15px] font-semibold text-black sm:text-base">
+                                Search courses
+                            </h3>
+                            <button
+                                type="button"
+                                onClick={closeSearchModal}
+                                className="flex h-8 w-8 items-center justify-center rounded-full text-black/50 transition-colors duration-200 hover:bg-black/[0.05] hover:text-black"
+                                aria-label="Close search"
+                            >
+                                <svg
+                                    className="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={2}
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <form onSubmit={handleSearch} className="relative">
+                            <input
+                                type="text"
+                                ref={searchInputRef}
+                                placeholder="Search courses..."
+                                value={searchQuery}
+                                onChange={(e) =>
+                                    setSearchQuery(e.target.value)
+                                }
+                                className="w-full rounded-2xl border border-black/[0.08] bg-black/[0.03] py-3 pl-11 pr-4 text-sm text-black outline-none transition-all placeholder:text-black/35 focus:border-[#982cdc]/40 focus:bg-white focus:ring-4 focus:ring-[#982cdc]/[0.08]"
+                            />
+                            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
+                            <button
+                                type="submit"
+                                className="mt-4 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
+                            >
+                                Search
+                                <ArrowRight className="h-4 w-4" />
+                            </button>
+                        </form>
                     </div>
                 </div>
             )}

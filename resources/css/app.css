@@ -745,33 +745,102 @@ body {
 
 @media (max-width: 767px) {
     .tstack {
-        height: 100vh;
-        height: 100svh;
+        height: min(500px, 92svh);
     }
 
     .tstack-card {
         width: calc(100% - 4px);
+        padding: 16px;
     }
 
     .tstack-card:nth-child(1) {
-        top: min(80px, 12vh);
+        top: min(56px, 8vh);
     }
     .tstack-card:nth-child(2) {
-        top: min(92px, 13.5vh);
+        top: min(64px, 9vh);
     }
     .tstack-card:nth-child(3) {
-        top: min(104px, 15vh);
+        top: min(72px, 10vh);
     }
     .tstack-card:nth-child(4) {
-        top: min(116px, 16.5vh);
+        top: min(80px, 11vh);
     }
     .tstack-card:nth-child(5) {
-        top: min(128px, 18vh);
+        top: min(88px, 12vh);
+    }
+
+    .tstack-mark {
+        font-size: clamp(34px, 4.5vw, 42px);
+        line-height: 0.55;
+        margin-bottom: clamp(12px, 2.5vw, 16px);
+    }
+
+    .tstack-quote {
+        font-size: clamp(14px, 1.3vw, 15px);
+        line-height: 1.65;
     }
 
     .tstack-avatar {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .tstack-foot {
+        margin-top: clamp(16px, 2.5vw, 22px);
+        gap: 10px;
+    }
+}
+
+/* Mobile only: reveal cards inside the stack box so the transformed cards
+   never spill out over (and clip) the "View More" button below it. Scoped to
+   no-preference because the reduced-motion fallback uses normal-flow cards
+   that legitimately extend past the box. */
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+    .tstack {
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tstack {
+        height: 420px;
+        --_border-radius---border-radius-xl: 20px;
+    }
+
+    .tstack-card {
+        padding: 18px;
+    }
+
+    .tstack-card:nth-child(1) {
+        top: 44px;
+    }
+    .tstack-card:nth-child(2) {
+        top: 52px;
+    }
+    .tstack-card:nth-child(3) {
+        top: 52px;
+    }
+    .tstack-card:nth-child(4) {
+        top: 52px;
+    }
+    .tstack-card:nth-child(5) {
+        top: 52px;
+    }
+
+    .tstack-mark {
+        font-size: clamp(36px, 4vw, 46px);
+        line-height: 0.55;
+        margin-bottom: clamp(12px, 2vw, 16px);
+    }
+
+    .tstack-quote {
+        font-size: clamp(14px, 1.3vw, 16px);
+        line-height: 1.65;
+    }
+
+    .tstack-avatar {
+        width: 44px;
+        height: 44px;
     }
 }
 

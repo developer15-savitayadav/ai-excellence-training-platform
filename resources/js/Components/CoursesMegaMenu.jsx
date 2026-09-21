@@ -302,7 +302,7 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
             >
                 <Link
                     href="/courses"
-                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 ${
+                    className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 md:px-2 md:text-[13px] lg:px-4 lg:text-[16px] ${
                         isHovered
                             ? "text-black"
                             : "text-black/55 hover:text-black"
@@ -310,7 +310,7 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                 >
                     Courses
                     <span
-                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 ${
+                        className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 md:inset-x-2 lg:inset-x-4 ${
                             isHovered
                                 ? "scale-x-100 opacity-100"
                                 : "scale-x-0 opacity-0"
