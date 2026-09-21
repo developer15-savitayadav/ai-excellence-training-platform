@@ -546,77 +546,93 @@ export default function Navbar() {
                 </div>
             )}
 
-            {searchOpen && (
-                <div
-                    className={`fixed inset-0 z-[60] flex items-center justify-center p-4 md:hidden sm:p-6 ${
-                        searchShown ? "" : "pointer-events-none"
-                    }`}
-                >
-                    <div
-                        className={`absolute inset-0 bg-[#0f1616]/40 backdrop-blur-sm transition-opacity duration-300 ${
-                            searchShown ? "opacity-100" : "opacity-0"
-                        }`}
-                        onClick={closeSearchModal}
-                    />
-                    <div
-                        role="dialog"
-                        aria-modal="true"
-                        aria-label="Search courses"
-                        className={`relative w-full max-w-md rounded-3xl border border-black/[0.07] bg-white p-5 shadow-[0_30px_70px_-20px_rgba(15,22,22,0.4)] transition-all duration-300 ease-out sm:p-6 ${
-                            searchShown
-                                ? "translate-y-0 scale-100 opacity-100"
-                                : "translate-y-4 scale-95 opacity-0"
-                        }`}
-                    >
-                        <div className="mb-4 flex items-center justify-between sm:mb-5">
-                            <h3 className="text-[15px] font-semibold text-black sm:text-base">
-                                Search courses
-                            </h3>
-                            <button
-                                type="button"
-                                onClick={closeSearchModal}
-                                className="flex h-8 w-8 items-center justify-center rounded-full text-black/50 transition-colors duration-200 hover:bg-black/[0.05] hover:text-black"
-                                aria-label="Close search"
-                            >
-                                <svg
-                                    className="h-4 w-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
+{searchOpen && (
+    <div
+        className={`fixed inset-0 z-[60] flex items-center justify-center px-3 py-4 sm:px-6 sm:py-6 md:hidden ${
+            searchShown ? "" : "pointer-events-none"
+        }`}
+    >
+        {/* Overlay */}
+        <div
+            className={`absolute inset-0 bg-[#0f1616]/40 backdrop-blur-sm transition-opacity duration-300 ${
+                searchShown ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={closeSearchModal}
+        />
 
-                        <form onSubmit={handleSearch} className="relative">
-                            <input
-                                type="text"
-                                ref={searchInputRef}
-                                placeholder="Search courses..."
-                                value={searchQuery}
-                                onChange={(e) =>
-                                    setSearchQuery(e.target.value)
-                                }
-                                className="w-full rounded-2xl border border-black/[0.08] bg-black/[0.03] py-3 pl-11 pr-4 text-sm text-black outline-none transition-all placeholder:text-black/35 focus:border-[#982cdc]/40 focus:bg-white focus:ring-4 focus:ring-[#982cdc]/[0.08]"
-                            />
-                            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
-                            <button
-                                type="submit"
-                                className="mt-4 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
-                            >
-                                Search
-                                <ArrowRight className="h-4 w-4" />
-                            </button>
-                        </form>
-                    </div>
+        {/* Search Modal */}
+        <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Search courses"
+            className={`relative w-full max-w-[calc(100vw-24px)] rounded-3xl border border-black/[0.07] bg-white p-4 shadow-[0_30px_70px_-20px_rgba(15,22,22,0.4)] transition-all duration-300 ease-out sm:max-w-md sm:p-6 ${
+                searchShown
+                    ? "translate-y-0 scale-100 opacity-100"
+                    : "translate-y-4 scale-95 opacity-0"
+            }`}
+        >
+            {/* Header */}
+            <div className="mb-4 flex items-center justify-between sm:mb-5">
+                <h3 className="text-[15px] font-semibold text-black sm:text-base">
+                    Search courses
+                </h3>
+
+                <button
+                    type="button"
+                    onClick={closeSearchModal}
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-black/50 transition-colors duration-200 hover:bg-black/[0.05] hover:text-black"
+                    aria-label="Close search"
+                >
+                    <svg
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            {/* Search Form */}
+            <form
+                onSubmit={handleSearch}
+                className="relative w-full"
+            >
+                <div className="relative w-full">
+                    <input
+                        type="text"
+                        ref={searchInputRef}
+                        placeholder="Search courses..."
+                        value={searchQuery}
+                        onChange={(e) =>
+                            setSearchQuery(e.target.value)
+                        }
+                        className="h-12 w-full rounded-2xl border border-black/[0.08] bg-black/[0.03] py-3 pl-11 pr-4 text-sm text-black outline-none transition-all placeholder:text-black/35 focus:border-[#982cdc]/40 focus:bg-white focus:ring-4 focus:ring-[#982cdc]/[0.08] sm:h-12"
+                    />
+
+                    <Search
+                        className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35"
+                    />
                 </div>
-            )}
+
+                {/* Search Button */}
+                <button
+                    type="submit"
+                    className="mt-4 inline-flex h-12 w-full items-center justify-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-6 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
+                >
+                    Search
+                    <ArrowRight className="h-4 w-4" />
+                </button>
+            </form>
+        </div>
+    </div>
+)}
 
             <div className="h-24" />
         </>
