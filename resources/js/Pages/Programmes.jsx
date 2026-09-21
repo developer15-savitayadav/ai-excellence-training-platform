@@ -70,7 +70,7 @@ export default function Programmes() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="flex items-start justify-center lg:justify-start">
+                            <div className="flex items-start justify-start lg:justify-center">
                                 <img
                                     src="/assets/images/aktu-seal.png"
                                     alt="AKTU"
@@ -87,17 +87,18 @@ export default function Programmes() {
             <section className="relative">
                 <div className="max-w-[1240px] mx-auto px-6 py-16 max-lg:py-12">
                     {/* Tracks row — image-based tabs */}
-                    <div className="flex items-center gap-4 pb-8 mb-14 border-b border-black/[0.06]">
-                        <span className="font-display text-lg font-bold text-black shrink-0 mr-2">
+                    <div className="mb-10 flex flex-col gap-5 border-b border-black/[0.06] pb-8 sm:mb-14 lg:flex-row lg:items-center lg:gap-4">
+                        <span className="shrink-0 font-display text-lg font-bold text-black lg:mr-2">
                             Tracks :
                         </span>
-                        <div className="flex-1 grid grid-cols-4 gap-4">
+
+                        <div className="grid w-full flex-1 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
                             {TRACKS.map((track) => (
                                 <div
                                     key={track.name}
-                                    className="flex items-center justify-center h-14 px-4 rounded-2xl bg-black/[0.03] border border-black/[0.06] hover:border-violet/30 hover:bg-violet/5 hover:-translate-y-0.5 transition-all duration-200"
+                                    className="flex min-h-14 items-center justify-center rounded-2xl border border-black/[0.06] bg-black/[0.03] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-violet/30 hover:bg-violet/5"
                                 >
-                                    <span className="text-sm font-semibold text-gray-800 text-center">
+                                    <span className="text-center text-sm font-semibold text-gray-800">
                                         {track.name}
                                     </span>
                                 </div>

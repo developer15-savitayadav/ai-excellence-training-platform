@@ -480,7 +480,7 @@ export default function CoursesIndex() {
                         </RevealDiv>
 
                         <RevealDiv delay={80}>
-                            <h1 className="font-display text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold tracking-[-0.035em] leading-[1.08] text-black">
+                            <h1 className="font-display mt-6 text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold tracking-[-0.035em] leading-[1.08] text-black">
                                 Find the{" "}
                                 <span className="bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent">
                                     right program
@@ -499,17 +499,21 @@ export default function CoursesIndex() {
                         </RevealDiv>
 
                         <RevealDiv delay={240}>
-                            <div className="mt-8 inline-flex items-center gap-3 bg-white border border-black/5 rounded-full px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,.04)] max-sm:flex-col max-sm:gap-2 max-sm:w-full max-sm:justify-center">
-                                <span className="text-lg">📞</span>
-                                <span className="text-sm text-black/65">
+                            <div className="mt-8 flex w-full max-w-full items-center gap-2 rounded-full border border-black/5 bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,.04)] sm:gap-3 sm:px-5 sm:py-3">
+                                <span className="shrink-0 text-base sm:text-lg">
+                                    📞
+                                </span>
+
+                                <span className="min-w-0 flex-1 text-left text-xs leading-5 text-black/65 sm:text-sm">
                                     Take our free{" "}
                                     <strong className="text-black">
                                         15-min career counselling
                                     </strong>
                                 </span>
+
                                 <Link
                                     href="/contact"
-                                    className="shrink-0 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-xs font-semibold text-white transition-all hover:shadow-[0_4px_12px_rgba(152,44,220,.3)] hover:-translate-y-0.5 duration-300"
+                                    className="shrink-0 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-4 py-2 text-center text-[11px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(152,44,220,.3)] sm:px-5 sm:text-xs"
                                 >
                                     Book Now
                                 </Link>
@@ -646,7 +650,7 @@ export default function CoursesIndex() {
                                 items-center
                                 gap-5
                                 px-3
-                               
+
                                 overflow-hidden
                                 group
                                 cursor-pointer

@@ -3895,6 +3895,8 @@ function StickyNav() {
     const [visible, setVisible] = useState(false);
     const [active, setActive] = useState("");
     const triggerRef = useRef(null);
+    const scrollerRef = useRef(null);
+    const tabRefs = useRef({});
 
     useEffect(() => {
         const trigger = triggerRef.current;
@@ -3925,6 +3927,22 @@ function StickyNav() {
         return () => observers.forEach((o) => o.disconnect());
     }, [visible]);
 
+    // Keep the active tab visible in the horizontal scroller on small screens
+    useEffect(() => {
+        if (!visible || !active) return;
+        const scroller = scrollerRef.current;
+        const btn = tabRefs.current[active];
+        if (!scroller || !btn) return;
+        const btnRect = btn.getBoundingClientRect();
+        const scrRect = scroller.getBoundingClientRect();
+        const target =
+            scroller.scrollLeft +
+            btnRect.left -
+            scrRect.left -
+            (scrRect.width / 2 - btnRect.width / 2);
+        scroller.scrollTo({ left: target, behavior: "smooth" });
+    }, [active, visible]);
+
     const scrollTo = (id) => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -3940,15 +3958,22 @@ function StickyNav() {
                         ? "translate-y-0 opacity-100"
                         : "translate-y-6 opacity-0 pointer-events-none"
                 }`}
-                style={{ width: "min(960px, calc(100% - 32px))" }}
+                style={{
+                    width: "min(960px, calc(100% - 32px))",
+                    bottom: "calc(20px + env(safe-area-inset-bottom))",
+                }}
             >
                 <div className="flex items-center gap-1 rounded-[20px] bg-white/92 backdrop-blur-xl border border-black/[0.07] shadow-[0_8px_32px_rgba(0,0,0,.12),0_2px_8px_rgba(0,0,0,.06)] px-2 py-1.5">
-                    <div className="flex items-center gap-0.5 flex-1 overflow-x-auto no-scrollbar">
+                    <div
+                        ref={scrollerRef}
+                        className="flex items-center gap-0.5 flex-1 overflow-x-auto no-scrollbar"
+                    >
                         {NAV_TABS.map(({ id, label }) => (
                             <button
                                 key={id}
+                                ref={(el) => (tabRefs.current[id] = el)}
                                 onClick={() => scrollTo(id)}
-                                className={`shrink-0 px-3 py-2 text-[12.5px] font-semibold rounded-xl transition-all duration-200 ${
+                                className={`shrink-0 px-3 py-2 max-sm:py-2.5 text-[12.5px] font-semibold rounded-xl transition-all duration-200 ${
                                     active === id
                                         ? "bg-surface text-white shadow-sm"
                                         : "text-black/50 hover:text-black hover:bg-black/[0.04]"
@@ -4068,7 +4093,7 @@ export default function CoursesShow({ slug }) {
                         <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                     </div>
 
-                    <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px]   max-lg:pt-[48px] grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+                    <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-10 sm:pt-[48px] grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
                         <div>
                             <RevealDiv>
                                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
@@ -4278,14 +4303,20 @@ export default function CoursesShow({ slug }) {
                                     >
                                         <div
                                             className="
-                        h-[156px]
+                        h-auto
                         sm:h-[156px]
                         lg:h-[156px]
                         rounded-[18px]
                         bg-[#ffd05a]
                         flex
-                        items-center
-                        gap-5
+                        flex-col
+                        sm:flex-row
+                        items-stretch
+                        sm:items-center
+                        gap-2
+                        sm:gap-5
+                        pt-3
+                        sm:pt-0
                         px-3
                         overflow-hidden
                         group
@@ -4297,7 +4328,7 @@ export default function CoursesShow({ slug }) {
                     "
                                         >
                                             {/* Image */}
-                                            <div className="w-[100px] h-[136px] sm:w-[105px] sm:h-[136px] shrink-0 rounded-[13px] overflow-hidden">
+                                            <div className="w-full h-[110px] sm:w-[105px] sm:h-[136px] shrink-0 rounded-[13px] overflow-hidden">
                                                 <img
                                                     src={item.img}
                                                     alt={item.label}
@@ -4334,7 +4365,7 @@ export default function CoursesShow({ slug }) {
                                     >
                                         <div
                                             className="
-                            h-[154px]
+                            h-auto
                             sm:h-[170px]
                             lg:h-[154px]
                             rounded-[18px]
@@ -4342,8 +4373,14 @@ export default function CoursesShow({ slug }) {
                             border
                             border-black/[0.04]
                             flex
-                            items-center
-                            gap-5
+                            flex-col
+                            sm:flex-row
+                            items-stretch
+                            sm:items-center
+                            gap-2
+                            sm:gap-5
+                            pt-3
+                            sm:pt-0
                             px-3
                             sm:px-4
                             overflow-hidden
@@ -4357,7 +4394,7 @@ export default function CoursesShow({ slug }) {
                         "
                                         >
                                             {/* Image */}
-                                            <div className="w-[100px] h-[126px] sm:w-[105px] sm:h-[135px] shrink-0 rounded-[13px] overflow-hidden">
+                                            <div className="w-full h-[110px] sm:w-[105px] sm:h-[135px] shrink-0 rounded-[13px] overflow-hidden">
                                                 <img
                                                     src={item.img}
                                                     alt={item.label}
@@ -4388,7 +4425,7 @@ export default function CoursesShow({ slug }) {
             {/* ═══════════════ THE PROBLEM ═══════════════ */}
             <section className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24">
                 <div className="mx-auto max-w-[1240px] px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 sm:gap-10 lg:gap-16 items-center">
                         <RevealDiv>
                             <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
@@ -4422,7 +4459,7 @@ export default function CoursesShow({ slug }) {
                     className="sticky top-[100px] z-[1] mx-auto max-w-[1240px] px-6 pb-20"
                 >
                     <RevealDiv>
-                        <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_8px_32px_rgba(152,44,220,0.06)] px-8 sm:px-10 lg:px-12 py-10 sm:py-12 hover:shadow-[0_16px_50px_rgba(152,44,220,0.12)] transition-all duration-400">
+                        <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_8px_32px_rgba(152,44,220,0.06)] px-6 sm:px-10 lg:px-12 py-10 sm:py-12 hover:shadow-[0_16px_50px_rgba(152,44,220,0.12)] transition-all duration-400">
                             <div className="grid grid-cols-1 md:grid-cols-[170px_1fr] gap-8 md:gap-12 items-start">
                                 <div className="pt-1">
                                     <span className="inline-flex items-center justify-center rounded-full bg-violet px-6 py-2.5 text-[13px] font-semibold text-white whitespace-nowrap shadow-[0_4px_12px_rgba(152,44,220,.2)]">
@@ -4508,8 +4545,8 @@ export default function CoursesShow({ slug }) {
                     className="sticky top-0 z-[2] mx-auto max-w-[1240px] px-6 pb-20"
                 >
                     <RevealDiv>
-                        <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_12px_40px_rgba(152,44,220,0.06)] p-8 sm:p-10 lg:p-12">
-                            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-12 items-start">
+                        <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_12px_40px_rgba(152,44,220,0.06)] p-6 sm:p-10 lg:p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 sm:gap-10 lg:gap-12 items-start">
                                 <div className="flex flex-col items-start">
                                     <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
@@ -4681,9 +4718,10 @@ export default function CoursesShow({ slug }) {
                                                     src={tool.logo}
                                                     alt={tool.name}
                                                     className="
-                                                        w-full h-full grayscale 
+                                                        w-12 h-12 
                                                         sm:w-20 sm:h-20
                                                         object-contain
+                                                        grayscale
                                                         opacity-70
                                                         group-hover/tool:opacity-100
                                                         transition-all
@@ -4751,7 +4789,7 @@ export default function CoursesShow({ slug }) {
                                                     return next;
                                                 });
                                             }}
-                                            className={`w-full flex items-center gap-5 px-6 sm:px-7 py-5 sm:py-6 text-left transition-colors duration-300 ${
+                                            className={`w-full flex items-center gap-5 px-5 sm:px-7 py-5 sm:py-6 text-left transition-colors duration-300 ${
                                                 isOpen
                                                     ? "bg-[#cdbdff]/50"
                                                     : "hover:bg-[#cdbdff]/25"
@@ -4795,7 +4833,7 @@ export default function CoursesShow({ slug }) {
                                             }`}
                                         >
                                             <div className="overflow-hidden">
-                                                <div className="px-6 sm:px-7 pb-5 sm:pb-6">
+                                                <div className="px-5 sm:px-7 pb-5 sm:pb-6">
                                                     {mod.lectures.length > 0 ? (
                                                         <div className="space-y-2.5 pt-1">
                                                             {mod.lectures.map(
@@ -4806,7 +4844,7 @@ export default function CoursesShow({ slug }) {
                                                                         }
                                                                         className="flex min-h-[66px] items-center justify-between rounded-[10px] bg-white px-5 border border-black/[0.04] hover:border-violet/20 hover:shadow-[0_4px_16px_rgba(152,44,220,.06)] transition-all duration-300"
                                                                     >
-                                                                        <div>
+                                                                        <div className="flex-1 min-w-0 pr-3">
                                                                             <p className="text-[11px] font-semibold text-[#765bc4]">
                                                                                 Lecture
                                                                                 -{" "}
@@ -4937,7 +4975,7 @@ export default function CoursesShow({ slug }) {
                                 <img
                                     src="/assets/images/instructor.jpeg"
                                     alt={detail.instructor.name}
-                                    className="w-full h-[500px] aspect-[4/5] object-cover"
+                                    className="w-full h-[420px] sm:h-[500px] aspect-[4/5] object-cover"
                                 />
                                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 pt-16">
                                     <h3 className="font-display text-[22px] font-bold text-white">
@@ -5049,7 +5087,7 @@ export default function CoursesShow({ slug }) {
 
                     <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-start max-w-[1000px] mx-auto">
                         <RevealDiv>
-                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-8 sm:p-10">
+                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-6 sm:p-10">
                                 <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     Course fee
@@ -5085,7 +5123,7 @@ export default function CoursesShow({ slug }) {
                         </RevealDiv>
 
                         <RevealDiv delay={100}>
-                            <div className="rounded-[22px] bg-white border border-black/[0.05] p-8 sm:p-10">
+                            <div className="rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
                                 <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     What is included

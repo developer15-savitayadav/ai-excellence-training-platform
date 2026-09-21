@@ -128,15 +128,15 @@ export default function Contact() {
                     <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
+                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-10 pb-12 sm:pt-[48px] sm:pb-14">
                     <div className="inline-flex items-center ">
-                        
+
                          <EyeBrow>
                             Get in Touch
                          </EyeBrow>
                     </div>
 
-                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                    <h1 className="font-display mt-6 text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
                         <span className="text-black">
                             Let&apos;s Talk About Your{" "}
                         </span>
@@ -145,17 +145,17 @@ export default function Contact() {
                         </span>
                     </h1>
 
-                    <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                    <p className="text-muted text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
                         Walk in, call, or message us. A counsellor will understand your
                         background and goals and recommend the right program &mdash;
                         honestly, even if that means a shorter course than you expected.
                     </p>
 
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        <Link href="/contact" className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
+                    <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
+                        <Link href="/contact" className="w-full sm:w-auto text-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
                             Send a Message
                         </Link>
-                        <Link href="tel:[Phone]" className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
+                        <Link href="tel:[Phone]" className="w-full sm:w-auto text-center rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">
                             Call Us Now
                         </Link>
                     </div>
@@ -167,12 +167,12 @@ export default function Contact() {
             {/* ═══════════════ CONTACT CONTENT ═══════════════ */}
             <section className="relative">
                 <div className="max-w-[1240px] mx-auto px-6 pb-[120px] max-lg:pb-[72px]">
-                    <div className="grid lg:grid-cols-5 gap-10">
+                    <div className="grid lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
                         {/* ═══ FORM ═══ */}
                         <div className="lg:col-span-3">
-                            <div className="bg-white border border-black/5 rounded-2xl p-8 md:p-10 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
+                            <div className="bg-white border border-black/5 rounded-2xl p-5 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
                                 {submitted ? (
-                                    <div className="text-center py-16">
+                                    <div className="text-center py-12 sm:py-16">
                                         <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-lime/10 border border-lime/20">
                                             <svg className="w-8 h-8 text-lime" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -207,9 +207,9 @@ export default function Contact() {
                                             </p>
                                         </div>
 
-                                        <form onSubmit={handleSubmit} className="space-y-5">
+                                        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
                                             {/* Row 1: Name + Phone */}
-                                            <div className="grid sm:grid-cols-2 gap-5">
+                                            <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                                                 <div>
                                                     <label htmlFor="name" className="block text-sm font-semibold text-body mb-1.5">
                                                         Name
@@ -263,7 +263,7 @@ export default function Contact() {
                                             </div>
 
                                             {/* Row 3: I am a + Program */}
-                                            <div className="grid sm:grid-cols-2 gap-5">
+                                            <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                                                 <div>
                                                     <label htmlFor="audience" className="block text-sm font-semibold text-body mb-1.5">
                                                         I am a
@@ -362,9 +362,9 @@ export default function Contact() {
                         </div>
 
                         {/* ═══ CONTACT INFO ═══ */}
-                        <div className="lg:col-span-2 space-y-6">
+                        <div className="lg:col-span-2 space-y-5 md:space-y-6">
                             {/* Contact cards */}
-                            <div className="bg-white border border-black/5 rounded-2xl p-7 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
+                            <div className="bg-white border border-black/5 rounded-2xl p-5 sm:p-7 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
                                 <h3 className="font-display text-lg font-semibold text-body mb-5">
                                     Contact Information
                                 </h3>
@@ -399,7 +399,7 @@ export default function Contact() {
                             </div>
 
                             {/* Hours */}
-                            <div className="bg-white border border-black/5 rounded-2xl p-7 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
+                            <div className="bg-white border border-black/5 rounded-2xl p-5 sm:p-7 shadow-[0_8px_30px_rgba(0,0,0,.03)]">
                                 <div className="flex items-start gap-3.5">
                                     <div className="w-10 h-10 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center shrink-0 text-lime">
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
