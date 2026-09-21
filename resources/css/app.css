@@ -13,8 +13,8 @@
     --color-danger: #ff5a5a;
     --color-muted: #73726a;
     --color-body: #23231e;
-    
-    --font-display:"Poppins" sans-serif;
+
+    --font-display: "Poppins" sans-serif;
     --font-body: "Poppins" sans-serif;
     --font-mono: "Urbanist" sans-serif;
     --font-geist-mono: "Geist Mono", ui-monospace, monospace;
@@ -518,7 +518,7 @@ body {
 /* .home-fonts p {
     color: #0a0a0a;
 } */
-.course-mid{
+.course-mid {
     color: #000 !important;
 }
 /* .home-fonts a p,
@@ -526,8 +526,6 @@ body {
 .home-fonts section[class*="bg-[#070d0d]"] p {
     color: rgba(255, 255, 255, 0.78);
 } */
-
-
 
 .is-light {
     background-color: var(--white);
@@ -847,7 +845,7 @@ body {
 /* PLACEMENT vertical-scroll-driven horizontal carousel */
 .placement-scroll {
     position: relative;
- }
+}
 
 .placement-viewport {
     position: sticky;
@@ -925,4 +923,67 @@ body {
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+/* ── WHAT WE BELIEVE — stacked-to-separated scroll reveal ── */
+/* Mobile: un-pin the 160vh scroll-jack and stack the belief cards
+   vertically. Cards stay positioned (relative) so the absolute icon and
+   image/overlay inside each card keep anchoring to the card itself. */
+@media (max-width: 767px) {
+    .beliefs-scroll {
+        height: auto !important;
+        padding: 48px 0;
+    }
+
+    .beliefs-scroll > .sticky {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .beliefs-scroll > .sticky > div {
+        height: auto !important;
+        min-height: 0 !important;
+        justify-content: flex-start !important;
+    }
+
+    .beliefs-scroll > .sticky > div > div {
+        margin-bottom: 28px;
+    }
+
+    .beliefs-scroll .beliefs-track {
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    .beliefs-scroll .beliefs-track > div {
+        position: relative !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 300px !important;
+        transform: none !important;
+        z-index: auto !important;
+        box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.25) !important;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet: keep the reveal but give the (narrower) separated cards a bit more
+   room — tighter header gap and slightly smaller card padding. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .beliefs-scroll > .sticky > div > div {
+        margin-bottom: 28px;
+    }
+
+    .beliefs-scroll .beliefs-track > div {
+        padding: 24px;
+    }
+}
+@media (max-width: 480px) {
+    .float-stat-br {
+        padding: 15px 10px ;
+    }
+     .float-stat-br p{
+        font-size: 14px;
+     }
 }

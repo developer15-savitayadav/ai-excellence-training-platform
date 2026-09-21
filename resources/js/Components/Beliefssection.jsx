@@ -116,21 +116,28 @@ const textShift = 0;
         trackWidth > 0 ? (trackWidth - FINAL_GAP * (CARDS.length - 1)) / CARDS.length : 0;
 
     return (
-        <section ref={sectionRef} className="relative bg-white" style={{ height: "160vh" }}>
+        <section
+            ref={sectionRef}
+            className="beliefs-scroll relative bg-white"
+            style={{ height: "160vh" }}
+        >
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="max-w-[1240px] mx-auto h-full flex flex-col justify-center px-6">
                     <div className="text-center mb-10">
                         <EyeBrow>
                              What we believe
                         </EyeBrow>
-                         
+
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-neutral-900">
                             Our Principles
                         </h2>
                     </div>
 
                     {/* track: relative container the cards are absolutely placed within */}
-                    <div ref={trackRef} className="relative w-full h-[62vh] max-h-[560px]">
+                    <div
+                        ref={trackRef}
+                        className="beliefs-track relative w-full h-[62vh] max-h-[560px]"
+                    >
                         {CARDS.map((card, i) => {
                             // stacked starting position: cards nearly overlap, offset only by a sliver
                             const startX = i * STACK_OFFSET;

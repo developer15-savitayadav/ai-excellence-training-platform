@@ -336,7 +336,7 @@ export default function About() {
                         <EyeBrow>
                             AI Excellence Academy
                        </EyeBrow>
-                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08] text-white max-w-4xl mx-auto">
+                    <h1 className="font-display mt-6 text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08] text-white max-w-4xl mx-auto">
                         <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                             Built in Lucknow,
                         </span>
@@ -379,44 +379,44 @@ export default function About() {
                             src="/assets/images/team-1.webp"
                             alt="The AI Excellence Academy team"
                             loading="eager"
-                            className="w-full h-[300px] sm:h-[340px] lg:h-[500px] object-cover object-center"
+                            className="w-full h-[400px] sm:h-[400px] lg:h-[500px] object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,13,13,0.55)_0%,rgba(7,13,13,0)_40%,rgba(7,13,13,0)_70%,rgba(7,13,13,0.4)_100%)]" />
 
                         {/* Stat Bar — floats over the top of the image */}
                         <div className="absolute inset-x-0 top-0 sm:top-0 z-20 border-t border-white/10 bg-[#0b1212]/40 backdrop-blur-sm">
-                            <div className="px-6 grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/[0.08]">
-                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                            <div className=" grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/[0.08]">
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center float-stat-br">
                                     <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
                                         Location
                                     </span>
-                                    <span className="text-lg font-bold text-white">
+                                    <p className="text-lg font-bold text-white">
                                         Gomti Nagar, Lucknow
-                                    </span>
+                                    </p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center  float-stat-br">
                                     <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
                                         Workstations
                                     </span>
-                                    <span className="text-lg font-bold text-white">
+                                    <p className="text-lg font-bold text-white">
                                         25
-                                    </span>
+                                    </p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center  float-stat-br">
                                     <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
                                         Batch Size
                                     </span>
-                                    <span className="text-lg font-bold text-white">
+                                    <p className="text-lg font-bold text-white">
                                         20–25 max
-                                    </span>
+                                    </p>
                                 </div>
-                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center">
+                                <div className="flex flex-col items-center justify-center gap-1 py-6 px-4 text-center  float-stat-br">
                                     <span className="text-xs text-white/60 font-medium uppercase tracking-wider">
                                         Lab Hours
                                     </span>
-                                    <span className="text-lg font-bold text-white">
+                                    <p className="text-lg font-bold text-white">
                                         10 AM – 7 PM
-                                    </span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -573,7 +573,7 @@ export default function About() {
                             </div>
                         </div>
 
-                 
+
                         <div className="flex-1 w-full max-w-md">
                             <div className="relative">
                                 <div className="absolute -inset-4 bg-violet/8 rounded-3xl blur-2xl" />
