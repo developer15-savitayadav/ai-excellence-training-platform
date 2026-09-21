@@ -166,7 +166,7 @@ export default function Contact() {
 
             {/* ═══════════════ CONTACT CONTENT ═══════════════ */}
             <section className="relative">
-                <div className="max-w-[1240px] mx-auto px-6 pb-[120px] max-lg:pb-[72px]">
+             <div className="mx-auto max-w-[1240px] px-2 sm:px-6 pb-[120px] max-lg:pb-[72px]">
                     <div className="grid lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
                         {/* ═══ FORM ═══ */}
                         <div className="lg:col-span-3">

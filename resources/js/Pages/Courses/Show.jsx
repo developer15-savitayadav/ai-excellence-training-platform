@@ -4328,11 +4328,11 @@ export default function CoursesShow({ slug }) {
                     "
                                         >
                                             {/* Image */}
-                                            <div className="w-full h-[110px] sm:w-[105px] sm:h-[136px] shrink-0 rounded-[13px] overflow-hidden">
+                                            <div className="w-full h-[210px] sm:w-[105px] sm:h-[136px] shrink-0 rounded-[13px] overflow-hidden">
                                                 <img
                                                     src={item.img}
                                                     alt={item.label}
-                                                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                                    className="w-full h-full  object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                                 />
                                             </div>
 
@@ -4394,7 +4394,7 @@ export default function CoursesShow({ slug }) {
                         "
                                         >
                                             {/* Image */}
-                                            <div className="w-full h-[110px] sm:w-[105px] sm:h-[135px] shrink-0 rounded-[13px] overflow-hidden">
+                                            <div className="w-full h-[210px] sm:w-[105px] sm:h-[135px] shrink-0 rounded-[13px] overflow-hidden">
                                                 <img
                                                     src={item.img}
                                                     alt={item.label}
@@ -4718,7 +4718,7 @@ export default function CoursesShow({ slug }) {
                                                     src={tool.logo}
                                                     alt={tool.name}
                                                     className="
-                                                        w-12 h-12 
+                                                        w-12 h-12
                                                         sm:w-20 sm:h-20
                                                         object-contain
                                                         grayscale

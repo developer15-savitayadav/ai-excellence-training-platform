@@ -41,7 +41,9 @@ function Logo() {
 function HamburgerIcon({ open }) {
     return (
         <svg
-            className="h-5 w-5 text-black"
+            className={`h-5 w-5 ${
+                open ? "text-white" : "text-black"
+            }`}
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.75}
