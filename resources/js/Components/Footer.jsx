@@ -101,6 +101,14 @@ export default function Footer() {
                                     </Link>
                                 </li>
                             ))}
+                            <li>
+                                <Link
+                                    href="/verify"
+                                    className="text-sm text-white/55 hover:text-white transition-colors"
+                                >
+                                    Verify Certificate
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

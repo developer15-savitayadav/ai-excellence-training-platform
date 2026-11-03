@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { Link, router, usePage } from '@inertiajs/react';
+import { Link, router, usePage, Head } from '@inertiajs/react';
 import Button from '../../Components/ui/Button';
 import ProgressBar from '../../Components/ui/ProgressBar';
 import Badge from '../../Components/ui/Badge';
@@ -484,6 +484,7 @@ function TopHeaderBar({ course, progressPct, onToggleSidebar }) {
 
 /* ───── Sidebar Curriculum Tree ───── */
 function Sidebar({
+    course,
     sections,
     currentLessonId,
     completedLessons,
@@ -1331,7 +1332,22 @@ export default function Player() {
     const sections = props.sections ?? STATIC_SECTIONS;
     const allLessons = useMemo(() => sections.flatMap((s) => s.lessons), [sections]);
     const initialLessonId = props.currentLesson?.id ?? allLessons[0]?.id;
-    const instructor = STATIC_INSTRUCTOR;
+    const instructor = useMemo(
+        () => ({
+            ...STATIC_INSTRUCTOR,
+            ...(course.instructor || {}),
+            studentCount: course.instructor?.studentCount ?? STATIC_INSTRUCTOR.studentCount,
+            specialties: course.instructor?.specialties?.length
+                ? course.instructor.specialties
+                : STATIC_INSTRUCTOR.specialties,
+        }),
+        [course.instructor],
+    );
+    const enrollment = props.enrollment ?? null;
+    const serverProgress = props.progress ?? null;
+    const lessonStorageKey = `cortex_completed_lessons:${course.slug || 'course'}`;
+    const notesStorageKey = `cortex_notes:${course.slug || 'course'}`;
+    const progressSynced = useRef(false);
 
     /* ── State ── */
     const [currentLessonId, setCurrentLessonId] = useState(initialLessonId);
@@ -1339,8 +1355,16 @@ export default function Player() {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
     const [activeTab, setActiveTab] = useState('Overview');
     const [completedLessons, setCompletedLessons] = useState(() => {
+        if (enrollment && serverProgress) {
+            return new Set(
+                allLessons
+                    .slice(0, Math.max(0, Number(serverProgress.completedLessons) || 0))
+                    .map((lesson) => lesson.id),
+            );
+        }
+
         try {
-            const stored = localStorage.getItem('cortex_completed_lessons');
+            const stored = localStorage.getItem(lessonStorageKey);
             return stored ? new Set(JSON.parse(stored)) : new Set();
         } catch {
             return new Set();
@@ -1348,7 +1372,7 @@ export default function Player() {
     });
     const [notes, setNotes] = useState(() => {
         try {
-            const stored = localStorage.getItem('cortex_notes');
+            const stored = localStorage.getItem(notesStorageKey);
             return stored ? JSON.parse(stored) : STATIC_NOTES;
         } catch {
             return STATIC_NOTES;
@@ -1368,15 +1392,36 @@ export default function Player() {
     /* ── Persistence ── */
     useEffect(() => {
         try {
-            localStorage.setItem('cortex_completed_lessons', JSON.stringify([...completedLessons]));
+            localStorage.setItem(lessonStorageKey, JSON.stringify([...completedLessons]));
         } catch { /* noop */ }
-    }, [completedLessons]);
+    }, [completedLessons, lessonStorageKey]);
 
     useEffect(() => {
         try {
-            localStorage.setItem('cortex_notes', JSON.stringify(notes));
+            localStorage.setItem(notesStorageKey, JSON.stringify(notes));
         } catch { /* noop */ }
-    }, [notes]);
+    }, [notes, notesStorageKey]);
+
+    /* ── Sync completion to the database ── */
+    useEffect(() => {
+        if (!enrollment?.updateUrl || allLessons.length === 0) return;
+
+        if (!progressSynced.current) {
+            progressSynced.current = true;
+            return;
+        }
+
+        const percentage = Math.round((completedLessons.size / allLessons.length) * 100);
+        const timer = setTimeout(() => {
+            router.patch(
+                enrollment.updateUrl,
+                { progress: percentage },
+                { preserveScroll: true, preserveState: true, replace: true },
+            );
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [completedLessons, enrollment?.updateUrl, allLessons.length]);
 
     /* ── Progress ── */
     const progressPct = useMemo(
@@ -1485,6 +1530,7 @@ export default function Player() {
 
     return (
         <div className="h-screen flex flex-col bg-ink overflow-hidden select-none">
+            <Head title={course.title} />
             {/* Top header */}
             <TopHeaderBar
                 course={course}
@@ -1496,6 +1542,7 @@ export default function Player() {
             <div className="flex-1 flex min-h-0">
                 {/* Left sidebar */}
                 <Sidebar
+                    course={course}
                     sections={sections}
                     currentLessonId={currentLessonId}
                     completedLessons={completedLessons}

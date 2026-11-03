@@ -3735,7 +3735,7 @@ function buildDetail(course) {
     const tools = (override.tools || (course.tools ? course.tools : TOOLS)).map(
         normalizeTool,
     );
-    const instructor = override.instructor || DEFAULT_INSTRUCTOR;
+    const instructor = override.instructor || course.instructorProfile || DEFAULT_INSTRUCTOR;
 
     const pricingIncludes =
         override.pricingIncludes ||
@@ -4009,15 +4009,22 @@ function StickyNav() {
     );
 }
 
-export default function CoursesShow({ slug }) {
+export default function CoursesShow({ slug, dbCourse = null }) {
     const [openModules, setOpenModules] = useState(new Set([0]));
     const [openFaq, setOpenFaq] = useState(null);
 
     const toggleFaq = (i) => setOpenFaq(openFaq === i ? null : i);
 
-    const course = ALL_COURSES.find((c) => c.slug === slug);
+    const course = dbCourse || ALL_COURSES.find((c) => c.slug === slug);
     const detail = course ? buildDetail(course) : null;
-    const seo = SEO_META[slug] || {};
+    const seo =
+        SEO_META[slug] ||
+        (dbCourse
+            ? {
+                  title: dbCourse.title,
+                  description: dbCourse.tagline || dbCourse.description || "",
+              }
+            : {});
 
     const timelineRef = useRef(null);
 

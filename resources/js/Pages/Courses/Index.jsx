@@ -455,13 +455,34 @@ function CategorySection({ tier, index }) {
     );
 }
 
-export default function CoursesIndex() {
+export default function CoursesIndex({ courses = null }) {
     const [activeTier, setActiveTier] = useState("all");
-    const allCourses = [...SHORT_TERM, ...PROFESSIONAL, ...CAREER];
+
+    const hasDbCourses = Array.isArray(courses) && courses.length > 0;
+    const tiers = hasDbCourses
+        ? TIERS.map((tier) => ({
+              ...tier,
+              courses: courses
+                  .filter((course) => course.tier === tier.key)
+                  .map((course) => ({
+                      id: course.id,
+                      title: course.title,
+                      slug: course.slug,
+                      duration: course.duration,
+                      hours: course.hours,
+                      tagline: course.tagline || course.subtitle,
+                      price: course.price || "Contact us",
+                      badge: course.badge,
+                      emi: !!course.emi,
+                      flagship: !!course.flagship,
+                  })),
+          })).filter((tier) => tier.courses.length > 0)
+        : TIERS;
+
     const filteredTiers =
         activeTier === "all"
-            ? TIERS
-            : TIERS.filter((t) => t.key === activeTier);
+            ? tiers
+            : tiers.filter((t) => t.key === activeTier);
 
     return (
         <PublicLayout>

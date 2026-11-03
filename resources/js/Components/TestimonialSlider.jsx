@@ -210,11 +210,11 @@ export default function TestimonialSlider() {
                 {/* Section Heading */}
                 <RevealDiv>
                     <div className="mb-10 text-center sm:mb-14">
-                        <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.12em] text-violet">
+                        <div className="mb-2 font-mono text-[11px] uppercase tracking-[0.12em] text-violet">
                             <EyeBrow>
                                 TESTIMONIALS
                             </EyeBrow>
-                        </p>
+                        </div>
 
                         <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
                             Alumni&apos;s Testimonies

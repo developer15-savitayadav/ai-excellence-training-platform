@@ -1,751 +1,262 @@
-import { Link, router, usePage } from '@inertiajs/react'
-import { useState } from 'react'
-import DashboardLayout from '../../Layouts/DashboardLayout'
-import Button from '../../Components/ui/Button'
-import Card from '../../Components/ui/Card'
-import Badge from '../../Components/ui/Badge'
-import ProgressBar from '../../Components/ui/ProgressBar'
-import StarRating from '../../Components/ui/StarRating'
-import Avatar from '../../Components/ui/Avatar'
-import SearchInput from '../../Components/ui/SearchInput'
+import { Head, Link } from '@inertiajs/react';
+import {
+    ArrowRight,
+    Award,
+    BookOpen,
+    CalendarDays,
+    Download,
+    Layers,
+    MessageSquare,
+    Plus,
+    Sparkles,
+    Users,
+} from 'lucide-react';
+import DashboardLayout from '../../Layouts/DashboardLayout';
+import PageHeader from '../../Components/dashboard/PageHeader';
+import StatCard from '../../Components/dashboard/StatCard';
+import Panel from '../../Components/dashboard/Panel';
+import { DonutChart, HorizontalBars, LineChart } from '../../Components/dashboard/Charts';
+import StatusPill from '../../Components/dashboard/StatusPill';
+import Avatar from '../../Components/ui/Avatar';
 
-const navigation = [
-    { name: 'Dashboard', href: '/admin/dashboard', icon: '📊', current: true },
-    { name: 'Users', href: '/admin/dashboard', icon: '👥', current: false },
-    { name: 'Courses', href: '/admin/dashboard', icon: '📚', current: false },
-    { name: 'Categories', href: '/admin/dashboard', icon: '🏷', current: false },
-    { name: 'Orders', href: '/admin/dashboard', icon: '💰', current: false },
-    { name: 'Reviews', href: '/admin/dashboard', icon: '⭐', current: false },
-    { name: 'Settings', href: '/profile', icon: '⚙', current: false },
-]
-
-const staticData = {
-    user: { id: 3, name: 'Jordan Blake', email: 'jordan@cortex.academy', avatar: null, role: 'admin' },
-    stats: {
-        totalUsers: 10247,
-        totalCourses: 203,
-        revenue: 84500,
-        activeLearners: 3421,
-    },
-    users: [
-        { id: 1, name: 'Sarah Chen', email: 'sarah.chen@example.com', role: 'student', joined: '2026-01-15', status: 'active' },
-        { id: 2, name: 'Dr. Alex Rivera', email: 'alex.rivera@cortex.academy', role: 'instructor', joined: '2025-09-01', status: 'active' },
-        { id: 3, name: 'Prof. Maya Patel', email: 'maya.patel@cortex.academy', role: 'instructor', joined: '2025-10-12', status: 'active' },
-        { id: 4, name: 'Liam Park', email: 'liam.park@example.com', role: 'student', joined: '2026-02-20', status: 'active' },
-        { id: 5, name: 'Olivia Chen', email: 'olivia.chen@example.com', role: 'student', joined: '2026-03-05', status: 'suspended' },
-        { id: 6, name: 'Dr. James Liu', email: 'james.liu@cortex.academy', role: 'instructor', joined: '2025-11-08', status: 'active' },
-        { id: 7, name: 'Noah Kumar', email: 'noah.kumar@example.com', role: 'student', joined: '2026-04-12', status: 'active' },
-        { id: 8, name: 'Jordan Blake', email: 'jordan@cortex.academy', role: 'admin', joined: '2025-06-01', status: 'active' },
-        { id: 9, name: 'Sophia Martinez', email: 'sophia.martinez@example.com', role: 'student', joined: '2026-05-18', status: 'active' },
-        { id: 10, name: 'Emma Wilson', email: 'emma.wilson@example.com', role: 'student', joined: '2026-06-01', status: 'active' },
-    ],
-    courses: {
-        published: [
-            { id: 1, title: 'Deep Learning Fundamentals', instructor: 'Dr. Alex Rivera', students: 1580, rating: 4.9, status: 'Published', revenue: 59200, completionRate: 78 },
-            { id: 2, title: 'Natural Language Processing Mastery', instructor: 'Prof. Maya Patel', students: 1240, rating: 4.8, status: 'Published', revenue: 42300, completionRate: 82 },
-            { id: 3, title: 'Computer Vision with PyTorch', instructor: 'Dr. James Liu', students: 980, rating: 4.7, status: 'Published', revenue: 35100, completionRate: 74 },
-            { id: 4, title: 'Python for AI & Machine Learning', instructor: 'Prof. Maya Patel', students: 2100, rating: 4.9, status: 'Published', revenue: 68400, completionRate: 91 },
-            { id: 5, title: 'Reinforcement Learning from Scratch', instructor: 'Dr. Alex Rivera', students: 890, rating: 4.8, status: 'Published', revenue: 31200, completionRate: 65 },
-            { id: 6, title: 'AI Ethics & Responsible Design', instructor: 'Dr. James Liu', students: 670, rating: 4.8, status: 'Published', revenue: 22100, completionRate: 88 },
-            { id: 7, title: 'MLOps & Model Deployment', instructor: 'Prof. Maya Patel', students: 450, rating: 4.6, status: 'Published', revenue: 15300, completionRate: 72 },
-            { id: 8, title: 'Mathematics for Machine Learning', instructor: 'Dr. Alex Rivera', students: 1340, rating: 4.7, status: 'Published', revenue: 41200, completionRate: 80 },
-        ],
-        pending: [
-            { id: 9, title: 'Generative AI with LLMs', instructor: 'Dr. Alex Rivera', submitted: '2026-08-15', status: 'Under Review' },
-            { id: 10, title: 'Edge AI & TinyML', instructor: 'Dr. Alex Rivera', submitted: '2026-08-18', status: 'Under Review' },
-            { id: 11, title: 'Neural Architecture Search', instructor: 'Dr. James Liu', submitted: '2026-08-19', status: 'Under Review' },
-        ],
-    },
-    categories: [
-        { id: 1, name: 'AI & Machine Learning', description: 'Core AI and ML concepts', courseCount: 8 },
-        { id: 2, name: 'Deep Learning', description: 'Neural networks and deep architectures', courseCount: 12 },
-        { id: 3, name: 'Natural Language Processing', description: 'Text processing and language models', courseCount: 6 },
-        { id: 4, name: 'Computer Vision', description: 'Image recognition and video analysis', courseCount: 5 },
-        { id: 5, name: 'Reinforcement Learning', description: 'Decision making and game theory', courseCount: 4 },
-        { id: 6, name: 'MLOps', description: 'Model deployment and monitoring', courseCount: 7 },
-        { id: 7, name: 'AI Ethics', description: 'Responsible AI and fairness', courseCount: 3 },
-        { id: 8, name: 'Data Science', description: 'Statistics and data analysis', courseCount: 9 },
-    ],
-    orders: [
-        { id: 'ORD-7842', user: 'Sarah Chen', course: 'Deep Learning Fundamentals', amount: 79.99, date: '2026-08-20', status: 'completed' },
-        { id: 'ORD-7841', user: 'Liam Park', course: 'Reinforcement Learning from Scratch', amount: 89.99, date: '2026-08-19', status: 'completed' },
-        { id: 'ORD-7840', user: 'Noah Kumar', course: 'Python for AI & Machine Learning', amount: 69.99, date: '2026-08-19', status: 'pending' },
-        { id: 'ORD-7839', user: 'Sophia Martinez', course: 'Computer Vision with PyTorch', amount: 89.99, date: '2026-08-18', status: 'completed' },
-        { id: 'ORD-7838', user: 'Emma Wilson', course: 'Deep Learning Fundamentals', amount: 79.99, date: '2026-08-18', status: 'refunded' },
-        { id: 'ORD-7837', user: 'Liam Park', course: 'AI Ethics & Responsible Design', amount: 59.99, date: '2026-08-17', status: 'completed' },
-        { id: 'ORD-7836', user: 'Sarah Chen', course: 'NLP Mastery', amount: 89.99, date: '2026-08-16', status: 'completed' },
-        { id: 'ORD-7835', user: 'Olivia Chen', course: 'MLOps & Model Deployment', amount: 79.99, date: '2026-08-15', status: 'completed' },
-    ],
-    reviews: [
-        { id: 1, reviewer: 'Emma Wilson', course: 'Deep Learning Fundamentals', rating: 5, comment: 'Fantastic course. The transformer section alone is worth the price.', date: '2026-08-20', status: 'approved' },
-        { id: 2, reviewer: 'Liam Park', course: 'Reinforcement Learning from Scratch', rating: 4, comment: 'Good content but some quizzes have incorrect answers.', date: '2026-08-19', status: 'approved' },
-        { id: 3, reviewer: 'Noah Kumar', course: 'Python for AI & ML', rating: 5, comment: 'Perfect for beginners. Dr. Patel explains everything clearly.', date: '2026-08-18', status: 'approved' },
-        { id: 4, reviewer: 'Sophia Martinez', course: 'Computer Vision with PyTorch', rating: 3, comment: 'Decent course but feels outdated. No mention of ViT or recent architectures.', date: '2026-08-18', status: 'flagged' },
-        { id: 5, reviewer: 'Sarah Chen', course: 'AI Ethics & Responsible Design', rating: 5, comment: 'Eye-opening content that every AI practitioner should study.', date: '2026-08-17', status: 'approved' },
-        { id: 6, reviewer: 'Emma Wilson', course: 'MLOps & Model Deployment', rating: 4, comment: 'Practical and well-structured. Would love more Kubernetes content.', date: '2026-08-16', status: 'approved' },
-        { id: 7, reviewer: 'James O\'Brien', course: 'Deep Learning Fundamentals', rating: 1, comment: 'This is a terrible course and a scam!!!', date: '2026-08-15', status: 'flagged' },
-        { id: 8, reviewer: 'Mia Tanaka', course: 'NLP Mastery', rating: 5, comment: 'Best NLP course on the platform. Comprehensive and up-to-date.', date: '2026-08-14', status: 'approved' },
-    ],
+function timeAgo(iso) {
+    if (!iso) return '—';
+    const seconds = Math.max(1, Math.floor((Date.now() - new Date(iso).getTime()) / 1000));
+    if (seconds < 60) return `${seconds}s ago`;
+    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+    if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`;
+    return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
-const recentActivity = [
-    { id: 1, message: 'Sarah Chen enrolled in Deep Learning Fundamentals', time: '2 hours ago', icon: '📚' },
-    { id: 2, message: 'New review submitted for Computer Vision (3 stars)', time: '4 hours ago', icon: '⭐' },
-    { id: 3, message: 'Dr. Alex Rivera submitted "Generative AI with LLMs" for review', time: '5 hours ago', icon: '🔧' },
-    { id: 4, message: 'Order ORD-7842 completed — $79.99', time: '6 hours ago', icon: '💰' },
-    { id: 5, message: 'Emma Wilson earned certificate for NLP Mastery', time: '8 hours ago', icon: '🏆' },
-    { id: 6, message: 'Order ORD-7838 refunded — $79.99', time: '1 day ago', icon: '↩️' },
-    { id: 7, message: 'New user registered: Liam Park (student)', time: '1 day ago', icon: '👤' },
-    { id: 8, message: 'Prof. Maya Patel updated course "Python for AI & ML"', time: '2 days ago', icon: '✏️' },
-]
+function EmptyRow({ children }) {
+    return <p className="py-8 text-center text-sm text-muted">{children}</p>;
+}
 
-export default function Admin({ user: propUser, stats: propStats, users: propUsers, pendingCourses: propPending, categories: propCategories, orders: propOrders, reviews: propReviews }) {
-    const user = propUser || staticData.user
-    const stats = propStats || staticData.stats
-    const initialUsers = propUsers || staticData.users
-    const initialCategories = propCategories || staticData.categories
-    const initialOrders = propOrders || staticData.orders
-    const initialReviews = propReviews || staticData.reviews
-    const courses = staticData.courses
-
-    const [activeTab, setActiveTab] = useState('dashboard')
-    const [searchQuery, setSearchQuery] = useState('')
-    const [userRoleFilter, setUserRoleFilter] = useState('all')
-    const [userList, setUserList] = useState(initialUsers)
-    const [courseTab, setCourseTab] = useState('published')
-    const [categoryList, setCategoryList] = useState(initialCategories)
-    const [showAddCategory, setShowAddCategory] = useState(false)
-    const [newCategory, setNewCategory] = useState({ name: '', description: '' })
-    const [editingCategory, setEditingCategory] = useState(null)
-    const [editCategoryForm, setEditCategoryForm] = useState({ name: '', description: '' })
-    const [orderFilter, setOrderFilter] = useState('all')
-    const [orderList, setOrderList] = useState(initialOrders)
-    const [reviewList, setReviewList] = useState(initialReviews)
-    const [pendingCourses, setPendingCourses] = useState(courses.pending)
-
-    const tabs = [
-        { id: 'dashboard', label: 'Dashboard', icon: '📊' },
-        { id: 'users', label: 'Users', icon: '👥' },
-        { id: 'courses', label: 'Courses', icon: '📚' },
-        { id: 'categories', label: 'Categories', icon: '🏷' },
-        { id: 'orders', label: 'Orders', icon: '💰' },
-        { id: 'reviews', label: 'Reviews', icon: '⭐' },
-    ]
-
-    const filteredUsers = userList.filter(u => {
-        const matchesSearch = u.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            u.email.toLowerCase().includes(searchQuery.toLowerCase())
-        const matchesRole = userRoleFilter === 'all' || u.role === userRoleFilter
-        return matchesSearch && matchesRole
-    })
-
-    const filteredOrders = orderFilter === 'all'
-        ? orderList
-        : orderList.filter(o => o.status === orderFilter)
-
-    const handleToggleUserStatus = (userId) => {
-        setUserList(prev => prev.map(u =>
-            u.id === userId
-                ? { ...u, status: u.status === 'active' ? 'suspended' : 'active' }
-                : u
-        ))
-    }
-
-    const handleChangeRole = (userId, newRole) => {
-        setUserList(prev => prev.map(u =>
-            u.id === userId ? { ...u, role: newRole } : u
-        ))
-    }
-
-    const handleApproveCourse = (courseId) => {
-        setPendingCourses(prev => prev.filter(c => c.id !== courseId))
-        alert(`Phase 1: Course ${courseId} approved and published.`)
-    }
-
-    const handleRejectCourse = (courseId) => {
-        setPendingCourses(prev => prev.filter(c => c.id !== courseId))
-        alert(`Phase 1: Course ${courseId} rejected.`)
-    }
-
-    const handleAddCategory = () => {
-        if (!newCategory.name.trim()) return
-        setCategoryList(prev => [...prev, {
-            id: Date.now(),
-            name: newCategory.name,
-            description: newCategory.description,
-            courseCount: 0,
-        }])
-        setNewCategory({ name: '', description: '' })
-        setShowAddCategory(false)
-    }
-
-    const handleEditCategory = (cat) => {
-        setEditingCategory(cat.id)
-        setEditCategoryForm({ name: cat.name, description: cat.description })
-    }
-
-    const handleSaveEditCategory = (catId) => {
-        setCategoryList(prev => prev.map(c =>
-            c.id === catId ? { ...c, name: editCategoryForm.name, description: editCategoryForm.description } : c
-        ))
-        setEditingCategory(null)
-    }
-
-    const handleDeleteCategory = (catId) => {
-        setCategoryList(prev => prev.filter(c => c.id !== catId))
-    }
-
-    const handleReviewAction = (reviewId, action) => {
-        setReviewList(prev => prev.map(r => {
-            if (r.id !== reviewId) return r
-            if (action === 'approve') return { ...r, status: 'approved' }
-            if (action === 'flag') return { ...r, status: 'flagged' }
-            return r
-        }))
-    }
-
-    const handleRemoveReview = (reviewId) => {
-        setReviewList(prev => prev.filter(r => r.id !== reviewId))
-    }
+export default function Admin({ dashboard }) {
+    const { stats, secondary, charts, coursePerformance, latestEnrollments, latestEnquiries, recentActivity } = dashboard;
 
     return (
-        <DashboardLayout
-            title="Admin Dashboard"
-            navigation={navigation}
-            user={user}
-        >
+        <DashboardLayout title="Dashboard">
+            <Head title="Admin Dashboard" />
+
             <div className="space-y-6">
-                {/* Tab Navigation */}
-                <div className="flex flex-wrap gap-2 border-b border-black/[0.08] pb-2">
-                    {tabs.map(tab => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`px-4 py-2 rounded-lg font-body text-sm transition-all duration-200 ${
-                                activeTab === tab.id
-                                    ? 'bg-lime/10 text-lime border border-lime/30'
-                                    : 'text-muted hover:text-body hover:bg-black/[0.03]'
-                            }`}
-                        >
-                            <span className="mr-2">{tab.icon}</span>
-                            {tab.label}
-                        </button>
+                <PageHeader
+                    eyebrow={new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' })}
+                    title="Platform overview"
+                    description="Live enrolment, learner and certification activity across the academy."
+                    actions={
+                        <>
+                            <Link
+                                href="/admin/reports"
+                                className="inline-flex h-10 items-center gap-2 rounded-xl border border-black/[0.1] bg-white px-3.5 text-sm font-semibold text-body transition-colors hover:bg-black/[0.03]"
+                            >
+                                <Download className="h-4 w-4" /> Reports
+                            </Link>
+                            <Link
+                                href="/admin/certificates"
+                                className="inline-flex h-10 items-center gap-2 rounded-xl bg-body px-3.5 text-sm font-semibold text-white transition-colors hover:bg-body/90"
+                            >
+                                <Award className="h-4 w-4" /> Issue certificate
+                            </Link>
+                        </>
+                    }
+                />
+
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                    {stats.map((stat) => (
+                        <StatCard key={stat.id} stat={stat} />
                     ))}
                 </div>
 
-                {/* Dashboard View */}
-                {activeTab === 'dashboard' && (
-                    <div className="space-y-8">
-                        <div>
-                            <h1 className="text-2xl font-display font-bold text-body">Admin Dashboard</h1>
-                            <p className="text-muted font-body mt-1">Platform overview and management</p>
-                        </div>
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                    {secondary.map((stat) => (
+                        <StatCard key={stat.label} stat={stat} compact />
+                    ))}
+                </div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <Card className="p-5 bg-white border-black/[0.08]">
-                                <div className="text-3xl font-display font-bold text-lime">{stats.totalUsers.toLocaleString()}</div>
-                                <div className="text-muted font-body text-sm mt-1">Total Users</div>
-                                <div className="text-success font-mono text-xs mt-2">↑ 248 this month</div>
-                            </Card>
-                            <Card className="p-5 bg-white border-black/[0.08]">
-                                <div className="text-3xl font-display font-bold text-violet">{stats.totalCourses}</div>
-                                <div className="text-muted font-body text-sm mt-1">Total Courses</div>
-                                <div className="text-success font-mono text-xs mt-2">↑ 12 this month</div>
-                            </Card>
-                            <Card className="p-5 bg-white border-black/[0.08]">
-                                <div className="text-3xl font-display font-bold text-success">${stats.revenue.toLocaleString()}</div>
-                                <div className="text-muted font-body text-sm mt-1">Revenue</div>
-                                <div className="text-success font-mono text-xs mt-2">↑ 15% this month</div>
-                            </Card>
-                            <Card className="p-5 bg-white border-black/[0.08]">
-                                <div className="text-3xl font-display font-bold text-body">{stats.activeLearners.toLocaleString()}</div>
-                                <div className="text-muted font-body text-sm mt-1">Active Learners</div>
-                                <div className="text-success font-mono text-xs mt-2">↑ 5.2% this week</div>
-                            </Card>
-                        </div>
+                <div className="grid gap-5 xl:grid-cols-3">
+                    <Panel
+                        className="xl:col-span-2"
+                        title="Growth & outcomes"
+                        description="Enrolments, completions and certificates over the last 12 months."
+                        action={
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet/[0.07] px-2.5 py-1 text-[11px] font-semibold text-violet">
+                                <Sparkles className="h-3.5 w-3.5" /> Live data
+                            </span>
+                        }
+                    >
+                        <LineChart
+                            labels={charts.months}
+                            height={260}
+                            series={[
+                                { name: 'Enrolments', data: charts.enrollments, color: '#982cdc' },
+                                { name: 'Completions', data: charts.completions, color: '#34d399' },
+                                { name: 'Certificates', data: charts.certificates, color: '#eec369' },
+                            ]}
+                        />
+                    </Panel>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {/* Recent Activity */}
-                            <div>
-                                <h2 className="text-lg font-display font-semibold text-body mb-4">Recent Activity</h2>
-                                <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
-                                    {recentActivity.map(activity => (
-                                        <div key={activity.id} className="flex items-center gap-3 px-5 py-3">
-                                            <span className="text-xl">{activity.icon}</span>
-                                            <div className="flex-1 min-w-0">
-                                                <p className="text-body font-body text-sm truncate">{activity.message}</p>
-                                            </div>
-                                            <span className="text-muted font-body text-xs whitespace-nowrap">{activity.time}</span>
-                                        </div>
-                                    ))}
-                                </Card>
-                            </div>
-
-                            {/* Quick Actions */}
-                            <div>
-                                <h2 className="text-lg font-display font-semibold text-body mb-4">Quick Actions</h2>
-                                <Card className="p-6 bg-white border-black/[0.08] space-y-3">
-                                    <Button
-                                        className="w-full justify-start"
-                                        variant="secondary"
-                                        onClick={() => setActiveTab('courses')}
-                                    >
-                                        <span className="mr-2">📚</span>
-                                        Approve Pending Courses ({pendingCourses.length})
-                                    </Button>
-                                    <Button
-                                        className="w-full justify-start"
-                                        variant="secondary"
-                                        onClick={() => setActiveTab('users')}
-                                    >
-                                        <span className="mr-2">👥</span>
-                                        Manage Users ({userList.filter(u => u.status === 'suspended').length} suspended)
-                                    </Button>
-                                    <Button
-                                        className="w-full justify-start"
-                                        variant="secondary"
-                                        onClick={() => setActiveTab('reviews')}
-                                    >
-                                        <span className="mr-2">⭐</span>
-                                        Review Flagged Reviews ({reviewList.filter(r => r.status === 'flagged').length})
-                                    </Button>
-                                    <Button
-                                        className="w-full justify-start"
-                                        variant="secondary"
-                                        onClick={() => setActiveTab('orders')}
-                                    >
-                                        <span className="mr-2">💰</span>
-                                        View Orders ({orderList.filter(o => o.status === 'pending').length} pending)
-                                    </Button>
-                                    <Button
-                                        className="w-full justify-start"
-                                        variant="secondary"
-                                        onClick={() => setActiveTab('categories')}
-                                    >
-                                        <span className="mr-2">🏷</span>
-                                        Manage Categories
-                                    </Button>
-                                </Card>
-                            </div>
-                        </div>
+                    <div className="space-y-5">
+                        <Panel title="Certificate health" description="Current certificate statuses.">
+                            <DonutChart
+                                data={charts.certificateStatus}
+                                size={150}
+                                thickness={18}
+                                centerLabel="total"
+                            />
+                        </Panel>
+                        <Panel title="Course tiers" description="Published catalogue mix.">
+                            <HorizontalBars data={charts.tiers} />
+                        </Panel>
                     </div>
-                )}
+                </div>
 
-                {/* Users View */}
-                {activeTab === 'users' && (
-                    <div className="space-y-6">
-                        <div className="flex items-center justify-between">
-                            <h1 className="text-2xl font-display font-bold text-body">Users</h1>
-                            <div className="w-64">
-                    <SearchInput
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Search users..."
-                    />
-                            </div>
-                        </div>
-
-                        {/* Role Filter Tabs */}
-                        <div className="flex gap-2">
-                            {['all', 'student', 'instructor', 'admin'].map(role => (
-                                <button
-                                    key={role}
-                                    onClick={() => setUserRoleFilter(role)}
-                                    className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
-                                        userRoleFilter === role
-                                            ? 'bg-lime/10 text-lime border border-lime/30'
-                                            : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
-                                    }`}
-                                >
-                                    {role === 'all' ? 'All' : role.charAt(0).toUpperCase() + role.slice(1)}s
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Users Table */}
-                        <Card className="bg-white border-black/[0.08] overflow-hidden">
-                            <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead>
-                                        <tr className="border-b border-black/[0.08]">
-                                            <th className="text-left px-6 py-4 font-display font-semibold text-body text-sm">User</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Role</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Joined</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Status</th>
-                                            <th className="text-right px-6 py-4 font-display font-semibold text-body text-sm">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-black/[0.08]">
-                                        {filteredUsers.map(u => (
-                                            <tr key={u.id} className="hover:bg-black/[0.03] transition-colors">
-                                                <td className="px-6 py-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <Avatar name={u.name} className="w-8 h-8" />
-                                                        <div>
-                                                            <div className="font-body text-sm text-body font-medium">{u.name}</div>
-                                                            <div className="text-muted font-body text-xs">{u.email}</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="px-4 py-4">
-                                                    <select
-                                                        value={u.role}
-                                                        onChange={(e) => handleChangeRole(u.id, e.target.value)}
-                                                        className="px-3 py-1 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
-                                                    >
-                                                        <option value="student">Student</option>
-                                                        <option value="instructor">Instructor</option>
-                                                        <option value="admin">Admin</option>
-                                                    </select>
-                                                </td>
-                                                <td className="px-4 py-4 font-body text-sm text-muted">{u.joined}</td>
-                                                <td className="px-4 py-4">
-                                                    <Badge variant={u.status === 'active' ? 'success' : 'danger'}>
-                                                        {u.status}
-                                                    </Badge>
-                                                </td>
-                                                <td className="px-6 py-4">
-                                                    <div className="flex items-center justify-end gap-2">
-                                                        <Button
-                                                            size="sm"
-                                                            variant={u.status === 'active' ? 'danger' : 'primary'}
-                                                            onClick={() => handleToggleUserStatus(u.id)}
-                                                        >
-                                                            {u.status === 'active' ? 'Suspend' : 'Activate'}
-                                                        </Button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </Card>
-                    </div>
-                )}
-
-                {/* Courses View */}
-                {activeTab === 'courses' && (
-                    <div className="space-y-6">
-                        <h1 className="text-2xl font-display font-bold text-body">Courses</h1>
-
-                        {/* Course Tabs */}
-                        <div className="flex gap-2">
-                            <button
-                                onClick={() => setCourseTab('published')}
-                                className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
-                                    courseTab === 'published'
-                                        ? 'bg-lime/10 text-lime border border-lime/30'
-                                        : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
-                                }`}
-                            >
-                                Published ({courses.published.length})
-                            </button>
-                            <button
-                                onClick={() => setCourseTab('pending')}
-                                className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
-                                    courseTab === 'pending'
-                                        ? 'bg-lime/10 text-lime border border-lime/30'
-                                        : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
-                                }`}
-                            >
-                                Pending Approval ({pendingCourses.length})
-                            </button>
-                        </div>
-
-                        {/* Published Courses Grid */}
-                        {courseTab === 'published' && (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {courses.published.map(course => (
-                                    <Card key={course.id} className="p-5 bg-white border-black/[0.08]">
-                                        <div className="flex items-center justify-between mb-3">
-                                            <Badge variant="success">{course.status}</Badge>
-                                            <StarRating rating={course.rating} size="sm" />
-                                        </div>
-                                        <h3 className="font-display font-semibold text-body">{course.title}</h3>
-                                        <p className="text-muted font-body text-sm mt-1">{course.instructor}</p>
-                                        <div className="grid grid-cols-2 gap-3 mt-4">
-                                            <div>
-                                                <div className="text-sm font-mono text-body">{course.students.toLocaleString()}</div>
-                                                <div className="text-xs text-muted font-body">Students</div>
-                                            </div>
-                                            <div>
-                                                <div className="text-sm font-mono text-success">${course.revenue.toLocaleString()}</div>
-                                                <div className="text-xs text-muted font-body">Revenue</div>
-                                            </div>
-                                            <div>
-                                                <div className="text-sm font-mono text-body">{course.completionRate}%</div>
-                                                <div className="text-xs text-muted font-body">Completion</div>
-                                            </div>
-                                            <div>
-                                                <div className="text-sm font-mono text-body">{course.rating}</div>
-                                                <div className="text-xs text-muted font-body">Rating</div>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                ))}
-                            </div>
-                        )}
-
-                        {/* Pending Courses */}
-                        {courseTab === 'pending' && (
-                            <div className="space-y-3">
-                                {pendingCourses.length === 0 ? (
-                                    <Card className="p-12 bg-white border-black/[0.08] text-center">
-                                        <div className="text-4xl mb-4">✅</div>
-                                        <p className="text-muted font-body">No pending courses to review.</p>
-                                    </Card>
-                                ) : (
-                                    pendingCourses.map(course => (
-                                        <Card key={course.id} className="p-5 bg-white border-black/[0.08]">
-                                            <div className="flex items-center justify-between">
-                                                <div className="flex-1">
-                                                    <div className="flex items-center gap-2 mb-1">
-                                                        <h3 className="font-display font-semibold text-body">{course.title}</h3>
-                                                        <Badge variant="warning">{course.status}</Badge>
-                                                    </div>
-                                                    <p className="text-muted font-body text-sm">{course.instructor}</p>
-                                                    <p className="text-muted font-body text-xs mt-1">Submitted: {course.submitted}</p>
-                                                </div>
+                <div className="grid gap-5 xl:grid-cols-3">
+                    <Panel
+                        className="xl:col-span-2"
+                        title="Course performance"
+                        description="Top courses ranked by enrolments."
+                        action={
+                            <Link href="/admin/courses" className="inline-flex items-center gap-1 text-xs font-semibold text-violet hover:underline">
+                                All courses <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                        }
+                        bodyClassName="p-0"
+                    >
+                        <div className="overflow-x-auto">
+                            <table className="w-full min-w-[640px] text-left text-sm">
+                                <thead>
+                                    <tr className="border-b border-black/[0.06] bg-black/[0.02] text-[11px] uppercase tracking-[0.12em] text-muted">
+                                        <th className="px-5 py-3 font-semibold">Course</th>
+                                        <th className="px-4 py-3 font-semibold">Instructor</th>
+                                        <th className="px-4 py-3 font-semibold">Enrolments</th>
+                                        <th className="px-4 py-3 font-semibold">Avg. progress</th>
+                                        <th className="px-4 py-3 font-semibold">Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {coursePerformance.map((course) => (
+                                        <tr key={course.id} className="border-b border-black/[0.05] last:border-0 hover:bg-black/[0.015]">
+                                            <td className="px-5 py-3.5">
+                                                <p className="font-medium text-body">{course.title}</p>
+                                                <p className="text-xs text-muted">{course.category || 'Uncategorised'}</p>
+                                            </td>
+                                            <td className="px-4 py-3.5 text-muted">{course.instructor || '—'}</td>
+                                            <td className="px-4 py-3.5 font-semibold text-body">{course.enrollments}</td>
+                                            <td className="px-4 py-3.5">
                                                 <div className="flex items-center gap-2">
-                                                    <Button size="sm" onClick={() => handleApproveCourse(course.id)}>
-                                                        Approve
-                                                    </Button>
-                                                    <Button
-                                                        size="sm"
-                                                        variant="danger"
-                                                        onClick={() => handleRejectCourse(course.id)}
-                                                    >
-                                                        Reject
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    ))
-                                )}
-                            </div>
-                        )}
-                    </div>
-                )}
-
-                {/* Categories View */}
-                {activeTab === 'categories' && (
-                    <div className="space-y-6">
-                        <div className="flex items-center justify-between">
-                            <h1 className="text-2xl font-display font-bold text-body">Categories</h1>
-                            <Button onClick={() => setShowAddCategory(!showAddCategory)}>
-                                {showAddCategory ? 'Cancel' : '+ Add Category'}
-                            </Button>
-                        </div>
-
-                        {/* Add Category Form */}
-                        {showAddCategory && (
-                            <Card className="p-6 bg-white border-black/[0.08] border-lime/30">
-                                <h2 className="font-display font-semibold text-body mb-4">New Category</h2>
-                                <div className="space-y-4">
-                                    <div>
-                                        <label className="block font-body text-sm text-muted mb-2">Name</label>
-                                        <input
-                                            type="text"
-                                            value={newCategory.name}
-                                            onChange={(e) => setNewCategory(prev => ({ ...prev, name: e.target.value }))}
-                                            placeholder="e.g., Generative AI"
-                                            className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block font-body text-sm text-muted mb-2">Description</label>
-                                        <input
-                                            type="text"
-                                            value={newCategory.description}
-                                            onChange={(e) => setNewCategory(prev => ({ ...prev, description: e.target.value }))}
-                                            placeholder="Brief description..."
-                                            className="w-full px-4 py-2 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body placeholder:text-muted/50 focus:outline-none focus:border-lime/50"
-                                        />
-                                    </div>
-                                    <Button onClick={handleAddCategory}>Create Category</Button>
-                                </div>
-                            </Card>
-                        )}
-
-                        {/* Categories List */}
-                        <Card className="bg-white border-black/[0.08] divide-y divide-black/[0.08]">
-                            {categoryList.map(cat => (
-                                <div key={cat.id} className="px-6 py-4">
-                                    {editingCategory === cat.id ? (
-                                        <div className="space-y-3">
-                                            <input
-                                                type="text"
-                                                value={editCategoryForm.name}
-                                                onChange={(e) => setEditCategoryForm(prev => ({ ...prev, name: e.target.value }))}
-                                                className="w-full px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
-                                            />
-                                            <input
-                                                type="text"
-                                                value={editCategoryForm.description}
-                                                onChange={(e) => setEditCategoryForm(prev => ({ ...prev, description: e.target.value }))}
-                                                className="w-full px-3 py-1.5 bg-black/[0.03] border border-black/[0.08] rounded-lg font-body text-body text-sm focus:outline-none focus:border-lime/50"
-                                            />
-                                            <div className="flex gap-2">
-                                                <Button size="sm" onClick={() => handleSaveEditCategory(cat.id)}>Save</Button>
-                                                <Button size="sm" variant="secondary" onClick={() => setEditingCategory(null)}>Cancel</Button>
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex-1">
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-xl">🏷</span>
-                                                    <div>
-                                                        <h3 className="font-body text-body font-medium">{cat.name}</h3>
-                                                        <p className="text-muted font-body text-xs">{cat.description}</p>
+                                                    <div className="h-1.5 w-20 overflow-hidden rounded-full bg-black/[0.06]">
+                                                        <div className="h-full rounded-full bg-violet" style={{ width: `${Math.min(100, course.avgProgress)}%` }} />
                                                     </div>
+                                                    <span className="text-xs text-muted">{course.avgProgress}%</span>
                                                 </div>
-                                            </div>
-                                            <div className="flex items-center gap-4">
-                                                <span className="font-mono text-sm text-muted">{cat.courseCount} courses</span>
-                                                <div className="flex gap-2">
-                                                    <Button size="sm" variant="secondary" onClick={() => handleEditCategory(cat)}>
-                                                        Edit
-                                                    </Button>
-                                                    <Button size="sm" variant="danger" onClick={() => handleDeleteCategory(cat.id)}>
-                                                        Delete
-                                                    </Button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </Card>
-                    </div>
-                )}
-
-                {/* Orders View */}
-                {activeTab === 'orders' && (
-                    <div className="space-y-6">
-                        <h1 className="text-2xl font-display font-bold text-body">Orders</h1>
-
-                        {/* Filter */}
-                        <div className="flex gap-2">
-                            {['all', 'completed', 'pending', 'refunded'].map(status => (
-                                <button
-                                    key={status}
-                                    onClick={() => setOrderFilter(status)}
-                                    className={`px-4 py-2 rounded-lg font-body text-sm transition-all ${
-                                        orderFilter === status
-                                            ? 'bg-lime/10 text-lime border border-lime/30'
-                                            : 'text-muted hover:text-body hover:bg-black/[0.03] border border-transparent'
-                                    }`}
-                                >
-                                    {status.charAt(0).toUpperCase() + status.slice(1)}
-                                </button>
-                            ))}
-                        </div>
-
-                        {/* Orders Table */}
-                        <Card className="bg-white border-black/[0.08] overflow-hidden">
-                            <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead>
-                                        <tr className="border-b border-black/[0.08]">
-                                            <th className="text-left px-6 py-4 font-display font-semibold text-body text-sm">Order ID</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">User</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Course</th>
-                                            <th className="text-right px-4 py-4 font-display font-semibold text-body text-sm">Amount</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Date</th>
-                                            <th className="text-left px-4 py-4 font-display font-semibold text-body text-sm">Status</th>
+                                            </td>
+                                            <td className="px-4 py-3.5 text-muted">{course.rating ? course.rating.toFixed(1) : '—'}</td>
                                         </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-black/[0.08]">
-                                        {filteredOrders.map(order => (
-                                            <tr key={order.id} className="hover:bg-black/[0.03] transition-colors">
-                                                <td className="px-6 py-4 font-mono text-sm text-body">{order.id}</td>
-                                                <td className="px-4 py-4 font-body text-sm text-body">{order.user}</td>
-                                                <td className="px-4 py-4 font-body text-sm text-muted max-w-[200px] truncate">{order.course}</td>
-                                                <td className="px-4 py-4 text-right font-mono text-sm text-body">${order.amount}</td>
-                                                <td className="px-4 py-4 font-body text-sm text-muted">{order.date}</td>
-                                                <td className="px-4 py-4">
-                                                    <Badge variant={
-                                                        order.status === 'completed' ? 'success' :
-                                                        order.status === 'pending' ? 'info' :
-                                                        'danger'
-                                                    }>
-                                                        {order.status}
-                                                    </Badge>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </Card>
-                    </div>
-                )}
-
-                {/* Reviews View */}
-                {activeTab === 'reviews' && (
-                    <div className="space-y-6">
-                        <h1 className="text-2xl font-display font-bold text-body">Reviews Moderation</h1>
-
-                        <div className="space-y-4">
-                            {reviewList.map(review => (
-                                <Card key={review.id} className="p-5 bg-white border-black/[0.08]">
-                                    <div className="flex items-start justify-between gap-4">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <Avatar name={review.reviewer} className="w-6 h-6" />
-                                                <span className="font-body text-sm text-body font-medium">{review.reviewer}</span>
-                                                <Badge variant={
-                                                    review.status === 'approved' ? 'success' :
-                                                    review.status === 'flagged' ? 'danger' :
-                                                    'info'
-                                                }>
-                                                    {review.status}
-                                                </Badge>
-                                            </div>
-                                            <StarRating rating={review.rating} size="sm" />
-                                            <p className="font-body text-sm text-body mt-2">{review.comment}</p>
-                                            <div className="flex items-center gap-3 mt-2">
-                                                <span className="font-body text-xs text-muted">{review.course}</span>
-                                                <span className="text-muted">·</span>
-                                                <span className="font-body text-xs text-muted">{review.date}</span>
-                                            </div>
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            {review.status !== 'approved' && (
-                                                <Button
-                                                    size="sm"
-                                                    onClick={() => handleReviewAction(review.id, 'approve')}
-                                                >
-                                                    Approve
-                                                </Button>
-                                            )}
-                                            {review.status !== 'flagged' && (
-                                                <Button
-                                                    size="sm"
-                                                    variant="danger"
-                                                    onClick={() => handleReviewAction(review.id, 'flag')}
-                                                >
-                                                    Flag
-                                                </Button>
-                                            )}
-                                            <Button
-                                                size="sm"
-                                                variant="secondary"
-                                                onClick={() => handleRemoveReview(review.id)}
-                                            >
-                                                Remove
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </Card>
-                            ))}
+                                    ))}
+                                </tbody>
+                            </table>
+                            {coursePerformance.length === 0 && <EmptyRow>No course data yet.</EmptyRow>}
                         </div>
-                    </div>
-                )}
+                    </Panel>
+
+                    <Panel
+                        title="Recent activity"
+                        description="Latest platform events."
+                        action={<Link href="/admin/reports" className="text-xs font-semibold text-violet hover:underline">Reports</Link>}
+                    >
+                        <ol className="relative space-y-4 before:absolute before:bottom-1 before:left-[7px] before:top-1 before:w-px before:bg-black/[0.08]">
+                            {recentActivity.slice(0, 8).map((item) => (
+                                <li key={item.id} className="relative flex gap-3 pl-6">
+                                    <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-violet shadow-[0_0_0_1px_rgba(152,44,220,0.25)]" />
+                                    <div className="min-w-0">
+                                        <p className="text-sm leading-snug text-body">{item.description}</p>
+                                        <p className="mt-0.5 text-[11px] text-muted">{timeAgo(item.createdAt)}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+                        {recentActivity.length === 0 && <EmptyRow>No activity recorded yet.</EmptyRow>}
+                    </Panel>
+                </div>
+
+                <div className="grid gap-5 xl:grid-cols-2">
+                    <Panel
+                        title="Latest enrolments"
+                        description="Most recent student course registrations."
+                        action={<Link href="/admin/enrollments" className="inline-flex items-center gap-1 text-xs font-semibold text-violet hover:underline">Manage <ArrowRight className="h-3.5 w-3.5" /></Link>}
+                        bodyClassName="p-0"
+                    >
+                        <ul className="divide-y divide-black/[0.05]">
+                            {latestEnrollments.map((e) => (
+                                <li key={e.id} className="flex items-center gap-3 px-5 py-3.5">
+                                    <Avatar name={e.student} size="sm" />
+                                    <div className="min-w-0 flex-1">
+                                        <p className="truncate text-sm font-medium text-body">{e.student}</p>
+                                        <p className="truncate text-xs text-muted">{e.course}</p>
+                                    </div>
+                                    <div className="shrink-0 text-right">
+                                        <StatusPill status={e.status} />
+                                        <p className="mt-1 text-[11px] text-muted">{timeAgo(e.createdAt)}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                        {latestEnrollments.length === 0 && <EmptyRow>No enrolments yet.</EmptyRow>}
+                    </Panel>
+
+                    <Panel
+                        title="Latest enquiries"
+                        description="Prospective students needing follow-up."
+                        action={<Link href="/admin/enquiries" className="inline-flex items-center gap-1 text-xs font-semibold text-violet hover:underline">Inbox <ArrowRight className="h-3.5 w-3.5" /></Link>}
+                        bodyClassName="p-0"
+                    >
+                        <ul className="divide-y divide-black/[0.05]">
+                            {latestEnquiries.map((e) => (
+                                <li key={e.id} className="flex items-center gap-3 px-5 py-3.5">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+                                        <MessageSquare className="h-4 w-4" />
+                                    </span>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="truncate text-sm font-medium text-body">{e.name}</p>
+                                        <p className="truncate text-xs text-muted">{e.program || 'General enquiry'}</p>
+                                    </div>
+                                    <div className="shrink-0 text-right">
+                                        <StatusPill status={e.status} />
+                                        <p className="mt-1 text-[11px] text-muted">{timeAgo(e.createdAt)}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                        {latestEnquiries.length === 0 && <EmptyRow>No enquiries yet.</EmptyRow>}
+                    </Panel>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                        { href: '/admin/courses', label: 'Create a course', desc: 'Add to the catalogue', icon: BookOpen },
+                        { href: '/admin/students', label: 'Manage students', desc: 'Roles & access', icon: Users },
+                        { href: '/admin/enrollments', label: 'Enrol a student', desc: 'Assign a course', icon: Layers },
+                        { href: '/admin/reports', label: 'Download reports', desc: 'CSV exports', icon: CalendarDays },
+                    ].map((action) => (
+                        <Link
+                            key={action.href}
+                            href={action.href}
+                            className="group flex items-center gap-3 rounded-2xl border border-dashed border-black/[0.12] bg-white/60 p-4 transition-colors hover:border-violet/40 hover:bg-white"
+                        >
+                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/[0.04] text-muted transition-colors group-hover:bg-violet/[0.08] group-hover:text-violet">
+                                <action.icon className="h-5 w-5" />
+                            </span>
+                            <span className="min-w-0">
+                                <span className="block text-sm font-semibold text-body">{action.label}</span>
+                                <span className="block text-xs text-muted">{action.desc}</span>
+                            </span>
+                            <Plus className="ml-auto h-4 w-4 shrink-0 text-muted opacity-0 transition-opacity group-hover:opacity-100" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </DashboardLayout>
-    )
+    );
 }
