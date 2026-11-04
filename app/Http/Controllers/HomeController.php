@@ -7,7 +7,7 @@ use Inertia\Inertia;
 class HomeController extends Controller
 {
     public function index()
-    { 
+    {
         return Inertia::render('Home', [
             'featuredCourses' => [
                 [
@@ -129,7 +129,7 @@ class HomeController extends Controller
                     'name' => 'Marcus Williams',
                     'role' => 'ML Engineer at Google',
                     'avatar' => '/avatars/marcus.jpg',
-                    'content' => 'AI Excellence Academy transformed my career. The deep learning course gave me the foundation to land my dream job at Google. The hands-on projects were exactly what employers look for.',
+                    'content' => 'AI Execellence Academy transformed my career. The deep learning course gave me the foundation to land my dream job at Google. The hands-on projects were exactly what employers look for.',
                     'rating' => 5,
                     'courseCompleted' => 'Deep Learning Fundamentals',
                 ],
@@ -147,7 +147,7 @@ class HomeController extends Controller
                     'name' => 'Raj Patel',
                     'role' => 'AI Lead at Stripe',
                     'avatar' => '/avatars/raj.jpg',
-                    'content' => 'As a self-taught developer, AI Excellence Academy filled all my knowledge gaps. The learning paths are perfectly structured and the community is incredibly supportive.',
+                    'content' => 'As a self-taught developer, AI Execellence Academy filled all my knowledge gaps. The learning paths are perfectly structured and the community is incredibly supportive.',
                     'rating' => 5,
                     'courseCompleted' => 'Machine Learning Engineering',
                 ],
@@ -165,7 +165,7 @@ class HomeController extends Controller
                     'name' => 'David Kim',
                     'role' => 'MLOps Engineer at AWS',
                     'avatar' => '/avatars/david.jpg',
-                    'content' => 'I switched from traditional software engineering to MLOps thanks to AI Excellence Academy. The practical approach to model deployment saved me months of self-study.',
+                    'content' => 'I switched from traditional software engineering to MLOps thanks to AI Execellence Academy. The practical approach to model deployment saved me months of self-study.',
                     'rating' => 4,
                     'courseCompleted' => 'MLOps Fundamentals',
                 ],

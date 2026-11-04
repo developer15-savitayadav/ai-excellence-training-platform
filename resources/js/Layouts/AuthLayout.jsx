@@ -6,7 +6,7 @@ function Logo({ light = false }) {
         <Link href="/" className="flex items-center gap-2.5 group w-fit">
             <img
                 src="/assets/images/logoExtra1.png"
-                alt="AI Excellence Academy"
+                alt="AI Execellence Academy"
                 className="h-[60px] w-[120px] transition-transform group-hover:scale-105"
             />
         </Link>

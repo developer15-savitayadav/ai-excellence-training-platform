@@ -358,7 +358,7 @@ export default function OfflineCourses() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-lg">✉️</span>
-                    <a href="mailto:hello@aiexcellence.ai" className="text-[#982cdc] hover:text-[#eec369] transition-colors">hello@aiexcellence.ai</a>
+                    <a href="mailto:hello@aiexecellence.ai" className="text-[#982cdc] hover:text-[#eec369] transition-colors">hello@aiexecellence.ai</a>
                   </div>
                 </div>
               </div>

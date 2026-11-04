@@ -764,7 +764,7 @@ export default function Home() {
                     <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
                         <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                            AI EXCELLENCE ACADEMY
+                            AI EXECELLENCE ACADEMY
                         </div>
 
                         <h1 className="mx-auto mt-6 max-w-[780px] text-[clamp(2.5rem,6vw,4.8rem)] font-bold leading-[.95] tracking-[-0.04em]">
@@ -889,7 +889,7 @@ export default function Home() {
                             >
                                 <img
                                     src="/assets/images/hero-lastbg.png"
-                                    alt="Join AI Excellence Academy"
+                                    alt="Join AI Execellence Academy"
                                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                             </Link>
@@ -1263,7 +1263,7 @@ export default function Home() {
                                         fontFamily: "'Urbanist', sans-serif",
                                     }}
                                 >
-                                    Why Students Choose AI Excellence Academy
+                                    Why Students Choose AI Execellence Academy
                                 </h2>
                             </div>
 

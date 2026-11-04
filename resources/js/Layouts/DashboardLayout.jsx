@@ -69,7 +69,7 @@ function Brand({ compact = false }) {
             {!compact && (
                 <span className="min-w-0">
                     <span className="block truncate font-display text-sm font-bold leading-tight text-body">
-                        AI Excellence
+                        AI Execellence
                     </span>
                     <span className="block text-[10px] uppercase tracking-[0.18em] text-muted">Academy</span>
                 </span>

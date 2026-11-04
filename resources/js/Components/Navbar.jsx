@@ -31,7 +31,7 @@ function Logo() {
         <Link href="/" className="flex shrink-0 items-center gap-2">
             <img
                 src="/assets/images/logoExtra1.png"
-                alt="AI Excellence Academy"
+                alt="AI Execellence Academy"
                 className="h-14 w-36 object-contain sm:h-16 sm:w-40 md:h-14 md:w-36 lg:h-20 lg:w-30"
             />
         </Link>

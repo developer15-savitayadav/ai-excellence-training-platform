@@ -52,7 +52,7 @@ export default function Footer() {
                                 <Sparkles size={14} className="text-white" />
                             </div>
                             <span className="text-sm font-semibold text-white">
-                                AI Excellence Academy
+                                AI Execellence Academy
                             </span>
                         </div>
 

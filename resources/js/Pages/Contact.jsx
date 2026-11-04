@@ -430,7 +430,7 @@ export default function Contact() {
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    title="AI Excellence Academy - Gomti Nagar, Lucknow"
+                                    title="AI Execellence Academy - Gomti Nagar, Lucknow"
                                     className="w-full h-full"
                                 />
                             </div>

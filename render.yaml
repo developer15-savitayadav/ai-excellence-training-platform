@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ai-excellence-training-platform
+    name: ai-execellence-training-platform
     runtime: docker
     dockerfilePath: Dockerfile
     envVars:
@@ -18,23 +18,23 @@ services:
         value: pgsql
       - key: DB_HOST
         fromDatabase:
-          name: ai-excellence-db
+          name: ai-execellence-db
           property: host
       - key: DB_PORT
         fromDatabase:
-          name: ai-excellence-db
+          name: ai-execellence-db
           property: port
       - key: DB_DATABASE
         fromDatabase:
-          name: ai-excellence-db
+          name: ai-execellence-db
           property: database
       - key: DB_USERNAME
         fromDatabase:
-          name: ai-excellence-db
+          name: ai-execellence-db
           property: user
       - key: DB_PASSWORD
         fromDatabase:
-          name: ai-excellence-db
+          name: ai-execellence-db
           property: password
       - key: CACHE_STORE
         value: database
@@ -46,6 +46,6 @@ services:
         value: "true"
 
 databases:
-  - name: ai-excellence-db
+  - name: ai-execellence-db
     plan: free
-    databaseName: ai_excellence
+    databaseName: ai_execellence

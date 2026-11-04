@@ -1,4 +1,4 @@
-# AI Excellence Training Platform — Setup & Deployment Guide
+# AI Execellence Training Platform — Setup & Deployment Guide
 
 This document accompanies the Laravel 13 + Inertia/React training management platform. It
 covers local setup, production deployment, and the test/verification coverage that ships with

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "==> AI Excellence Academy — Starting..."
+echo "==> AI Execellence Academy — Starting..."
 
 # ── .env ──────────────────────────────────────────────
 if [ ! -f /var/www/html/.env ]; then

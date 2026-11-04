@@ -4,7 +4,7 @@ import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 
-const appName = 'AI Excellence Academy';
+const appName = 'AI Execellence Academy';
 
 createInertiaApp({
     title: (title) => `${title} — ${appName}`,

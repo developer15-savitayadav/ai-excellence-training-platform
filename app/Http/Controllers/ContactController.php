@@ -20,9 +20,9 @@ class ContactController extends Controller
             ],
             'socialLinks' => [
                 ['platform' => 'Twitter', 'url' => 'https://twitter.com/cortexacademy', 'handle' => '@cortexacademy'],
-                ['platform' => 'LinkedIn', 'url' => 'https://linkedin.com/company/cortex-academy', 'handle' => 'AI Excellence Academy'],
+                ['platform' => 'LinkedIn', 'url' => 'https://linkedin.com/company/cortex-academy', 'handle' => 'AI Execellence Academy'],
                 ['platform' => 'GitHub', 'url' => 'https://github.com/cortex-academy', 'handle' => 'cortex-academy'],
-                ['platform' => 'YouTube', 'url' => 'https://youtube.com/@cortexacademy', 'handle' => 'AI Excellence Academy'],
+                ['platform' => 'YouTube', 'url' => 'https://youtube.com/@cortexacademy', 'handle' => 'AI Execellence Academy'],
             ],
         ]);
     }

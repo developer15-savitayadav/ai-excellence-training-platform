@@ -286,7 +286,7 @@ const TEAM = [
     {
         name: "Dr. Sarah Mitchell",
         role: "Deep Learning & Neural Architecture",
-        bio: "Former MIT professor with 15 years of experience in deep learning research. Leads curriculum design at AI Excellence Academy.",
+        bio: "Former MIT professor with 15 years of experience in deep learning research. Leads curriculum design at AI Execellence Academy.",
         gradient: "from-violet to-lime",
     },
     {
@@ -334,7 +334,7 @@ export default function About() {
 
                 <div className="relative z-10 mx-auto max-w-[1240px] px-6  py-16 max-lg:pt-[56px] text-center">
                         <EyeBrow>
-                            AI Excellence Academy
+                            AI Execellence Academy
                        </EyeBrow>
                     <h1 className="font-display mt-6 text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08] text-white max-w-4xl mx-auto">
                         <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
@@ -348,7 +348,7 @@ export default function About() {
                     </h1>
 
                     <p className="text-black/85 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-                        AI Excellence Academy was founded on a simple
+                        AI Execellence Academy was founded on a simple
                         observation: Lucknow has thousands of bright students
                         and ambitious professionals, but the training available
                         to them is either outdated, certificate-only, or priced
@@ -377,7 +377,7 @@ export default function About() {
                         {/* Image */}
                         <img
                             src="/assets/images/team-1.webp"
-                            alt="The AI Excellence Academy team"
+                            alt="The AI Execellence Academy team"
                             loading="eager"
                             className="w-full h-[400px] sm:h-[400px] lg:h-[500px] object-cover object-center"
                         />
@@ -433,7 +433,7 @@ export default function About() {
                     <div className="text-center mb-16">
                         <EyeBrow>THE DIFFERENCE</EyeBrow>
                         <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
-                            The AI Excellence Academy Difference
+                            The AI Execellence Academy Difference
                         </h2>
                         <p className="text-muted text-lg mt-4 max-w-xl mx-auto">
                             Side by side, the choice is clear.
@@ -461,7 +461,7 @@ export default function About() {
                                             d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
                                         />
                                     </svg>
-                                    AI Excellence Academy
+                                    AI Execellence Academy
                                 </span>
                             </div>
                             <div className="px-6 py-4 border-l border-black/[0.08]">

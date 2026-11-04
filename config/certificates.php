@@ -10,5 +10,5 @@ return [
 
     'log_retention_days' => (int) env('CERTIFICATE_LOG_RETENTION_DAYS', 90),
 
-    'issuer_name' => env('CERTIFICATE_ISSUER_NAME', 'AI Excellence Academy'),
+    'issuer_name' => env('CERTIFICATE_ISSUER_NAME', 'AI Execellence Academy'),
 ];

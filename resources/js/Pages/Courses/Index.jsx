@@ -497,7 +497,7 @@ export default function CoursesIndex({ courses = null }) {
 
                     <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[148px] pb-12 max-lg:pt-[124px] max-lg:pb-10 text-center">
                         <RevealDiv>
-                            <EyeBrow>AI Excellence Academy</EyeBrow>
+                            <EyeBrow>AI Execellence Academy</EyeBrow>
                         </RevealDiv>
 
                         <RevealDiv delay={80}>
