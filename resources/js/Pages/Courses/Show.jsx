@@ -3737,11 +3737,14 @@ function buildDetail(course) {
     );
     const instructor = override.instructor || course.instructorProfile || DEFAULT_INSTRUCTOR;
 
-    const pricingIncludes =
-        override.pricingIncludes ||
-        (course.included && Array.isArray(course.included)
-            ? course.included
-            : DEFAULT_PRICING_INCLUDES);
+const pricingIncludes =
+    (Array.isArray(override.pricingIncludes) && override.pricingIncludes.length
+        ? override.pricingIncludes
+        : null) ||
+    (Array.isArray(course.included) && course.included.length
+        ? course.included
+        : null) ||
+    DEFAULT_PRICING_INCLUDES;
 
     const audience =
         override.audience ||
