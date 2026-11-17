@@ -934,6 +934,18 @@ body {
      .tier-col{
       width: 120px;
     }
+    .partner-card {
+    text-align: center;
+}
+
+.partner-content p {
+    margin-left: auto;
+    margin-right: auto; /* max-w-md wala paragraph bhi center ho */
+}
+
+.partner-action {
+    text-align: center;
+}
     .hero-stat-card .hero-stat-para{
         font-size: 18px;
     }

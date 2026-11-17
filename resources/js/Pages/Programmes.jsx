@@ -42,56 +42,46 @@ export default function Programmes() {
                     <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(238,195,105,0.55),rgba(152,44,220,0.55))] mix-blend-multiply" />
 
                     {/* Centered content card */}
-                    <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6">
-                        <div className="rounded-[24px] bg-[#F5F5F2] px-8 py-10 shadow-[0_20px_60px_rgba(0,0,0,.08)] sm:px-10 sm:py-12">
-                            <div className="grid items-center gap-8 lg:grid-cols-[80%_20%]">
-                                <div>
-                                    <h1 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-bold leading-[1.15] tracking-[-0.03em]">
-                                        <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
-                                            College Partnerships —
-                                        </span>
-                                        <br />
-                                        <span className="text-black">
-                                            AKTU Summer &amp; Winter Training
-                                        </span>
-                                    </h1>
+                   <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6">
+    <div className="partner-card rounded-[24px] bg-[#F5F5F2] px-8 py-10 shadow-[0_20px_60px_rgba(0,0,0,.08)] sm:px-10 sm:py-12">
+        <div className="grid items-center gap-8 lg:grid-cols-[80%_20%]">
+            <div className="partner-content">
+                <h1 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-bold leading-[1.15] tracking-[-0.03em]">
+                    <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
+                        College Partnerships —
+                    </span>
+                    <br />
+                    <span className="text-black">
+                        AKTU Summer &amp; Winter Training
+                    </span>
+                </h1>
 
-                                    <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
-                                        We partner directly with Training &amp;
-                                        Placement cells to deliver compliant,
-                                        high-quality industrial training on your
-                                        campus or at ours.
-                                    </p>
+                <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+                    We partner directly with Training &amp; Placement cells to
+                    deliver compliant, high-quality industrial training on your
+                    campus or at ours.
+                </p>
+            </div>
 
-                                    {/* <div className="mt-7">
-                                        <Link
-                                            href="/contact"
-                                            className="inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(152,44,220,.38)]"
-                                        >
-                                            Request a Partnership
-                                        </Link>
-                                    </div> */}
-                                </div>
+            <div className="partner-action flex flex-col items-center justify-center gap-5 sm:gap-6">
+                <img
+                    src="/assets/images/aktu-seal.png"
+                    alt="AKTU"
+                    className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20 lg:h-28 lg:w-28"
+                />
 
-                                <div className="flex flex-col items-center justify-center gap-5 sm:gap-6">
-                                    <img
-                                        src="/assets/images/aktu-seal.png"
-                                        alt="AKTU"
-                                        className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20 lg:h-28 lg:w-28"
-                                    />
-
-                                    <Link
-                                        href="/contact"
-                                        className="inline-block w-full rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-6 py-3 text-center text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] sm:w-auto sm:px-7 sm:py-3.5"
-                                    >
-                                        Request a Partnership
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                <Link
+                    href="/contact"
+                    className="inline-block w-full rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-6 py-3 text-center text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] sm:w-auto sm:px-7 sm:py-3.5"
+                >
+                    Request a Partnership
+                </Link>
+            </div>
+        </div>
+    </div>
+</div>
                     </div>
-                    </div>
- 
+
             </section>
             {/* ═══════════════ AKTU TRAINING — DETAILS ═══════════════ */}
             <section className="relative">
