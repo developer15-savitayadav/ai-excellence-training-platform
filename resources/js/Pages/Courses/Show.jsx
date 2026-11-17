@@ -5095,7 +5095,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                         </div>
                     </RevealDiv>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-start max-w-[1000px] mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-stretch  max-w-[1000px] mx-auto ">
                         <RevealDiv>
                             <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-6 sm:p-10">
                                 <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
@@ -5132,8 +5132,8 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                             </div>
                         </RevealDiv>
 
-                        <RevealDiv delay={100}>
-                            <div className="rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
+                        <RevealDiv delay={100} className="h-full">
+                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
                                 <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     What is included
