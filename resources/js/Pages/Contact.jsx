@@ -6,7 +6,7 @@ import Button from '../Components/ui/Button';
 function EyeBrow({ children, color = "violet" }) {
     return (
         <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm uppercase">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold tracking-[0.15em] text-black/70 backdrop-blur-sm uppercase">
                 <span
                     className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
                 />

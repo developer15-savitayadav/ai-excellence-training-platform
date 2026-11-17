@@ -4111,7 +4111,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
                                         <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
                                     </span>
-                                    <span className="font-mono text-[11px] text-black uppercase tracking-wider">
+                                    <span className="font-mono text-[12px] tracking-[0.15em] font-semibold text-black/70 uppercase tracking-wider">
                                         {detail.eyebrow}
                                     </span>
                                 </div>
