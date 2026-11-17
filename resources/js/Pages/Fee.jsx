@@ -2,11 +2,14 @@ import { Link } from "@inertiajs/react";
 import PublicLayout from "../Layouts/PublicLayout";
 import Button from "../Components/ui/Button";
 import FaqSection from "../Components/FAQSection";
+import Animate from "../Components/Animate";
 
 function EyeBrow({ children, color = "violet" }) {
     return (
         <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-            <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`} />
+            <span
+                className={`w-1.5 h-1.5 rounded-full animate-pulse ${color === "lime" ? "bg-[#eec369]" : "bg-[#982cdc]"}`}
+            />
             {children}
         </p>
     );
@@ -84,7 +87,9 @@ export default function Fee() {
             {/* ═══════════════ HERO BANNER ═══════════════ */}
             <section
                 className="relative overflow-hidden bg-cover bg-center -mt-24 pt-[220px] pb-[40px]"
-                style={{ backgroundImage: "url('/assets/images/rumi_darwaza.png')" }}
+                style={{
+                    backgroundImage: "url('/assets/images/rumi_darwaza.png')",
+                }}
             >
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 pointer-events-none">
@@ -164,7 +169,12 @@ export default function Fee() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <Animate
+                        type="fade-up"
+                        stagger={150}
+                        duration={900}
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+                    >
                         {PAYMENT_OPTIONS.map((option) => (
                             <div
                                 key={option.title}
@@ -189,7 +199,7 @@ export default function Fee() {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </Animate>
 
                     <div className="mt-10 flex justify-center">
                         <div className="rounded-full bg-white border border-black/[0.06] shadow-[0_4px_20px_rgba(0,0,0,.04)] px-6 py-3.5">
@@ -210,7 +220,12 @@ export default function Fee() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <Animate
+                        type="fade-up"
+                        stagger={150}
+                        duration={900}
+                        className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+                    >
                         {BUNDLES.map((bundle) => (
                             <Link
                                 key={bundle.tag}
@@ -224,7 +239,7 @@ export default function Fee() {
                                 />
                             </Link>
                         ))}
-                    </div>
+                    </Animate>
                 </div>
             </section>
             {/* ═══════════════ FAQ ═══════════════ */}

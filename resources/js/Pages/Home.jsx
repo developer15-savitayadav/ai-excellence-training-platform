@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PublicLayout from "../Layouts/PublicLayout";
 import Placementsnapshot from "../Components/Placementsnapshot";
+import Animate from "../Components/Animate";
 import {
     ArrowRight,
     Play,
@@ -800,7 +801,12 @@ export default function Home() {
                             </Link>
                         </div>
 
-                        <div className="mx-auto mt-16 grid max-w-[1350px] grid-cols-2 items-start gap-4 md:grid-cols-5 md:gap-5">
+                        <Animate
+                            type="fade-up"
+                            stagger={150}
+                            duration={900}
+                            className="mx-auto mt-16 grid max-w-[1350px] grid-cols-2 items-start gap-4 md:grid-cols-5 md:gap-5"
+                        >
                             {/* CARD 1 — deep blue, tallest, starts highest */}
                             <div className="hero-stat-card group relative flex h-[200px] flex-col justify-end rounded-[22px] bg-[linear-gradient(60deg,#183d8a,#617db6,#9bb0da)] p-5 text-left shadow-[0_14px_35px_-12px_rgba(24,61,138,.45)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-12px_rgba(24,61,138,.55)] md:col-span-1 md:mt-0">
                                 {/* Pill badge — outside overflow-hidden so it's never clipped */}
@@ -896,7 +902,7 @@ export default function Home() {
                                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                             </Link>
-                        </div>
+                        </Animate>
                     </div>
                 </section>
 
@@ -989,7 +995,12 @@ export default function Home() {
                         </div>
 
                         {/* Statistics Cards */}
-                        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[1.65fr_1fr_1fr]">
+                        <Animate
+                            type="fade-up"
+                            stagger={150}
+                            duration={900}
+                            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-[1.65fr_1fr_1fr]"
+                        >
                             {/* 500K */}
                             <div
                                 className="
@@ -1073,7 +1084,7 @@ export default function Home() {
                                     thousand signups.
                                 </p>
                             </div>
-                        </div>
+                        </Animate>
                     </div>
                 </section>
                 {/* OUR COURSES */}
@@ -1363,11 +1374,16 @@ export default function Home() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <Animate
+                            type="fade-up"
+                            stagger={150}
+                            duration={900}
+                            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                        >
                             {mentors.map((mentor) => (
                                 <MentorCard key={mentor.name} mentor={mentor} />
                             ))}
-                        </div>
+                        </Animate>
                     </div>
                 </section>
 
@@ -1402,7 +1418,12 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <Animate
+                            type="fade-up"
+                            stagger={150}
+                            duration={900}
+                            className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+                        >
                             {learners.map((learner, index) => (
                                 <div
                                     key={learner.title}
@@ -1452,7 +1473,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             ))}
-                        </div>
+                        </Animate>
                     </div>
                 </section>
 

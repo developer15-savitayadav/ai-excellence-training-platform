@@ -1,0 +1,68 @@
+/* ───────── Base: hidden state ───────── */
+.anim {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition-property: opacity, transform, filter;
+    transition-duration: var(--anim-duration, 0.8s);
+    transition-delay: var(--anim-delay, 0s);
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ───────── Start states (per type) ───────── */
+.anim-fade-up     { transform: translateY(60px); }
+.anim-fade-down   { transform: translateY(-60px); }
+.anim-fade-left   { transform: translateX(-60px); }
+.anim-fade-right  { transform: translateX(60px); }
+.anim-zoom-in     { transform: scale(0.85); }
+.anim-zoom-out    { transform: scale(1.15); }
+.anim-flip-up     { transform: perspective(800px) rotateX(-25deg) translateY(40px); transform-origin: bottom; }
+.anim-flip-left   { transform: perspective(800px) rotateY(-30deg) translateX(-40px); }
+.anim-rotate-in   { transform: rotate(-8deg) translateY(40px) scale(0.95); }
+.anim-blur-in     { transform: translateY(30px); filter: blur(12px); }
+.anim-slide-mask  { opacity: 1; clip-path: inset(0 100% 0 0); transform: none; transition-property: clip-path; transition-duration: 1s; }
+.anim-fade        { transform: none; }
+
+/* ───────── Visible state ───────── */
+.anim.is-inview {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+.anim-slide-mask.is-inview {
+    clip-path: inset(0 0 0 0);
+}
+
+/* ───────── After finish: clear delay so hover works instantly ───────── */
+.anim.is-done {
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    will-change: auto;
+}
+
+/* ───────── Continuous (loop) animations ───────── */
+@keyframes floatY   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes pulseSoft{ 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes shimmer  { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes wiggle   { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+.loop-float  { animation: floatY 4s ease-in-out infinite; }
+.loop-pulse  { animation: pulseSoft 2.5s ease-in-out infinite; }
+.loop-spin   { animation: spinSlow 20s linear infinite; }
+.loop-wiggle { animation: wiggle 2s ease-in-out infinite; }
+.loop-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+/* ───────── Accessibility ───────── */
+@media (prefers-reduced-motion: reduce) {
+    .anim, .anim-slide-mask {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        clip-path: none !important;
+        transition: none !important;
+    }
+    [class*="loop-"] { animation: none !important; }
+}

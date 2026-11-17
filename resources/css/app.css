@@ -1024,3 +1024,7 @@ flex-direction: row;
 .offer-course-card:hover p{
     color: #fff;
 }
+.hero-stat-card {
+    animation: heroCardRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
