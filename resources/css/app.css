@@ -614,7 +614,7 @@ body {
     margin-inline: auto;
     width: calc(100% - 8px);
     max-width: 670px;
-    padding: var(--_gap---gap-xl);
+    padding: 40px;
     border-radius: var(--_border-radius---border-radius-xl);
 }
 
@@ -930,7 +930,10 @@ body {
 /* Mobile: un-pin the 160vh scroll-jack and stack the belief cards
    vertically. Cards stay positioned (relative) so the absolute icon and
    image/overlay inside each card keep anchoring to the card itself. */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    .hero-stat-card .hero-stat-para{
+        font-size: 18px;
+    }
     .beliefs-scroll {
         height: auto !important;
         padding: 48px 0;
@@ -972,6 +975,15 @@ body {
 /* Tablet: keep the reveal but give the (narrower) separated cards a bit more
    room — tighter header gap and slightly smaller card padding. */
 @media (min-width: 768px) and (max-width: 1023px) {
+    .bannercard1-heading{
+        font-size: 28px;
+    }
+    .bannercard4-heading{
+        font-size: 28px;
+    }
+    .bannercard2-heading{
+        font-size: 18px;
+    }
     .beliefs-scroll > .sticky > div > div {
         margin-bottom: 28px;
     }
@@ -987,4 +999,25 @@ body {
      .float-stat-br p{
         font-size: 14px;
      }
+}
+
+.offer-course-card
+{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+.offer-course-card img
+{
+    width:100%;
+}
+.offer-course-card:hover{
+    background-color: black;
+}
+.offer-course-card:hover h3{
+    color:#fff
+}
+.offer-course-card:hover p{
+    color: #fff;
 }

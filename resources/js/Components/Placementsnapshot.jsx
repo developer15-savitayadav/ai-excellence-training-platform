@@ -141,7 +141,7 @@ export default function PlacementSnapshot() {
                     pinned ? "fixed top-0 left-0 z-30" : "relative"
                 }`}
             >
-                <div className="mx-auto max-w-[1050px] px-5 pt-20">
+                <div className="mx-auto max-w-[1200px] px-5 pt-20">
                     <p className="font-mono text-xs uppercase tracking-[0.1em] text-[#982cdc] mb-3">
                         YOUR NEXT STEP
                     </p>

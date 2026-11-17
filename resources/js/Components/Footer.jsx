@@ -8,7 +8,17 @@ function FacebookIcon() {
         </svg>
     );
 }
-
+function Logo() {
+    return (
+        <Link href="/" className="flex shrink-0 items-center gap-2">
+            <img
+                src="/assets/images/logoExtra1.png"
+                alt="AI Execellence Academy"
+                className="h-14 w-36 object-contain sm:h-16 sm:w-40 md:h-14 md:w-36 lg:h-20 lg:w-30"
+            />
+        </Link>
+    );
+}
 function TwitterIcon() {
     return (
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -48,11 +58,9 @@ export default function Footer() {
                     {/* Newsletter Section */}
                     <div className="col-span-2 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)]">
-                                <Sparkles size={14} className="text-white" />
-                            </div>
+                            
                             <span className="text-sm font-semibold text-white">
-                                AI Execellence Academy
+                              <Logo />
                             </span>
                         </div>
 

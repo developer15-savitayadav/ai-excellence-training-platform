@@ -422,7 +422,7 @@ function LearnSkillSection() {
             <h2
                 ref={ref}
                 style={{ fontFamily: "'Poppins', sans-serif" }}
-                className={`relative mx-auto max-w-[1050px]  text-[clamp(2.35rem,9.2vw,9.2rem)] font-bold uppercase leading-[1.06] tracking-[-0.03em] text-[#0a0a0a] transition-all duration-700 ease-out motion-reduce:transition-none ${
+                className={`relative mx-auto max-w-[1200px]  text-[clamp(2.35rem,9.2vw,9.2rem)] font-bold uppercase leading-[1.06] tracking-[-0.03em] text-[#0a0a0a] transition-all duration-700 ease-out motion-reduce:transition-none ${
                     inView
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
@@ -465,7 +465,7 @@ const courseOfferData = {
         {
             lessons: "20 Lessons",
             hours: "5 Hours",
-            title: "AI Tools Mastery",
+            title: "AI Tools \n Mastery",
             description:
                 "Get hands-on with the AI tools professionals use daily — from content creation to workflow automation.",
             slug: "ai-tools-mastery",
@@ -474,7 +474,7 @@ const courseOfferData = {
         {
             lessons: "28 Lessons",
             hours: "7 Hours",
-            title: "Python Foundation",
+            title: "Python \n Foundation",
             description:
                 "Build a solid programming base in Python — the language behind every AI and data career.",
             slug: "python-programming-foundation",
@@ -483,7 +483,7 @@ const courseOfferData = {
         {
             lessons: "24 Lessons",
             hours: "6 Hours",
-            title: "Generative AI & Prompt Engineering",
+            title: "Generative AI & \n Prompt Engineering",
             description:
                 "Learn to communicate with AI models effectively and build reliable prompt workflows for daily tasks.",
             slug: "generative-ai-prompt-engineering",
@@ -492,7 +492,7 @@ const courseOfferData = {
         {
             lessons: "18 Lessons",
             hours: "4.5 Hours",
-            title: "AI for Business Owners",
+            title: "AI for Business \n Owners",
             description:
                 "Understand practical AI use cases to cut costs, save time and grow revenue in your business.",
             slug: "ai-for-business",
@@ -501,7 +501,7 @@ const courseOfferData = {
         {
             lessons: "32 Lessons",
             hours: "8 Hours",
-            title: "AKTU Summer/Winter Training",
+            title: "AKTU Summer/Winter \n Training",
             description:
                 "AKTU-aligned industrial training program covering AI fundamentals with certification for engineering students.",
             slug: "summer-winter-training",
@@ -512,7 +512,7 @@ const courseOfferData = {
         {
             lessons: "40 Lessons",
             hours: "16 Hours",
-            title: "Digital Marketing with AI",
+            title: "Digital Marketing \n with AI",
             description:
                 "Combine core digital marketing skills with AI tools to plan, create and optimise campaigns faster.",
             slug: "digital-marketing-with-ai",
@@ -522,7 +522,7 @@ const courseOfferData = {
         {
             lessons: "48 Lessons",
             hours: "20 Hours",
-            title: "Python for Data Analytics",
+            title: "Python for Data \n Analytics",
             description:
                 "Turn raw data into clear business insights using Python, pandas and practical visualisation techniques.",
             slug: "python-for-data-analytics",
@@ -531,7 +531,7 @@ const courseOfferData = {
         {
             lessons: "44 Lessons",
             hours: "18 Hours",
-            title: "Applied Machine Learning",
+            title: "Applied Machine \n Learning",
             description:
                 "Master practical ML workflows — from data preparation to model training, evaluation and deployment.",
             slug: "applied-machine-learning",
@@ -542,10 +542,10 @@ const courseOfferData = {
         {
             lessons: "120 Lessons",
             hours: "60 Hours",
-            title: "Advanced Diploma in AI & Machine Learning",
+            title: "Advanced Diploma in AI & \n Machine Learning",
             description:
                 "A complete placement-backed path from programming foundations to deployed AI and ML systems.",
-            price: "₹79,999",
+
             popular: true,
             slug: "advanced-diploma-ai-ml",
             image: "/assets/images/advanced-diploma-ai-ml.png",
@@ -553,7 +553,7 @@ const courseOfferData = {
         {
             lessons: "96 Lessons",
             hours: "48 Hours",
-            title: "AI-Powered Digital Marketing Specialist",
+            title: "AI-Powered Digital \n Marketing Specialist",
             description:
                 "Become a digital marketer who leverages AI for strategy, content, ads and analytics — placement support included.",
             slug: "ai-digital-marketing-specialist",
@@ -562,7 +562,7 @@ const courseOfferData = {
         {
             lessons: "110 Lessons",
             hours: "56 Hours",
-            title: "Data Science & AI Career Track with Internship",
+            title: "Data Science & AI  Career \n Track with Internship",
             description:
                 "Master statistics, machine learning and AI with a guaranteed internship and dedicated interview preparation.",
             slug: "data-science-ai-career-track",
@@ -619,14 +619,14 @@ function OfferCourseCard({ course }) {
     return (
         <Link
             href={courseHref}
-            className="group block h-full bg-white border border-black/5 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative p-3"
+            className="offer-course-card group block_ h-full bg-white border border-black/5 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative p-4"
         >
             {course.popular && (
                 <div className="absolute top-3 right-3 bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white text-[8px] font-bold uppercase tracking-wider px-3 py-1 rounded-[14px] z-10 shadow-sm">
                     Popular
                 </div>
             )}
-            <div className="relative h-[170px] overflow-hidden rounded-[14px]">
+            <div className="relative w-full h-[170px] overflow-hidden rounded-[14px]">
                 <img
                     src={course.image}
                     alt={course.title}
@@ -635,8 +635,8 @@ function OfferCourseCard({ course }) {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-10 bg-[linear-gradient(to_top,rgba(255,255,255,.35),transparent)]" />
             </div>
-            <div className="p-6">
-                <div className="flex items-center justify-start mb-4 font-[500] text-[14px]  gap-2">
+            <div className="p-0">
+                <div className="flex items-center justify-start mt-4 mb-4 font-[500] text-[14px]  gap-2">
                     <span className="rounded-full bg-[#ecf0f5] text-black px-5 py-0">
                         {course.lessons}
                     </span>
@@ -644,7 +644,7 @@ function OfferCourseCard({ course }) {
                         {course.hours}
                     </span>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-2">
+                <h3 className="text-xl leading-7 font-bold text-black mb-2 min-h-[56px] whitespace-pre-line">
                     {course.title}
                 </h3>
                 <p className="text-sm text-black/60 leading-relaxed">
@@ -654,12 +654,15 @@ function OfferCourseCard({ course }) {
                     <span className="text-2xl font-bold text-black">
                         {course.price}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-black text-white text-[13px] font-semibold px-5 py-2.5 transition-all duration-300 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:shadow-[0_8px_20px_-4px_rgba(152,44,220,.45)]">
-                        View Details
-                        <ArrowRight size={14} />
-                    </span>
                 </div>
             </div>
+            <div className=" pr-6">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-black text-white text-[13px] font-semibold px-5 py-2.5 transition-all duration-300 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:shadow-[0_8px_20px_-4px_rgba(152,44,220,.45)]">
+                    View Details
+                    <ArrowRight size={14} />
+                </span>
+            </div>
+            <div></div>
         </Link>
     );
 }
@@ -694,7 +697,7 @@ export default function Home() {
                         window.innerWidth < 1024
                             ? "+=" +
                               Math.round(
-                                  Math.min(2226, window.innerHeight * 2.6)
+                                  Math.min(2226, window.innerHeight * 2.6),
                               )
                             : "+=2226",
                     pin: true,
@@ -761,9 +764,9 @@ export default function Home() {
                     <div className="absolute left-1/2 top-0 h-[420px] w-[650px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(152,44,220,.15),transparent_68%)] blur-3xl" />
                     <div className="absolute right-0 bottom-0 h-[300px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(238,195,105,.12),transparent_68%)] blur-3xl" />
 
-                    <div className="relative z-10 mx-auto w-full max-w-[950px] text-center">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                    <div className="relative z-10 mx-auto w-full max-w-[1200px] text-center">
+                        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse " />
                             AI EXECELLENCE ACADEMY
                         </div>
 
@@ -814,7 +817,7 @@ export default function Home() {
                                 </div>
 
                                 <div className="relative">
-                                    <div className="text-[40px] font-bold leading-none tracking-[-0.04em] text-white mb-6">
+                                    <div className="text-[40px] font-bold leading-none tracking-[-0.04em] text-white mb-6 bannercard1-heading">
                                         97M
                                     </div>
                                     <p className="mt-2 text-[11px] font-medium leading-snug !text-white/75">
@@ -829,7 +832,7 @@ export default function Home() {
                             {/* CARD 2 — light sky, medium, offset down a bit */}
                             <div className="hero-stat-card group relative flex h-[170px] flex-col justify-end overflow-hidden rounded-[22px] bg-[linear-gradient(60deg,#c2e9fb,#a1c4fd,#a1c4fd)] p-5 text-left shadow-[0_14px_35px_-12px_rgba(161,196,253,.6)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-12px_rgba(161,196,253,.7)] md:col-span-1 md:mt-8">
                                 <div>
-                                    <div className="text-[26px] font-bold leading-tight tracking-[-0.03em] text-[#1149a3] mb-6">
+                                    <div className="text-[26px] font-bold leading-tight tracking-[-0.03em] text-[#1149a3] mb-6 bannercard2-heading">
                                         ₹12–25 LPA
                                     </div>
                                     <p className="mt-1.5 text-[11px] font-medium leading-snug text-[#12294a]/70">
@@ -854,7 +857,7 @@ export default function Home() {
                                     <div className="text-[17px] font-medium uppercase leading-[1.15] tracking-[-0.01em] text-[#8d3a0c]">
                                         AI jobs are{" "}
                                     </div>
-                                    <p className=" uppercase  mt-2 text-[24px] font-bold leading-snug text-[#8d3a0c]">
+                                    <p className=" uppercase  mt-2 text-[24px] font-bold leading-snug text-[#8d3a0c] hero-stat-para">
                                         Exploding
                                     </p>
                                 </div>
@@ -866,7 +869,7 @@ export default function Home() {
 
                                 <div>
                                     <div className="flex items-end gap-1.5">
-                                        <span className="text-[40px] font-bold leading-none tracking-[-0.04em] text-white mb-6">
+                                        <span className="text-[40px] font-bold leading-none tracking-[-0.04em] text-white mb-6 bannercard4-heading">
                                             85%
                                         </span>
                                         <span className="mb-1.5 text-sm font-bold text-[#ffd6f2]">
@@ -924,7 +927,7 @@ export default function Home() {
                 <LearnSkillSection />
 
                 {/* NUMBERS */}
-                <section className="relative overflow-hidden bg-[#070d0d] px-5 py-14 sm:py-16 lg:py-20 text-white">
+                <section className="relative overflow-hidden bg-[#070d0d] px-5 py-14 sm:py-16 lg:py-20 text-white ">
                     {/* World map background */}
                     <div
                         className="absolute inset-0 opacity-[0.12] pointer-events-none"
@@ -940,7 +943,7 @@ export default function Home() {
                     {/* Soft background glow */}
                     <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#982cdc]/[0.06] blur-[100px] pointer-events-none" />
 
-                    <div className="relative z-10 mx-auto max-w-[1050px]">
+                    <div className="relative z-10 mx-auto max-w-[1200px]">
                         {/* Header */}
                         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
                             {/* Left heading */}
@@ -1075,9 +1078,9 @@ export default function Home() {
                 </section>
                 {/* OUR COURSES */}
                 <section className="overflow-hidden px-5 py-20 bg-[#f5f5f2]">
-                    <div className="mx-auto max-w-[1050px]">
+                    <div className="mx-auto max-w-[1200px]">
                         <div className="text-center">
-                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 OUR COURSES
                             </div>
@@ -1125,7 +1128,7 @@ export default function Home() {
                                 onTouchEnd={handleTouchEnd}
                             >
                                 <div
-                                    className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
+                                    className=" pb-4 flex transition-transform duration-500 ease-out motion-reduce:transition-none"
                                     style={{
                                         transform: `translateX(-${
                                             slideIndex * (100 / perView)
@@ -1192,10 +1195,10 @@ export default function Home() {
                                                 type="button"
                                                 onClick={() => setSlideIndex(i)}
                                                 aria-label={`Go to slide ${i + 1}`}
-                                                className={`h-1.5 rounded-full transition-all duration-300 ${
+                                                className={`h-3 rounded-full transition-all duration-300 ${
                                                     i === slideIndex
                                                         ? "w-6 bg-black"
-                                                        : "w-1.5 bg-black/20"
+                                                        : "w-3 bg-black/20"
                                                 }`}
                                             />
                                         ),
@@ -1225,10 +1228,10 @@ export default function Home() {
                                             type="button"
                                             onClick={() => setSlideIndex(i)}
                                             aria-label={`Go to slide ${i + 1}`}
-                                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                            className={`h-3 rounded-full transition-all duration-300 ${
                                                 i === slideIndex
                                                     ? "w-6 bg-black"
-                                                    : "w-1.5 bg-black/20"
+                                                    : "w-3 bg-black/20"
                                             }`}
                                         />
                                     ),
@@ -1250,10 +1253,10 @@ export default function Home() {
                 {/* WHY CHOOSE */}
                 <section className="relative overflow-hidden border-t border-black/5 px-5 py-20 bg-[#f5f5f2]">
                     <div className="pointer-events-none absolute -right-32 top-0 h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(152,44,220,.06),transparent_70%)] blur-2xl" />
-                    <div className="mx-auto max-w-[1050px]">
+                    <div className="mx-auto max-w-[1200px]">
                         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]  items-center">
                             <div>
-                                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     WHY US?
                                 </div>
@@ -1293,7 +1296,7 @@ export default function Home() {
                                             : "translate-y-6 opacity-0"
                                     } motion-reduce:transition-none motion-reduce:transform-none`}
                                 >
-                                    <span className="select-none font-mono text-[13px] font-normal leading-none text-black/25 transition-colors duration-300 group-hover:text-[#982cdc] sm:-ml-2">
+                                    <span className="select-none font-mono text-[18px] font-bold leading-none text-black/25 transition-colors duration-300 group-hover:text-[#982cdc] sm:-ml-2">
                                         {index + 1}
                                     </span>
 
@@ -1338,9 +1341,9 @@ export default function Home() {
 
                 {/* MENTORS */}
                 <section className="px-5 py-20 bg-[#f5f5f2] overflow-hidden">
-                    <div className="mx-auto max-w-[1050px]">
+                    <div className="mx-auto max-w-[1200px]">
                         <div className="text-center mb-12">
-                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 OUR MENTORS
                             </div>
@@ -1379,7 +1382,7 @@ export default function Home() {
                         }}
                     />
 
-                    <div className="relative z-10 mx-auto max-w-[1050px]">
+                    <div className="relative z-10 mx-auto max-w-[1200px]">
                         <div className="flex items-end justify-between gap-6">
                             <div>
                                 <SectionLabel light>WHO WE TRAIN</SectionLabel>
@@ -1455,9 +1458,9 @@ export default function Home() {
 
                 {/* TESTIMONIAL */}
                 <section className="px-5 py-12 sm:py-14 md:py-16 lg:py-20 bg-[#f5f5f2] overflow-hidden">
-                    <div className="mx-auto max-w-[1050px]">
+                    <div className="mx-auto max-w-[1200px]">
                         <div className="text-center mb-8 lg:mb-12">
-                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 TESTIMONIAL
                             </div>
@@ -1559,7 +1562,7 @@ export default function Home() {
                 {/* FINAL CTA */}
                 <section className="border-t border-black/5 px-5 py-24 text-center bg-[#f5f5f2]">
                     <div className="mx-auto max-w-[700px]">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium text-black/70 backdrop-blur-sm mb-6">
+                        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                             START YOUR JOURNEY
                         </div>

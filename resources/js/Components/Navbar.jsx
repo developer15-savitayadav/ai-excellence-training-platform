@@ -277,7 +277,7 @@ export default function Navbar() {
                                 placeholder="Search courses..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="h-9 w-[168px] rounded-full border border-black/[0.08] bg-black/[0.03] pl-9 pr-4 text-[13px] text-black outline-none transition-all duration-300 placeholder:text-black/35 "
+                                className="h-9 w-[168px] rounded-full border border-black/[0.08] bg-black/[0.03] pl-9 pr-4 text-[16px] text-black outline-none transition-all duration-300 placeholder:text-black/35 "
                             />
                             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-black/35" />
                         </form>
@@ -373,7 +373,7 @@ export default function Navbar() {
                                 <>
                                     <Link
                                         href="/register"
-                                        className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)] md:px-3 md:py-1.5 md:text-[13px] lg:px-5 lg:py-2 lg:text-[13.5px]"
+                                        className="group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] p-[12px_20px] text-[16px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)] md:px-3 md:py-1.5 md:text-[13px] lg:px-5 lg:py-2 lg:text-[16px]"
                                     >
                                         Get Started
                                         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
