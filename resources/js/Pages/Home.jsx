@@ -412,8 +412,33 @@ function SkillHeadingImage() {
     );
 }
 
+// Har letter ko alag span me todta hai
+function SplitText({ text, startIndex = 0, inView, step = 40 }) {
+    return text.split("").map((char, i) => (
+        <span
+            key={i}
+            aria-hidden="true"
+            className="inline-block will-change-transform"
+            style={{
+                transition:
+                    "transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease",
+                transitionDelay: `${(startIndex + i) * step}ms`,
+                transform: inView ? "translateY(0)" : "translateY(60%)",
+                opacity: inView ? 1 : 0,
+                whiteSpace: "pre", // spaces bachane ke liye
+            }}
+        >
+            {char}
+        </span>
+    ));
+}
+
 function LearnSkillSection() {
     const [ref, inView] = useInView();
+
+    const line1 = "Learn Skill That";
+    const part1 = "Matt";
+    const part2 = "ers.";
 
     return (
         <section className="relative overflow-hidden bg-[#f5f5f2] px-5 py-20 sm:py-28">
@@ -422,18 +447,42 @@ function LearnSkillSection() {
 
             <h2
                 ref={ref}
+                aria-label="Learn Skill That Matters."
                 style={{ fontFamily: "'Poppins', sans-serif" }}
-                className={`relative mx-auto max-w-[1200px]  text-[clamp(2.35rem,9.2vw,9.2rem)] font-bold uppercase leading-[1.06] tracking-[-0.03em] text-[#0a0a0a] transition-all duration-700 ease-out motion-reduce:transition-none ${
-                    inView
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-8 opacity-0"
-                }`}
+                className="relative mx-auto max-w-[1200px] text-[clamp(2.35rem,9.2vw,9.2rem)] font-bold uppercase leading-[1.06] tracking-[-0.03em] text-[#0a0a0a]"
             >
-                <span className="block">Learn Skill That</span>
-                <span className="block">
-                    Matt
-                    <SkillHeadingImage />
-                    ers.
+                <span className="block overflow-hidden">
+                    <SplitText text={line1} inView={inView} />
+                </span>
+
+                <span className="block overflow-hidden">
+                    <SplitText
+                        text={part1}
+                        startIndex={line1.length}
+                        inView={inView}
+                    />
+
+                    {/* Image bhi letters ke saath animate hogi */}
+                    <span
+                        className="inline-block"
+                        style={{
+                            transition:
+                                "transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease",
+                            transitionDelay: `${(line1.length + part1.length) * 40}ms`,
+                            transform: inView
+                                ? "translateY(0) scale(1)"
+                                : "translateY(60%) scale(0.8)",
+                            opacity: inView ? 1 : 0,
+                        }}
+                    >
+                        <SkillHeadingImage />
+                    </span>
+
+                    <SplitText
+                        text={part2}
+                        startIndex={line1.length + part1.length + 2}
+                        inView={inView}
+                    />
                 </span>
             </h2>
         </section>
