@@ -361,7 +361,7 @@ export default function Career() {
                         </div>
 
                         {/* Short-Term */}
-                        <div className="w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                        <div className="tier-col w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-body mb-4">
                                 Short-Term
                             </span>
@@ -376,7 +376,7 @@ export default function Career() {
                         </div>
 
                         {/* Professional */}
-                        <div className="w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
+                        <div className="tier-col w-[230px] shrink-0 rounded-[28px] bg-black/[0.035] px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-body mb-4">
                                 Professional
                             </span>
@@ -391,7 +391,7 @@ export default function Career() {
                         </div>
 
                         {/* Career — highlighted tier */}
-                        <div className="w-[230px] shrink-0 rounded-[28px] bg-violet/25 px-4 py-6 flex flex-col items-center">
+                        <div className="tier-col w-[230px] shrink-0 rounded-[28px] bg-violet/25 px-4 py-6 flex flex-col items-center">
                             <span className="font-display font-semibold text-base text-violet-950 mb-4">
                                 Career
                             </span>

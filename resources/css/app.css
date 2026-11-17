@@ -931,6 +931,9 @@ body {
    vertically. Cards stay positioned (relative) so the absolute icon and
    image/overlay inside each card keep anchoring to the card itself. */
 @media (max-width: 768px) {
+     .tier-col{
+      width: 120px;
+    }
     .hero-stat-card .hero-stat-para{
         font-size: 18px;
     }
@@ -975,6 +978,7 @@ body {
 /* Tablet: keep the reveal but give the (narrower) separated cards a bit more
    room — tighter header gap and slightly smaller card padding. */
 @media (min-width: 768px) and (max-width: 1023px) {
+
     .bannercard1-heading{
         font-size: 28px;
     }
