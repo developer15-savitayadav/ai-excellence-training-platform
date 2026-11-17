@@ -58,7 +58,7 @@ export default function Footer() {
                     {/* Newsletter Section */}
                     <div className="col-span-2 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
-                            
+
                             <span className="text-sm font-semibold text-white">
                               <Logo />
                             </span>
@@ -165,7 +165,7 @@ export default function Footer() {
                         <h3 className="text-sm font-semibold text-white/70 mb-4">
                             Social Media
                         </h3>
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-4 footer-social">
                             {socialLinks.map((social) => (
                                 <a
                                     key={social.name}

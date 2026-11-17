@@ -993,6 +993,9 @@ body {
     }
 }
 @media (max-width: 480px) {
+    .footer-social{
+flex-direction: row;
+    }
     .float-stat-br {
         padding: 15px 10px ;
     }
