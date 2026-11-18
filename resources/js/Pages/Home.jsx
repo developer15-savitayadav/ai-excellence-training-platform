@@ -946,7 +946,7 @@ export default function Home() {
                                     <div className="text-[17px] font-medium uppercase leading-[1.15] tracking-[-0.01em] text-[#8d3a0c]">
                                         AI jobs are{" "}
                                     </div>
-                                    <p className=" uppercase  mt-2 text-[24px] font-bold leading-snug text-[#8d3a0c] hero-stat-para">
+                                    <p className=" uppercase  mt-2 text-[24px] font-bold leading-snug text-[#8d3a0c] hero-stat-para md:text-[18px]">
                                         Exploding
                                     </p>
                                 </div>
