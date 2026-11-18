@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "@inertiajs/react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { Link, usePage, router } from "@inertiajs/react";
 import {
     Zap,
     Award,
@@ -277,12 +277,72 @@ function LineChart(props) {
 }
 
 export default function CoursesMegaMenu({ onMobileNavigate }) {
-    const [activeTab, setActiveTab] = useState(tabs[0].id);
-    const [isHovered, setIsHovered] = useState(false);
+    const path = usePage().url.split("?")[0];
+    const onCoursesPage = path === "/courses" || path.startsWith("/courses/");
+    const currentTab = tabs.find((t) =>
+        t.courses.some((c) => path === c.href || path.startsWith(`${c.href}/`)),
+    );
+
+    const [activeTab, setActiveTab] = useState(currentTab?.id ?? tabs[0].id);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuStyle, setMenuStyle] = useState({});
     const [mobileOpen, setMobileOpen] = useState(false);
     const [mobileAccordionTab, setMobileAccordionTab] = useState(null);
 
+    const wrapRef = useRef(null);
+    const inputType = useRef("mouse"); // "mouse" | "touch" | "pen" | "keyboard"
+
+    const linkActive = menuOpen || onCoursesPage;
     const activeTabData = tabs.find((t) => t.id === activeTab);
+
+    useEffect(() => {
+        setMenuOpen(false);
+        setActiveTab(currentTab?.id ?? tabs[0].id);
+    }, [path]);
+
+     useEffect(() => {
+        if (!menuOpen) return;
+        const onDown = (e) => {
+            if (wrapRef.current && !wrapRef.current.contains(e.target)) {
+                setMenuOpen(false);
+            }
+        };
+        const onKey = (e) => {
+            if (e.key === "Escape") setMenuOpen(false);
+        };
+        document.addEventListener("pointerdown", onDown);
+        document.addEventListener("keydown", onKey);
+        return () => {
+            document.removeEventListener("pointerdown", onDown);
+            document.removeEventListener("keydown", onKey);
+        };
+    }, [menuOpen]);
+
+     useLayoutEffect(() => {
+        if (!menuOpen) return;
+        const place = () => {
+            if (!wrapRef.current) return;
+            const rect = wrapRef.current.getBoundingClientRect();
+            const vw = document.documentElement.clientWidth;
+            const width = Math.min(680, vw - 24);
+            const idealLeft = rect.left + rect.width / 2 - width / 2;
+            const left = Math.max(12, Math.min(idealLeft, vw - 12 - width));
+            setMenuStyle({ width, left: left - rect.left });
+        };
+        place();
+        window.addEventListener("resize", place);
+        return () => window.removeEventListener("resize", place);
+    }, [menuOpen]);
+
+    function handleTriggerClick() {
+
+        if (inputType.current === "mouse" && menuOpen) {
+            setMenuOpen(false);
+            router.visit("/courses");
+            return;
+        }
+         setMenuOpen((o) => !o);
+    }
 
     function handleMobileNavigate() {
         setMobileOpen(false);
@@ -291,19 +351,29 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
 
     return (
         <>
-            {/* Desktop Mega Menu */}
+            {/* Desktop / Tablet Mega Menu (768px+) */}
             <div
+                ref={wrapRef}
                 className="relative hidden md:block"
-                onMouseEnter={() => {
-                    setIsHovered(true);
-                    setMobileOpen(false);
+                onPointerEnter={(e) => {
+                    if (e.pointerType === "mouse") {
+                        setMenuOpen(true);
+                        setMobileOpen(false);
+                    }
                 }}
-                onMouseLeave={() => setIsHovered(false)}
+                onPointerLeave={(e) => {
+                    if (e.pointerType === "mouse") setMenuOpen(false);
+                }}
             >
-                <Link
-                    href="/courses"
+                <button
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded={menuOpen}
+                    onPointerDown={(e) => (inputType.current = e.pointerType)}
+                    onKeyDown={() => (inputType.current = "keyboard")}
+                    onClick={handleTriggerClick}
                     className={`relative rounded-full px-4 py-2 text-[16px] font-medium tracking-[-0.01em] transition-colors duration-200 md:px-2 md:text-[13px] lg:px-4 lg:text-[16px] ${
-                        isHovered
+                        linkActive
                             ? "text-black"
                             : "text-black/55 hover:text-black"
                     }`}
@@ -311,27 +381,32 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                     Courses
                     <span
                         className={`absolute inset-x-4 bottom-0 h-[2px] rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] transition-all duration-300 md:inset-x-2 lg:inset-x-4 ${
-                            isHovered
+                            linkActive
                                 ? "scale-x-100 opacity-100"
                                 : "scale-x-0 opacity-0"
                         }`}
                     />
-                </Link>
+                </button>
 
-                {isHovered && (
-                    <div className="absolute left-1/2 top-full z-50 mt-0 w-[680px] -translate-x-1/2 animate-menu-pop overflow-hidden rounded-2xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)]">
-                        <div className="flex">
-                            {/* Left Column — Tabs */}
-                            <div className="w-[260px] shrink-0 border-r border-black/[0.06] bg-black/[0.02] p-2">
+                {menuOpen && (
+                    <div
+                        style={menuStyle}
+                        className="absolute top-full z-50 mt-0 animate-menu-pop overflow-hidden rounded-2xl border border-black/[0.07] bg-white shadow-[0_30px_70px_-20px_rgba(15,22,22,0.35)]"
+                    >
+                        <div className="flex max-h-[calc(100vh-120px)] overflow-y-auto">
+                            {/* Left — Tabs */}
+                            <div className="w-[240px] shrink-0 border-r border-black/[0.06] bg-black/[0.02] p-2 lg:w-[260px]">
                                 {tabs.map((tab) => {
                                     const Icon = tab.icon;
                                     const isActive = activeTab === tab.id;
                                     return (
                                         <button
                                             key={tab.id}
-                                            onMouseEnter={() =>
-                                                setActiveTab(tab.id)
-                                            }
+                                            type="button"
+                                            onPointerEnter={(e) => {
+                                                if (e.pointerType === "mouse")
+                                                    setActiveTab(tab.id);
+                                            }}
                                             onClick={() => setActiveTab(tab.id)}
                                             className={`group flex w-full items-start gap-3 rounded-xl px-3 py-3 text-left transition-all duration-200 ${
                                                 isActive
@@ -358,14 +433,14 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                                 >
                                                     {tab.label}
                                                 </p>
-                                                <p className="mt-0.5 text-[11.5px] text-black/40 leading-tight">
+                                                <p className="mt-0.5 text-[11.5px] leading-tight text-black/40">
                                                     {tab.subtitle}
                                                 </p>
                                             </div>
                                             <ChevronRight
                                                 className={`ml-auto mt-1 h-3.5 w-3.5 shrink-0 transition-all duration-200 ${
                                                     isActive
-                                                        ? "translate-x-0 opacity-100 text-[#982cdc]"
+                                                        ? "translate-x-0 text-[#982cdc] opacity-100"
                                                         : "-translate-x-1 opacity-0"
                                                 }`}
                                             />
@@ -377,15 +452,15 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                 <Link
                                     href="/courses"
                                     className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-[13px] font-medium text-black/50 transition-colors hover:bg-white/60 hover:text-black"
-                                    onClick={() => setIsHovered(false)}
+                                    onClick={() => setMenuOpen(false)}
                                 >
                                     View all courses
                                     <ChevronRight className="h-3.5 w-3.5" />
                                 </Link>
                             </div>
 
-                            {/* Right Column — Courses */}
-                            <div className="flex-1 p-3">
+                            {/* Right — Courses */}
+                            <div className="min-w-0 flex-1 p-3">
                                 <div className="mb-2 flex items-center justify-between px-1">
                                     <p className="text-[11.5px] font-semibold uppercase tracking-wider text-black/30">
                                         {activeTabData?.label}
@@ -394,20 +469,31 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                 <div className="space-y-0.5">
                                     {activeTabData?.courses.map((course) => {
                                         const CourseIcon = course.icon;
+                                        const current = path === course.href;
                                         return (
                                             <Link
                                                 key={course.name}
                                                 href={course.href}
-                                                className="group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200 hover:bg-[linear-gradient(60deg,#982cdc,#eec369)]/5"
                                                 onClick={() =>
-                                                    setIsHovered(false)
+                                                    setMenuOpen(false)
                                                 }
+                                                className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200 ${
+                                                    current
+                                                        ? "bg-black/[0.05]"
+                                                        : "hover:bg-black/[0.03]"
+                                                }`}
                                             >
-                                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-black/[0.04] text-black/35 transition-all duration-200 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:text-white">
+                                                <span
+                                                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all duration-200 ${
+                                                        current
+                                                            ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white"
+                                                            : "bg-black/[0.04] text-black/35 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:text-white"
+                                                    }`}
+                                                >
                                                     <CourseIcon className="h-4 w-4" />
                                                 </span>
                                                 <div className="min-w-0 flex-1">
-                                                    <p className="text-[13.5px] font-medium text-black/80 transition-colors group-hover:text-black">
+                                                    <p className="text-[13.5px] font-medium leading-snug text-black/80 transition-colors group-hover:text-black">
                                                         {course.name}
                                                     </p>
                                                     <p className="text-[11.5px] text-black/35 transition-colors group-hover:text-black/50">
@@ -425,19 +511,25 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                 )}
             </div>
 
-            {/* Mobile — Expandable accordion under Courses */}
+
+            {/* Mobile — Expandable accordion under Courses (< 768px) */}
             <div className="md:hidden">
                 <button
+                    type="button"
                     onClick={() => setMobileOpen(!mobileOpen)}
                     className={`group flex w-full items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-medium transition-colors ${
-                        mobileOpen
+                        mobileOpen || onCoursesPage
                             ? "bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent"
                             : "text-black/65 hover:bg-black/[0.04] hover:text-black"
                     }`}
                 >
                     <span>Courses</span>
                     <svg
-                        className={`h-4 w-4 transition-transform duration-200 ${mobileOpen ? "rotate-180 text-[#982cdc]" : "text-black/25"}`}
+                        className={`h-4 w-4 transition-transform duration-200 ${
+                            mobileOpen
+                                ? "rotate-180 text-[#982cdc]"
+                                : "text-black/25"
+                        }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth={2}
@@ -459,6 +551,7 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                             return (
                                 <div key={tab.id}>
                                     <button
+                                        type="button"
                                         onClick={() =>
                                             setMobileAccordionTab(
                                                 isOpen ? null : tab.id,
@@ -475,7 +568,9 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                             {tab.label}
                                         </span>
                                         <svg
-                                            className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                                            className={`h-3.5 w-3.5 shrink-0 transition-transform duration-200 ${
+                                                isOpen ? "rotate-180" : ""
+                                            }`}
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             strokeWidth={2}
@@ -495,7 +590,11 @@ export default function CoursesMegaMenu({ onMobileNavigate }) {
                                                 <Link
                                                     key={course.name}
                                                     href={course.href}
-                                                    className="flex flex-col rounded-xl px-3 py-2.5 text-black/55 transition-colors hover:bg-black/[0.04] hover:text-black"
+                                                    className={`flex flex-col rounded-xl px-3 py-2.5 transition-colors hover:bg-black/[0.04] hover:text-black ${
+                                                        path === course.href
+                                                            ? "bg-black/[0.04] text-black"
+                                                            : "text-black/55"
+                                                    }`}
                                                     onClick={
                                                         handleMobileNavigate
                                                     }

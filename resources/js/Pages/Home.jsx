@@ -644,16 +644,50 @@ const mentors = [
 ];
 
 function MentorCard({ mentor }) {
+    const [active, setActive] = useState(false);
+    const ref = useRef(null);
+
+     useEffect(() => {
+        if (!active) return;
+        const onDown = (e) => {
+            if (ref.current && !ref.current.contains(e.target)) setActive(false);
+        };
+        document.addEventListener("pointerdown", onDown);
+        return () => document.removeEventListener("pointerdown", onDown);
+    }, [active]);
+
     return (
-        <div className="group relative h-[300px] overflow-hidden rounded-2xl">
+        <div
+            ref={ref}
+            onClick={() => setActive((a) => !a)}
+            onPointerEnter={(e) => {
+                if (e.pointerType === "mouse") setActive(true);
+            }}
+            onPointerLeave={(e) => {
+                if (e.pointerType === "mouse") setActive(false);
+            }}
+            className="relative h-[300px] cursor-pointer overflow-hidden rounded-2xl"
+        >
             <img
                 src={mentor.image}
                 alt={mentor.name}
                 loading="lazy"
-                className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                className={`h-full w-full object-cover transition-all duration-500 ${
+                    active ? "scale-105 grayscale-0" : "grayscale"
+                }`}
             />
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,13,13,.85)_0%,rgba(7,13,13,0)_55%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="absolute bottom-0 left-0 right-0 translate-y-3 p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <div
+                className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(7,13,13,.85)_0%,rgba(7,13,13,0)_55%)] transition-opacity duration-300 ${
+                    active ? "opacity-100" : "opacity-0"
+                }`}
+            />
+            <div
+                className={`absolute bottom-0 left-0 right-0 p-5 transition-all duration-300 ${
+                    active
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-3 opacity-0"
+                }`}
+            >
                 <h3 className="text-[16px] font-bold text-white">
                     {mentor.name}
                 </h3>

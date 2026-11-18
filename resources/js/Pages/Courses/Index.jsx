@@ -284,6 +284,7 @@ function useReveal(threshold = 0.15) {
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
+        setVisible(false);
         const obs = new IntersectionObserver(
             ([e]) => {
                 if (e.isIntersecting) {
@@ -298,7 +299,6 @@ function useReveal(threshold = 0.15) {
     }, [threshold]);
     return [ref, visible];
 }
-
 function RevealDiv({ children, className = "", delay = 0, ...props }) {
     const [ref, visible] = useReveal();
     return (
@@ -520,12 +520,12 @@ export default function CoursesIndex({ courses = null }) {
                         </RevealDiv>
 
                         <RevealDiv delay={240}>
-                            <div className="mt-8 flex w-full max-w-full items-center gap-2 rounded-full border border-black/5 bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,.04)] sm:gap-3 sm:px-5 sm:py-3">
-                                <span className="shrink-0 text-base sm:text-lg">
+                            <div className="mx-auto mt-8 flex w-full max-w-[560px] items-center gap-3 rounded-full border border-black/5 bg-white px-4 py-4 shadow-[0_8px_30px_rgba(0,0,0,.04)] sm:gap-4 sm:px-6 sm:py-5">
+                                <span className="shrink-0 text-xl sm:text-2xl">
                                     📞
                                 </span>
 
-                                <span className="min-w-0 flex-1 text-left text-xs leading-5 text-black/65 sm:text-sm">
+                                <span className="min-w-0 flex-1 text-left text-[13px] leading-5 text-black/65 sm:text-[15px] sm:leading-6">
                                     Take our free{" "}
                                     <strong className="text-black">
                                         15-min career counselling
@@ -534,7 +534,7 @@ export default function CoursesIndex({ courses = null }) {
 
                                 <Link
                                     href="/contact"
-                                    className="shrink-0 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-4 py-2 text-center text-[11px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(152,44,220,.3)] sm:px-5 sm:text-xs"
+                                    className="shrink-0 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-3 text-center text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(152,44,220,.3)] sm:px-7 sm:py-3.5 sm:text-sm"
                                 >
                                     Book Now
                                 </Link>
@@ -593,7 +593,10 @@ export default function CoursesIndex({ courses = null }) {
                 </div>
 
                 {/* ═══════════════ COURSE CATEGORY SECTIONS ═══════════════ */}
-                <div className="mx-auto max-w-[1240px] px-6 pb-20 space-y-16">
+                <div
+                    key={activeTier}
+                    className="mx-auto max-w-[1240px] px-6 pb-20 space-y-16"
+                >
                     {filteredTiers.map((tier, i) => (
                         <CategorySection key={tier.key} tier={tier} index={i} />
                     ))}
