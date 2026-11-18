@@ -857,7 +857,7 @@ export default function CoursesIndex({ courses = null }) {
                                                     alt={tool}
                                                     loading="lazy"
                                                     title={tool}
-                                                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default"
+                                                    className="w-28 h-12 sm:w-28 sm:h-16 rounded-xl object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-default"
                                                 />
                                             )}
                                             {i < TOOLS.length - 1 && (

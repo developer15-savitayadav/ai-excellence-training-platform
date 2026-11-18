@@ -383,8 +383,8 @@ export default function TestimonialSlider() {
                             }`}
                             className={`h-2 rounded-full transition-all duration-300 ${
                                 i === current
-                                    ? "w-7 bg-violet"
-                                    : "w-2 bg-black/15 hover:bg-black/25"
+                                    ? "w-6 bg-violet"
+                                    : "w-6 bg-black/15 hover:bg-black/25"
                             }`}
                         />
                     ))}
