@@ -119,7 +119,7 @@ export default function Fee() {
                     <div className="mt-6 flex flex-wrap items-center gap-3">
                         <Link
                             href="/contact"
-                            className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                            className="btn-main"
                         >
                             Contact us
                         </Link>

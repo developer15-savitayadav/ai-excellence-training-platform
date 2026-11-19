@@ -4966,7 +4966,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                             {detail.finalProject.cta && (
                                 <Link
                                     href="/contact"
-                                    className="shrink-0 inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                                    className="btn-main"
                                 >
                                     {detail.finalProject.cta}
                                 </Link>
@@ -5065,7 +5065,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                         <div className="mt-8 flex justify-center">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-10 py-4 text-sm font-semibold text-white shadow-[0_6px_24px_rgba(152,44,220,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(152,44,220,.5)]"
+                                className="btn-cta"
                             >
                                 Enroll Now
                             </Link>

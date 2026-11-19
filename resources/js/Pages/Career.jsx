@@ -270,7 +270,7 @@ export default function Career() {
                             <div className="mt-7 flex flex-wrap gap-3">
                                 <Link
                                     href="/enroll"
-                                    className="rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                                    className="btn-main"
                                 >
                                     Enrol Now
                                 </Link>
@@ -324,7 +324,7 @@ export default function Career() {
                         <div className="flex items-center justify-center py-6 px-4">
                             <Link
                                 href="/contact"
-                                className="rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 transition-all duration-300"
+                                className="btn-main"
                             >
                                 Contact us for pricing
                             </Link>
@@ -454,7 +454,7 @@ export default function Career() {
                                 </h2>
                                 <Link
                                     href="/enroll"
-                                    className="mt-6 inline-block rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-7 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 transition-all duration-300"
+                                    className="mt-6 btn-main"
                                 >
                                     Enrol Now
                                 </Link>
@@ -632,7 +632,7 @@ export default function Career() {
                         <div className="mt-8 flex justify-center">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-10 py-4 text-sm font-semibold text-white shadow-[0_6px_24px_rgba(152,44,220,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(152,44,220,.5)]"
+                                className="btn-cta"
                             >
                                 Enroll Now
                             </Link>

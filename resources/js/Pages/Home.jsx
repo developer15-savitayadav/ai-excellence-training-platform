@@ -742,7 +742,7 @@ function OfferCourseCard({ course }) {
                 </div>
             </div>
             <div className=" pr-6">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-black text-white text-[13px] font-semibold px-5 py-2.5 transition-all duration-300 group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] group-hover:shadow-[0_8px_20px_-4px_rgba(152,44,220,.45)]">
+                <span className="offer-course-btn">
                     View Details
                     <ArrowRight size={14} />
                 </span>
@@ -873,13 +873,13 @@ export default function Home() {
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(152,44,220,.35)]"
+                                className=" btn-cta"
                             >
                                 Book a Free Counselling
                             </Link>
                             <Link
                                 href="/courses"
-                                className="inline-flex items-center justify-center rounded-full border border-black/10 bg-black px-8 py-3.5 text-sm font-semibold text-white transition hover:border-black/25 hover:bg-white/80 hover:text-black "
+                                className="btn-dark-cta"
                             >
                                 Explore Courses
                             </Link>
@@ -1055,23 +1055,7 @@ export default function Home() {
 
                                 <Link
                                     href="/register"
-                                    className="
-                        inline-flex
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-[linear-gradient(60deg,#eec369,#982cdc)]
-                        px-8
-                        py-3
-                        text-[clamp(13px,1.2vw,15px)]
-                        font-semibold
-                        text-white
-                        shadow-[0_8px_25px_rgba(152,44,220,.22)]
-                        transition-all
-                        duration-300
-                        hover:-translate-y-0.5
-                        hover:shadow-[0_12px_30px_rgba(152,44,220,.35)]
-                    "
+                                    className="btn-main"
                                 >
                                     Get Started
                                 </Link>
@@ -1337,7 +1321,7 @@ export default function Home() {
                         <div className="mt-10 flex justify-center">
                             <Link
                                 href="/courses"
-                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(152,44,220,.35)]"
+                                className="btn-cta"
                             >
                                 View Full Course Catalog →
                             </Link>
@@ -1640,7 +1624,7 @@ export default function Home() {
                         <div className="mt-8 flex justify-center lg:mt-10">
                             <Link
                                 href="/testimonials"
-                                className=" group inline-flex items-center gap-1.5 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-2 text-[13.5px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(152,44,220,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-8px_rgba(152,44,220,0.6)]"
+                                className=" btn-main"
                             >
                                 View More
                                 <svg
@@ -1689,7 +1673,7 @@ export default function Home() {
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-10 py-4 text-[clamp(15px,1.1vw,18px)] font-semibold text-white shadow-[0_8px_25px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(152,44,220,.35)]"
+                                className="btn-cta"
                             >
                                 Book Your Free Counselling
                             </Link>

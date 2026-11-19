@@ -534,7 +534,7 @@ export default function CoursesIndex({ courses = null }) {
 
                                 <Link
                                     href="/contact"
-                                    className="shrink-0 rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-5 py-3 text-center text-[13px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(152,44,220,.3)] sm:px-7 sm:py-3.5 sm:text-sm"
+                                    className="btn-main"
                                 >
                                     Book Now
                                 </Link>
@@ -788,7 +788,7 @@ export default function CoursesIndex({ courses = null }) {
                                     </h2>
                                     <Link
                                         href="/contact"
-                                        className="mt-10 inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold text-white bg-[linear-gradient(60deg,#eec369,#982cdc)] shadow-[0_6px_18px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.35)] hover:-translate-y-0.5 transition-all duration-300"
+                                        className="mt-10 btn-main"
                                     >
                                         Enroll Now
                                     </Link>
@@ -954,7 +954,7 @@ export default function CoursesIndex({ courses = null }) {
                             <div className="mt-8 flex flex-wrap justify-center gap-4">
                                 <Link
                                     href="/contact"
-                                    className="rounded-full bg-[linear-gradient(60deg,#eec369,#982cdc)] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_6px_24px_rgba(152,44,220,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(152,44,220,.5)]"
+                                    className="btn-cta"
                                 >
                                     Book Free Counselling
                                 </Link>

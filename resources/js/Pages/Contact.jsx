@@ -152,7 +152,7 @@ export default function Contact() {
                     </p>
 
                     <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
-                        <Link href="/contact" className="w-full sm:w-auto text-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300">
+                        <Link href="/contact" className="btn-main">
                             Send a Message
                         </Link>
                         <Link href="tel:[Phone]" className="w-full sm:w-auto text-center rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300">

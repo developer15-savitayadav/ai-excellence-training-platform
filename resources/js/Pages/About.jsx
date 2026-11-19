@@ -358,7 +358,7 @@ export default function About() {
                     <div className="mt-7 flex flex-wrap gap-3 justify-center">
                         <Link
                             href="/courses"
-                            className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.45)] hover:shadow-[0_10px_28px_rgba(152,44,220,.6)] hover:-translate-y-0.5 transition-all duration-300"
+                            className=" btn-cta"
                         >
                             Explore Courses
                         </Link>
@@ -651,7 +651,7 @@ export default function About() {
                         succeed.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mt-8">
-                        <Button href="/register">Get Started</Button>
+                        <Button href="/register" className="btn-main">Get Started</Button>
                         <Button
                             variant="secondary"
                             href="/contact"
