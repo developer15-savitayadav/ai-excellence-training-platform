@@ -364,7 +364,7 @@ export default function About() {
                         </Link>
                         <Link
                             href="/contact"
-                            className="rounded-full bg-black/10 border border-black/20 px-7 py-3.5 text-sm font-semibold text-black backdrop-blur-sm hover:bg-black/20 hover:-translate-y-0.5 transition-all duration-300"
+                            className="btn-dark-cta"
                         >
                             Visit Our Campus
                         </Link>
@@ -443,11 +443,11 @@ export default function About() {
                     {/* Desktop table */}
                     <div className="hidden md:block bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] overflow-hidden">
                         <div className="grid grid-cols-3 border-b border-black/[0.08]">
-                            <div className="px-6 py-4 font-mono text-xs uppercase tracking-wider text-muted">
+                            <div className="px-6 py-4 font-mono text-[16px] uppercase tracking-wider text-muted">
                                 Feature
                             </div>
                             <div className="px-6 py-4 bg-lime/5 border-l border-black/[0.08]">
-                                <span className="inline-flex items-center gap-2 font-display font-semibold text-violet text-sm">
+                                <span className="inline-flex items-center gap-2 font-display font-semibold text-violet text-[16px]">
                                     <svg
                                         className="w-4 h-4"
                                         fill="none"
@@ -465,7 +465,7 @@ export default function About() {
                                 </span>
                             </div>
                             <div className="px-6 py-4 border-l border-black/[0.08]">
-                                <span className="font-display text-sm text-muted">
+                                <span className="font-display text-[16px] text-muted">
                                     Typical Institute
                                 </span>
                             </div>
@@ -475,7 +475,7 @@ export default function About() {
                                 key={row.feature}
                                 className={`grid grid-cols-3 ${i < COMPARISON.length - 1 ? "border-b border-black/[0.06]" : ""}`}
                             >
-                                <div className="px-6 py-5 font-mono text-sm text-muted">
+                                <div className="px-6 py-5 font-mono text-[16px] text-muted">
                                     {row.feature}
                                 </div>
                                 <div className="px-6 py-5 bg-lime/[0.02] border-l border-black/[0.08]">
@@ -487,7 +487,7 @@ export default function About() {
                                     </div>
                                 </div>
                                 <div className="px-6 py-5 border-l border-black/[0.08]">
-                                    <span className="text-sm text-muted/60">
+                                    <span className="text-[16px]  ">
                                         {row.them}
                                     </span>
                                 </div>
@@ -502,7 +502,7 @@ export default function About() {
                                 key={row.feature}
                                 className="bg-white border border-black/5 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,.03)] p-5"
                             >
-                                <p className="font-mono text-xs uppercase tracking-wider text-muted mb-3">
+                                <p className="font-mono text-[14px] uppercase tracking-wider text-muted mb-3">
                                     {row.feature}
                                 </p>
                                 <div className="space-y-2">
