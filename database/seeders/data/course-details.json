@@ -1,0 +1,296 @@
+{
+    "ai-tools-mastery": {
+        "heroImage": "/assets/images/AI-tools-course.png",
+        "eyebrow": "4-Week Live Cohort · Hands-On · No Coding Required",
+        "trustLine": "Next cohort starts [DATE] · Limited to 25 seats · Certificate of completion",
+        "whoItsForHeadline": "Built for people who need results, not theory",
+        "whoItsForBullets": [
+            "Working professionals who want to cut hours off writing, research, reporting, and admin",
+            "Marketers, founders, and creators who need content, visuals, and video faster and cheaper",
+            "Managers and team leads who want to automate repetitive processes without an engineering team",
+            "Students and career changers who want a portfolio project that proves real AI skills"
+        ],
+        "audience": [
+            {
+                "label": "Working Professionals",
+                "desc": "Working professionals who want to cut hours off writing, research, reporting, and admin",
+                "img": "/assets/images/teacher.png",
+                "tone": "gold"
+            },
+            {
+                "label": "Marketers, Founders & Creators",
+                "desc": "Marketers, founders, and creators who need content, visuals, and video faster and cheaper",
+                "img": "/assets/images/job-seekers.png",
+                "tone": "gold"
+            },
+            {
+                "label": "Managers & Team Leads",
+                "desc": "Managers and team leads who want to automate repetitive processes without an engineering team",
+                "img": "/assets/images/shop-owners.png",
+                "tone": "white"
+            },
+            {
+                "label": "Students & Career Changers",
+                "desc": "Students and career changers who want a portfolio project that proves real AI skills",
+                "img": "/assets/images/exam-aspirants.png",
+                "tone": "white"
+            }
+        ],
+        "readinessNote": "You don’t need to code. If you can use email, a browser, and a spreadsheet, you’re ready.",
+        "problemTitle": "Everyone has AI. Almost nobody uses it well.",
+        "problemBody": [
+            "Most people have opened ChatGPT, typed a question, gotten a mediocre answer, and moved on. Meanwhile, a small group is using these same tools to write in an hour what used to take a day, generate a week of content in an afternoon, and build automations that run while they sleep.",
+            "The difference isn’t access. It’s knowing which tool to use, how to prompt it, how to connect it to your real work, and how to catch it when it’s wrong.",
+            "That’s exactly what this course teaches."
+        ],
+        "outcomes": [
+            {
+                "title": "Prompt Like a Pro",
+                "desc": "Write structured prompts that get accurate, usable output on the first or second try"
+            },
+            {
+                "title": "Pick the Right Tool",
+                "desc": "Choose the best tool across text, research, images, audio, video, slides, and code"
+            },
+            {
+                "title": "Build an Automation",
+                "desc": "Connect AI to your email, forms, spreadsheets, and chat apps"
+            },
+            {
+                "title": "Custom AI Assistant",
+                "desc": "Create an assistant trained on your own documents, with guardrails"
+            },
+            {
+                "title": "Build an App with AI",
+                "desc": "Build a simple app using natural language — no programming background"
+            },
+            {
+                "title": "Evaluate AI Critically",
+                "desc": "Spot hallucinations, test for bias, and use AI responsibly with sensitive data"
+            },
+            {
+                "title": "Ship a Real Project",
+                "desc": "A working, documented, demo-ready AI solution for your portfolio or workplace"
+            }
+        ],
+        "howItWorks": [
+            {
+                "label": "Length",
+                "value": "4 weeks"
+            },
+            {
+                "label": "Schedule",
+                "value": "3 live sessions per week, 2 hours each ([DAYS], [TIME])"
+            },
+            {
+                "label": "Session format",
+                "value": "30 min concept → 75 min hands-on lab → 15 min review"
+            },
+            {
+                "label": "Outside class",
+                "value": "~4 hours/week of practice and assignments"
+            },
+            {
+                "label": "Class size",
+                "value": "Capped at 25 for individual feedback"
+            },
+            {
+                "label": "Recordings",
+                "value": "Every session recorded and available for 12 months"
+            },
+            {
+                "label": "Support",
+                "value": "Private community channel + weekly office hours"
+            }
+        ],
+        "weeks": [
+            {
+                "week": 1,
+                "sub": "Week 1 — How AI models work, and how to talk to them well",
+                "title": "Foundations & Prompt Engineering",
+                "topics": [
+                    "How large language models actually work — and why they hallucinate",
+                    "The prompt anatomy: role, context, task, format, constraints, examples",
+                    "Few-shot prompting, chain-of-thought, and iterative refinement",
+                    "Working with PDFs, spreadsheets, and images; getting structured output",
+                    "Grounded research with citations using Perplexity and NotebookLM"
+                ],
+                "build": "A personal prompt library of 10 reusable templates, and a full document-analysis workflow from a 20-page report"
+            },
+            {
+                "week": 2,
+                "sub": "Week 2 — Generating and editing images, audio, video, and visual content",
+                "title": "Creative & Multimodal Tools",
+                "topics": [
+                    "Image generation with Midjourney, DALL·E, Firefly, and Ideogram — including style consistency",
+                    "Voice, music, and video with ElevenLabs, Suno, Runway, HeyGen, and Descript",
+                    "AI-powered slides and design with Gamma, Canva AI, and Notion AI",
+                    "The ethics of synthetic media: consent, deepfakes, disclosure"
+                ],
+                "build": "A 5-image brand visual set, a 60-second AI-produced explainer video, and a 10-slide deck"
+            },
+            {
+                "week": 3,
+                "sub": "Week 3 — Moving from chatting with AI to systems that run without you",
+                "title": "Automation, Agents & AI-Assisted Building",
+                "topics": [
+                    "Custom assistants with Claude Projects, Custom GPTs, and Gemini Gems",
+                    "No-code automation with Zapier, Make, and n8n — triggers, AI steps, and human-in-the-loop approvals",
+                    "“Vibe coding”: building and deploying a web app with Cursor, Claude Code, Replit, or Lovable",
+                    "Cost control, error handling, and knowing when to build vs. buy"
+                ],
+                "build": "A custom assistant trained on your own documents, a live automation that summarizes and routes incoming emails, and a deployed web app"
+            },
+            {
+                "week": 4,
+                "sub": "Week 4 — Using AI well, evaluating it critically, and shipping a real project",
+                "title": "Responsible Use, Strategy & Final Project",
+                "topics": [
+                    "Hallucination detection, bias testing, and verification workflows",
+                    "Privacy, copyright, and company AI policy — what never to paste into an AI tool",
+                    "Red-teaming a classmate’s assistant",
+                    "Project build studio with instructor and peer support",
+                    "Final presentations and your personal “AI Operating System” plan"
+                ],
+                "build": "Your capstone project, demoed live to the cohort"
+            }
+        ],
+        "finalProject": {
+            "intro": "Every learner finishes with a working AI-powered solution to a problem they actually have.",
+            "tracks": [
+                {
+                    "title": "Content Engine",
+                    "desc": "A repeatable pipeline that turns sources into newsletters, posts, images, and audio"
+                },
+                {
+                    "title": "Custom Assistant",
+                    "desc": "A deployed, knowledge-based assistant for your team or customers"
+                },
+                {
+                    "title": "Workflow Automation",
+                    "desc": "A live automation with AI decision steps (e.g., lead qualification → CRM → personalized email)"
+                },
+                {
+                    "title": "AI-Built App",
+                    "desc": "A deployed web app built entirely with AI coding tools"
+                },
+                {
+                    "title": "Open Track",
+                    "desc": "Your own idea, approved by the instructor"
+                }
+            ],
+            "grading": "Projects are graded on functionality, tool selection, evaluation rigor, responsible-use considerations, documentation, and presentation.",
+            "leave": "A demo, an architecture diagram, and a full prompt appendix you can reuse.",
+            "cta": "Reserve Your Seat"
+        },
+        "toolsNote": "Tools are updated each cohort to reflect the current landscape. Most labs work on free tiers; budget roughly ₹3,500–5,000 for the month if you want paid access to everything.",
+        "instructor": {
+            "name": "Your Lead Instructor",
+            "tagline": "AI Practitioner & Trainer · Lucknow",
+            "bio": "Live, in-person, taught by practitioners who actually ship AI projects — not by someone who just reads about them.",
+            "points": [
+                "I have 4+ years of hands-on experience with AI tools in real work",
+                "I have trained 25+ professionals and students in person at the academy",
+                "You can ask me anything — and I will actually answer",
+                "Every technique is tested on real work before it reaches the classroom"
+            ]
+        },
+        "pricingIncludes": [
+            "12 live, hands-on sessions (24 hours of instruction)",
+            "All session recordings for 12 months",
+            "Prompt library, templates, and sample datasets",
+            "Private community channel and weekly office hours",
+            "Instructor feedback on all assignments and your final project",
+            "Certificate of completion"
+        ],
+        "teamPricing": "Enrolling 3 or more people? Contact us for group rates and private cohorts.",
+        "guarantee": "Attend the first two sessions. If it’s not for you, email us before Session 3 for a full refund.",
+        "faqs": [
+            {
+                "question": "Do I need any technical or coding background?",
+                "answer": "No. The course is designed for non-technical professionals. The Week 3 app-building session uses AI coding tools driven entirely by natural language — you describe what you want, and the AI writes the code. Many learners with zero programming experience deploy a working app in that session."
+            },
+            {
+                "question": "I’ve already used ChatGPT quite a bit. Will this be too basic?",
+                "answer": "If your experience is mostly typing questions into a chat box, no. Week 1 moves quickly past the basics into structured prompting, document workflows, and grounded research. Weeks 2–4 cover multimodal tools, automation, custom assistants, and app building — areas most casual users have never touched. If you’re already building automations and custom assistants, this course may be too introductory for you."
+            },
+            {
+                "question": "How much time will it take each week?",
+                "answer": "Plan for about 6 hours of live sessions plus roughly 4 hours of practice and assignments — around 10 hours per week. Week 4 may run heavier as you finish your final project."
+            },
+            {
+                "question": "What if I can’t attend a live session?",
+                "answer": "Every session is recorded and posted within 24 hours. Labs are designed so you can complete them from the recording, and you can ask questions in the community channel or at office hours. We recommend attending live whenever possible, since the hands-on help is the biggest benefit."
+            },
+            {
+                "question": "Which AI tools do I need to pay for?",
+                "answer": "Most labs can be completed on free tiers. A paid plan for one chat assistant (Claude, ChatGPT, or Gemini — roughly ₹1,600–2,000/month) is strongly recommended because free tiers have usage limits that can interrupt labs. Beyond that, you’ll be able to try image, video, and automation tools on free or trial plans. Budget ₹3,500–5,000 for the month if you want paid access to everything."
+            },
+            {
+                "question": "Do I need a powerful computer?",
+                "answer": "No. Everything runs in a web browser. Any laptop from the last several years with a stable internet connection is fine."
+            },
+            {
+                "question": "Will the tools be outdated by the time I take the course?",
+                "answer": "The AI landscape moves fast, which is why the curriculum focuses on transferable skills — prompt structure, evaluation, workflow design — rather than memorizing menus. The specific tools are reviewed and updated before every cohort, and the skills you learn carry over when a tool changes or a new one appears."
+            },
+            {
+                "question": "Can I use AI tools safely with my company’s data?",
+                "answer": "Week 4 covers this in depth: what to never paste into consumer AI tools, how enterprise tiers differ, and how to work within a company AI policy. For course labs, we provide sample datasets so you never need to use confidential material."
+            },
+            {
+                "question": "What is the final project, and do I have to do it?",
+                "answer": "The final project is a working AI-powered solution you build, document, and present in Week 4. You choose the track — content pipeline, custom assistant, automation, app, or your own idea. It’s required for the certificate and is worth 45% of your grade. It’s also the part learners most often say was worth the entire course."
+            },
+            {
+                "question": "Is there a certificate?",
+                "answer": "Yes. You receive a certificate of completion after passing (70% overall) and presenting your final project. It can be added to LinkedIn and your résumé."
+            },
+            {
+                "question": "Can I get this course for my team?",
+                "answer": "Yes. We offer group rates for 3 or more learners and private cohorts for teams of 10+, where labs and the final project can be tailored to your company’s actual workflows. Contact us for details."
+            },
+            {
+                "question": "What’s the refund policy?",
+                "answer": "Attend the first two sessions. If the course isn’t what you expected, email us before Session 3 and we’ll refund you in full. After Session 3, no refunds are issued, but you can transfer your seat to a future cohort once."
+            },
+            {
+                "question": "Is the course accessible for people with disabilities?",
+                "answer": "Sessions include live captions, and all recordings include transcripts. If you have specific accommodation needs, please contact us before the cohort begins so we can support you."
+            },
+            {
+                "question": "I have a question that isn’t answered here.",
+                "answer": "Email [support@yourdomain.com] or book a 15-minute call — we’re happy to help you decide whether the course is the right fit."
+            }
+        ],
+        "heroCta": "Reserve Your Seat",
+        "heroCtaSecondary": "Download the Full Curriculum (PDF)",
+        "finalCta": {
+            "headline": "Four weeks from now, you could be the person your team asks about AI.",
+            "sub": "Seats are limited to 25 per cohort so everyone gets individual feedback.",
+            "primary": "Reserve Your Seat — Next Cohort Starts [DATE]",
+            "secondary": "Questions? Book a 15-minute call",
+            "secondaryHref": "/contact"
+        }
+    },
+    "python-programming-foundation": {
+        "finalCta": {
+            "primary": "Enroll Now — Batch Starts [DATE]"
+        }
+    },
+    "generative-ai-prompt-engineering": {
+        "finalCta": {
+            "primary": "Enroll Now — Batch Starts [DATE]"
+        }
+    },
+    "ai-for-business": {
+        "finalCta": {
+            "primary": "Reserve Your Seat — Only [20] Seats Per Batch"
+        }
+    },
+    "summer-winter-training": {
+        "finalCta": {
+            "primary": "Register Now — [Summer/Winter] Batch Seats Filling Fast"
+        }
+    }
+}

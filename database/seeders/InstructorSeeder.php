@@ -20,7 +20,7 @@ class InstructorSeeder extends Seeder
                 'rating' => 4.90,
                 'student_count' => 420,
                 'years_experience' => 12,
-                'avatar' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+                'avatar' => 'assets/images/avtar1.avif',
             ],
             [
                 'name' => 'Prof. James Chen',
@@ -30,7 +30,7 @@ class InstructorSeeder extends Seeder
                 'rating' => 4.80,
                 'student_count' => 318,
                 'years_experience' => 15,
-                'avatar' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80',
+                'avatar' => 'assets/images/avtar2.avif',
             ],
             [
                 'name' => 'Dr. Anika Patel',
@@ -40,7 +40,7 @@ class InstructorSeeder extends Seeder
                 'rating' => 4.90,
                 'student_count' => 265,
                 'years_experience' => 10,
-                'avatar' => 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+                'avatar' => 'assets/images/avtar3.avif',
             ],
             [
                 'name' => 'Dr. Luis Morales',

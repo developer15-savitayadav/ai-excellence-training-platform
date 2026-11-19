@@ -583,13 +583,13 @@ const COURSE_DETAILS = {
                 tone: "gold",
             },
             {
-                label: "Marketers & Freelancers",
+                label: "Marketers, founders, and creators",
                 desc: "Marketers, content creators and freelancers who want AI leverage — without becoming prompt engineers",
                 img: "/assets/images/job-seekers.png",
                 tone: "gold",
             },
             {
-                label: "Managers & Founders",
+                label: "Managers And Team Leads",
                 desc: "Managers and founders who need to make data-informed decisions faster",
                 img: "/assets/images/shop-owners.png",
                 tone: "white",
@@ -605,8 +605,9 @@ const COURSE_DETAILS = {
             "You don't need to code. You don't need to be \u201ctechnical\u201d. If you have ever used WhatsApp, you have all the prerequisites you need.",
         problemTitle: "Everyone has AI. Almost nobody uses it well.",
         problemBody: [
-            "ChatGPT has taken over the world. But open the average person's chat history and there it is — 3 prompts, 1.5 sentences, and a \u201cthat's not what I meant\u201d loop.",
-            "The single most powerful tool of this generation is being used at 5% of its capability. Generic prompt → generic answer → give up. This course fixes exactly that.",
+            "Most people have opened ChatGPT, typed a question, gotten a mediocre answer, and moved on.Meanwhile, a small group is using thesesame tools to write in an hour what used to take a day, generate a week of content in an afternoon, and build automations that run while they sleep.",
+            "The difference isn't access. It's knowing which tool to use, how to prompt it, how to connect it to your real work, and how to catch it when it's wrong.",
+            "That's exactly what this course teaches."
         ],
         outcomes: [
             {
@@ -636,98 +637,97 @@ const COURSE_DETAILS = {
         ],
         howItWorks: [
             { label: "Length", value: "4 weeks" },
-            { label: "Schedule", value: "2 sessions per week · evenings" },
+            { label: "Schedule", value: "3 live sessions per week, 2 hours each ([DAYS], [TIME] [TIMEZONE]) Session format" },
             {
                 label: "Session format",
-                value: "Live, instructor-led, hands-on — 60% practice, 40% discussion",
+                value: "30 min concept → 75 min hands-on lab → 15 min review",
             },
             {
                 label: "Outside class",
-                value: "Weekly guided practice exercises (\u201cBrush-Ups\u201d) using free tools",
+                value: "~4 hours/week of practice and assignments",
             },
             { label: "Class size", value: "Small — capped at 25 per cohort" },
             {
                 label: "Recordings",
-                value: "Every session recorded and available for the cohort",
+                value: "Every session recorded and available for 12 months",
             },
             {
                 label: "Support",
-                value: "Yes — we answer AI questions between sessions",
+                value: "Private community channel + weekly office hours",
             },
         ],
         weeks: [
             {
                 week: 1,
                 title: "Foundations & Prompt Engineering",
-                build: "Your Prompt Toolkit — a reusable prompt system for your daily tasks",
-                topics: [
-                    "The AI fluency loop: 5% → 50% → 90%",
-                    "Inside an LLM — what it can and cannot do",
-                    "The 6-level task model",
-                    "The R.O.L.E. prompt framework",
-                    "The \u201cFeed Forward\u201d technique",
-                    "Your 12 weekly prompts",
+                build: "You'll build: A personal prompt library of 10 reusable templates, and a full document-analysis workflow from a 20-page report.",
+                 topics: [
+                    "How large language models actually work — and why they hallucinate",
+                    "The prompt anatomy: role, context, task, format, constraints, examples",
+                    "Few-shot prompting, chain-of-thought, and iterative refinement",
+                    "Working with PDFs, spreadsheets, and images; getting structured output",
+                    "Grounded research with citations using Perplexity and NotebookLM",
                 ],
             },
             {
                 week: 2,
-                title: "AI for Documents, Thinking & Ideas",
-                build: "The 10x Your Draft workflow",
+                title: "Creative & Multimodal Tools",
+                build: "You'll build: A 5-image brand visual set, a 60-second AI-produced explainer video, and a 10-slide deck.",
                 topics: [
-                    "Write, edit and re-research drafts",
-                    "Summarise long reports and extract data",
-                    "Study heavy documents with NotebookLM",
-                    "Plan your week and brainstorm ideas",
-                    "AI vision — let it \u201csee\u201d your pictures and documents",
+                    "Image generation with Midjourney, DALL·E, Firefly, and Ideogram — including style consistency",
+                    "Voice, music, and video with ElevenLabs, Suno, Runway, HeyGen, and Descript",
+                    "AI-powered slides and design with Gamma, Canva AI, and Notion AI",
+                    "The ethics of synthetic media: consent, deepfakes, disclosure"
+
                 ],
             },
             {
                 week: 3,
-                title: "AI for Images, Presentations & Content",
-                build: "A complete branded content pack — logo, palette, 3 images, a 10-slide deck",
+                title: "Automation, Agents & AI-Assisted Building",
+                build: "You'll build: A custom assistant trained on your own documents, a live automation that summarizes and routes incoming emails, and a deployed web app.",
                 topics: [
-                    "Images for anything — Canva AI, Midjourney",
-                    "A logo and brand palette",
-                    "A pitch deck in under 30 minutes",
-                    "A month of social content",
-                    "Short video with AI narration",
+                    "Custom assistants with Claude Projects, Custom GPTs, and Gemini Gems",
+                    "No-code automation with Zapier, Make, and n8n — triggers, AI steps, and human-in-the-loop approvals",
+                    " Vibe coding building and deploying a web app with Cursor, Claude Code, Replit, or Lovable",
+                    "Cost control, error handling, and knowing when to build vs. buy",
+
                 ],
             },
             {
                 week: 4,
-                title: "Personal AI, Business Ops & Future-Proofing",
-                build: "Your Personal AI Toolkit and a working FAQ bot",
+                title: "Responsible Use, Strategy & Final Project",
+                build: "You'll build: Your capstone project, demoed live to the cohort.",
                 topics: [
-                    "Build your own AI assistant (custom GPT)",
-                    "Drag-and-drop your knowledge into AI",
-                    "Your FAQ bot",
-                    "Business ops — invoices, spreadsheets, WhatsApp",
-                    "Beyond ChatGPT — agentic AI, voice, ambient AI",
+                    "Hallucination detection, bias testing, and verification workflows",
+                    "Privacy, copyright, and company AI policy — what never to paste into an AI tool",
+                    "Red-teaming a classmate's assistant",
+                    "Project build studio with instructor and peer support",
+                    "Final presentations and your personal 'AI Operating System' plan",
                 ],
             },
         ],
         finalProject: {
-            intro: "You don't need to code. If you can use email, a browser, and a spreadsheet, you're ready.",
+            intro: "Every learner finishes with a working AI-powered solution to a problem they actually have. Choose your track:",
             tracks: [
                 {
-                    title: "Professional",
-                    desc: "Design an AI workflow for one core task in your job",
+                    title: "Content Engine",
+                    desc: "a repeatable pipeline that turns sources into newsletters, posts, images, and audio",
                 },
                 {
-                    title: "Marketing / Creative",
-                    desc: "A complete AI-made marketing pack",
+                    title: "Custom Assistant",
+                    desc: "a deployed, knowledge-based assistant for your team or customers",
                 },
                 {
-                    title: "Student",
-                    desc: "Build an AI study system — notes, flashcards, mock exams",
+                    title: "Workflow Automation",
+                    desc: "a live automation with AI decision steps (e.g., lead qualification → CRM → personalized email)",
                 },
                 {
-                    title: "Small Business",
-                    desc: "An AI operations kit — catalogue, invoices, WhatsApp replies",
+                    title: "AI-Built App",
+                    desc: "a deployed web app built entirely with AI coding tools",
                 },
                 {
-                    title: "Curated Projects",
-                    desc: "Pick one from our project briefs",
+                    title: "Open Track",
+                    desc: "your own idea, approved by the instructor",
                 },
             ],
             grading:
@@ -763,53 +763,61 @@ const COURSE_DETAILS = {
         faqs: [
             {
                 question:
-                    "I'm a complete beginner with AI. Will I cope on this course?",
-                answer: "Yes — this course was built specifically for people without a technical background. The whole curriculum runs on tools you already use: a browser, WhatsApp, and plain English.",
+                    "Do I need any technical or coding background?",
+                answer: "No. The course is designed for non-technical professionals. The Week 3 app-building session uses AI coding tools driven entirely by naturallanguage — you describe what you want, and the AI writes the code. Many learners with zero programming experience deploy a working app in that session.",
             },
             {
                 question:
-                    "I already use ChatGPT. Will I still learn something?",
-                answer: "Yes. Most people use one tool, a few prompts and generic answers. We go far deeper — prompt frameworks, custom assistants, knowledge you can drag-and-drop, and a final project you actually use.",
+                    "I've already used ChatGPT quite a bit. Will this be too basic?",
+                answer: "If your experience is mostly typing questions into a chat box, no. Week 1 moves quickly past the basics into structured prompting,document workflows, and grounded research. Weeks 2–4 cover multimodal tools, automation, custom assistants, and app building — areas most casual users have never touched. If you're already building automations and custom assistants, this course may be too introductory for you.",
             },
             {
-                question: "What's the time commitment?",
-                answer: "Four weeks, two live sessions per week, plus a weekly guided practice exercise. Realistically 3–4 hours per week outside class.",
+                question: "How much time will it take each week?",
+                answer: "Plan for about 6 hours of live sessions plus roughly 4 hours of practice and assignments — around 10 hours per week. Week 4 may run heavier as you finish your final project.",
             },
             {
-                question: "Do I need to buy any software or subscriptions?",
-                answer: "No. Almost everything runs on free tiers. The course includes an AI Tool Budget Note that caps your real spend at around ₹500/month if you want to.",
+                question: "What if I can't attend a live session?",
+                answer: "Every session is recorded and posted within 24 hours. Labs are designed so you can complete them from the recording, and you can ask questions in the community channel or at office hours. We recommend attending live whenever possible, since the hands-on help is the biggest benefit.",
             },
             {
-                question: "Will I get a certificate?",
-                answer: "Yes — you earn a certificate of completion by finishing the final project, which is graded pass/fail on completion.",
+                question: "Which AI tools do I need to pay for?",
+                answer: "Most labs can be completed on free tiers. A paid plan for one chat assistant (Claude, ChatGPT, or Gemini — roughly $20/month) is strongly recommended because free tiers have usage limits that can interrupt labs. Beyond that, you'll be able to try image, video, and automation tools on free or trial plans. Budget $40–60 for the month if you want paid access to everything.",
             },
             {
-                question: "Do I need a laptop?",
-                answer: "Yes, any modern laptop with a browser works. Most exercises also work from your phone.",
+                question: "Do I need a powerful computer?",
+                answer: "No. Everything runs in a web browser. Any laptop from the last several years with a stable internet connection is fine.",
             },
             {
-                question: "What happens if I miss a session?",
-                answer: "Every session is recorded and made available to the cohort, so you can catch up. You can also attend a makeup session in the next cycle.",
+                question: "Will the tools be outdated by the time I take the course?",
+                answer: "The AI landscape moves fast, which is why the curriculum focuses on transferable skills — prompt structure, evaluation, workflow design —rather than memorizing menus. The specific tools are reviewed and updated before every cohort, and the skills you learn carry over when a tool changes or a new one appears..",
             },
             {
-                question: "Is the course live?",
-                answer: "Yes — it is live and instructor-led, not a pre-recorded video course. You practise during the session and get immediate feedback.",
+                question: "Can I use AI tools safely with my company's data?",
+                answer: "Week 4 covers this in depth: what to never paste into consumer AI tools, how enterprise tiers differ, and how to work within a company AI policy. For course labs, we provide sample datasets so you never need to use confidential material.",
             },
             {
-                question: "Will I work on real projects?",
-                answer: "Yes. Every week ends with a build, and the course finishes with a final project you choose from five tracks.",
+                question: "What is the final project, and do I have to do it?",
+                answer: "The final project is a working AI-powered solution you build, document, and present in Week 4. You choose the track — content pipeline,custom assistant, automation, app, or your own idea. It's required for the certificate and is worth 45% of your grade. It's also the part learners most often say was worth the entire course.",
             },
             {
-                question: "How is this different from a free YouTube playlist?",
-                answer: "A playlist won't correct your prompts, answer your questions, hold you accountable, or give feedback on your project. That feedback loop is the whole point.",
+                question: "Is there a certificate?",
+                answer: "Yes. You receive a certificate of completion after passing (70% overall) and presenting your final project. It can be added to LinkedIn and your résumé.",
             },
             {
-                question: "Can my team or group enrol together?",
-                answer: "Yes — teams of 2+ get 10% off and teams of 5+ get 15% off. We also run private cohorts for companies and colleges.",
+                question: "Can I get this course for my team?",
+                answer: "Yes. We offer group rates for 3 or more learners and private cohorts for teams of 10+, where labs and the final project can be tailored to your company's actual workflows. [Contact us] for details.",
             },
             {
-                question: "Where and when does the course run?",
-                answer: "The course runs as a live cohort at our Lucknow academy. Contact us for the schedule of the next batch.",
+                question: "What's the refund policy?",
+                answer: "Attend the first two sessions. If the course isn't what you expected, email us before Session 3 and we'll refund you in full. After Session 3, no refunds are issued, but you can transfer your seat to a future cohort once.",
+            },
+            {
+                question: "Is the course accessible for people with disabilities?",
+                answer: "Sessions include live captions, and all recordings include transcripts. If you have specific accommodation needs, please [contact us] before the cohort begins so we can support you.",
+            },
+             {
+                question: "I have a question that isn't answered here.",
+                answer: "Email [support@yourdomain.com] or [book a 15-minute call] — we're happy to help you decide whether the course is the right fit.",
             },
         ],
     },
@@ -4253,7 +4261,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 >
                     <RevealDiv>
                         <div className="mb-10">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 WHO IT&apos;S FOR
                             </p>
@@ -4349,7 +4357,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                                             {/* Content */}
                                             <div className="flex flex-col justify-around  h-full py-2">
                                                 {/* Label */}
-                                                <h3 className="font-display text-[20px] sm:text-[22px] lg:text-[20px] xl:text-[22px] font-bold tracking-[-0.025em] leading-tight text-black">
+                                                <h3 className="font-display text-[20px] sm:text-[22px] lg:text-[20px] xl:text-[22px] font-bold tracking-[-0.025em] leading-tight text-black capitalize">
                                                     {item.label}
                                                 </h3>
 
@@ -4437,7 +4445,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 sm:gap-10 lg:gap-16 items-center">
                         <RevealDiv>
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 THE PROBLEM
                             </p>
@@ -4558,7 +4566,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                         <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_12px_40px_rgba(152,44,220,0.06)] p-6 sm:p-10 lg:p-12">
                             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 sm:gap-10 lg:gap-12 items-start">
                                 <div className="flex flex-col items-start">
-                                    <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                    <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                         LEARNING OUTCOMES
                                     </p>
@@ -4621,7 +4629,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <RevealDiv>
                         <div className="text-center mb-12">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 HOW IT WORKS
                             </p>
@@ -4697,7 +4705,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
             >
                 <RevealDiv>
                     <div className="py-16 sm:py-20 text-center">
-                        <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                        <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                             TOOLS
                         </p>
@@ -4768,7 +4776,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <RevealDiv>
                         <div className="text-center mb-10">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 CURRICULUM
                             </p>
@@ -4903,7 +4911,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <RevealDiv>
                         <div className="max-w-[720px] mb-12">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 THE FINAL PROJECT
                             </p>
@@ -4939,7 +4947,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                     <RevealDiv delay={120}>
                         <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 rounded-[18px] bg-white border border-black/[0.05] px-6 sm:px-8 py-6">
                             <div className="flex-1">
-                                <p className="mb-1.5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <p className="mb-1.5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     Grading & outcome
                                 </p>
@@ -4999,7 +5007,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                         </RevealDiv>
 
                         <RevealDiv delay={100}>
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 YOUR INSTRUCTOR
                             </p>
@@ -5078,9 +5086,9 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <RevealDiv>
                         <div className="text-center mb-12">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                                PRICING_
+                                PRICING
                             </p>
                             <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
                                 Pricing
@@ -5098,7 +5106,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                     <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-stretch  max-w-[1000px] mx-auto ">
                         <RevealDiv>
                             <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-6 sm:p-10">
-                                <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     Course fee
                                 </p>
@@ -5134,7 +5142,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
 
                         <RevealDiv delay={100} className="h-full">
                             <div className="h-full rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
-                                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     What is included
                                 </p>

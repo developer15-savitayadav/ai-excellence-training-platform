@@ -351,11 +351,12 @@ function ProgramCard({ program }) {
 }
 
 const skillSliderImages = [
-    "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=500&q=80",
+
+    "/assets/images/skillsliderimages1.avif",
+    "/assets/images/skillsliderimages2.avif",
+    "/assets/images/skillsliderimages3.avif",
+    "/assets/images/skillsliderimages4.avif",
+    "/assets/images/skillsliderimages5.avif",
 ];
 
 function useInView(threshold = 0.25) {
@@ -519,7 +520,7 @@ const courseOfferData = {
             description:
                 "Get hands-on with the AI tools professionals use daily — from content creation to workflow automation.",
             slug: "ai-tools-mastery",
-            image: "/assets/images/AI-tools-mastery.png",
+            image: "/assets/images/aitoolmastery.png",
         },
         {
             lessons: "28 Lessons",
@@ -528,16 +529,16 @@ const courseOfferData = {
             description:
                 "Build a solid programming base in Python — the language behind every AI and data career.",
             slug: "python-programming-foundation",
-            image: "/assets/images/python-programming-foundation.png",
+            image: "/assets/images/pythonFoundation.webp",
         },
         {
             lessons: "24 Lessons",
             hours: "6 Hours",
             title: "Generative AI & \n Prompt Engineering",
             description:
-                "Learn to communicate with AI models effectively and build reliable prompt workflows for daily tasks.",
+                "Learn to communicate with AI modemake this image ratio 3:2ls effectively and build reliable prompt workflows for daily tasks.",
             slug: "generative-ai-prompt-engineering",
-            image: "/assets/images/generative-ai-thumb-bg.jpeg",
+            image: "/assets/images/generativeaithumbbg.webp",
         },
         {
             lessons: "18 Lessons",
@@ -546,7 +547,7 @@ const courseOfferData = {
             description:
                 "Understand practical AI use cases to cut costs, save time and grow revenue in your business.",
             slug: "ai-for-business",
-            image: "/assets/images/AI-for-business-owners.png",
+            image: "/assets/images/aiforbusinessowners.webp",
         },
         {
             lessons: "32 Lessons",
@@ -555,7 +556,7 @@ const courseOfferData = {
             description:
                 "AKTU-aligned industrial training program covering AI fundamentals with certification for engineering students.",
             slug: "summer-winter-training",
-            image: "/assets/images/AKTU-summer-winter-training.png",
+            image: "/assets/images/AKTUsummerwintertraining.webp",
         },
     ],
     certificates: [
@@ -567,7 +568,7 @@ const courseOfferData = {
                 "Combine core digital marketing skills with AI tools to plan, create and optimise campaigns faster.",
             slug: "digital-marketing-with-ai",
             popular: true,
-            image: "/assets/images/digital-marketing-ai.png",
+            image: "/assets/images/digitalmarketingai.webp",
         },
         {
             lessons: "48 Lessons",
@@ -576,7 +577,7 @@ const courseOfferData = {
             description:
                 "Turn raw data into clear business insights using Python, pandas and practical visualisation techniques.",
             slug: "python-for-data-analytics",
-            image: "/assets/images/python-data-analytics.png",
+            image: "/assets/images/pythondataanalytics.webp",
         },
         {
             lessons: "44 Lessons",
@@ -585,7 +586,7 @@ const courseOfferData = {
             description:
                 "Master practical ML workflows — from data preparation to model training, evaluation and deployment.",
             slug: "applied-machine-learning",
-            image: "/assets/images/applied-machine-learning.png",
+            image: "/assets/images/appliedmachinelearning.webp",
         },
     ],
     career: [
@@ -598,7 +599,7 @@ const courseOfferData = {
 
             popular: true,
             slug: "advanced-diploma-ai-ml",
-            image: "/assets/images/advanced-diploma-ai-ml.png",
+            image: "/assets/images/advanceddiplomaaiml.webp",
         },
         {
             lessons: "96 Lessons",
@@ -607,7 +608,7 @@ const courseOfferData = {
             description:
                 "Become a digital marketer who leverages AI for strategy, content, ads and analytics — placement support included.",
             slug: "ai-digital-marketing-specialist",
-            image: "/assets/images/ai-digital-marketing-specialist.jpeg",
+            image: "/assets/images/aidigitalmarketingspecialist.webp",
         },
         {
             lessons: "110 Lessons",
@@ -616,7 +617,7 @@ const courseOfferData = {
             description:
                 "Master statistics, machine learning and AI with a guaranteed internship and dedicated interview preparation.",
             slug: "data-science-ai-career-track",
-            image: "/assets/images/data-science-ai-career-track.jpeg",
+            image: "/assets/images/datascienceaicareertrack.webp",
         },
     ],
 };
@@ -844,7 +845,7 @@ export default function Home() {
         <PublicLayout>
             <div className="home-fonts min-h-screen overflow-hidden bg-[#f5f5f2] text-[#080909]">
                 {/* HERO */}
-                <section className="relative flex min-h-[610px] items-center justify-center overflow-hidden px-5 pb-16 pt-28 bg-[#f5f5f2]">
+                <section className="relative flex min-h-[610px] items-center justify-center overflow-hidden px-5 pb-16 pt-16 bg-[#f5f5f2]">
                     <div className="absolute left-1/2 top-0 h-[420px] w-[650px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(152,44,220,.15),transparent_68%)] blur-3xl" />
                     <div className="absolute right-0 bottom-0 h-[300px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(238,195,105,.12),transparent_68%)] blur-3xl" />
 
@@ -854,22 +855,22 @@ export default function Home() {
                             AI EXECELLENCE ACADEMY
                         </div>
 
-                        <h1 className="mx-auto mt-6 max-w-[780px] text-[clamp(2.5rem,6vw,4.8rem)] font-bold leading-[.95] tracking-[-0.04em]">
+                        <h1 className="mx-auto mt-4 max-w-[780px] text-[clamp(2.5rem,6vw,4.8rem)] font-bold leading-[.95] tracking-[-0.04em]">
                             <span className="bg-[linear-gradient(60deg,#982cdc,#eec369)] bg-clip-text text-transparent">
                                 Learn AI
                             </span>{" "}
                             in Lucknow.
                         </h1>
-                        <h6 className="mx-auto mt-4 max-w-[550px] text-[28px] font-bold text-black/70">
+                        <h6 className="mx-auto mt-2 max-w-[550px] text-[28px] font-bold text-black/70">
                             Build Real Projects. Get Hired.
                         </h6>
 
-                        <p className="mx-auto mt-5 max-w-[550px] text-[16px] leading-[1.7] text-black/60">
+                        <p className="mx-auto mt-2 max-w-[550px] text-[16px] leading-[1.7] text-black/60">
                             Practical, mentor-led AI programs that take you from
                             curious beginner to industry-ready professional.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap justify-center gap-3">
+                        <div className="mt-6 flex flex-wrap justify-center gap-3">
                             <Link
                                 href="/contact"
                                 className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_8px_25px_rgba(152,44,220,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(152,44,220,.35)]"
