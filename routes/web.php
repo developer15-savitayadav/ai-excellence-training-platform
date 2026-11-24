@@ -35,6 +35,9 @@ use Illuminate\Support\Facades\Route;
 // ---------------------------------------------------------------------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/courses/search-check', [CourseController::class, 'searchCheck'])
+    ->middleware('throttle:60,1')
+    ->name('courses.search-check');
 Route::get('/courses/{slug}', [CourseController::class, 'show'])->name('courses.show');
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 Route::get('/about', [AboutController::class, 'index'])->name('about');

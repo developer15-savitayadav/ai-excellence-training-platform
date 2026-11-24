@@ -749,18 +749,22 @@ const COURSE_DETAILS = {
                 "Every technique is tested on real work before it reaches the classroom",
             ],
         },
+        pricingHeadline: "One price. Everything included.",
+        installments: "or [X] installments of [₹Y]",
         pricingIncludes: [
-            "All 8 live, instructor-led sessions",
-            "Lifetime access to all session recordings",
-            "The complete curriculum workbook (PDF)",
-            "Weekly Brush-Ups with instructor feedback",
-            "Final project feedback",
+            "12 live, hands-on sessions (24 hours of instruction)",
+            "All session recordings for 12 months",
+            "Prompt library, templates, and sample datasets",
+            "Private community channel and weekly office hours",
+            "Instructor feedback on all assignments and your final project",
             "Certificate of completion",
-            "AI Tool Budget Note — everything you need has a free tier (cap ₹500/month)",
         ],
-        teamPricing: "Teams of 2+ get 10% off · Teams of 5+ get 15% off",
+        teamPricing:
+            "Enrolling 3 or more people? Ask us about group rates and private cohorts.",
         guarantee:
-            "If you attend every session and complete the final project, and you don't feel more confident with AI, we'll make it right.",
+            "Attend the first two sessions. If it's not for you, email us before Session 3 for a full refund.",
+        pricingCta: "Reserve Your Seat",
+        cohortNote: "Next Cohort Starts [DATE]",
         faqs: [
             {
                 question: "Do I need any technical or coding background?",
@@ -3807,6 +3811,10 @@ function buildDetail(course) {
             "Everything you need is industry-standard — most tools have free tiers.",
         instructor,
         pricingIncludes,
+        pricingHeadline: override.pricingHeadline || null,
+        installments: override.installments || null,
+        pricingCta: override.pricingCta || null,
+        cohortNote: override.cohortNote || null,
         teamPricing:
             override.teamPricing || "Group and institute discounts available",
         guarantee:
@@ -4021,7 +4029,7 @@ function StickyNav() {
                 </div>
             </div>
         </>
-    ); 
+    );
 }
 
 export default function CoursesShow({ slug, dbCourse = null }) {
@@ -4983,10 +4991,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                                 </Link>
                             )}
                             {!detail.finalProject.cta && (
-                                <Link
-                                    href="/contact"
-                                    className="btn-cta"
-                                >
+                                <Link href="/contact" className="btn-cta">
                                     Enquire Now
                                 </Link>
                             )}
@@ -5087,122 +5092,163 @@ export default function CoursesShow({ slug, dbCourse = null }) {
             <TestimonialSlider />
 
             {/* ═══════════════ PRICING ═══════════════ */}
-            <section
-                id="pricing"
-                className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24"
-            >
-                <div className="mx-auto max-w-[1240px] px-6">
-                    <RevealDiv>
-                        <div className="text-center mb-12">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                                PRICING
-                            </p>
-                            <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
-                                Pricing
-                            </h2>
-                            <p className="mt-3 text-[15px] text-black/45 max-w-xl mx-auto">
-                                {typeof course.emi === "string"
-                                    ? course.emi
-                                    : course.emi
-                                      ? "No-cost EMI available — contact us for the payment plan."
-                                      : "Contact us for the current batch pricing and instalment options."}
-                            </p>
-                        </div>
-                    </RevealDiv>
+        {/* ═══════════════ PRICING ═══════════════ */}
+<section
+    id="pricing"
+    className="bg-[#F5F5F2] border-y border-black/[0.06] py-20 sm:py-24"
+>
+    <div className="mx-auto max-w-[1240px] px-6">
+        <RevealDiv>
+            <div className="text-center mb-12">
+                <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                    PRICING
+                </p>
+                <h2 className="font-display text-[clamp(2rem,4vw,2.7rem)] font-bold tracking-[-0.04em] text-black">
+                    {detail.pricingHeadline || "Pricing"}
+                </h2>
+                {!detail.pricingHeadline && (
+                    <p className="mt-3 text-[15px] text-black/45 max-w-xl mx-auto">
+                        {typeof course.emi === "string"
+                            ? course.emi
+                            : course.emi
+                              ? "No-cost EMI available — contact us for the payment plan."
+                              : "Contact us for the current batch pricing and instalment options."}
+                    </p>
+                )}
+            </div>
+        </RevealDiv>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-stretch  max-w-[1000px] mx-auto ">
-                        <RevealDiv>
-                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-6 sm:p-10">
-                                <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                                    Course fee
-                                </p>
-                                <div className="flex items-baseline gap-2">
-                                    <span className="font-display text-[38px] sm:text-[44px] font-bold tracking-[-0.03em] text-black">
-                                        {course.price}
-                                    </span>
-                                </div>
-                                <p className="mt-2 text-sm text-black/45">
-                                    {typeof course.classesPerWeek === "number"
-                                        ? `${course.classesPerWeek} classes a week · ${course.duration}`
-                                        : `${course.duration} · ${course.hours}`}
-                                </p>
-                                <div className="mt-8 flex flex-col gap-3">
-                                    <Link
-                                        href="/contact"
-                                        className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-4 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
-                                    >
-                                        Enquire & Reserve a Seat
-                                    </Link>
-                                    <Link
-                                        href="/contact"
-                                        className="inline-flex items-center justify-center rounded-full border border-black/[0.08] px-8 py-4 text-sm font-semibold text-black/70 hover:bg-black/[0.02] transition-all duration-300"
-                                    >
-                                        Get a Call Back
-                                    </Link>
-                                </div>
-                                <p className="mt-6 text-[13.5px] text-black/50">
-                                    {detail.teamPricing}
-                                </p>
-                            </div>
-                        </RevealDiv>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-5 items-stretch max-w-[1000px] mx-auto">
+            {/* Price card */}
+            <RevealDiv>
+                <div className="h-full rounded-[22px] bg-white border border-black/[0.05] shadow-[0_12px_40px_rgba(152,44,220,0.08)] p-6 sm:p-10">
+                    <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                        Course fee
+                    </p>
 
-                        <RevealDiv delay={100} className="h-full">
-                            <div className="h-full rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
-                                <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                                    What is included
-                                </p>
-                                <ul className="space-y-3.5">
-                                    {detail.pricingIncludes.map((item, i) => (
-                                        <li
-                                            key={i}
-                                            className="flex items-start gap-3 text-[15px] leading-[1.5] text-black/70"
-                                        >
-                                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white shadow-[0_2px_8px_rgba(152,44,220,.25)]">
-                                                <svg
-                                                    className="w-3.5 h-3.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    strokeWidth={2.5}
-                                                    stroke="currentColor"
-                                                >
-                                                    <path
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        d="m4.5 12.75 6 6 9-13.5"
-                                                    />
-                                                </svg>
-                                            </span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </RevealDiv>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <span className="font-display text-[38px] sm:text-[44px] font-bold tracking-[-0.03em] text-black">
+                            {course.price}
+                        </span>
+                        {detail.installments && (
+                            <span className="text-[15px] font-medium text-black/55">
+                                {detail.installments}
+                            </span>
+                        )}
                     </div>
 
-                    <RevealDiv delay={120}>
-                        <p className="mt-8 max-w-[1000px] mx-auto flex items-start gap-3 rounded-[16px] border border-lime/30 bg-lime/[0.08] px-6 py-4 text-[14.5px] leading-relaxed text-black/70">
-                            <svg
-                                className="mt-0.5 w-5 h-5 shrink-0 text-[#765bc4]"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.8}
-                                stroke="currentColor"
+                    <p className="mt-2 text-sm text-black/45">
+                        {typeof course.classesPerWeek === "number"
+                            ? `${course.classesPerWeek} classes a week · ${course.duration}`
+                            : `${course.duration} · ${course.hours}`}
+                    </p>
+
+                    <div className="mt-8 flex flex-col gap-3">
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-8 py-4 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                            {detail.pricingCta || "Enquire & Reserve a Seat"}
+                        </Link>
+
+                        {detail.cohortNote ? (
+                            <p className="text-center text-[13px] font-medium text-black/50">
+                                {detail.cohortNote}
+                            </p>
+                        ) : (
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center justify-center rounded-full border border-black/[0.08] px-8 py-4 text-sm font-semibold text-black/70 hover:bg-black/[0.02] transition-all duration-300"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-                                />
-                            </svg>
-                            {detail.guarantee}
+                                Get a Call Back
+                            </Link>
+                        )}
+                    </div>
+
+                    {detail.teamPricing && (
+                        <p className="mt-6 text-[13.5px] text-black/50">
+                            {detail.teamPricing}{" "}
+                            {detail.pricingHeadline && (
+                                <Link
+                                    href="/contact"
+                                    className="font-semibold text-[#982cdc] hover:underline"
+                                >
+                                    Contact us
+                                </Link>
+                            )}
                         </p>
-                    </RevealDiv>
+                    )}
                 </div>
-            </section>
+            </RevealDiv>
+
+            {/* Includes card */}
+            <RevealDiv delay={100} className="h-full">
+                <div className="h-full rounded-[22px] bg-white border border-black/[0.05] p-6 sm:p-10">
+                    <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                        {detail.pricingHeadline ? "Includes" : "What is included"}
+                    </p>
+                    <ul className="space-y-3.5">
+                        {detail.pricingIncludes.map((item, i) => (
+                            <li
+                                key={i}
+                                className="flex items-start gap-3 text-[15px] leading-[1.5] text-black/70"
+                            >
+                                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] text-white shadow-[0_2px_8px_rgba(152,44,220,.25)]">
+                                    <svg
+                                        className="w-3.5 h-3.5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={2.5}
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5"
+                                        />
+                                    </svg>
+                                </span>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </RevealDiv>
+        </div>
+
+        {/* Guarantee */}
+        {detail.guarantee && (
+            <RevealDiv delay={120}>
+                <p className="mt-8 max-w-[1000px] mx-auto flex items-start gap-3 rounded-[16px] border border-lime/30 bg-lime/[0.08] px-6 py-4 text-[14.5px] leading-relaxed text-black/70">
+                    <svg
+                        className="mt-0.5 w-5 h-5 shrink-0 text-[#765bc4]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.8}
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+                        />
+                    </svg>
+                    <span>
+                        {detail.pricingHeadline && (
+                            <span className="font-semibold text-black">
+                                Guarantee:{" "}
+                            </span>
+                        )}
+                        {detail.guarantee}
+                    </span>
+                </p>
+            </RevealDiv>
+        )}
+    </div>
+</section>
 
             {/* ═══════════════ FAQ ═══════════════ */}
 

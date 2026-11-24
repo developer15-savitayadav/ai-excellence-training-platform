@@ -16,11 +16,11 @@ function EyeBrow({ children, color = "violet" }) {
 const SHORT_TERM = [
     {
         id: 1,
-        title: "AI Tools Mastery",
+        title: "AI Tools Mastery — Work Smarter with AI",
         slug: "ai-tools-mastery",
         duration: "4 weeks",
         hours: "32 hrs",
-        tagline: "Work Smarter with AI — no coding required",
+        tagline: "Go from “I’ve tried ChatGPT” to building real AI-powered workflows, content pipelines, and apps — in four weeks, with live instruction and hands-on labs every session.",
         price: "Contact us",
     },
     {
@@ -29,7 +29,7 @@ const SHORT_TERM = [
         slug: "python-programming-foundation",
         duration: "6 weeks",
         hours: "48 hrs",
-        tagline: "The one skill every AI and data career starts with",
+        tagline: "Build a rock-solid programming base in 6 weeks — live classes, daily coding practice, real mini-projects, and a final project you can show in interviews.",
         price: "Contact us",
     },
     {
@@ -38,16 +38,16 @@ const SHORT_TERM = [
         slug: "generative-ai-prompt-engineering",
         duration: "6 weeks",
         hours: "48 hrs",
-        tagline: "The most in-demand AI skill of 2026",
+        tagline: "Learn to command tools like ChatGPT, Claude, and Gemini — then go further: build custom AI assistants, automate workflows, and create images, audio, and video with AI. In 6 weeks, become the AI person in the room.",
         price: "Contact us",
     },
     {
         id: 4,
-        title: "AI for Business Owners & Professionals",
+        title: "AI for Business Owners & Professionals (Weekend)",
         slug: "ai-for-business",
         duration: "4 weeks",
         hours: "24 hrs",
-        tagline: "Run your business smarter in four weekends",
+        tagline: "A weekend-only program for business owners, managers, and senior professionals. In 4 weekends, learn to use AI for marketing, operations, customer communication, and decision-making — and leave with automations running in your own business.",
         price: "Contact us",
         badge: "Weekend",
     },
@@ -57,7 +57,7 @@ const SHORT_TERM = [
         slug: "summer-winter-training",
         duration: "45 days",
         hours: "60 hrs",
-        tagline: "Industrial training that satisfies your college",
+        tagline: "A 45-day, project-based industrial training program aligned with AKTU requirements — complete with training certificate, project report guidance, and viva preparation. Learn real skills, build a real project, and submit with confidence.",
         price: "Contact us",
         badge: "AKTU",
     },
@@ -70,7 +70,7 @@ const PROFESSIONAL = [
         slug: "digital-marketing-with-ai",
         duration: "3 months",
         hours: "100 hrs",
-        tagline: "Learn marketing the way agencies practise it in 2026",
+        tagline: "Learn marketing the way agencies practise it in 2026 — and run a live campaign with a real budget.",
         price: "Contact us",
         emi: true,
     },
@@ -80,7 +80,7 @@ const PROFESSIONAL = [
         slug: "python-for-data-analytics",
         duration: "3 months",
         hours: "96 hrs",
-        tagline: "Turn raw data into decisions",
+        tagline: "Turn raw data into decisions — the fastest route into analyst roles.",
         price: "Contact us",
         emi: true,
     },
@@ -90,7 +90,7 @@ const PROFESSIONAL = [
         slug: "applied-machine-learning",
         duration: "4 months",
         hours: "128 hrs",
-        tagline: "From data to deployed model in four months",
+        tagline: "From data to deployed model in four months.",
         price: "Contact us",
         emi: true,
     },
@@ -121,7 +121,7 @@ const CAREER = [
     },
     {
         id: 11,
-        title: "Data Science & AI Career Track",
+        title: "Data Science & AI Career Track (with Internship)",
         slug: "data-science-ai-career-track",
         duration: "9 months",
         hours: "320 hrs",
@@ -252,7 +252,7 @@ const TOOL_ICONS = {
 const TIERS = [
     {
         key: "short-term",
-        label: "Short-Term Courses",
+        label: "Short-Term Courses — Start Fast",
         subtitle:
             "4–6 weeks · Beginner-friendly · Fee fully adjustable if you upgrade within 60 days",
         courses: SHORT_TERM,
@@ -261,7 +261,7 @@ const TIERS = [
     },
     {
         key: "professional",
-        label: "Professional Certificates",
+        label: "Professional Certificates — Build a Skill Employers Pay For",
         subtitle: "3–4 months · Portfolio + career services · No-cost EMI",
         courses: PROFESSIONAL,
         accent: "#982cdc",
@@ -269,7 +269,7 @@ const TIERS = [
     },
     {
         key: "career",
-        label: "Career Programs",
+        label: "Career Programs — Our Flagship, Placement-Backed Tracks",
         subtitle:
             "6–9 months · Full career services · Lifetime re-attendance · No-cost EMI",
         courses: CAREER,
@@ -455,29 +455,10 @@ function CategorySection({ tier, index }) {
     );
 }
 
-export default function CoursesIndex({ courses = null }) {
+export default function CoursesIndex() {
     const [activeTier, setActiveTier] = useState("all");
 
-    const hasDbCourses = Array.isArray(courses) && courses.length > 0;
-    const tiers = hasDbCourses
-        ? TIERS.map((tier) => ({
-              ...tier,
-              courses: courses
-                  .filter((course) => course.tier === tier.key)
-                  .map((course) => ({
-                      id: course.id,
-                      title: course.title,
-                      slug: course.slug,
-                      duration: course.duration,
-                      hours: course.hours,
-                      tagline: course.tagline || course.subtitle,
-                      price: course.price || "Contact us",
-                      badge: course.badge,
-                      emi: !!course.emi,
-                      flagship: !!course.flagship,
-                  })),
-          })).filter((tier) => tier.courses.length > 0)
-        : TIERS;
+   const tiers = TIERS;
 
     const filteredTiers =
         activeTier === "all"
@@ -515,7 +496,8 @@ export default function CoursesIndex({ courses = null }) {
                                 Whether you have four weeks or nine months,
                                 whether you are a complete beginner or a working
                                 professional, there is a path here. Not sure
-                                where to start?
+                                where to start? Take our free 15-minute career
+                                counselling session and we will guide you.
                             </p>
                         </RevealDiv>
 
