@@ -750,7 +750,7 @@ const COURSE_DETAILS = {
             ],
         },
         pricingHeadline: "One price. Everything included.",
-        installments: "or [X] installments of [₹Y]",
+        installments: " ",
         pricingIncludes: [
             "12 live, hands-on sessions (24 hours of instruction)",
             "All session recordings for 12 months",

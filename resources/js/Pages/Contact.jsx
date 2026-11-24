@@ -195,17 +195,17 @@ export default function Contact() {
 
                     <div className="contact-hero-actions mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
                         <Link
-    href="/contact"
-    className="w-full sm:w-auto text-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
->
-    Send a Message
-</Link>
-                        <Link
-                            href="tel:[Phone]"
+                            href="/contact"
+                            className="w-full sm:w-auto text-center rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                            Send a Message
+                        </Link>
+                        <a
+                            href="tel:+91"
                             className="w-full sm:w-auto text-center rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-white hover:bg-surface/80 hover:-translate-y-0.5 transition-all duration-300"
                         >
                             Call Us Now
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
