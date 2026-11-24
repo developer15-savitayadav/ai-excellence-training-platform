@@ -351,7 +351,6 @@ function ProgramCard({ program }) {
 }
 
 const skillSliderImages = [
-
     "/assets/images/skillsliderimages1.avif",
     "/assets/images/skillsliderimages2.avif",
     "/assets/images/skillsliderimages3.avif",
@@ -648,10 +647,11 @@ function MentorCard({ mentor }) {
     const [active, setActive] = useState(false);
     const ref = useRef(null);
 
-     useEffect(() => {
+    useEffect(() => {
         if (!active) return;
         const onDown = (e) => {
-            if (ref.current && !ref.current.contains(e.target)) setActive(false);
+            if (ref.current && !ref.current.contains(e.target))
+                setActive(false);
         };
         document.addEventListener("pointerdown", onDown);
         return () => document.removeEventListener("pointerdown", onDown);
@@ -866,21 +866,19 @@ export default function Home() {
                         </h6>
 
                         <p className="mx-auto mt-2 max-w-[550px] text-[16px] leading-[1.7] text-black/60">
-                            Practical, mentor-led AI programs that take you from
-                            curious beginner to industry-ready professional.
+                            AI Excellence Academy is Lucknow’s offline,
+                            project-first AI training institute. Small batches
+                            of 20–25, a GenAI-current curriculum, a deployed
+                            portfolio you can show employers, and structured
+                            placement support that does the work instead of
+                            making promises.
                         </p>
 
                         <div className="mt-6 flex flex-wrap justify-center gap-3">
-                            <Link
-                                href="/contact"
-                                className=" btn-cta"
-                            >
+                            <Link href="/contact" className=" btn-cta">
                                 Book a Free Counselling
                             </Link>
-                            <Link
-                                href="/courses"
-                                className="btn-dark-cta"
-                            >
+                            <Link href="/courses" className="btn-dark-cta">
                                 Explore Courses
                             </Link>
                         </div>
@@ -1053,10 +1051,7 @@ export default function Home() {
                                     are finding every bold ideas
                                 </p>
 
-                                <Link
-                                    href="/register"
-                                    className="btn-main"
-                                >
+                                <Link href="/register" className="btn-main">
                                     Get Started
                                 </Link>
                             </div>
@@ -1166,7 +1161,6 @@ export default function Home() {
                             <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.04em] text-black">
                                 Our Programs at a Glance
                             </h2>
-
 
                             <div className="mt-6 flex flex-wrap justify-center gap-3">
                                 {courseTabs.map((tab) => {
@@ -1320,10 +1314,7 @@ export default function Home() {
                         </div>
 
                         <div className="mt-10 flex justify-center">
-                            <Link
-                                href="/courses"
-                                className="btn-cta"
-                            >
+                            <Link href="/courses" className="btn-cta">
                                 View Full Course Catalog →
                             </Link>
                         </div>
@@ -1623,10 +1614,7 @@ export default function Home() {
                         </div>
 
                         <div className="mt-8 flex justify-center lg:mt-10">
-                            <Link
-                                href="/testimonials"
-                                className=" btn-main"
-                            >
+                            <Link href="/testimonials" className=" btn-main">
                                 View More
                                 <svg
                                     className="w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -1672,10 +1660,7 @@ export default function Home() {
                         </p>
 
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
-                            <Link
-                                href="/contact"
-                                className="btn-cta"
-                            >
+                            <Link href="/contact" className="btn-cta">
                                 Book Your Free Counselling
                             </Link>
                         </div>

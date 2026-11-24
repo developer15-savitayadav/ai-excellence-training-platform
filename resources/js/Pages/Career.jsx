@@ -44,7 +44,7 @@ const TIER_ROWS = [
     },
     {
         service: "Mock interviews",
-        short: "2 sessions",
+        short: false,
         professional: "5+ sessions",
         career: "5+ sessions",
     },
@@ -68,7 +68,7 @@ const TIER_ROWS = [
     },
     {
         service: "Lifetime re-attendance",
-        short: true,
+        short: false,
         professional: true,
         career: true,
     },
@@ -147,9 +147,9 @@ const PLACEMENT_ENGINE = [
                 />
             </svg>
         ),
-        title: "Hiring Partner Network",
+        title: "Growing hiring partner network",
         description:
-            "Growing across Lucknow, Noida, Gurgaon and remote-first startups.",
+            "across Lucknow, Noida, Gurgaon and remote-first startups.",
     },
     {
         icon: (
@@ -167,8 +167,8 @@ const PLACEMENT_ENGINE = [
                 />
             </svg>
         ),
-        title: "Quarterly Placement Drives",
-        description: "On-campus drives with multiple companies.",
+        title: "Quarterly on-campus placement drives",
+        description: "with multiple companies.",
     },
     {
         icon: (
@@ -500,7 +500,7 @@ export default function Career() {
                     <div className="text-center mb-16">
                         <EyeBrow color="violet">HOW IT WORKS</EyeBrow>
                         <h2 className="mx-auto max-w-[500px] font-display text-[clamp(2rem,4vw,2.7rem)] font-bold leading-[1.05] tracking-[-0.04em] text-black">
-                            Our Placement Engine
+                            How our placement engine works
                         </h2>
                     </div>
 

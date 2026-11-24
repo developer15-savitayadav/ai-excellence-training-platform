@@ -333,9 +333,7 @@ export default function About() {
                 </div>
 
                 <div className="relative z-10 mx-auto max-w-[1240px] px-6  py-16 max-lg:pt-[56px] text-center">
-                        <EyeBrow>
-                            AI Execellence Academy
-                       </EyeBrow>
+                    <EyeBrow>AI Execellence Academy</EyeBrow>
                     <h1 className="font-display mt-6 text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08] text-white max-w-4xl mx-auto">
                         <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                             Built in Lucknow,
@@ -348,24 +346,23 @@ export default function About() {
                     </h1>
 
                     <p className="text-black/85 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-                        AI Execellence Academy was founded on a simple
+                        AI Excellence Academy was founded on a simple
                         observation: Lucknow has thousands of bright students
                         and ambitious professionals, but the training available
                         to them is either outdated, certificate-only, or priced
-                        for metro cities.
+                        for metro cities and delivered online with no
+                        accountability. We set out to build something different
+                        — an offline institute with a curriculum that moves as
+                        fast as the AI industry, trainers who are practitioners
+                        rather than lecturers, and career support that is a
+                        process, not a slogan.
                     </p>
 
                     <div className="mt-7 flex flex-wrap gap-3 justify-center">
-                        <Link
-                            href="/courses"
-                            className=" btn-cta"
-                        >
+                        <Link href="/courses" className=" btn-cta">
                             Explore Courses
                         </Link>
-                        <Link
-                            href="/contact"
-                            className="btn-dark-cta"
-                        >
+                        <Link href="/contact" className="btn-dark-cta">
                             Visit Our Campus
                         </Link>
                     </div>
@@ -651,7 +648,9 @@ export default function About() {
                         succeed.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mt-8">
-                        <Button href="/register" className="btn-main">Get Started</Button>
+                        <Button href="/register" className="btn-main">
+                            Get Started
+                        </Button>
                         <Button
                             variant="secondary"
                             href="/contact"
