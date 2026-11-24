@@ -86,7 +86,7 @@ export default function Fee() {
         <PublicLayout>
             {/* ═══════════════ HERO BANNER ═══════════════ */}
             <section
-                className="relative overflow-hidden bg-cover bg-center -mt-24 pt-[220px] pb-[40px]"
+                className="relative overflow-hidden bg-cover bg-center -mt-24 pt-[180px] pb-[40px]"
                 style={{
                     backgroundImage: "url('/assets/images/rumi_darwaza.png')",
                 }}
