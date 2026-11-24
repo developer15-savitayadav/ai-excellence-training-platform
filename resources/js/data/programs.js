@@ -129,7 +129,7 @@ export const PROGRAMS = [
         ctas: [{ label: "Enrol Now", href: "/contact" }],
     },
     {
-        slug: "ai-business-owners-weekend",
+        slug: "ai-for-business",
         categoryId: "short-term",
         title: "AI for Business Owners & Professionals (Weekend)",
         tagline: "Run your business smarter in four weekends.",
@@ -149,7 +149,7 @@ export const PROGRAMS = [
         ctas: [{ label: "Reserve a Weekend Seat", href: "/contact" }],
     },
     {
-        slug: "summer-winter-training-aktu",
+        slug: "summer-winter-training",
         categoryId: "short-term",
         title: "Summer / Winter Training — AKTU-Compliant",
         tagline:
@@ -177,7 +177,7 @@ export const PROGRAMS = [
 
     /* ═══════════════ PROFESSIONAL CERTIFICATES ═══════════════ */
     {
-        slug: "digital-marketing-with-ai-professional",
+        slug: "digital-marketing-with-ai",
         categoryId: "certificates",
         title: "Digital Marketing with AI — Professional",
         tagline:
@@ -221,7 +221,7 @@ export const PROGRAMS = [
         ],
     },
     {
-        slug: "python-data-analytics",
+        slug: "python-for-data-analytics",
         categoryId: "certificates",
         title: "Python for Data Analytics",
         tagline: "Turn raw data into decisions — the fastest route into analyst roles.",
@@ -275,7 +275,7 @@ export const PROGRAMS = [
 
     /* ═══════════════ CAREER PROGRAMS ═══════════════ */
     {
-        slug: "advanced-diploma-ai-machine-learning",
+        slug: "advanced-diploma-ai-ml",
         categoryId: "career",
         title: "Advanced Diploma in AI & Machine Learning",
         tagline:

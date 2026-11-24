@@ -28,31 +28,31 @@ const testimonials = [
         quote: "The practical projects completely changed the way I understood AI. I stopped just watching tutorials and started building solutions that I could confidently showcase.",
         name: "Rahul Sharma",
         position: "AI & Machine Learning Engineer",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+        image: "/assets/images/testi1.avif",
     },
     {
         quote: "The training gave me a strong foundation in Python, data science, and machine learning. The hands-on approach made learning much easier and more practical.",
         name: "Priya Mehta",
         position: "Data Science Professional",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
+        image: "/assets/images/testi2.avif",
     },
     {
         quote: "The projects and real-world assignments helped me understand how AI is actually used in software companies. It gave me much more confidence in my technical skills.",
         name: "Arjun Kapoor",
         position: "Software Developer",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80",
+        image: "/assets/images/testi3.avif",
     },
     {
         quote: "The instructors explained complex AI concepts in a simple and practical way. I was able to apply what I learned directly to my own software projects.",
         name: "Amit Verma",
         position: "AI Software Developer",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80",
+        image: "/assets/images/testi4.avif",
     },
     {
         quote: "The combination of AI, Python, automation, and industry-focused projects made the learning experience extremely valuable for my career growth.",
         name: "Neha Gupta",
         position: "AI & Automation Specialist",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80",
+        image: "/assets/images/testi5.avif",
     },
 ];
 
@@ -163,35 +163,35 @@ const whyChoose = [
         title: "Real Projects, Real Stakes",
         description:
             "Every program ends with something you can actually show: a deployed machine learning model, a live ad campaign run with a real budget, or a working AI assistant. Not a certificate with nothing behind it.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
+        image: "/assets/images/whychoose1.avif",
     },
     {
         number: "02",
         title: "Curriculum built for 2026, not 2016.",
         description:
             "Generative AI, LLM APIs, RAG systems, AI agents, prompt engineering and AI-powered marketing are in the syllabus — not a footnote. We teach what employers are hiring for right now.",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80",
+        image: "/assets/images/skillsliderimages3.avif",
     },
     {
         number: "03",
         title: "Small batches. Every student known by name.",
         description:
             "We cap every batch at 25 students. Your trainer knows where you are stuck, and our doubt-clearing sessions and open lab make sure you do not fall behind.",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80",
+        image: "/assets/images/whychoose2.avif",
     },
     {
         number: "04",
         title: "Structured Placement Assistance",
         description:
             "A dedicated placement coordinator, 1-on-1 resume building, mock interviews, a growing network of hiring partners, and quarterly on-campus placement drives. We publish our real numbers, batch by batch.",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=400&q=80",
+        image: "/assets/images/whychoose3.avif",
     },
     {
         number: "05",
         title: "Fees a Lucknow family can plan around.",
         description:
             "No-cost EMI on all Professional and Career programs. Scholarships for women in tech and merit-based entrance test scholarships up to 25%.",
-        image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=400&q=80",
+        image: "/assets/images/whychoose4.avif",
     },
 ];
 const learners = [
@@ -1167,6 +1167,7 @@ export default function Home() {
                                 Our Programs at a Glance
                             </h2>
 
+
                             <div className="mt-6 flex flex-wrap justify-center gap-3">
                                 {courseTabs.map((tab) => {
                                     const active = offerTab === tab.id;
@@ -1332,9 +1333,9 @@ export default function Home() {
                 {/* WHY CHOOSE */}
                 <section className="relative overflow-hidden border-t border-black/5 px-5 py-20 bg-[#f5f5f2]">
                     <div className="pointer-events-none absolute -right-32 top-0 h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(152,44,220,.06),transparent_70%)] blur-2xl" />
-                    <div className="mx-auto max-w-[1200px]">
-                        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]  items-center">
-                            <div>
+                    <div className="mx-auto max-w-[1200px] ">
+                        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]  items-center ">
+                            <div className="why-head">
                                 <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                     WHY US?
@@ -1350,7 +1351,7 @@ export default function Home() {
                             </div>
 
                             <p
-                                className="max-w-[400px] text-[clamp(15px,1.2vw,18px)] leading-[1.7] text-black/50 lg:justify-self-end font-[600]"
+                                className="max-w-[400px] text-[clamp(15px,1.2vw,18px)] leading-[1.7] text-black/50 lg:justify-self-end font-[600] why-desc"
                                 style={{ fontFamily: "'Poppins', sans-serif" }}
                             >
                                 Expert mentorship, practical learning and

@@ -98,29 +98,26 @@ export default function Fee() {
                     <div className="absolute -bottom-20 left-[35%] w-[350px] h-[200px] rounded-full bg-violet/[0.04] blur-[100px]" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
-                    <h1 className="font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                <div className="fee-hero-inner relative z-10 mx-auto max-w-[1240px] px-6 pt-[48px] pb-14 max-lg:pt-[48px]">
+                    <h1 className="fee-hero-title font-display text-[clamp(2.1rem,3.8vw,3.2rem)] font-bold tracking-[-0.035em] leading-[1.08]">
                         <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                             Quality AI Education,
-                        </span>
-                        <br />
+                        </span>{" "}
+                        <br className="fee-hero-br" />
                         <span className="text-white">
                             Priced for Lucknow Families
                         </span>
                     </h1>
 
-                    <p className="text-white text-lg mt-5 max-w-xl leading-relaxed">
+                    <p className="fee-hero-text text-white text-lg mt-5 max-w-xl leading-relaxed">
                         We keep our fee structure transparent and flexible — and
                         we prefer to discuss it with you personally, so we can
                         match the right program and payment plan to your goals
                         and budget.
                     </p>
 
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
-                        <Link
-                            href="/contact"
-                            className="btn-main"
-                        >
+                    <div className="fee-hero-actions mt-6 flex flex-wrap items-center gap-3">
+                        <Link href="/contact" className="btn-main">
                             Contact us
                         </Link>
                         <span className="text-sm font-semibold text-white">

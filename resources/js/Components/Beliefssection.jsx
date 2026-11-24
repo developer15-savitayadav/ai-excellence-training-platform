@@ -34,7 +34,7 @@ const CARDS = [
             "Every competitor can teach you what a neural network is. We make sure you have built one, deployed it, and can explain it in an interview.",
         bg: null,
         image:
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+            "assets/images/beliefssection.avif",
         text: "#FFFFFF",
         iconBg: "rgba(255,255,255,0.16)",
         iconPath: "M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5",
@@ -56,7 +56,7 @@ const CARDS = [
 const FINAL_GAP = 20; // px gap between cards once fully separated
 const STACK_OFFSET = 28; // px offset between cards while stacked at the start
 
-/* ═══════════════ WHAT WE BELIEVE — stacked-to-separated scroll reveal ═══════════════ */
+/* ═══════════════ WH T WE BELIEVE — stacked-to-separated scroll reveal ═══════════════ */
 export default function BeliefsSection() {
     const sectionRef = useRef(null);
     const trackRef = useRef(null);

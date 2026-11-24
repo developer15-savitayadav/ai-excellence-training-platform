@@ -429,16 +429,16 @@ function CategorySection({ tier, index }) {
                 transition: `opacity 0.7s cubic-bezier(.22,1,.36,1) ${index * 80}ms, transform 0.7s cubic-bezier(.22,1,.36,1) ${index * 80}ms`,
             }}
         >
-            <div className="mb-8">
-                <div className="flex items-center gap-3 mb-2">
+            <div className="tier-head mb-8">
+                <div className="tier-title-wrap flex items-center gap-3 mb-2">
                     <span
-                        className={`h-2.5 w-2.5 rounded-full ${tier.accentBg}`}
+                        className={`tier-dot h-2.5 w-2.5 rounded-full ${tier.accentBg}`}
                     />
-                    <h3 className="font-display text-[22px] sm:text-[26px] font-bold text-black tracking-[-0.02em]">
+                    <h3 className="tier-title font-display text-[22px] sm:text-[26px] font-bold text-black tracking-[-0.02em]">
                         {tier.label}
                     </h3>
                 </div>
-                <p className="text-[13px] text-black/45 ml-[22px]">
+                <p className="tier-subtitle text-[13px] text-black/45 ml-[22px]">
                     {tier.subtitle}
                 </p>
             </div>
@@ -532,10 +532,7 @@ export default function CoursesIndex({ courses = null }) {
                                     </strong>
                                 </span>
 
-                                <Link
-                                    href="/contact"
-                                    className="btn-main"
-                                >
+                                <Link href="/contact" className="btn-main">
                                     Book Now
                                 </Link>
                             </div>
@@ -608,12 +605,12 @@ export default function CoursesIndex({ courses = null }) {
                     className="mx-auto max-w-[1240px] px-6 pb-20"
                 >
                     <RevealDiv>
-                        <div className="mb-10">
-                            <div className="inline-flex items-center ">
+                        <div className="who-head mb-10">
+                            <div className="who-eyebrow inline-flex items-center">
                                 <EyeBrow>WHO IT&apos;S FOR</EyeBrow>
                             </div>
 
-                            <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
+                            <h2 className="who-title font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
                                 Who it&apos;s for
                             </h2>
                         </div>
@@ -777,18 +774,21 @@ export default function CoursesIndex({ courses = null }) {
                     <RevealDiv>
                         <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_12px_40px_rgba(152,44,220,0.06)] p-8 sm:p-10 lg:p-12">
                             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-12 items-start">
-                                <div className="flex flex-col items-start">
-                                    <div className="inline-flex items-center ">
+                                <div className="learn-head flex flex-col items-start">
+                                    <div className="learn-eyebrow inline-flex items-center">
                                         <EyeBrow>LEARNING OUTCOMES</EyeBrow>
                                     </div>
-                                    <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black max-w-[230px]">
-                                        What you
-                                        <br />
-                                        will learn
+                                    <h2 className="learn-title font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black max-w-[230px]">
+                                        <span className="learn-line">
+                                            What you
+                                        </span>{" "}
+                                        <span className="learn-line">
+                                            will learn
+                                        </span>
                                     </h2>
                                     <Link
                                         href="/contact"
-                                        className="mt-10 btn-main"
+                                        className="learn-btn mt-10 btn-main"
                                     >
                                         Enroll Now
                                     </Link>
@@ -952,10 +952,7 @@ export default function CoursesIndex({ courses = null }) {
                                 background and goals.
                             </p>
                             <div className="mt-8 flex flex-wrap justify-center gap-4">
-                                <Link
-                                    href="/contact"
-                                    className="btn-cta"
-                                >
+                                <Link href="/contact" className="btn-cta">
                                     Book Free Counselling
                                 </Link>
                                 <Link

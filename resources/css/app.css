@@ -925,28 +925,243 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+.learn-line {
+    display: block;
+}
+.outcome-line {
+    display: block;
+}
 /* ── WHAT WE BELIEVE — stacked-to-separated scroll reveal ── */
 /* Mobile: un-pin the 160vh scroll-jack and stack the belief cards
    vertically. Cards stay positioned (relative) so the absolute icon and
    image/overlay inside each card keep anchoring to the card itself. */
 @media (max-width: 768px) {
-     .tier-col{
-      width: 120px;
+    .why-head {
+        text-align: center;
     }
+    .why-desc {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .tier-head {
+        text-align: center;
+    }
+
+    .tier-title-wrap {
+        justify-content: center;
+    }
+
+    .tier-title,
+    .tier-subtitle {
+        text-align: center;
+    }
+
+    .tier-subtitle {
+        margin-left: 0;
+    }
+    .tier-col {
+        width: 120px;
+    }
+    .who-head {
+        text-align: center;
+    }
+
+    .who-eyebrow {
+        display: flex;
+        justify-content: center;
+    }
+    .learn-head {
+        align-items: center;
+        text-align: center;
+    }
+
+    .learn-eyebrow {
+        justify-content: center;
+    }
+
+    .learn-title {
+        max-width: none !important;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .learn-line {
+        display: inline;
+    }
+    .who-title {
+        text-align: center;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .hero-eyebrow {
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-title {
+        text-align: center;
+    }
+
+    .hero-tagline {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-trust {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .problem-head {
+        text-align: center;
+    }
+
+    .problem-eyebrow {
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .problem-title {
+        text-align: center;
+    }
+
+    .problem-body,
+    .problem-text {
+        text-align: center;
+    }
+
+    .outcome-head {
+        align-items: center;
+        text-align: center;
+    }
+
+    .outcome-title {
+        max-width: none !important;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .outcome-line {
+        display: inline;
+    }
+
+    .outcome-intro {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .final-head {
+        text-align: center;
+    }
+
+    .final-eyebrow,
+    .final-bar-eyebrow {
+        display: flex;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .final-title,
+    .final-intro {
+        text-align: center;
+    }
+
+    .fee-hero-title {
+        text-align: center;
+    }
+
+    .fee-hero-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fee-hero-actions {
+        justify-content: center;
+    }
+    .career-hero-left {
+        text-align: center;
+    }
+
+    .career-hero-title {
+        text-align: center;
+    }
+
+    .career-hero-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .career-hero-actions {
+        justify-content: center;
+    }
+    .resume-head {
+        text-align: center;
+    }
+
+    .resume-title {
+        text-align: center;
+    }
+    .contact-hero-inner {
+        text-align: center;
+    }
+
+    .contact-hero-eyebrow {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-hero-title {
+        text-align: center;
+    }
+
+    .contact-hero-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-hero-actions {
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-form-head {
+        text-align: center;
+    }
+
+    .contact-info-title {
+        text-align: center;
+    }
+
+
+
     .partner-card {
-    text-align: center;
-}
+        text-align: center;
+    }
 
-.partner-content p {
-    margin-left: auto;
-    margin-right: auto; /* max-w-md wala paragraph bhi center ho */
-}
+    .partner-content p {
+        margin-left: auto;
+        margin-right: auto; /* max-w-md wala paragraph bhi center ho */
+    }
 
-.partner-action {
-    text-align: center;
-}
-    .hero-stat-card .hero-stat-para{
+    .partner-action {
+        text-align: center;
+    }
+    .hero-stat-card .hero-stat-para {
         font-size: 18px;
     }
     .beliefs-scroll {
@@ -990,14 +1205,13 @@ body {
 /* Tablet: keep the reveal but give the (narrower) separated cards a bit more
    room — tighter header gap and slightly smaller card padding. */
 @media (min-width: 768px) and (max-width: 1023px) {
-
-    .bannercard1-heading{
+    .bannercard1-heading {
         font-size: 28px;
     }
-    .bannercard4-heading{
+    .bannercard4-heading {
         font-size: 28px;
     }
-    .bannercard2-heading{
+    .bannercard2-heading {
         font-size: 18px;
     }
     .beliefs-scroll > .sticky > div > div {
@@ -1009,42 +1223,40 @@ body {
     }
 }
 @media (max-width: 480px) {
-    .footer-social{
-flex-direction: row;
+    .footer-social {
+        flex-direction: row;
     }
     .float-stat-br {
-        padding: 15px 10px ;
+        padding: 15px 10px;
     }
-     .float-stat-br p{
+    .float-stat-br p {
         font-size: 14px;
-     }
+    }
 }
 
-.offer-course-card
-{
-    display:flex;
+.offer-course-card {
+    display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
 }
-.offer-course-card img
-{
-    width:100%;
+.offer-course-card img {
+    width: 100%;
 }
-.offer-course-card:hover{
+.offer-course-card:hover {
     background-color: black;
 }
-.offer-course-card:hover h3{
-    color:#fff
+.offer-course-card:hover h3 {
+    color: #fff;
 }
-.offer-course-card:hover p{
+.offer-course-card:hover p {
     color: #fff;
 }
 .hero-stat-card {
     animation: heroCardRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
-.btn-main{
+.btn-main {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -1070,7 +1282,7 @@ flex-direction: row;
 .btn-main-btn__icon:hover .view-more-btn__icon {
     transform: translateX(4px);
 }
-.btn-cta{
+.btn-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1109,20 +1321,20 @@ flex-direction: row;
     color: #000;
 }
 .offer-course-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px; /* gap-1.5 */
-  border-radius: 9999px; /* rounded-full */
-  background-color: #000; /* bg-black */
-  color: #fff; /* text-white */
-  font-size: 14px; /* text- */
-  font-weight: 600; /* font-semibold */
-  padding: 12px 20px; /* px-5 py-2.5 */
-  transition: all 300ms; /* transition-all duration-300 */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* gap-1.5 */
+    border-radius: 9999px; /* rounded-full */
+    background-color: #000; /* bg-black */
+    color: #fff; /* text-white */
+    font-size: 14px; /* text- */
+    font-weight: 600; /* font-semibold */
+    padding: 12px 20px; /* px-5 py-2.5 */
+    transition: all 300ms; /* transition-all duration-300 */
 }
 
 /* group-hover:bg-[linear-gradient(60deg,#982cdc,#eec369)] */
 .group:hover .offer-course-btn {
-  background: linear-gradient(60deg, #982cdc, #eec369);
-  box-shadow: 0 8px 20px -4px rgba(152, 44, 220, 0.45);
+    background: linear-gradient(60deg, #982cdc, #eec369);
+    box-shadow: 0 8px 20px -4px rgba(152, 44, 220, 0.45);
 }

@@ -18,7 +18,7 @@ const BATCHES = [
     level: 'Beginner to Intermediate',
     category: 'ai-fundamentals',
     nextStart: 'Sep 2, 2026',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=900&q=80',
+    image: 'assets/images/skillsliderimages1.avif',
     features: ['25 workstations with GPU access', 'Live project deployment', '1-on-1 mentorship sessions', 'Placement assistance', 'Lab access 10 AM – 7 PM daily', 'Certificate of completion'],
   },
   {
@@ -36,7 +36,7 @@ const BATCHES = [
     level: 'Intermediate to Advanced',
     category: 'deep-learning',
     nextStart: 'Sep 16, 2026',
-    image: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=900&q=80',
+    image: '/assets/images/offlinebg1.avif',
     features: ['NVIDIA GPU lab access', 'Real-world dataset projects', 'TensorFlow & PyTorch', 'Model deployment training', 'Research paper workshops', 'Industry guest lectures'],
   },
   {
@@ -54,7 +54,7 @@ const BATCHES = [
     level: 'Intermediate',
     category: 'nlp',
     nextStart: 'Oct 7, 2026',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80',
+    image: '/assets/images/skillsliderimages3.avif',
     features: ['Transformer architecture deep-dive', 'Fine-tuning pre-trained models', 'RAG pipeline building', 'Prompt engineering workshop', 'Capstone project', 'Portfolio development'],
   },
   {
@@ -72,7 +72,7 @@ const BATCHES = [
     level: 'Beginner',
     category: 'data-science',
     nextStart: 'Sep 9, 2026',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80',
+    image: '/assets/images/whychoose1.avif',
     features: ['Python & Pandas mastery', 'SQL for data analysis', 'Data visualization with Plotly', 'Statistical modeling', 'Business case studies', 'Industry-recognized certification'],
   },
   {
@@ -90,7 +90,7 @@ const BATCHES = [
     level: 'Advanced',
     category: 'mlops',
     nextStart: 'Oct 21, 2026',
-    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=900&q=80',
+    image: 'assets/images/offlinebg2.avif',
     features: ['CI/CD for ML pipelines', 'Docker & Kubernetes', 'Model monitoring & drift', 'Cloud deployment (AWS/GCP)', 'Infrastructure as Code', 'Real production systems'],
   },
   {
@@ -108,7 +108,7 @@ const BATCHES = [
     level: 'Beginner',
     category: 'ai-fundamentals',
     nextStart: 'Sep 23, 2026',
-    image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=900&q=80',
+    image: 'assets/images/offlinebg2.avif',
     features: ['No coding required', 'AI tools for marketers', 'Content generation strategies', 'Analytics & automation', 'Case studies from industry', 'Weekend-friendly schedule'],
   },
 ];

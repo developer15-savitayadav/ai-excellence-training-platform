@@ -26,7 +26,7 @@ class CourseController extends Controller
             ->published()
             ->with('instructor:id,name,slug,avatar,specialization,bio')
             ->where('slug', $slug)
-            ->first();
+            ->first(); 
 
         return Inertia::render('Courses/Show', [
             'slug' => $slug,

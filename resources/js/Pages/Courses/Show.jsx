@@ -607,7 +607,7 @@ const COURSE_DETAILS = {
         problemBody: [
             "Most people have opened ChatGPT, typed a question, gotten a mediocre answer, and moved on.Meanwhile, a small group is using thesesame tools to write in an hour what used to take a day, generate a week of content in an afternoon, and build automations that run while they sleep.",
             "The difference isn't access. It's knowing which tool to use, how to prompt it, how to connect it to your real work, and how to catch it when it's wrong.",
-            "That's exactly what this course teaches."
+            "That's exactly what this course teaches.",
         ],
         outcomes: [
             {
@@ -637,7 +637,10 @@ const COURSE_DETAILS = {
         ],
         howItWorks: [
             { label: "Length", value: "4 weeks" },
-            { label: "Schedule", value: "3 live sessions per week, 2 hours each ([DAYS], [TIME] [TIMEZONE]) Session format" },
+            {
+                label: "Schedule",
+                value: "3 live sessions per week, 2 hours each ([DAYS], [TIME] [TIMEZONE]) Session format",
+            },
             {
                 label: "Session format",
                 value: "30 min concept → 75 min hands-on lab → 15 min review",
@@ -661,7 +664,7 @@ const COURSE_DETAILS = {
                 week: 1,
                 title: "Foundations & Prompt Engineering",
                 build: "You'll build: A personal prompt library of 10 reusable templates, and a full document-analysis workflow from a 20-page report.",
-                 topics: [
+                topics: [
                     "How large language models actually work — and why they hallucinate",
                     "The prompt anatomy: role, context, task, format, constraints, examples",
                     "Few-shot prompting, chain-of-thought, and iterative refinement",
@@ -677,8 +680,7 @@ const COURSE_DETAILS = {
                     "Image generation with Midjourney, DALL·E, Firefly, and Ideogram — including style consistency",
                     "Voice, music, and video with ElevenLabs, Suno, Runway, HeyGen, and Descript",
                     "AI-powered slides and design with Gamma, Canva AI, and Notion AI",
-                    "The ethics of synthetic media: consent, deepfakes, disclosure"
-
+                    "The ethics of synthetic media: consent, deepfakes, disclosure",
                 ],
             },
             {
@@ -690,7 +692,6 @@ const COURSE_DETAILS = {
                     "No-code automation with Zapier, Make, and n8n — triggers, AI steps, and human-in-the-loop approvals",
                     " Vibe coding building and deploying a web app with Cursor, Claude Code, Replit, or Lovable",
                     "Cost control, error handling, and knowing when to build vs. buy",
-
                 ],
             },
             {
@@ -762,8 +763,7 @@ const COURSE_DETAILS = {
             "If you attend every session and complete the final project, and you don't feel more confident with AI, we'll make it right.",
         faqs: [
             {
-                question:
-                    "Do I need any technical or coding background?",
+                question: "Do I need any technical or coding background?",
                 answer: "No. The course is designed for non-technical professionals. The Week 3 app-building session uses AI coding tools driven entirely by naturallanguage — you describe what you want, and the AI writes the code. Many learners with zero programming experience deploy a working app in that session.",
             },
             {
@@ -788,7 +788,8 @@ const COURSE_DETAILS = {
                 answer: "No. Everything runs in a web browser. Any laptop from the last several years with a stable internet connection is fine.",
             },
             {
-                question: "Will the tools be outdated by the time I take the course?",
+                question:
+                    "Will the tools be outdated by the time I take the course?",
                 answer: "The AI landscape moves fast, which is why the curriculum focuses on transferable skills — prompt structure, evaluation, workflow design —rather than memorizing menus. The specific tools are reviewed and updated before every cohort, and the skills you learn carry over when a tool changes or a new one appears..",
             },
             {
@@ -812,10 +813,11 @@ const COURSE_DETAILS = {
                 answer: "Attend the first two sessions. If the course isn't what you expected, email us before Session 3 and we'll refund you in full. After Session 3, no refunds are issued, but you can transfer your seat to a future cohort once.",
             },
             {
-                question: "Is the course accessible for people with disabilities?",
+                question:
+                    "Is the course accessible for people with disabilities?",
                 answer: "Sessions include live captions, and all recordings include transcripts. If you have specific accommodation needs, please [contact us] before the cohort begins so we can support you.",
             },
-             {
+            {
                 question: "I have a question that isn't answered here.",
                 answer: "Email [support@yourdomain.com] or [book a 15-minute call] — we're happy to help you decide whether the course is the right fit.",
             },
@@ -3743,16 +3745,18 @@ function buildDetail(course) {
     const tools = (override.tools || (course.tools ? course.tools : TOOLS)).map(
         normalizeTool,
     );
-    const instructor = override.instructor || course.instructorProfile || DEFAULT_INSTRUCTOR;
+    const instructor =
+        override.instructor || course.instructorProfile || DEFAULT_INSTRUCTOR;
 
-const pricingIncludes =
-    (Array.isArray(override.pricingIncludes) && override.pricingIncludes.length
-        ? override.pricingIncludes
-        : null) ||
-    (Array.isArray(course.included) && course.included.length
-        ? course.included
-        : null) ||
-    DEFAULT_PRICING_INCLUDES;
+    const pricingIncludes =
+        (Array.isArray(override.pricingIncludes) &&
+        override.pricingIncludes.length
+            ? override.pricingIncludes
+            : null) ||
+        (Array.isArray(course.included) && course.included.length
+            ? course.included
+            : null) ||
+        DEFAULT_PRICING_INCLUDES;
 
     const audience =
         override.audience ||
@@ -4017,7 +4021,7 @@ function StickyNav() {
                 </div>
             </div>
         </>
-    );
+    ); 
 }
 
 export default function CoursesShow({ slug, dbCourse = null }) {
@@ -4100,7 +4104,11 @@ export default function CoursesShow({ slug, dbCourse = null }) {
 
     return (
         <PublicLayout>
-            <Head title={seo.title}>{seo.description && <meta name="description" content={seo.description} />}</Head>
+            <Head title={seo.title}>
+                {seo.description && (
+                    <meta name="description" content={seo.description} />
+                )}
+            </Head>
             <StickyNav />
             <section className="min-h-screen bg-ink">
                 {/* ═══════════════ HERO ═══════════════ */}
@@ -4112,9 +4120,9 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                     </div>
 
                     <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-10 sm:pt-[48px] grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
-                        <div>
+                        <div className="hero-left">
                             <RevealDiv>
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
+                                <div className="hero-eyebrow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet/[0.07] border border-violet/15 mb-6">
                                     <span className="relative flex h-2 w-2">
                                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet opacity-75" />
                                         <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
@@ -4126,7 +4134,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                             </RevealDiv>
 
                             <RevealDiv delay={80}>
-                                <h1 className="font-display text-[clamp(2.1rem,3.8vw,2.8rem)] font-bold tracking-[-0.035em] leading-[1.08]">
+                                <h1 className="hero-title font-display text-[clamp(2.1rem,3.8vw,2.8rem)] font-bold tracking-[-0.035em] leading-[1.08]">
                                     <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                                         {course.title.split(" — ")[0]}
                                     </span>
@@ -4147,13 +4155,13 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                             </RevealDiv>
 
                             <RevealDiv delay={160}>
-                                <p className="text-muted text-lg mt-5 max-w-xl leading-relaxed">
+                                <p className="hero-tagline text-muted text-lg mt-5 max-w-xl leading-relaxed">
                                     {course.tagline}
                                 </p>
                             </RevealDiv>
 
                             <RevealDiv delay={240}>
-                                <div className="mt-6 flex flex-wrap gap-3">
+                                <div className="hero-actions mt-6 flex flex-wrap gap-3">
                                     <Link
                                         href="/contact"
                                         className="rounded-full bg-[linear-gradient(60deg,#982cdc,#eec369)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.38)] hover:-translate-y-0.5 transition-all duration-300"
@@ -4181,7 +4189,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                                         </Link>
                                     )}
                                 </div>
-                                <p className="mt-5 inline-flex items-center gap-2 text-[13px] text-black/50">
+                                <p className="hero-trust mt-5 inline-flex items-center gap-2 text-[13px] text-black/50">
                                     <svg
                                         className="w-4 h-4 text-lime/70"
                                         fill="currentColor"
@@ -4260,13 +4268,13 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                     className="mx-auto max-w-[1240px] px-6 pb-20"
                 >
                     <RevealDiv>
-                        <div className="mb-10">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                        <div className="who-head mb-10">
+                            <p className="who-eyebrow mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 WHO IT&apos;S FOR
                             </p>
 
-                            <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
+                            <h2 className="who-title font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
                                 {detail.whoItsForHeadline}
                             </h2>
                         </div>
@@ -4445,20 +4453,22 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                 <div className="mx-auto max-w-[1240px] px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 sm:gap-10 lg:gap-16 items-center">
                         <RevealDiv>
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
-                                THE PROBLEM
-                            </p>
-                            <h2 className="font-display text-[clamp(2rem,4vw,2.9rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black">
-                                {detail.problemTitle}
-                            </h2>
+                            <div className="problem-head">
+                                <p className="problem-eyebrow mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
+                                    THE PROBLEM
+                                </p>
+                                <h2 className="problem-title font-display text-[clamp(2rem,4vw,2.9rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black">
+                                    {detail.problemTitle}
+                                </h2>
+                            </div>
                         </RevealDiv>
                         <RevealDiv delay={100}>
-                            <div className="space-y-5">
+                            <div className="problem-body space-y-5">
                                 {detail.problemBody.map((para, i) => (
                                     <p
                                         key={i}
-                                        className="text-[17px] leading-[1.5] text-black/60"
+                                        className="problem-text text-[17px] leading-[1.5] text-black/60"
                                     >
                                         {para}
                                     </p>
@@ -4565,25 +4575,29 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                     <RevealDiv>
                         <div className="rounded-[22px] bg-white border border-black/[0.04] shadow-[0_12px_40px_rgba(152,44,220,0.06)] p-6 sm:p-10 lg:p-12">
                             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 sm:gap-10 lg:gap-12 items-start">
-                                <div className="flex flex-col items-start">
-                                    <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                                <div className="outcome-head flex flex-col items-start">
+                                    <p className="outcome-eyebrow mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                         LEARNING OUTCOMES
                                     </p>
-                                    <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black max-w-[230px]">
-                                        What you
-                                        <br />
-                                        will learn
+
+                                    <h2 className="outcome-title font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.045em] leading-[1.05] text-black max-w-[230px]">
+                                        <span className="outcome-line">
+                                            What you
+                                        </span>{" "}
+                                        <span className="outcome-line">
+                                            will learn
+                                        </span>
                                     </h2>
 
                                     <Link
                                         href="/contact"
-                                        className="mt-10 inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold text-white bg-[linear-gradient(60deg,#eec369,#982cdc)] shadow-[0_6px_18px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.35)] hover:-translate-y-0.5 transition-all duration-300"
+                                        className="outcome-btn mt-10 inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold text-white bg-[linear-gradient(60deg,#eec369,#982cdc)] shadow-[0_6px_18px_rgba(152,44,220,.25)] hover:shadow-[0_10px_28px_rgba(152,44,220,.35)] hover:-translate-y-0.5 transition-all duration-300"
                                     >
                                         Enroll Now
                                     </Link>
 
-                                    <p className="mt-6 max-w-[260px] text-[13px] sm:text-[14px] leading-[1.6] font-medium text-black/55">
+                                    <p className="outcome-intro mt-6 max-w-[260px] text-[13px] sm:text-[14px] leading-[1.6] font-medium text-black/55">
                                         {detail.finalProject.intro}
                                     </p>
                                 </div>
@@ -4910,15 +4924,15 @@ export default function CoursesShow({ slug, dbCourse = null }) {
             >
                 <div className="mx-auto max-w-[1240px] px-6">
                     <RevealDiv>
-                        <div className="max-w-[720px] mb-12">
-                            <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
+                        <div className="final-head max-w-[720px] mb-12">
+                            <p className="final-eyebrow mb-2 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.15em] text-black/70 backdrop-blur-sm">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#982cdc] animate-pulse" />
                                 THE FINAL PROJECT
                             </p>
-                            <h2 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
+                            <h2 className="final-title font-display text-[clamp(2rem,4vw,2.8rem)] font-bold tracking-[-0.04em] text-black">
                                 The Final Project
                             </h2>
-                            <p className="mt-4 text-[17px] leading-[1.5] text-black/60">
+                            <p className="final-intro mt-4 text-[17px] leading-[1.5] text-black/60">
                                 {detail.finalProject.intro}
                             </p>
                         </div>
@@ -4964,17 +4978,14 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                                 )}
                             </div>
                             {detail.finalProject.cta && (
-                                <Link
-                                    href="/contact"
-                                    className="btn-main"
-                                >
+                                <Link href="/contact" className="btn-main">
                                     {detail.finalProject.cta}
                                 </Link>
                             )}
                             {!detail.finalProject.cta && (
                                 <Link
                                     href="/contact"
-                                    className="shrink-0 inline-flex items-center justify-center rounded-full border border-violet/25 px-7 py-3.5 text-sm font-semibold text-violet hover:bg-violet/5 transition-all duration-300"
+                                    className="btn-cta"
                                 >
                                     Enquire Now
                                 </Link>
@@ -5063,10 +5074,7 @@ export default function CoursesShow({ slug, dbCourse = null }) {
                             New batch starts every month
                         </p>
                         <div className="mt-8 flex justify-center">
-                            <Link
-                                href="/contact"
-                                className="btn-cta"
-                            >
+                            <Link href="/contact" className="btn-cta">
                                 Enroll Now
                             </Link>
                         </div>

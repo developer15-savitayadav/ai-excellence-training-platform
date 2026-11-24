@@ -245,33 +245,30 @@ export default function Career() {
                 <div className="relative z-10 mx-auto max-w-[1240px] px-6 pt-16  max-lg:pt-12">
                     <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
                         {/* Left: copy */}
-                        <div>
-                            <h1 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.12]">
+                        <div className="career-hero-left">
+                            <h1 className="career-hero-title font-display text-[clamp(2rem,3.6vw,3rem)] font-extrabold tracking-[-0.03em] leading-[1.12]">
                                 <span className="bg-[linear-gradient(90deg,#eec369,#982cdc)] bg-clip-text text-transparent">
                                     Structured
                                 </span>
                                 <span className="text-black">
                                     {" "}
                                     Placement Assistance —
-                                </span>
-                                <br />
+                                </span>{" "}
+                                <br className="career-hero-br" />
                                 <span className="text-black">
                                     A process, Not a Promise
                                 </span>
                             </h1>
 
-                            <p className="text-neutral-600 text-base mt-5 max-w-lg leading-relaxed">
+                            <p className="career-hero-text text-neutral-600 text-base mt-5 max-w-lg leading-relaxed">
                                 We do not advertise &ldquo;100% placement
                                 guarantee.&rdquo; Nobody can honestly make that
                                 promise. What we offer instead is a structured
                                 system, a dedicated team, and published results
                             </p>
 
-                            <div className="mt-7 flex flex-wrap gap-3">
-                                <Link
-                                    href="/enroll"
-                                    className="btn-main"
-                                >
+                            <div className="career-hero-actions mt-7 flex flex-wrap gap-3">
+                                <Link href="/enroll" className="btn-main">
                                     Enrol Now
                                 </Link>
                                 <Link
@@ -322,10 +319,7 @@ export default function Career() {
                             </span>
                         </div>
                         <div className="flex items-center justify-center py-6 px-4">
-                            <Link
-                                href="/contact"
-                                className="btn-main"
-                            >
+                            <Link href="/contact" className="btn-main">
                                 Contact us for pricing
                             </Link>
                         </div>
@@ -344,8 +338,6 @@ export default function Career() {
                     }}
                 />
                 <div className="relative max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
-
-
                     {/* Desktop table */}
                     <div className="hidden md:flex items-stretch gap-4">
                         {/* Labels column */}
@@ -448,18 +440,17 @@ export default function Career() {
                     <div className="bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,.06)] p-10 max-lg:p-6">
                         <div className="grid lg:grid-cols-[0.85fr_2fr] gap-10 items-start">
                             {/* Left: intro panel */}
-                            <div className="lg:sticky lg:top-10">
-                                <h2 className="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] font-bold tracking-[-0.03em] leading-[1.15] text-black">
+                            <div className="resume-head lg:sticky lg:top-10">
+                                <h2 className="resume-title font-display text-[clamp(1.6rem,2.6vw,2.2rem)] font-bold tracking-[-0.03em] leading-[1.15] text-black">
                                     The Resume Building Module
                                 </h2>
                                 <Link
                                     href="/enroll"
-                                    className="mt-6 btn-main"
+                                    className="resume-btn mt-6 btn-main"
                                 >
                                     Enrol Now
                                 </Link>
                             </div>
-
                             {/* Right: step grid */}
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {RESUME_STEPS.map((step, i) => {
@@ -508,7 +499,7 @@ export default function Career() {
                 <div className="max-w-[1240px] mx-auto px-6 py-[60px] max-lg:py-[72px]">
                     <div className="text-center mb-16">
                         <EyeBrow color="violet">HOW IT WORKS</EyeBrow>
-                        <h2 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] font-semibold text-body">
+                        <h2 className="mx-auto max-w-[500px] font-display text-[clamp(2rem,4vw,2.7rem)] font-bold leading-[1.05] tracking-[-0.04em] text-black">
                             Our Placement Engine
                         </h2>
                     </div>
@@ -630,10 +621,7 @@ export default function Career() {
                             New batch starts every month
                         </p>
                         <div className="mt-8 flex justify-center">
-                            <Link
-                                href="/contact"
-                                className="btn-cta"
-                            >
+                            <Link href="/contact" className="btn-cta">
                                 Enroll Now
                             </Link>
                         </div>
